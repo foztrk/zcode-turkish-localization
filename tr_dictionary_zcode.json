@@ -5468,7 +5468,7 @@
   "chat.toolbar.model.targetMissing": "Model hedefi yok",
   "settings.subagents.modelLoadFailed": "Model listesi yüklenemedi.",
   "root.modelSelection.loadFailed": "Model yapılandırması yüklenemedi.",
-  "titleBar.menu.help.resourceManager": "Dosya Gezgini",
+  "titleBar.menu.help.resourceManager": "Kaynak Yöneticisi",
   "chat.previewCards.text": "Metin · TXT",
   "chat.previewCards.openExternalFailed": "Bu dosya tarayıcıda açılamadı",
   "resourceManager.storage.summaryTotal": "ZCode tarafından kullanılan toplam alan",

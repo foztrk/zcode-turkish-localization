@@ -232,6 +232,7 @@ def find_target_paths(header, f_src, base_offset):
         "menu": ["out", "main", menu_file],
         "main": ["out", "main", "index.js"],
         "html": ["out", "renderer", "index.html"],
+        "resource_html": ["out", "renderer", "resource-manager.html"],
     }
 
 
@@ -1323,9 +1324,16 @@ def patch_usage_parts(js_content):
 
 
 def patch_main(js_content):
-    js_content = js_content.replace("\\u8D44\\u6E90\\u7BA1\\u7406\\u5668", "Dosya Gezgini")
-    js_content = js_content.replace("资源管理器", "Dosya Gezgini")
+    js_content = js_content.replace("\\u8D44\\u6E90\\u7BA1\\u7406\\u5668", "Kaynak Yöneticisi")
+    js_content = js_content.replace("资源管理器", "Kaynak Yöneticisi")
+    js_content = js_content.replace('MU="Resource Manager"', 'MU="Kaynak Yöneticisi"')
+    js_content = js_content.replace('"Resource Manager"', '"Kaynak Yöneticisi"')
     return js_content
+
+
+def patch_resource_html(html_content):
+    html_content = html_content.replace("<title>Resource Manager</title>", "<title>Kaynak Yöneticisi</title>")
+    return patch_html(html_content)
 
 
 def patch_intl(js_content, tr_dict):
@@ -1390,7 +1398,7 @@ MENU_TR = {
     "titleBar.menu.help.whatsNew": "Yenilikler",
     "titleBar.menu.help.checkForUpdates": "Güncellemeleri Denetle...",
     "titleBar.menu.help.toggleDevTools": "Geliştirici Araçlarını Aç/Kapat",
-    "titleBar.menu.help.resourceManager": "Dosya Gezgini",
+    "titleBar.menu.help.resourceManager": "Kaynak Yöneticisi",
     "titleBar.menu.help.toggleZCodeStdioTap": "Ajan Stdio İletişimini Yakala",
     "titleBar.menu.help.zcodeEndpoint": "ZCode Uç Noktası",
     "titleBar.menu.help.zcodeEndpoint.production": "Production (Varsayılan)",
@@ -1881,6 +1889,11 @@ def main():
         html_orig = extract_file(f_src, node_html, base_offset).decode("utf-8")
         html_patched = patch_html(html_orig)
 
+        # C2. resource-manager.html (Kaynak Yöneticisi Başlığı ve DOM Gözlemcisi)
+        node_res_html = find_node(header, targets["resource_html"])
+        res_html_orig = extract_file(f_src, node_res_html, base_offset).decode("utf-8")
+        res_html_patched = patch_resource_html(res_html_orig)
+
         # D. styles (Webview + Skills + Bilgisayar Kontrolü)
         node_styles = find_node(header, targets["styles"])
         styles_orig = extract_file(f_src, node_styles, base_offset).decode("utf-8")
@@ -1900,6 +1913,7 @@ def main():
         "/".join(targets["intl"]): intl_patched.encode("utf-8"),
         "/".join(targets["menu"]): menu_patched.encode("utf-8"),
         "/".join(targets["html"]): html_patched.encode("utf-8"),
+        "/".join(targets["resource_html"]): res_html_patched.encode("utf-8"),
         "/".join(targets["styles"]): styles_patched.encode("utf-8"),
         "/".join(targets["main"]): main_patched.encode("utf-8"),
         "/".join(targets["usage_parts"]): usage_parts_patched.encode("utf-8"),

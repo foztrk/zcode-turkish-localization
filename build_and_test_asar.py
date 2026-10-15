@@ -48,7 +48,7 @@ MENU_TR_V2 = {
     "titleBar.menu.help.whatsNew": "Yenilikler",
     "titleBar.menu.help.checkForUpdates": "Güncellemeleri Denetle...",
     "titleBar.menu.help.toggleDevTools": "Geliştirici Araçlarını Aç/Kapat",
-    "titleBar.menu.help.resourceManager": "Dosya Gezgini",
+    "titleBar.menu.help.resourceManager": "Kaynak Yöneticisi",
     "titleBar.menu.help.toggleZCodeStdioTap": "Ajan Stdio İletişimini Yakala",
     "titleBar.menu.help.zcodeEndpoint": "ZCode Uç Noktası",
     "titleBar.menu.help.zcodeEndpoint.production": "Production (Varsayılan)",
@@ -136,6 +136,7 @@ def find_target_paths(header, f_src, base_offset):
         "menu": ["out", "main", menu_file],
         "main": ["out", "main", "index.js"],
         "html": ["out", "renderer", "index.html"],
+        "resource_html": ["out", "renderer", "resource-manager.html"],
     }
 
 def patch_intl(js_content, tr_dict):
@@ -946,9 +947,15 @@ def patch_usage_parts(js_content):
     return js_content
 
 def patch_main(js_content):
-    js_content = js_content.replace("\\u8D44\\u6E90\\u7BA1\\u7406\\u5668", "Dosya Gezgini")
-    js_content = js_content.replace("资源管理器", "Dosya Gezgini")
+    js_content = js_content.replace("\\u8D44\\u6E90\\u7BA1\\u7406\\u5668", "Kaynak Yöneticisi")
+    js_content = js_content.replace("资源管理器", "Kaynak Yöneticisi")
+    js_content = js_content.replace('MU="Resource Manager"', 'MU="Kaynak Yöneticisi"')
+    js_content = js_content.replace('"Resource Manager"', '"Kaynak Yöneticisi"')
     return js_content
+
+def patch_resource_html(html_content):
+    html_content = html_content.replace("<title>Resource Manager</title>", "<title>Kaynak Yöneticisi</title>")
+    return patch_html(html_content)
 
 def patch_html(html_content):
     if "zcode-tr-dom-patch" in html_content:
@@ -1315,6 +1322,7 @@ def main():
         menu_orig = extract_file(f_src, find_node(header, targets["menu"]), base_offset).decode("utf-8")
         main_orig = extract_file(f_src, find_node(header, targets["main"]), base_offset).decode("utf-8")
         html_orig = extract_file(f_src, find_node(header, targets["html"]), base_offset).decode("utf-8")
+        resource_html_orig = extract_file(f_src, find_node(header, targets["resource_html"]), base_offset).decode("utf-8")
 
     print("Applying patches in memory...")
     intl_patched = patch_intl(intl_orig, tr_dict)
@@ -1323,6 +1331,7 @@ def main():
     menu_patched = patch_menu(menu_orig)
     main_patched = patch_main(main_orig)
     html_patched = patch_html(html_orig)
+    resource_html_patched = patch_resource_html(resource_html_orig)
 
     modified_files = {
         "/".join(targets["intl"]): intl_patched.encode("utf-8"),
@@ -1331,6 +1340,7 @@ def main():
         "/".join(targets["menu"]): menu_patched.encode("utf-8"),
         "/".join(targets["main"]): main_patched.encode("utf-8"),
         "/".join(targets["html"]): html_patched.encode("utf-8"),
+        "/".join(targets["resource_html"]): resource_html_patched.encode("utf-8"),
     }
 
     rebuild_asar(ORIG_ASAR, PATCHED_ASAR, modified_files)
