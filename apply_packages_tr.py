@@ -64,6 +64,86 @@ PLUGIN_TRANSLATIONS = {
         "displayName": "node_repl Barındırıcısı",
         "description": "Resmi ZCode yetenekleri için paylaşılan node_repl çalışma ortamı barındırıcısı."
     },
+    "hyper3d-rodin": {
+        "displayName": "Hyper3D Rodin",
+        "description": "Hyper3D Rodin ile metin istemlerinden veya referans görsellerden 3B modeller üretin."
+    },
+    "jupyter-notebook": {
+        "displayName": "Jupyter Notebook",
+        "description": "Jupyter not defterleriyle yan panelde çalışın: çalışan bir çekirdeğe bağlanın, hücreleri çalıştırın ve çıktıları inceleyin."
+    },
+    "zcode-context": {
+        "displayName": "ZCode Context",
+        "description": "Salt okunur oturum kullanımı, model girdi bileşimi, istek farkları ve bağlam analitiği."
+    },
+    "zcode-mcp-app-dev": {
+        "displayName": "ZCode MCP App Dev",
+        "description": "Resmi SDKlar ve yerel geliştirici ortamı ile ZCode için MCP Uygulamaları geliştirin."
+    },
+    "blender": {
+        "displayName": "Blender",
+        "description": "Etkileşimli 3B panel ve MCP araçlarıyla Blender sahnelerini düzenleyin."
+    },
+    "cadcraft": {
+        "displayName": "CADCraft",
+        "description": "Çalışma alanı dosyaları ve DXF dışa aktarma desteğiyle ZCode panelinde CADCraft CAD çizim ve modelleme."
+    },
+    "deckcraft": {
+        "displayName": "DeckCraft",
+        "description": "Çalışma alanı dosyaları ve slayt dışa aktarma desteğiyle ZCode panelinde DeckCraft interaktif sunumlar."
+    },
+    "designcraft": {
+        "displayName": "DesignCraft",
+        "description": "Çalışma alanı dosyaları ve tuval düzenleme desteğiyle ZCode panelinde DesignCraft sayfa ve grafik tasarımı."
+    },
+    "excalidraw": {
+        "displayName": "Excalidraw",
+        "description": "Excalidraw ve MCP araçlarıyla el çizimi tarzında diyagramlar ve şemalar oluşturun."
+    },
+    "gridcraft": {
+        "displayName": "GridCraft",
+        "description": "Çalışma alanı dosyaları ve tablo dışa aktarma desteğiyle ZCode panelinde GridCraft elektronik tablo düzenleme."
+    },
+    "openpencil": {
+        "displayName": "OpenPencil",
+        "description": "OpenPencil ve MCP araçlarıyla tasarım ve vektör dosyalarını düzenleyin."
+    },
+    "pdfcraft": {
+        "displayName": "PdfCraft",
+        "description": "Çalışma alanı dosyaları ve not ekleme desteğiyle ZCode panelinde PdfCraft PDF düzenleme ve inceleme."
+    },
+    "photocraft": {
+        "displayName": "PhotoCraft",
+        "description": "Çalışma alanı dosyaları ve raster filtre desteğiyle ZCode panelinde PhotoCraft görsel düzenleme."
+    },
+    "soundcraft": {
+        "displayName": "SoundCraft",
+        "description": "Çalışma alanı dosyaları ve dalga formu desteğiyle ZCode panelinde SoundCraft ses düzenleme."
+    },
+    "tripo-3d": {
+        "displayName": "Tripo 3D",
+        "description": "Bir metin isteminden veya referans görselden kaplamalı, animasyona hazır 3B modeller üretin."
+    },
+    "typst-workbench": {
+        "displayName": "Typst Workbench",
+        "description": "Etkileşimli Typst derleyicisi ile Typst belgelerini yan panelde canlı önizleyin ve düzenleyin."
+    },
+    "vectorcraft": {
+        "displayName": "VectorCraft",
+        "description": "Çalışma alanı dosyaları ve SVG dışa aktarma desteğiyle ZCode panelinde VectorCraft vektörel illüstrasyon."
+    },
+    "visualize": {
+        "displayName": "Visualize",
+        "description": "ZCode içinde HTML tuvali ile etkileşimli açıklamalar, grafikler ve tasarım önizlemeleri oluşturun."
+    },
+    "wordcraft": {
+        "displayName": "WordCraft",
+        "description": "Çalışma alanı dosyaları ve zengin metin düzenleme desteğiyle ZCode panelinde WordCraft belge işleme."
+    },
+    "zotero": {
+        "displayName": "Zotero",
+        "description": "Yan panelde Zotero kütüphanenizle çalışın: makaleleri arayın, okuyun, alıntıları dışa aktarın ve koleksiyonları yönetin."
+    },
     "ios-simulator": {
         "displayName": "iOS Simülatörü",
         "description": "iOS simülatörlerini yönetme, test etme ve arayüz denetimi araçları."
