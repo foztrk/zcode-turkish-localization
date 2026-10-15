@@ -1,6 +1,7 @@
 # Binaries and archives
 *.exe
 *.asar
+*.asar.*
 *.asar.orig
 *.asar.patched
 *.zip

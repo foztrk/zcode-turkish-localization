@@ -12,7 +12,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ZCODE_RESOURCES = r"C:\Program Files\ZCode\resources"
-ORIG_ASAR = os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3145") if os.path.exists(os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3145")) else (os.path.join(ZCODE_RESOURCES, "app.asar.orig") if os.path.exists(os.path.join(ZCODE_RESOURCES, "app.asar.orig")) else os.path.join(ZCODE_RESOURCES, "app.asar"))
+ORIG_ASAR = os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3153") if os.path.exists(os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3153")) else os.path.join(ZCODE_RESOURCES, "app.asar")
 PATCHED_ASAR = os.path.join(BASE_DIR, "app.asar.patched")
 DICT_PATH = os.path.join(BASE_DIR, "tr_dictionary_zcode.json")
 
@@ -140,17 +140,30 @@ def find_target_paths(header, f_src, base_offset):
 
 def patch_intl(js_content, tr_dict):
     tr_json = json.dumps(tr_dict, ensure_ascii=False)
-    replacement = f'g={{"zh-CN":p,"en-US":Object.assign({{}},m,{tr_json})}}'
 
-    pos_obj = js_content.find('g={"zh-CN":p,"en-US":Object.assign({},m,')
-    if pos_obj != -1:
-        pos_after = js_content.find(',_=`zcode-locale-preference`', pos_obj)
-        if pos_after != -1:
-            return js_content[:pos_obj] + replacement + js_content[pos_after:]
+    # Check if already patched
+    if 'Object.assign({},' in js_content and 'zcode-locale-preference' in js_content:
+        m_patched = re.search(r'(\w+)=\{"zh-CN":(\w+),"en-US":Object\.assign\(\{\},(\w+),\{.*?\}\}(?=,\w+=`zcode-locale-preference`)', js_content)
+        if m_patched:
+            var_map = m_patched.group(1)
+            zh_var = m_patched.group(2)
+            en_var = m_patched.group(3)
+            new_val = f'{var_map}={{"zh-CN":{zh_var},"en-US":Object.assign({{}},{en_var},{tr_json})}}'
+            return js_content[:m_patched.start()] + new_val + js_content[m_patched.end():]
+
+    # Pattern: xyz={"zh-CN":a,"en-US":b}
+    m = re.search(r'(\w+)=\{"zh-CN":(\w+),"en-US":(\w+)\}', js_content)
+    if m:
+        var_map = m.group(1)
+        zh_var = m.group(2)
+        en_var = m.group(3)
+        replacement = f'{var_map}={{"zh-CN":{zh_var},"en-US":Object.assign({{}},{en_var},{tr_json})}}'
+        return js_content[:m.start()] + replacement + js_content[m.end():]
 
     target = 'g={"zh-CN":p,"en-US":m}'
     pos_g = js_content.find(target)
     if pos_g != -1:
+        replacement = f'g={{"zh-CN":p,"en-US":Object.assign({{}},m,{tr_json})}}'
         return js_content[:pos_g] + replacement + js_content[pos_g + len(target):]
     return js_content
 
@@ -753,10 +766,14 @@ def patch_styles(js_content):
         )
         js_content = js_content.replace(m_m4.group(0), m4_replacement, 1)
 
-    # Connect r2 to fn_m4 (t2) and _trPluginDescRow
-    js_content = js_content.replace('return{name:qa(r??e,n),description:r?n2(r,n):e.description}}', 'return{name:t2(r??e,n),description:r?n2(r,n):_trPluginDescRow(e)}}', 1)
-    if 'return{name:t2(r??e,n)' not in js_content:
-        js_content = js_content.replace('return{name:qa(r??e,n),', 'return{name:t2(r??e,n),', 1)
+    # Connect r2 to fn_m4 and _trPluginDescRow
+    m_row = re.search(r'return\{name:(\w+)\(r\?\?e,n\),description:r\?(\w+)\(r,n\):e\.description\}\}', js_content)
+    if m_row:
+        fn_name_call = m_row.group(1)
+        fn_desc_call = m_row.group(2)
+        js_content = js_content[:m_row.start()] + f'return{{name:{fn_m4}(r??e,n),description:r?{fn_desc_call}(r,n):_trPluginDescRow(e)DEBUG}}}}'.replace('DEBUG', '') + js_content[m_row.end():]
+    else:
+        js_content = js_content.replace('return{name:qa(r??e,n),description:r?n2(r,n):e.description}}', f'return{{name:{fn_m4}(r??e,n),description:r?n2(r,n):_trPluginDescRow(e)DEBUG}}}}'.replace('DEBUG', ''), 1)
 
     # Subagents descriptions replacement
     if "function _trAgentDesc(" not in js_content:
@@ -914,12 +931,10 @@ def patch_styles(js_content):
                 js_content = js_content.replace(target_cmd_hint, replacement_cmd_hint, 1)
 
     # Plugin settings row helpers and replacements
-    if 'children:si(e.name,m)}' in js_content:
-        js_content = js_content.replace('children:si(e.name,m)}', 'children:_trPluginNameRow(e,si(e.name,m))}', 1)
+    js_content = re.sub(r'children:(\w+)\(e\.name,(\w+)\)\}', r'children:_trPluginNameRow(e,\1(e.name,\2))}', js_content, count=1)
 
-    target_plugin_desc = f'className:{bt}mt-0.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:e.description}}):null'
-    if target_plugin_desc in js_content:
-        js_content = js_content.replace(target_plugin_desc, f'className:{bt}mt-0.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:_trPluginDescRow(e)}}):null', 1)
+    pdesc_pattern = rf'className:{bt}mt-0\.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:(?:e|[\w.()]+)\.description}}\):null'
+    js_content = re.sub(pdesc_pattern, f'className:{bt}mt-0.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:_trPluginDescRow(e)}}):null', js_content, count=1)
 
     return js_content
 
