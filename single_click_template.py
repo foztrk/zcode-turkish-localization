@@ -300,6 +300,10 @@ def patch_html(html_content):
     dom_script = r"""<script id="zcode-tr-dom-patch">
 (function() {
   const DOM_MAP = {
+    "Community": "Topluluk",
+    "App plugins": "Uygulama eklentileri",
+    "Delegate tasks to other AI agents over A2A through a local AgentNetwork gateway.": "Yerel bir AgentNetwork ağ geçidi üzerinden A2A ile diğer yapay zeka ajanlarına görevler atayın.",
+    "Delegate tasks to other AI agents": "Diğer yapay zeka ajanlarına görevler atayın",
     "This computer": "Bu bilgisayar",
     "Kullanıcı - This computer": "Kullanıcı - Bu bilgisayar",
     "User - This computer": "Kullanıcı - Bu bilgisayar",

@@ -314,5 +314,7 @@
   "vectorcraft": "Çalışma alanı dosyaları ve SVG dışa aktarma desteğiyle ZCode panelinde VectorCraft vektörel illüstrasyon.",
   "visualize": "ZCode içinde HTML tuvali ile etkileşimli açıklamalar, grafikler ve tasarım önizlemeleri oluşturun.",
   "wordcraft": "Çalışma alanı dosyaları ve zengin metin düzenleme desteğiyle ZCode panelinde WordCraft belge işleme.",
-  "zotero": "Yan panelde Zotero kütüphanenizle çalışın: makaleleri arayın, okuyun, alıntıları dışa aktarın ve koleksiyonları yönetin."
+  "zotero": "Yan panelde Zotero kütüphanenizle çalışın: makaleleri arayın, okuyun, alıntıları dışa aktarın ve koleksiyonları yönetin.",
+  "agentnetwork": "Yerel bir AgentNetwork ağ geçidi üzerinden A2A ile diğer yapay zeka ajanlarına görevler atayın.",
+  "anet": "Yerel bir AgentNetwork ağ geçidi üzerinden A2A ile diğer yapay zeka ajanlarına görevler atayın."
 }
