@@ -943,6 +943,16 @@ def patch_styles(js_content):
     pdesc_pattern = rf'className:{bt}mt-0\.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:(?:e|[\w.()]+)\.description}}\):null'
     js_content = re.sub(pdesc_pattern, f'className:{bt}mt-0.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:_trPluginDescRow(e)}}):null', js_content, count=1)
 
+
+    # Inject Turkish into sidebar locale dropdown and settings page
+    js_content = js_content.replace(
+        '(0,$.jsx)(Py,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),',
+        '(0,$.jsx)(Py,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Py,{value:`tr-TR`,children:v.formatMessage({id:`sidebar.settings.locale.tr-TR`})||`Türkçe`}),'
+    )
+    js_content = js_content.replace(
+        '(0,$.jsx)(km,{value:`en-US`,"data-testid":hb(sb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})})',
+        '(0,$.jsx)(km,{value:`en-US`,"data-testid":hb(sb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(km,{value:`tr-TR`,"data-testid":hb(sb,`tr-TR`),children:_e.formatMessage({id:`settings.locale.tr-TR`})||`Türkçe`})'
+    )
     return js_content
 
 

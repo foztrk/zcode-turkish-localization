@@ -7309,5 +7309,7 @@
   "chat.permission.workflow.save.args.showAll": "Show all {count} arguments",
   "chat.permission.workflow.save.args.showFewer": "Show fewer arguments",
   "chat.permission.workflow.save.showMore": "Show more",
-  "chat.permission.workflow.save.showLess": "Show less"
+  "chat.permission.workflow.save.showLess": "Show less",
+  "settings.locale.tr-TR": "Türkçe",
+  "sidebar.settings.locale.tr-TR": "Türkçe"
 }
