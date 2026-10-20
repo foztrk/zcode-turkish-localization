@@ -300,6 +300,22 @@ def patch_html(html_content):
     dom_script = r"""<script id="zcode-tr-dom-patch">
 (function() {
   const DOM_MAP = {
+    "This computer": "Bu bilgisayar",
+    "Kullanıcı - This computer": "Kullanıcı - Bu bilgisayar",
+    "User - This computer": "Kullanıcı - Bu bilgisayar",
+    "Connection preferences": "Bağlantı tercihleri",
+    "Connection Preferences": "Bağlantı Tercihleri",
+    "Reconnect automatically at startup": "Başlangıçta otomatik olarak yeniden bağlan",
+    "Reconnects devices seen online in the last 7 days at startup. Changes take effect on the next startup.": "Son 7 gün içinde çevrimiçi görülen cihazlara başlangıçta otomatik olarak yeniden bağlanır. Değişiklikler bir sonraki başlangıçta geçerli olur.",
+    "No remote device connections yet.": "Henüz uzak cihaz bağlantısı yok.",
+    "New connection": "Yeni bağlantı",
+    "+ New connection": "+ Yeni bağlantı",
+    "Select a running container": "Çalışan bir konteyner seçin",
+    "Running containers": "Çalışan konteynerler",
+    "Enter Docker manually": "Docker'ı manuel girin",
+    "formu": "Form",
+    "(recommended)": "(Önerilen)",
+    "Otomatik (recommended)": "Otomatik (Önerilen)",
     "Manage Modeller": "Modelleri Yönet",
     "Manage Models": "Modelleri Yönet",
     "Manage models": "Modelleri Yönet",
