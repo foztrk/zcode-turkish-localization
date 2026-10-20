@@ -300,6 +300,17 @@ def patch_html(html_content):
     dom_script = r"""<script id="zcode-tr-dom-patch">
 (function() {
   const DOM_MAP = {
+    "Select a running container": "Çalışan Bir Konteyner Seçin",
+    "Çalışan bir konteyner seçin": "Çalışan Bir Konteyner Seçin",
+    "Kopyala Markdown": "Markdown'ı Kopyala",
+    "Copy Markdown": "Markdown'ı Kopyala",
+    "Önizle table": "Tabloyu Önizle",
+    "Preview table": "Tabloyu Önizle",
+    "Özel key": "Özel Anahtar",
+    "Resource İndir method": "Kaynak İndirme Yöntemi",
+    "Resource download method": "Kaynak İndirme Yöntemi",
+    "Visualize 1": "Görselleştirme 1",
+    "Visualize": "Görselleştirme",
     "Community": "Topluluk",
     "App plugins": "Uygulama eklentileri",
     "Delegate tasks to other AI agents over A2A through a local AgentNetwork gateway.": "Yerel bir AgentNetwork ağ geçidi üzerinden A2A ile diğer yapay zeka ajanlarına görevler atayın.",
@@ -1281,7 +1292,7 @@ def patch_styles(js_content):
             'if(d.startsWith("Use to diagnose and fix ZCode skill configuration"))return TR_SKILL_DESCS["diagnosing-skills"];'
             'if(d.startsWith("Use when configuring ZCode")&&d.includes("extension resources"))return TR_SKILL_DESCS["zcode-configuration-guide"];'
             'if(d.startsWith("Build, run, inspect, and lightly automate iOS"))return TR_SKILL_DESCS["ios-dev"];'
-            'if(d.startsWith("Build, run, inspect, and lightly automate Android"))return TR_SKILL_DESCS["android-dev"]}'
+            'if(d.startsWith("Build, run, inspect, and lightly automate Android"))return TR_SKILL_DESCS["android-dev"];if(d.startsWith("Create visualizations and interactive tools")||d.includes("Create visualizations"))return TR_SKILL_DESCS["visualize"]}'
             'if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n];'
             'return d};'
             'const TR_CMD_DESCS={"android-dev":"Android emülatör geliştirme döngüsünü başlatın.","/android-dev":"Android emülatör geliştirme döngüsünü başlatın.",'
