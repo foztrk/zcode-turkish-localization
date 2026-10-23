@@ -1451,6 +1451,11 @@ def patch_styles(js_content):
     js_content = js_content.replace("?`Start Plan`:e.label", "?`Başlangıç Planı`:e.label")
     js_content = js_content.replace('name:e?.name??`Effort`', 'name:e?.name??`Efor`')
     js_content = js_content.replace('name:`Thought Level`', 'name:`Düşünme Seviyesi`')
+        # Category labels and game/3d translation
+    if 'var n7e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};' in js_content:
+        js_content = js_content.replace('var n7e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};', 'var n7e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`,"游戏/3D":`settings.plugins.store.category.game3d`,"游戏 / 3D":`settings.plugins.store.category.game3d`,"游戏":`settings.plugins.store.category.game3d`,"game-3d":`settings.plugins.store.category.game3d`,"Game/3D":`settings.plugins.store.category.game3d`};', 1)
+    if 'S=(0,Q.useMemo)(()=>e=>{let t=n7e[e];return t?u.formatMessage({id:t}):e},[u])' in js_content:
+        js_content = js_content.replace('S=(0,Q.useMemo)(()=>e=>{let t=n7e[e];return t?u.formatMessage({id:t}):e},[u])', 'S=(0,Q.useMemo)(()=>e=>{if(e===`游戏/3D`||e===`游戏 / 3D`||e===`游戏`||e===`game-3d`||e===`Game/3D`)return`Oyun / 3B`;let t=n7e[e];return t?u.formatMessage({id:t}):e},[u])', 1)
     return js_content
 
 
