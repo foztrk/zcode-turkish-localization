@@ -7311,5 +7311,20 @@
   "chat.permission.workflow.save.showMore": "Show more",
   "chat.permission.workflow.save.showLess": "Show less",
   "settings.locale.tr-TR": "Türkçe",
-  "sidebar.settings.locale.tr-TR": "Türkçe"
+  "sidebar.settings.locale.tr-TR": "Türkçe",
+  "remote.error.authenticationUnsupported": "Sunucu Ek Doğrulama Gerektiriyor",
+  "remote.error.authenticationUnsupported.reason": "Paroladan sonra bu sunucu daha fazla doğrulama istiyor (örneğin tek kullanımlık bir kod). Yalnızca parola, özel anahtar ve SSH ajanı ile oturum açma desteklenir. Bunun yerine özel bir anahtar kullanın.",
+  "remote.error.platformUnsupported": "Bu Cihazın İşletim Sistemi Desteklenmiyor",
+  "remote.error.platformUnsupported.reason": "Uzak bağlantılar x64 ve arm64 üzerinde Linux ve macOS'u destekler. Windows'ta WSL üzerinden bağlanın veya bir Linux cihazı kullanın.",
+  "remote.error.workspaceDirectoryUnresponsive": "Proje Klasörü Okunurken Uzak Cihaz 30 Saniye Boyunca Yanıt Vermedi",
+  "remote.error.workspaceDirectoryUnresponsive.reason": "Uzak cihaz bir Mac ise, klasör erişim istemi olup olmadığını kontrol edin. Klasör bir ağ veya harici sürücüdeyse, sürücünün erişilebilir olduğundan emin olun. Ardından tekrar deneyin.",
+  "remote.phase.workspace": "Proje Klasörünü Aç",
+  "remote.phaseSub.workspaceReading": "{path} Okunuyor",
+  "login.oauth.browserNotOpened": "Tarayıcı Açılmadı mı?",
+  "login.oauth.copyLoginLink": "Giriş Bağlantısını Kopyala",
+  "login.oauth.copyLinkSuccess": "Kopyalandı. Tarayıcınıza yapıştırıp açın.",
+  "login.oauth.copyLinkFailed": "Giriş Bağlantısı Kopyalanamadı. Lütfen Tekrar Deneyin.",
+  "workspaceHeader.help.copyDeviceMid": "Cihaz MID'sini Kopyala",
+  "workspaceHeader.help.deviceMidCopied": "Cihaz MID'si Kopyalandı",
+  "workspaceHeader.help.deviceMidCopyFailed": "Cihaz MID'si Kopyalanamadı. Pano Erişimini Kontrol Edip Tekrar Deneyin."
 }

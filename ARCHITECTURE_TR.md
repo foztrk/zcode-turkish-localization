@@ -1,11 +1,11 @@
 # 🧠 Codebase Memory & Bilgi Grafiği (Knowledge Graph) — ZCode Türkçe Yerelleştirme ve Kalıcı Yama Altyapısı
 
-> **Son Güncelleme:** 2026-10-20  
-> **Sürüm:** ZCode Desktop v3.16.2 (En Son Resmi Sürüm)  
+> **Son Güncelleme:** 2026-10-23  
+> **Sürüm:** ZCode Desktop v3.16.3 (En Son Resmi Sürüm)  
 > **Geliştirici:** Faruk Öztürk ([@foztrk](https://github.com/foztrk))  
 > **Konum:** `C:\Users\Work-D\zcode-turkish-localization`  
 > **Upstream Fork:** [foztrk/ZCode@feat/add-turkish-language-support](https://github.com/foztrk/ZCode/tree/feat/add-turkish-language-support)  
-> **Durum:** Canlıda Aktif & %100 Doğrulanmış (7.311 Anahtar)
+> **Durum:** Canlıda Aktif & %100 Doğrulanmış (7.328 Anahtar)
 
 ---
 
@@ -13,23 +13,23 @@
 
 ```mermaid
 graph TD
-    A["ZCode.exe (Electron Ana Süreci v3.16.2)"] --> B["resources/app.asar"]
+    A["ZCode.exe (Electron Ana Süreci v3.16.3)"] --> B["resources/app.asar"]
     A --> C["resources/glm/packages (Resmi Eklentiler)"]
     A --> D["~/.zcode (Kullanıcı Verileri, Oturumlar ve Önbellek)"]
     A --> E["~/.agents/skills (Ajan Becerileri & Visualize)"]
 
-    subgraph "app.asar Canlı Bundle Bileşenleri (v3.16.2)"
-        B --> G["out/renderer/assets/IntlProvider-C2IbGUkl.js (React-Intl Motoru)"]
-        B --> H["out/main/chunk-XYX2CJ3H.js (Masaüstü Menüleri)"]
+    subgraph "app.asar Canlı Bundle Bileşenleri (v3.16.3)"
+        B --> G["out/renderer/assets/IntlProvider-Bw7hoRlp.js (React-Intl Motoru)"]
+        B --> H["out/main/chunk-CJROBAMZ.js (Masaüstü Menüleri)"]
         B --> I["out/renderer/index.html (Dinamik DOM Gözlemcisi)"]
-        B --> J["out/renderer/assets/styles-n-UNIiNg.js (Arayüz Mantığı, Dil Menüsü & Webview)"]
+        B --> J["out/renderer/assets/styles-CQuzX8si.js (Arayüz Mantığı, Dil Menüsü & Webview)"]
         B --> K["out/main/index.js (Ana Süreç & Kaynak Yöneticisi)"]
     end
 
     subgraph "Yama Motoru ve Dağıtım Altyapısı"
-        L["tr_dictionary_zcode.json (7.311 Anahtar)"] --> M["build_and_test_asar.py (Doğrulama & ASAR Derleyici)"]
+        L["tr_dictionary_zcode.json (7.328 Anahtar)"] --> M["build_and_test_asar.py (Doğrulama & ASAR Derleyici)"]
         N["single_click_template.py"] --> O["build_single_click_script.py"]
-        O --> P["ZCode_Tek_Tik_Yama.exe (10.2 MB Bağımsız Yönetici Exe)"]
+        O --> P["ZCode_Tek_Tik_Yama.exe (10.3 MB Bağımsız Yönetici Exe)"]
         P --> B
         M --> B
     end
@@ -47,14 +47,14 @@ graph TD
 
 ## 2. Dizinler, Düğümler ve Sorumluluklar
 
-| Düğüm / Dosya | Rol ve İşlev | v3.16.2 Enjekte Edilen / Yamalanan Mantık |
+| Düğüm / Dosya | Rol ve İşlev | v3.16.3 Enjekte Edilen / Yamalanan Mantık |
 | :--- | :--- | :--- |
-| **`IntlProvider-C2IbGUkl.js`** | React-Intl dil sağlayıcısı | `var _tr = { ... }; g = { "zh-CN": p, "en-US": Object.assign({}, m, _tr) };` enjeksiyonu. 7.311 anahtar doğrudan belleğe yüklenir. |
-| **`chunk-XYX2CJ3H.js`** | Electron masaüstü menüleri | `Kp["en-US"]` tablosuna Dosya, Düzen, Görünüm, Pencere, Yardım Türkçe menüleri eklenir. |
+| **`IntlProvider-Bw7hoRlp.js`** | React-Intl dil sağlayıcısı | `var _tr = { ... }; _ = { "zh-CN": m, "en-US": Object.assign({}, h, _tr) };` enjeksiyonu. 7.328 anahtar doğrudan belleğe yüklenir. |
+| **`chunk-CJROBAMZ.js`** | Electron masaüstü menüleri | `J_["en-US"]` tablosuna Dosya, Düzen, Görünüm, Pencere, Yardım Türkçe menüleri eklenir. |
 | **`index.html`** | Webview ve React kök belgesi | `DOM_MAP` içeren MutationObserver `<script>` bloğu. Dinamik parçalı React metinlerini ve buton etiketlerini anında Türkçeleştirir. |
-| **`styles-n-UNIiNg.js`** | Arayüz bileşenleri, stiller ve menüler | 1. **Dil Açılır Menüsü Entegrasyonu:** Sol alttaki profil menüsüne (`WorkspaceSidebarFooter`) ve Genel Ayarlar sayfasına `tr-TR` ("Türkçe") seçeneği doğrudan JSX seviyesinde enjekte edilir.<br>2. **Plan & Fiyatlandırma Webview:** Dinamik DOM gözlemcisi ile Bireysel ve Ekip planları Türkçeleştirilir.<br>3. **Yetenek ve Komut Açıklamaları:** `TR_SKILL_DESCS` ve `TR_CMD_DESCS` ile `visualize`, `docx`, `pdf`, `pptx`, `xlsx` becerileri dinamik çevrilir.<br>4. **Tarih & Sayı Biçimi:** `Intl.DateTimeFormat("tr-TR")` ve `NumberFormat("tr-TR")` aktif edilir. |
+| **`styles-CQuzX8si.js`** | Arayüz bileşenleri, stiller ve menüler | 1. **Dil Açılır Menüsü Entegrasyonu:** Sol alttaki profil menüsüne (`WorkspaceSidebarFooter`) ve Genel Ayarlar sayfasına `tr-TR` ("Türkçe") seçeneği doğrudan JSX seviyesinde dinamik regex ile enjekte edilir.<br>2. **Plan & Fiyatlandırma Webview:** Dinamik DOM gözlemcisi ile Bireysel ve Ekip planları Türkçeleştirilir.<br>3. **Yetenek ve Komut Açıklamaları:** `TR_SKILL_DESCS` ve `TR_CMD_DESCS` ile `visualize`, `docx`, `pdf`, `pptx`, `xlsx` becerileri dinamik çevrilir.<br>4. **Tarih & Sayı Biçimi:** `Intl.DateTimeFormat("tr-TR")` ve `NumberFormat("tr-TR")` aktif edilir. |
 | **`out/main/index.js`** | Ana Electron süreci | Çince `\u8D44\u6E90\u7BA1\u7406\u5668` ve `资源管理器` metninin `Kaynak Yöneticisi` ile değiştirilmesi. |
-| **`tr-TR.ts`** | Resmi monorepo dil dosyası | `zai-org/ZCode` ana deposuna yönelik hazırlanan 7.311 anahtarlık TypeScript dosyası. |
+| **`tr-TR.ts`** | Resmi monorepo dil dosyası | `zai-org/ZCode` ana deposuna yönelik hazırlanan 7.328 anahtarlık TypeScript dosyası. |
 | **`ZCode_Tek_Tik_Yama.exe`** | Bağımsız dağıtım aracı | Gömülü Base64+Zlib sözlük, otomatik yönetici izni (UAC manifest), dinamik hash tarayıcı ve masaüstü kısayolu. |
 
 ---
@@ -75,6 +75,10 @@ graph TD
 
 ### 🚨 4. Geliştirici İsmi Hassasiyeti
 * **Kalıcı Kural:** Kullanıcının adı **Faruk Öztürk**'tür (`foztrk`). Resmi yazışmalarda, commit imzalarında ve PR metinlerinde kesinlikle Faruk Öztürk adı kullanılır.
+
+### 🚨 5. Minified Tanımlayıcılarda Dolar İşareti (`$`) ve Dinamik Regex
+* **Sorun:** JS bundler değişken veya fonksiyon adlarında `$` kullanabilir (örneğin `$D`). Standart `\w+` regex'i dolar işaretini eşleştirmediğinden yama sessizce atlanabilir veya UnboundLocalError verebilir.
+* **Kalıcı Kural:** JS tanımlayıcıları için `[\w$]+` kullanılmalı ve minified kod değişimlerine karşı dinamik regex kalıpları tercih edilmelidir.
 
 ---
 

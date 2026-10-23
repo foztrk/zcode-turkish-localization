@@ -4,8 +4,8 @@
 <div align="center">
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.16.2%2B-green.svg)](https://zcode.z.ai)
-[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-7%2C311-orange.svg)](tr_dictionary_zcode.json)
+[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.16.3%2B-green.svg)](https://zcode.z.ai)
+[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-7%2C328-orange.svg)](tr_dictionary_zcode.json)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Cross--Platform-lightgrey.svg)](#-kurulum-installation)
 [![Maintenance Commitment](https://img.shields.io/badge/Maintenance-Day--0%20SLA-blue.svg)](#-note-to-official-zcode-developers-zai-org)
 [![GitHub stars](https://img.shields.io/github/stars/foztrk/zcode-turkish-localization?style=social)](https://github.com/foztrk/zcode-turkish-localization)
@@ -35,14 +35,14 @@ Bu proje; arayüz metinlerinden eklenti mağazasına, uzak bağlantılardan (Doc
 
 First of all, congratulations on creating **ZCode**! It is an outstanding agentic IDE and coding assistant, and our Turkish developer community truly appreciates the hard work your team is putting into this product.
 
-### Upstream Integration Ready (Parity with v3.16.2)
+### Upstream Integration Ready (Parity with v3.16.3)
 Following guidance from the Z.ai Developer Support team, we have prepared the complete native Turkish localization branch in our fork:
 - 🔗 **Branch:** [foztrk/ZCode@feat/add-turkish-language-support](https://github.com/foztrk/ZCode/tree/feat/add-turkish-language-support)
-- 🔗 **Direct Commit:** [de4d448](https://github.com/foztrk/ZCode/commit/de4d4482b8d0ca22ec4bfda42cb1a520ca49f2b8)
+- 🔗 **Direct Commit:** [7f14fea](https://github.com/foztrk/ZCode/commit/7f14fea0)
 - 🔗 **Official Feedback Issue:** [zai-org/feedback#1047](https://github.com/zai-org/feedback/issues/1047#issuecomment-6291121632)
 
 ### Changes Prepared:
-1. `packages/ui/src/i18n/locales/tr-TR.ts`: Complete Turkish locale dictionary with **7,311 keys** (100% key parity).
+1. `packages/ui/src/i18n/locales/tr-TR.ts`: Complete Turkish locale dictionary with **7,328 keys** (100% key parity).
 2. `packages/shared/src/protocol.ts`: Extended `Locale` union type to `"zh-CN" | "en-US" | "tr-TR"`.
 3. `packages/ui/src/i18n/IntlProvider.tsx`: Registered `tr-TR` translations in `MESSAGES`.
 4. `packages/ui/src/i18n/LocaleSwitcher.tsx` & `WorkspaceSidebarFooter.tsx`: Added Turkish ("Tr" / "Türkçe") to interactive language pickers.
@@ -51,9 +51,10 @@ Following guidance from the Z.ai Developer Support team, we have prepared the co
 
 ## 🌟 Neler İçerir? (Özellikler)
 
-1. **Tam Kapsamlı Arayüz (7.311 Anahtar):**
-   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **7.311 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
-   - v3.16.2 ile gelen Uzak Bağlantılar (SSH, Docker, WSL, ZCode Server) altyapısı, Konteyner Seçimi, Özel Anahtar yönetimi ve kaynak indirme sihirbazları.
+1. **Tam Kapsamlı Arayüz (7.328 Anahtar):**
+   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **7.328 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
+   - v3.16.3 ile gelen yeni kimlik doğrulama, uzak bağlantı platform/dizin hata mesajları, OAuth giriş bağlantısı kopyalama ve MID araçları.
+   - Uzak Bağlantılar (SSH, Docker, WSL, ZCode Server) altyapısı, Konteyner Seçimi, Özel Anahtar yönetimi ve kaynak indirme sihirbazları.
    - Sol alttaki profil menüsünde ve Genel Ayarlar sayfasında yerleşik **"Türkçe"** dil seçeneği.
    - Electron yerel masaüstü menüleri (Dosya, Düzen, Görünüm, Pencere, Yardım).
    - Güncelleyici diyalogları ve Türkçe yerel tarih/sayı biçimlendirmeleri.
@@ -65,7 +66,7 @@ Following guidance from the Z.ai Developer Support team, we have prepared the co
 4. **Planı Yükselt & Webview Arayüzü:**
    - Dinamik DOM gözlemcisi ile Bireysel ve Ekip planları, kredi kotaları, indirimler ve faturalandırma metinleri.
 5. **Kalıcı ve Güvenli:**
-   - Orijinal `app.asar.orig.v3162` fabrika yedeğini saklar; istendiğinde tek tıkla orijinal fabrika ayarlarına geri döndürür.
+   - Orijinal `app.asar.orig.v3163` fabrika yedeğini saklar; istendiğinde tek tıkla orijinal fabrika ayarlarına geri döndürür.
 
 ---
 

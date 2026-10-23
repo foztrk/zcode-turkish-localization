@@ -325,7 +325,7 @@ def patch_html(html_content):
     "No remote device connections yet.": "Henüz uzak cihaz bağlantısı yok.",
     "New connection": "Yeni bağlantı",
     "+ New connection": "+ Yeni bağlantı",
-    "Select a running container": "Çalışan bir konteyner seçin",
+    "Select a running container": "Çalışan Bir Konteyner Seçin",
     "Running containers": "Çalışan konteynerler",
     "Enter Docker manually": "Docker'ı manuel girin",
     "formu": "Form",
@@ -1017,10 +1017,10 @@ def patch_styles(js_content):
             js_content = js_content.replace(m_ri.group(0), repl_ri, 1)
 
         # Hook pricing modal credentials injection
-        pat_cred = r'await t\.executeJavaScript\(`\$\{aN\(\)\};\\n\$\{s\}`,\!0\)'
+        pat_cred = r'await t\.executeJavaScript\(`\$\{([\w$]+)\(\)\};\\n\$\{s\}`,\!0\)'
         m_cred = re.search(pat_cred, js_content)
         if m_cred:
-            repl_cred = f"await t.executeJavaScript(`${{aN()}};\\n${{s}};\\n${{{style_fn_name}()}}`,!0)"
+            repl_cred = f"await t.executeJavaScript(`${{{m_cred.group(1)}()}};\\n${{s}};\\n${{{style_fn_name}()}}`,!0)"
             js_content = js_content.replace(m_cred.group(0), repl_cred, 1)
 
         # Hook rewards modal navigation
@@ -1031,10 +1031,10 @@ def patch_styles(js_content):
             js_content = js_content.replace(m_ren.group(0), repl_ren, 1)
 
         # Hook rewards modal context injection
-        pat_ren_ctx = r'await e\.executeJavaScript\(Ma\(d,\{oauth:c,jwt:l\},a\)\)'
+        pat_ren_ctx = r'await e\.executeJavaScript\(([\w$]+)\(d,\{oauth:c,jwt:l\},a\)\)'
         m_ren_ctx = re.search(pat_ren_ctx, js_content)
         if m_ren_ctx:
-            repl_ren_ctx = f"await e.executeJavaScript(Ma(d,{{oauth:c,jwt:l}},a)),await e.executeJavaScript({style_fn_name}(),!0).catch(()=>{{}})"
+            repl_ren_ctx = f"await e.executeJavaScript({m_ren_ctx.group(1)}(d,{{oauth:c,jwt:l}},a)),await e.executeJavaScript({style_fn_name}(),!0).catch(()=>{{}})"
             js_content = js_content.replace(m_ren_ctx.group(0), repl_ren_ctx, 1)
     else:
         target_r_i = 'r=()=>{T(e=>({...e,isLoading:!1})),j(e)},i=()=>{j(e)}'
@@ -1150,8 +1150,9 @@ def patch_styles(js_content):
         'return fallback};'
     )
 
-    pat_m4 = r"function\s+(\w+)\(e,t\)\{return\s+(\w+)\(e,t\)\}function\s+(\w+)\(e,t\)\{return\s+(\w+)\(t,e\.summary\?\.description\?\?e\.info\?\.description\?\?e\.installedMeta\?\.description,e\.listing\?\.descriptionI18n\)\}"
+    pat_m4 = r"function\s+([\w$]+)\(e,t\)\{return\s+([\w$]+)\(e,t\)\}function\s+([\w$]+)\(e,t\)\{return\s+([\w$]+)\(t,e\.summary\?\.description\?\?e\.info\?\.description\?\?e\.installedMeta\?\.description,e\.listing\?\.descriptionI18n\)\}"
     m_m4 = re.search(pat_m4, js_content)
+    fn_m4 = None
     if m_m4:
         fn_m4 = m_m4.group(1)
         fn_dn = m_m4.group(2)
@@ -1174,13 +1175,13 @@ def patch_styles(js_content):
         js_content = js_content.replace(m_m4.group(0), m4_replacement, 1)
 
     # Connect r2 to fn_m4 and _trPluginDescRow
-    m_row = re.search(r'return\{name:(\w+)\(r\?\?e,n\),description:r\?(\w+)\(r,n\):e\.description\}\}', js_content)
-    if m_row:
-        fn_name_call = m_row.group(1)
-        fn_desc_call = m_row.group(2)
-        js_content = js_content[:m_row.start()] + f'return{{name:{fn_m4}(r??e,n),description:r?{fn_desc_call}(r,n):_trPluginDescRow(e)DEBUG}}}}'.replace('DEBUG', '') + js_content[m_row.end():]
-    else:
-        js_content = js_content.replace('return{name:qa(r??e,n),description:r?n2(r,n):e.description}}', f'return{{name:{fn_m4}(r??e,n),description:r?n2(r,n):_trPluginDescRow(e)DEBUG}}}}'.replace('DEBUG', ''), 1)
+    if fn_m4:
+        m_row = re.search(r'return\{name:([\w$]+)\(r\?\?e,n\),description:r\?([\w$]+)\(r,n\):e\.description\}\}', js_content)
+        if m_row:
+            fn_desc_call = m_row.group(2)
+            js_content = js_content[:m_row.start()] + f'return{{name:{fn_m4}(r??e,n),description:r?{fn_desc_call}(r,n):_trPluginDescRow(e)DEBUG}}}}'.replace('DEBUG', '') + js_content[m_row.end():]
+        else:
+            js_content = js_content.replace('return{name:qa(r??e,n),description:r?n2(r,n):e.description}}', f'return{{name:{fn_m4}(r??e,n),description:r?n2(r,n):_trPluginDescRow(e)DEBUG}}}}'.replace('DEBUG', ''), 1)
 
     # Subagents descriptions replacement
     if "function _trAgentDesc(" not in js_content:
@@ -1344,14 +1345,21 @@ def patch_styles(js_content):
     js_content = re.sub(pdesc_pattern, f'className:{bt}mt-0.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:_trPluginDescRow(e)}}):null', js_content, count=1)
 
 
-    # Inject Turkish into sidebar locale dropdown and settings page
-    js_content = js_content.replace(
-        '(0,$.jsx)(Py,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),',
-        '(0,$.jsx)(Py,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Py,{value:`tr-TR`,children:v.formatMessage({id:`sidebar.settings.locale.tr-TR`})||`Türkçe`}),'
+    # Inject Turkish into sidebar locale dropdown and settings page (Dynamic regex for v3.16.3+)
+    pat_sidebar = r'(\(0,\$\.jsx\)\(([\w]+),{value:`system`,children:([\w]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\)\}\),)'
+    js_content = re.sub(
+        pat_sidebar,
+        r'\1(0,$.jsx)(\2,{value:`tr-TR`,children:\3.formatMessage({id:`sidebar.settings.locale.tr-TR`})||`Türkçe`}),',
+        js_content,
+        count=1
     )
-    js_content = js_content.replace(
-        '(0,$.jsx)(km,{value:`en-US`,"data-testid":hb(sb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})})',
-        '(0,$.jsx)(km,{value:`en-US`,"data-testid":hb(sb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(km,{value:`tr-TR`,"data-testid":hb(sb,`tr-TR`),children:_e.formatMessage({id:`settings.locale.tr-TR`})||`Türkçe`})'
+
+    pat_settings = r'(\(0,\$\.jsx\)\(([\w]+),{value:`en-US`,"data-testid":([\w]+)\(([\w]+),`en-US`\),children:([\w]+)\.formatMessage\({id:`settings\.locale\.en-US`}\}\)\}\))'
+    js_content = re.sub(
+        pat_settings,
+        r'\1,(0,$.jsx)(\2,{value:`tr-TR`,"data-testid":\3(\4,`tr-TR`),children:\5.formatMessage({id:`settings.locale.tr-TR`})||`Türkçe`})',
+        js_content,
+        count=1
     )
     return js_content
 
