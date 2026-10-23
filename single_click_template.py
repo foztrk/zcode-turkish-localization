@@ -1345,22 +1345,32 @@ def patch_styles(js_content):
     js_content = re.sub(pdesc_pattern, f'className:{bt}mt-0.5 line-clamp-1 text-ui-sm text-foreground-subtle{bt},children:_trPluginDescRow(e)}}):null', js_content, count=1)
 
 
-    # Inject Turkish into sidebar locale dropdown and settings page (Dynamic regex for v3.16.3+)
-    pat_sidebar = r'(\(0,\$\.jsx\)\(([\w]+),{value:`system`,children:([\w]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\)\}\),)'
-    js_content = re.sub(
-        pat_sidebar,
-        r'\1(0,$.jsx)(\2,{value:`tr-TR`,children:\3.formatMessage({id:`sidebar.settings.locale.tr-TR`})||`Türkçe`}),',
-        js_content,
-        count=1
-    )
+    # 1. Sidebar Theme menu: change "system" label to "Sistem Teması (Varsayılan)"
+    target_theme = '(0,$.jsx)(Vy,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Vy,{value:`zai-dark`'
+    repl_theme = '(0,$.jsx)(Vy,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(Vy,{value:`zai-dark`'
+    if target_theme in js_content:
+        js_content = js_content.replace(target_theme, repl_theme, 1)
+    else:
+        pat_theme = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`system`,children:([\w$]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\}\),\(0,\$\.jsx\)\(\2,{value:`zai-dark`)'
+        js_content = re.sub(pat_theme, r'(0,$.jsx)(\2,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(\2,{value:`zai-dark`', js_content, count=1)
 
-    pat_settings = r'(\(0,\$\.jsx\)\(([\w]+),{value:`en-US`,"data-testid":([\w]+)\(([\w]+),`en-US`\),children:([\w]+)\.formatMessage\({id:`settings\.locale\.en-US`}\}\)\}\))'
-    js_content = re.sub(
-        pat_settings,
-        r'\1,(0,$.jsx)(\2,{value:`tr-TR`,"data-testid":\3(\4,`tr-TR`),children:\5.formatMessage({id:`settings.locale.tr-TR`})||`Türkçe`})',
-        js_content,
-        count=1
-    )
+    # 2. Sidebar Locale menu: change "system" label to "Sistem Dili (Varsayılan)" and inject "tr-TR" (Türkçe)
+    target_locale = '(0,$.jsx)(Vy,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Vy,{value:`en-US`'
+    repl_locale = '(0,$.jsx)(Vy,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(Vy,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(Vy,{value:`en-US`'
+    if target_locale in js_content:
+        js_content = js_content.replace(target_locale, repl_locale, 1)
+    else:
+        pat_locale = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`system`,children:([\w$]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\}\),\(0,\$\.jsx\)\(\2,{value:`en-US`)'
+        js_content = re.sub(pat_locale, r'(0,$.jsx)(\2,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(\2,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(\2,{value:`en-US`', js_content, count=1)
+
+    # 3. Settings page locale: inject tr-TR (Türkçe)
+    target_set = '(0,$.jsx)(Nm,{value:`en-US`,"data-testid":Sb(mb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})})'
+    repl_set = '(0,$.jsx)(Nm,{value:`en-US`,"data-testid":Sb(mb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(Nm,{value:`tr-TR`,"data-testid":Sb(mb,`tr-TR`),children:`Türkçe`})'
+    if target_set in js_content:
+        js_content = js_content.replace(target_set, repl_set, 1)
+    else:
+        pat_set = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`en-US`,"data-testid":([\w$]+)\(([\w$]+),`en-US`\),children:([\w$]+)\.formatMessage\({id:`settings\.locale\.en-US`}\}\}\))'
+        js_content = re.sub(pat_set, r'\1,(0,$.jsx)(\2,{value:`tr-TR`,"data-testid":\3(\4,`tr-TR`),children:`Türkçe`})', js_content, count=1)
     return js_content
 
 
