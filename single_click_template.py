@@ -1443,6 +1443,14 @@ def patch_styles(js_content):
     else:
         pat_set = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`en-US`,"data-testid":([\w$]+)\(([\w$]+),`en-US`\),children:([\w$]+)\.formatMessage\({id:`settings\.locale\.en-US`}\}\}\))'
         js_content = re.sub(pat_set, r'\1,(0,$.jsx)(\2,{value:`tr-TR`,"data-testid":\3(\4,`tr-TR`),children:`Türkçe`})', js_content, count=1)
+        # Start Plan and Effort labels
+    js_content = js_content.replace('?`Start Plan`:bL(e)}', '?`Başlangıç Planı`:bL(e)}')
+    js_content = js_content.replace('{label:`Start Plan`,labelBadge:', '{label:`Başlangıç Planı`,labelBadge:')
+    js_content = js_content.replace(',label:ln(e.id)?`Start Plan`:`', ',label:ln(e.id)?`Başlangıç Planı`:`')
+    js_content = js_content.replace("?`Start Plan`:r.label", "?`Başlangıç Planı`:r.label")
+    js_content = js_content.replace("?`Start Plan`:e.label", "?`Başlangıç Planı`:e.label")
+    js_content = js_content.replace('name:e?.name??`Effort`', 'name:e?.name??`Efor`')
+    js_content = js_content.replace('name:`Thought Level`', 'name:`Düşünme Seviyesi`')
     return js_content
 
 
