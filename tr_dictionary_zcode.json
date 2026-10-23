@@ -3071,7 +3071,7 @@
   "settings.subagents.reasoningUnavailable": "Düşünme düzeyi kullanılamıyor",
   "settings.subagents.model.inherit": "Devral",
   "settings.subagents.model.defaultMain": "Varsayılanı Devral",
-  "settings.subagents.model.select": "Model seç",
+  "settings.subagents.model.select": "Model Seçin",
   "settings.subagents.model.main": "Ana",
   "settings.subagents.model.lite": "Lite",
   "settings.subagents.permissionMode.default": "Varsayılan",
@@ -7290,9 +7290,9 @@
   "chat.empty.createProjectOnDevice": "Bu cihazda proje oluştur",
   "chat.toolbar.connection.switchFailed": "Bağlantı değiştirilemedi. Yeniden denemek için tekrar seçin.",
   "chat.toolbar.combined.provider": "Provider",
-  "chat.toolbar.combined.models": "Models",
-  "chat.toolbar.combined.effort": "Effort",
-  "chat.toolbar.combined.selectModel": "Select model",
+  "chat.toolbar.combined.models": "Modeller",
+  "chat.toolbar.combined.effort": "Düşünme Eforu",
+  "chat.toolbar.combined.selectModel": "Model Seçin",
   "chat.slash.app.plan.label": "Plan mode",
   "chat.slash.app.plan.description": "Enable Plan mode",
   "chat.toolCall.previewFailed": "Could not load preview",
@@ -7326,5 +7326,6 @@
   "login.oauth.copyLinkFailed": "Giriş Bağlantısı Kopyalanamadı. Lütfen Tekrar Deneyin.",
   "workspaceHeader.help.copyDeviceMid": "Cihaz MID'sini Kopyala",
   "workspaceHeader.help.deviceMidCopied": "Cihaz MID'si Kopyalandı",
-  "workspaceHeader.help.deviceMidCopyFailed": "Cihaz MID'si Kopyalanamadı. Pano Erişimini Kontrol Edip Tekrar Deneyin."
+  "workspaceHeader.help.deviceMidCopyFailed": "Cihaz MID'si Kopyalanamadı. Pano Erişimini Kontrol Edip Tekrar Deneyin.",
+  "settings.plugins.store.category.game3d": "Oyun / 3B"
 }
