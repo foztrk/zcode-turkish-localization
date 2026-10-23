@@ -300,6 +300,33 @@ def patch_html(html_content):
     dom_script = r"""<script id="zcode-tr-dom-patch">
 (function() {
   const DOM_MAP = {
+    // 1024 Programmer's Day Surprise Modal
+    "YOUR PROGRAMMER'S DAY SURPRISE": "PROGRAMCILAR GÜNÜ SÜRPRİZİNİZ",
+    "Your programmer's day surprise": "Programcılar Günü Sürpriziniz",
+    "Your gift pack is open": "Hediye Paketiniz Açıldı",
+    "Your gift pack is open.": "Hediye Paketiniz Açıldı.",
+    "1024 · INVITATION": "1024 · DAVETİYE",
+    "INVITATION": "DAVETİYE",
+    "Invitation": "Davetiye",
+    "TOKENS": "TOKEN",
+    "Tokens": "Token",
+    "tokens": "token",
+    "500,000,000 TOKENS": "500.000.000 TOKEN",
+    "500,000,000": "500.000.000",
+    "1024 · PROGRAMMER'S DAY": "1024 · PROGRAMCILAR GÜNÜ",
+    "PROGRAMMER'S DAY": "PROGRAMCILAR GÜNÜ",
+    "Programmer's Day": "Programcılar Günü",
+    "You now have access to ZCode 1024 Dev Day": "Artık ZCode 1024 Geliştirici Günü'ne erişiminiz var",
+    "You now have access to ZCode 1024 Dev Day.": "Artık ZCode 1024 Geliştirici Günü'ne erişiminiz var.",
+    "GLM-5.3-Flash will be available on Oct 23, 2026 18:00.": "GLM-5.3-Flash 23 Ekim 2026 18:00'de kullanıma açılacaktır.",
+    "GLM-5.3 will be available on Oct 23, 2026 18:00.": "GLM-5.3 23 Ekim 2026 18:00'de kullanıma açılacaktır.",
+    "GLM-5.3-Flash will be available on Oct 23, 2026 18:00": "GLM-5.3-Flash 23 Ekim 2026 18:00'de kullanıma açılacaktır",
+    "GLM-5.3 will be available on Oct 23, 2026 18:00": "GLM-5.3 23 Ekim 2026 18:00'de kullanıma açılacaktır",
+    "Valid until Oct 26, 2026 04:00": "Son Geçerlilik: 26 Ekim 2026 04:00",
+    "Valid until": "Son Geçerlilik:",
+    "Got it": "Anladım",
+    "Share": "Paylaş",
+
     "Select a running container": "Çalışan Bir Konteyner Seçin",
     "Çalışan bir konteyner seçin": "Çalışan Bir Konteyner Seçin",
     "Kopyala Markdown": "Markdown'ı Kopyala",
@@ -479,6 +506,12 @@ def patch_html(html_content):
           modified = modified.replaceAll(k, DOM_MAP[k]);
         }
       }
+            if (clean.includes("will be available on")) {
+        modified = modified.replace("will be available on", "tarihinde kullanıma açılacaktır:").replace("Oct", "Ekim");
+      }
+      if (clean.startsWith("Valid until")) {
+        modified = modified.replace("Valid until", "Son Geçerlilik:").replace("Oct", "Ekim");
+      }
       if (clean.startsWith("6x Lite usage") || clean.startsWith("6× Lite usage")) {
         modified = "6 kat Lite kullanımı + Tüm Lite avantajları";
       } else if (clean.startsWith("14x Lite usage") || clean.startsWith("14× Lite usage")) {
@@ -595,6 +628,33 @@ def patch_styles(js_content):
             pos_fn_end = js_content.find("function ", pos_sb)
 
         TR_MAP_CODE = r'''const TR_MAP = {
+    // 1024 Programmer's Day Surprise Modal
+    "YOUR PROGRAMMER'S DAY SURPRISE": "PROGRAMCILAR GÜNÜ SÜRPRİZİNİZ",
+    "Your programmer's day surprise": "Programcılar Günü Sürpriziniz",
+    "Your gift pack is open": "Hediye Paketiniz Açıldı",
+    "Your gift pack is open.": "Hediye Paketiniz Açıldı.",
+    "1024 · INVITATION": "1024 · DAVETİYE",
+    "INVITATION": "DAVETİYE",
+    "Invitation": "Davetiye",
+    "TOKENS": "TOKEN",
+    "Tokens": "Token",
+    "tokens": "token",
+    "500,000,000 TOKENS": "500.000.000 TOKEN",
+    "500,000,000": "500.000.000",
+    "1024 · PROGRAMMER'S DAY": "1024 · PROGRAMCILAR GÜNÜ",
+    "PROGRAMMER'S DAY": "PROGRAMCILAR GÜNÜ",
+    "Programmer's Day": "Programcılar Günü",
+    "You now have access to ZCode 1024 Dev Day": "Artık ZCode 1024 Geliştirici Günü'ne erişiminiz var",
+    "You now have access to ZCode 1024 Dev Day.": "Artık ZCode 1024 Geliştirici Günü'ne erişiminiz var.",
+    "GLM-5.3-Flash will be available on Oct 23, 2026 18:00.": "GLM-5.3-Flash 23 Ekim 2026 18:00'de kullanıma açılacaktır.",
+    "GLM-5.3 will be available on Oct 23, 2026 18:00.": "GLM-5.3 23 Ekim 2026 18:00'de kullanıma açılacaktır.",
+    "GLM-5.3-Flash will be available on Oct 23, 2026 18:00": "GLM-5.3-Flash 23 Ekim 2026 18:00'de kullanıma açılacaktır",
+    "GLM-5.3 will be available on Oct 23, 2026 18:00": "GLM-5.3 23 Ekim 2026 18:00'de kullanıma açılacaktır",
+    "Valid until Oct 26, 2026 04:00": "Son Geçerlilik: 26 Ekim 2026 04:00",
+    "Valid until": "Son Geçerlilik:",
+    "Got it": "Anladım",
+    "Share": "Paylaş",
+
     "Personal plans": "Bireysel Planlar",
     "Team plans": "Ekip Planları",
     "Personal Plans": "Bireysel Planlar",
@@ -907,6 +967,12 @@ def patch_styles(js_content):
       }
       if (clean.toUpperCase() === "BUILD TOGETHER" || clean.toUpperCase() === "BUILDTOGETHER") {
         modified = "BİRLİKTE ÜRETİN";
+      }
+            if (clean.includes("will be available on")) {
+        modified = modified.replace("will be available on", "tarihinde kullanıma açılacaktır:").replace("Oct", "Ekim");
+      }
+      if (clean.startsWith("Valid until")) {
+        modified = modified.replace("Valid until", "Son Geçerlilik:").replace("Oct", "Ekim");
       }
       if (clean.startsWith("6x Lite usage") || clean.startsWith("6× Lite usage")) {
         modified = "6 kat Lite kullanımı + Tüm avantajlar";
