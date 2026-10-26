@@ -786,6 +786,8 @@ def patch_styles(js_content):
 
     plugin_row_helpers = (
         'function _trPluginDescRow(e){if(!e)return"";let n=(e.name||e.id||"");let b=String(n).replace(/@.*$/,"").replace(/^plugin:/,"").trim();'
+        'if(b.includes(":"))b=b.slice(b.indexOf(":")+1);'
+        'if(typeof TR_SKILL_DESCS!=="undefined"){if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n]};'
         'if(typeof TR_P_DESCS!=="undefined"){if(TR_P_DESCS[b])return TR_P_DESCS[b];if(TR_P_DESCS[n])return TR_P_DESCS[n]};'
         'return e.description||""};'
         'function _trPluginNameRow(e,fallback){if(!e)return fallback;let n=(e.name||e.id||"");let b=String(n).replace(/@.*$/,"").replace(/^plugin:/,"").trim();'
@@ -832,13 +834,21 @@ def patch_styles(js_content):
             'const TR_AGENT_DESCS={"general-purpose":"Karmaşık soruları araştırmak, kod aramak ve çok adımlı görevleri yürütmek için genel amaçlı ajan.",'
             '"Explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.",'
             '"explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.",'
-            '"judge":"Yalnızca pptx, docx, xlsx, pdf, poster ve grafik türündeki görsel çıktıların kabul incelemesi için tek yetkili görsel onay ajanı."};'
+            '"judge":"Yalnızca pptx, docx, xlsx, pdf, poster ve grafik türündeki görsel çıktıların kabul incelemesi için tek yetkili görsel onay ajanı.","claude-security":"Özel Claude Güvenlik yöneticisi. Gözetimsiz bir tarama görevi verin; revizyonu yakalar, çoklu ajan güvenlik taramasını baştan sona yönetir ve bulunan açıkları yamalar.","patch-generator":"Tespit edilen bir güvenlik açığı için geçici çalışma alanında düzeltmeyi uygular ve inceleme için bir yama dosyası hazırlar; düzeltme işi tarafından otomatik çalıştırılır.","patch-verifier":"Düzeltme turundaki tek yetkili doğrulayıcı: çalışma alanındaki farkı (diff) bulguya göre inceler, testleri çalıştırır ve yama güvenilirlik kriterlerini onaylar; düzeltme işi tarafından otomatik çalıştırılır.","scan-inventory":"Claude Güvenlik taraması tarafından dizin ağacını bileşenlere bölmek ve tüm üst düzey dizinleri haritalamak için görevlendirilen salt okunur repo haritalayıcı.","scan-loader":"Claude Güvenlik taraması tarafından çalışma dizininden aday bir dosyayı yüklemek için görevlendirilen salt okunur dosya yükleyici.","scan-researcher":"Claude Güvenlik iş akışı tarafından derinlemesine güvenlik açıklarını araştırmak üzere görevlendirilen salt okunur güvenlik araştırmacısı.","scan-verifier":"Claude Güvenlik iş akışı tarafından tespit edilen aday bulguları doğrulamak ve oylamak için görevlendirilen salt okunur doğrulayıcı.",};'
             'function _trAgentDesc(e){let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;'
             'if(TR_AGENT_DESCS[b])return TR_AGENT_DESCS[b];if(TR_AGENT_DESCS[n])return TR_AGENT_DESCS[n];'
+            'if(typeof TR_P_DESCS!=="undefined"){if(TR_P_DESCS[b])return TR_P_DESCS[b];if(TR_P_DESCS[n])return TR_P_DESCS[n]};'
             'let d=(e&&e.description)||"";if(typeof d==="string"){'
             'if(d.startsWith("General-purpose agent"))return TR_AGENT_DESCS["general-purpose"];'
             'if(d.startsWith("Read-only search agent"))return TR_AGENT_DESCS["Explore"];'
-            'if(d.startsWith("THE single visual acceptance pass")||d.startsWith("THE single visual acceptance"))return TR_AGENT_DESCS["judge"]}'
+            'if(d.startsWith("THE single visual acceptance pass")||d.startsWith("THE single visual acceptance"))return TR_AGENT_DESCS["judge"];'
+            'if(d.startsWith("The dedicated Claude Security"))return TR_AGENT_DESCS["claude-security"];'
+            'if(d.startsWith("Implements the fix for one finding"))return TR_AGENT_DESCS["patch-generator"];'
+            'if(d.startsWith("The single verifier per fix"))return TR_AGENT_DESCS["patch-verifier"];'
+            'if(d.startsWith("Restricted read-only repository"))return TR_AGENT_DESCS["scan-inventory"];'
+            'if(d.startsWith("Restricted read-only loader"))return TR_AGENT_DESCS["scan-loader"];'
+            'if(d.startsWith("Restricted read-only vulnerability"))return TR_AGENT_DESCS["scan-researcher"];'
+            'if(d.startsWith("Restricted read-only verifier"))return TR_AGENT_DESCS["scan-verifier"]}'
             'return d};'
         )
         target_sub = f'children:e.description||d.formatMessage({{id:{bt}settings.subagents.noDescription{bt}}})'
@@ -868,7 +878,7 @@ def patch_styles(js_content):
             '"Plugin Creator":"Eklenti Oluşturucu","PLUGIN CREATOR":"Eklenti Oluşturucu",'
             '"Microsoft Foundry":"Microsoft Foundry","MICROSOFT FOUNDRY":"Microsoft Foundry",'
             '"Browser Use":"Browser Use","BROWSER USE":"Browser Use",'
-            '"Computer Use":"Bilgisayar Kontrolü","COMPUTER USE":"Bilgisayar Kontrolü","游戏/3D":"Oyun / 3B","游戏 / 3D":"Oyun / 3B","游戏":"Oyun"'
+            '"Computer Use":"Bilgisayar Kontrolü","COMPUTER USE":"Bilgisayar Kontrolü","游戏/3D":"Oyun / 3B","游戏 / 3D":"Oyun / 3B","游戏":"Oyun","Claude Security":"Claude Güvenlik","CLAUDE SECURITY":"Claude Güvenlik","Amd Skills":"AMD Becerileri","AMD SKILLS":"AMD Becerileri","Claude Code Setup":"Claude Code Kurulumu","CLAUDE CODE SETUP":"Claude Code Kurulumu","Claude Md Management":"Claude MD Yönetimi","CLAUDE MD MANAGEMENT":"Claude MD Yönetimi","Chrome Devtools MCP":"Chrome DevTools MCP","CHROME DEVTOOLS MCP":"Chrome DevTools MCP","Base44":"Base44","BASE44":"Base44","Cloudflare":"Cloudflare","CLOUDFLARE":"Cloudflare"'
             '};'
             'function _trSectionTitle(n){if(!n)return n;let u=n.toUpperCase();if(TR_SEC_TITLES[u])return TR_SEC_TITLES[u];if(TR_SEC_TITLES[n])return TR_SEC_TITLES[n];return n};'
         )
@@ -912,9 +922,11 @@ def patch_styles(js_content):
             '"zcode-computer-use":"Erişilebilirlik odaklı semantik eylemler ve görsel doğrulama ile masaüstü kontrolü.",'
             '"chrome-cdp":"Chrome oturumu ile etkileşim kurun, sayfaları denetleyin ve test edin.",'
             '"codebase-memory":"Yapısal kod sorguları, mimari keşif ve çağrı zinciri analizi için kod tabanı bilgi grafiğini kullanın.",'
-            '"desktop-eye":"Canlı masaüstü ekran görüntüsü alarak arayüz bağlamını anlık olarak doğrulayın."'
+            '"desktop-eye":"Canlı masaüstü ekran görüntüsü alarak arayüz bağlamını anlık olarak doğrulayın.","local-ai-app-integration":"Embeddable Lemonade kullanarak uygulamalara yerel yapay zeka yetenekleri entegre eder. Yerel, çevrimdışı, gizli ve cihaz üzeri LLM entegrasyonu istendiğinde kullanın.","local-ai-use":"Ücretli bulut bulut API servisleri yerine yerel Lemonade Sunucusu üzerinden kullanıcının kendi makinesinde görsel üretir, ses deşifre eder ve ses sentezler.","serving-llms-on-instinct":"vLLM kullanarak AMD Instinct GPU donanımı üzerinde yapay zeka modellerini sunar. AMD donanımında model dağıtmak, çalıştırmak ve barındırmak için kullanın.","tracelens-analysis-orchestrator":"TraceLens ile modüler PyTorch profil izleme analizini koordine eder: performans raporları üretir, kategori verilerini hazırlar ve alt ajanları çalıştırır.","base44-cli":"Base44 projeleriyle ilgili her işlem için kullanılır: kaynak yapılandırması (varlıklar, arka uç fonksiyonları, yapay zeka ajanları), başlatma ve kaynak yönetimi.","base44-sdk":"Base44 servisleriyle iletişim kurmak için kullanılan resmi SDK. Uzak kaynaklar, arka uç fonksiyonları ve ajanlarla entegrasyon sağlar.","base44-troubleshooter":"Arka uç fonksiyon günlüklerini ve iş akışı geçmişini kullanarak canlı ortam sorunlarını giderin. Uygulama hatalarını araştırmak ve çağrıları hata ayıklamak için kullanın.","a11y-debugging":"web.dev yönergelerine göre erişilebilirlik (a11y) denetimi ve hata ayıklaması yapar. Semantik HTML, ARIA etiketleri ve odak durumlarını test ederken kullanın.","chrome-devtools":"Hata ayıklama, sorun giderme ve tarayıcı otomasyonu için Chrome DevTools aracını kullanır. Web sayfalarında hata ayıklarken ve tarayıcı etkileşimlerini otomatikleştirirken kullanın.","chrome-devtools-cli":"Tarayıcıdaki görevleri otomatikleştirmek için kabuk betikleri yazın veya Chrome DevTools aracını CLI üzerinden doğrudan komutlarla kullanın.","debug-optimize-lcp":"Chrome DevTools MCP araçlarıyla Largest Contentful Paint (LCP) performansını optimize eder ve yavaş yüklenen web sayfalarını analiz eder.","memory-leak-debugging":"JavaScript ve Node.js uygulamalarındaki bellek sızıntılarını tespit eder ve giderir. Yüksek bellek kullanımı ve OOM hatalarını gidermek için kullanın.","troubleshooting":"Chrome DevTools MCP bağlantı ve hedef sorunlarını gidermek için kullanılır. Sayfa listeleme veya gezinme başarısız olduğunda devreye girer.","claude-automation-recommender":"Kod tabanını analiz ederek Claude Code otomasyonları (kancalar, alt ajanlar, beceriler, eklentiler ve MCP sunucuları) önerir.","claude-md-improver":"Repolardaki CLAUDE.md talimat dosyalarını denetler, iyileştirir ve günceller. Talimatların netliğini ve geçerliliğini doğrulamak için kullanın.","claude-security":"Claude Güvenlik menüsü: tüm depoyu veya belirli bir modülü tarayın, commit/PR diff değişikliklerini inceleyin ve güvenlik açıklarını tespit edin.","agents-sdk":"Agents SDK ile Cloudflare Workers üzerinde yapay zeka ajanları derleyin. Durum bilgili ajanlar, dayanıklı iş akışları ve gerçek zamanlı WebSocket uygulamaları için kullanın.","cloudflare":"Workers, Pages, depolama (KV, D1, R2), yapay zeka (Workers AI, Vectorize) ve ağ özelliklerini kapsayan kapsamlı Cloudflare platform yeteneği.","cloudflare-email-service":"Cloudflare Email Routing ve Workers ile e-posta alma, gönderme ve otomatik işleme yetenekleri.","reverse-engineer-anything":"Yerel, yönetilen, Electron/JavaScript, paketlenmiş, ürün yazılımı ve tarayıcı hedeflerini tersine mühendislikle analiz eder."'
             '};'
             'function _trSkillDesc(e){let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;'
+            'if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n];'
+            'if(typeof TR_P_DESCS!=="undefined"){if(TR_P_DESCS[b])return TR_P_DESCS[b];if(TR_P_DESCS[n])return TR_P_DESCS[n]};'
             'let d=(e&&e.description)||"";if(typeof d==="string"){'
             'if(d.startsWith("Comprehensive DOCX")||d.startsWith("Revizyonlar, yorumlar"))return TR_SKILL_DESCS["docx"];'
             'if(d.startsWith("Professional PDF")||d.startsWith("4 özel iş akışına"))return TR_SKILL_DESCS["pdf"];'
@@ -936,8 +948,29 @@ def patch_styles(js_content):
             'if(d.startsWith("Use to diagnose and fix ZCode skill configuration"))return TR_SKILL_DESCS["diagnosing-skills"];'
             'if(d.startsWith("Use when configuring ZCode")&&d.includes("extension resources"))return TR_SKILL_DESCS["zcode-configuration-guide"];'
             'if(d.startsWith("Build, run, inspect, and lightly automate iOS"))return TR_SKILL_DESCS["ios-dev"];'
-            'if(d.startsWith("Build, run, inspect, and lightly automate Android"))return TR_SKILL_DESCS["android-dev"];if(d.startsWith("Create visualizations and interactive tools")||d.includes("Create visualizations"))return TR_SKILL_DESCS["visualize"]}'
+            'if(d.startsWith("Build, run, inspect, and lightly automate Android"))return TR_SKILL_DESCS["android-dev"];'
+            'if(d.startsWith("Create visualizations and interactive tools")||d.includes("Create visualizations"))return TR_SKILL_DESCS["visualize"];'
+            'if(d.startsWith("Integrates local AI"))return TR_SKILL_DESCS["local-ai-app-integration"];'
+            'if(d.startsWith("Makes this agent generate images"))return TR_SKILL_DESCS["local-ai-use"];'
+            'if(d.startsWith("Serves AI models on AMD"))return TR_SKILL_DESCS["serving-llms-on-instinct"];'
+            'if(d.startsWith("Orchestrates modular PyTorch"))return TR_SKILL_DESCS["tracelens-analysis-orchestrator"];'
+            'if(d.startsWith("The base44 CLI is used"))return TR_SKILL_DESCS["base44-cli"];'
+            'if(d.startsWith("The base44 SDK is the library"))return TR_SKILL_DESCS["base44-sdk"];'
+            'if(d.startsWith("Troubleshoot production issues using backend"))return TR_SKILL_DESCS["base44-troubleshooter"];'
+            'if(d.startsWith("Uses Chrome DevTools MCP for accessibility"))return TR_SKILL_DESCS["a11y-debugging"];'
+            'if(d.startsWith("Uses Chrome DevTools via MCP"))return TR_SKILL_DESCS["chrome-devtools"];'
+            'if(d.startsWith("Use this skill to write shell scripts"))return TR_SKILL_DESCS["chrome-devtools-cli"];'
+            'if(d.startsWith("Guides debugging and optimizing Largest Contentful Paint"))return TR_SKILL_DESCS["debug-optimize-lcp"];'
+            'if(d.startsWith("Diagnoses and resolves memory leaks"))return TR_SKILL_DESCS["memory-leak-debugging"];'
+            'if(d.startsWith("Uses Chrome DevTools MCP and documentation"))return TR_SKILL_DESCS["troubleshooting"];'
+            'if(d.startsWith("Analyze a codebase and recommend Claude Code"))return TR_SKILL_DESCS["claude-automation-recommender"];'
+            'if(d.startsWith("Audit and improve CLAUDE.md"))return TR_SKILL_DESCS["claude-md-improver"];'
+            'if(d.startsWith("The Claude Security menu"))return TR_SKILL_DESCS["claude-security"];'
+            'if(d.startsWith("Build AI agents on Cloudflare"))return TR_SKILL_DESCS["agents-sdk"];'
+            'if(d.startsWith("Comprehensive Cloudflare platform"))return TR_SKILL_DESCS["cloudflare"];'
+            'if(d.startsWith("Reverse engineer native"))return TR_SKILL_DESCS["reverse-engineer-anything"]}'
             'if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n];'
+            'if(typeof TR_P_DESCS!=="undefined"){if(TR_P_DESCS[b])return TR_P_DESCS[b];if(TR_P_DESCS[n])return TR_P_DESCS[n]};'
             'return d};'
             'const TR_CMD_DESCS={"android-dev":"Android emülatör geliştirme döngüsünü başlatın.","/android-dev":"Android emülatör geliştirme döngüsünü başlatın.",'
             '"ios-dev":"iOS simülatör geliştirme döngüsünü başlatın.","/ios-dev":"iOS simülatör geliştirme döngüsünü başlatın.",'
@@ -1239,7 +1272,24 @@ def patch_html(html_content):
     "Start the iOS simulator development loop.": "iOS simülatör geliştirme döngüsünü başlatın.",
     "Select and restore a legacy ZCode session.": "Eski bir ZCode oturumunu seçin ve geri yükleyin.",
     "[goal or issue description]": "[hedef veya sorun açıklaması]",
-    "[agent/workspace/session filters]": "[ajan/çalışma alanı/oturum filtreleri]"
+    "[agent/workspace/session filters]": "[ajan/çalışma alanı/oturum filtreleri]",
+    "Absolute Yolunu Kopyala": "Mutlak Yolu Kopyala",
+    "Copy absolute path": "Mutlak Yolu Kopyala",
+    "Copy Absolute Path": "Mutlak Yolu Kopyala",
+    "Claude Security": "Claude Güvenlik",
+    "Amd Skills": "AMD Becerileri",
+    "AMD Skills": "AMD Becerileri",
+    "Claude Code Setup": "Claude Code Kurulumu",
+    "Claude Md Management": "Claude MD Yönetimi",
+    "Chrome Devtools MCP": "Chrome DevTools MCP",
+    "Chrome DevTools MCP": "Chrome DevTools MCP",
+    "The dedicated Claude Security orchestrator. Hand it an unattended job — \"fully scan this repository and patch what you find; I understand it will use a lot of token\" — and it runs the whole thing itself: capturing the revision, driving the multi-agent scan through..": "Özel Claude Güvenlik yöneticisi. Gözetimsiz bir tarama görevi verin; revizyonu yakalar, çoklu ajan güvenlik taramasını baştan sona yönetir ve bulunan açıkları yamalar.",
+    "Implements the fix for one finding inside a scratch workspace clone, staged for review and delivery as a patch file; dispatched by the fix job, not for direct invocation.": "Tespit edilen bir güvenlik açığı için geçici çalışma alanında düzeltmeyi uygular ve inceleme için bir yama dosyası hazırlar; düzeltme işi tarafından otomatik çalıştırılır.",
+    "The single verifier per fix round — reviews the workspace's staged diff against the finding, runs the tests, and states the three confidence claims a patch file must earn; dispatched by the fix job, not for direct invocation.": "Düzeltme turundaki tek yetkili doğrulayıcı: çalışma alanındaki farkı (diff) bulguya göre inceler, testleri çalıştırır ve yama güvenilirlik kriterlerini onaylar; düzeltme işi tarafından otomatik çalıştırılır.",
+    "Restricted read-only repository cartographer dispatched by the Claude Security scan workflow to partition the tree into components and account for every top-level directory; not for direct invocation or vulnerability research.": "Claude Güvenlik taraması tarafından dizin ağacını bileşenlere bölmek ve tüm üst düzey dizinleri haritalamak için görevlendirilen salt okunur repo haritalayıcı.",
+    "Restricted read-only loader dispatched by the Claude Security scan workflow to return one candidates file from the run directory; not for direct invocation.": "Claude Güvenlik taraması tarafından çalışma dizininden aday bir dosyayı yüklemek için görevlendirilen salt okunur dosya yükleyici.",
+    "Restricted read-only vulnerability researcher dispatched by the Claude Security scan workflow; not for direct invocation or general exploration.": "Claude Güvenlik iş akışı tarafından derinlemesine güvenlik açıklarını araştırmak üzere görevlendirilen salt okunur güvenlik araştırmacısı.",
+    "Restricted read-only verifier dispatched by the Claude Security scan workflow to vote on one candidate finding; not for direct invocation.": "Claude Güvenlik iş akışı tarafından tespit edilen aday bulguları doğrulamak ve oylamak için görevlendirilen salt okunur doğrulayıcı.",
   };
 
   const SORTED_DOM_KEYS = Object.keys(DOM_MAP).sort((a, b) => b.length - a.length);

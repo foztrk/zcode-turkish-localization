@@ -1079,7 +1079,7 @@
   "appHeader.openInEditor": "{editor} ile Aç",
   "appHeader.selectOpenApp": "Uygulamayı seçin",
   "appHeader.copyPath": "Yolu Kopyala",
-  "fileActions.copyAbsolutePath": "Absolute Yolunu Kopyala",
+  "fileActions.copyAbsolutePath": "Mutlak Yolu Kopyala",
   "fileActions.copyRelativePath": "Göreli Yolu Kopyala",
   "appHeader.copyTaskPath": "Görev Yolunu Kopyala",
   "appHeader.copyClaudeJsonlPath": "Jsonl Yolunu Kopyala",
