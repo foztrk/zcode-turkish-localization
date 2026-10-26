@@ -487,6 +487,10 @@ def patch_html(html_content):
     "Claude Md Management": "Claude MD Yönetimi",
     "Chrome Devtools MCP": "Chrome DevTools MCP",
     "Chrome DevTools MCP": "Chrome DevTools MCP",
+    "Request verification configuration read failed": "İstek doğrulama yapılandırması okunamadı",
+    "Request verification configuration is unavailable": "İstek doğrulama yapılandırması kullanılamıyor",
+    "Provider request auth is unavailable": "Sağlayıcı istek kimlik doğrulaması kullanılamıyor",
+    "Account request auth resolver returned no material": "Hesap yetkilendirme çözümleyicisi geçerli veri döndürmedi",
     "The dedicated Claude Security orchestrator. Hand it an unattended job — \"fully scan this repository and patch what you find; I understand it will use a lot of token\" — and it runs the whole thing itself: capturing the revision, driving the multi-agent scan through..": "Özel Claude Güvenlik yöneticisi. Gözetimsiz bir tarama görevi verin; revizyonu yakalar, çoklu ajan güvenlik taramasını baştan sona yönetir ve bulunan açıkları yamalar.",
     "Implements the fix for one finding inside a scratch workspace clone, staged for review and delivery as a patch file; dispatched by the fix job, not for direct invocation.": "Tespit edilen bir güvenlik açığı için geçici çalışma alanında düzeltmeyi uygular ve inceleme için bir yama dosyası hazırlar; düzeltme işi tarafından otomatik çalıştırılır.",
     "The single verifier per fix round — reviews the workspace's staged diff against the finding, runs the tests, and states the three confidence claims a patch file must earn; dispatched by the fix job, not for direct invocation.": "Düzeltme turundaki tek yetkili doğrulayıcı: çalışma alanındaki farkı (diff) bulguya göre inceler, testleri çalıştırır ve yama güvenilirlik kriterlerini onaylar; düzeltme işi tarafından otomatik çalıştırılır.",
@@ -524,7 +528,16 @@ def patch_html(html_content):
         }
       }
             if (clean.includes("will be available on")) {
-        modified = modified.replace("will be available on", "tarihinde kullanıma açılacaktır:").replace("Oct", "Ekim");
+        if (clean.startsWith("Request verification configuration read failed") || clean.includes("verification configuration read failed")) {
+        modified = "İstek doğrulama yapılandırması okunamadı";
+      } else if (clean.startsWith("Request verification configuration is unavailable")) {
+        modified = "İstek doğrulama yapılandırması kullanılamıyor";
+      } else if (clean.startsWith("Provider request auth is unavailable")) {
+        modified = "Sağlayıcı istek kimlik doğrulaması kullanılamıyor";
+      } else if (clean.startsWith("Account request auth resolver returned no material")) {
+        modified = "Hesap yetkilendirme çözümleyicisi geçerli veri döndürmedi";
+      }
+      modified = modified.replace("will be available on", "tarihinde kullanıma açılacaktır:").replace("Oct", "Ekim");
       }
       if (clean.startsWith("Valid until")) {
         modified = modified.replace("Valid until", "Son Geçerlilik:").replace("Oct", "Ekim");
@@ -1508,6 +1521,48 @@ def patch_styles(js_content):
         js_content = js_content.replace('var n7e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};', 'var n7e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`,"游戏/3D":`settings.plugins.store.category.game3d`,"游戏 / 3D":`settings.plugins.store.category.game3d`,"游戏":`settings.plugins.store.category.game3d`,"game-3d":`settings.plugins.store.category.game3d`,"Game/3D":`settings.plugins.store.category.game3d`};', 1)
     if 'S=(0,Q.useMemo)(()=>e=>{let t=n7e[e];return t?u.formatMessage({id:t}):e},[u])' in js_content:
         js_content = js_content.replace('S=(0,Q.useMemo)(()=>e=>{let t=n7e[e];return t?u.formatMessage({id:t}):e},[u])', 'S=(0,Q.useMemo)(()=>e=>{if(e===`游戏/3D`||e===`游戏 / 3D`||e===`游戏`||e===`game-3d`||e===`Game/3D`)return`Oyun / 3B`;let t=n7e[e];return t?u.formatMessage({id:t}):e},[u])', 1)
+        # Error message translation helpers
+    if "function _trErrorMsg(" not in js_content:
+        error_helpers = (
+            'const TR_ERRORS={'
+            '"Request verification configuration read failed":"İstek doğrulama yapılandırması okunamadı",'
+            '"Request verification configuration is unavailable":"İstek doğrulama yapılandırması kullanılamıyor",'
+            '"Provider request auth is unavailable":"Sağlayıcı istek kimlik doğrulaması kullanılamıyor",'
+            '"Account request auth resolver returned no material":"Hesap yetkilendirme çözümleyicisi geçerli veri döndürmedi",'
+            '"Failed to read persisted goal verification entries":"Kalıcı hedef doğrulama kayıtları okunamadı",'
+            '"Topic history exceeds attachment size limit":"Konu geçmişi ek boyutu sınırını aşıyor",'
+            '"Attachment content is unavailable":"Ek içeriği kullanılamıyor",'
+            '"Attachment exceeds protocol size limit":"Ek boyutu protokol sınırını aşıyor",'
+            '"Cannot commit selected staged paths while index conflicts exist.":"Dizin çakışmaları varken seçilen dosyalar commit edilemez.",'
+            '"Cannot push while HEAD is detached.":"HEAD ayrılmış (detached) durumdayken push yapılamaz.",'
+            '"Cannot resolve a Git push remote without a current branch.":"Mevcut bir dal olmadan Git uzak deposu çözümlenemez.",'
+            '"Git binary is not available":"Git çalıştırılabilir dosyası bulunamadı",'
+            '"workspace is not inside a Git repository":"Çalışma alanı bir Git deposu içinde değil",'
+            '"recording outputPath must end with .webm":"Kayıt çıkış yolu .webm ile bitmelidir",'
+            '"recording outputPath must stay inside the workspace":"Kayıt çıkış yolu çalışma alanı içinde kalmalıdır",'
+            '"service returned ok=false":"Servis başarısız yanıt döndürdü (ok=false)",'
+            '"workspacePath is required":"Çalışma alanı yolu zorunludur",'
+            '"zai_oauth_required":"ZCode OAuth kimlik doğrulaması gerekiyor",'
+            '"Turn execution failed":"Tur yürütme başarısız oldu",'
+            '"Network error":"Ağ hatası oluştu",'
+            '"Connection lost":"Bağlantı kesildi",'
+            '"Request timed out":"İstek zaman aşımına uğradı"'
+            '};'            'function _trErrorMsg(m){if(!m||typeof m!=="string")return m;let t=m.trim();if(TR_ERRORS[t])return TR_ERRORS[t];for(let k in TR_ERRORS){if(t.startsWith(k)||t.includes(k))return t.replace(k,TR_ERRORS[k])}return m};'
+        )
+        target_fLt = f"function fLt(e,t,n={bt}local{bt}){{"
+        if target_fLt in js_content:
+            js_content = js_content.replace(target_fLt, error_helpers + target_fLt, 1)
+        t1 = "if(r)return zk({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});"
+        r1 = "if(r)return zk({fallback:_trErrorMsg(e.message),reasonCode:r,formatMessage:t.formatMessage});"
+        js_content = js_content.replace(t1, r1, 1)
+        t2 = f":e.code&&cLt.has(e.code)?t.formatMessage({{id:{bt}zcode.error.${{e.code}}{bt}}}):e.message}}"
+        r2 = f":e.code&&cLt.has(e.code)?t.formatMessage({{id:{bt}zcode.error.${{e.code}}{bt}}}):_trErrorMsg(e.message)}}"
+        js_content = js_content.replace(t2, r2, 1)
+        t3 = f"t.formatMessage({{id:{bt}zcode.error.CLAUDE_UNKNOWN_COMMAND{bt}}},{{command:n.command}}):e.message"
+        r3 = f"t.formatMessage({{id:{bt}zcode.error.CLAUDE_UNKNOWN_COMMAND{bt}}},{{command:n.command}}):_trErrorMsg(e.message)"
+        js_content = js_content.replace(t3, r3, 1)
+        js_content = js_content.replace("h=fLt(e,u,s)", "h=_trErrorMsg(fLt(e,u,s))", 1)
+
     return js_content
 
 
