@@ -1,0 +1,758 @@
+{
+  "hyperloom-workload-optimizer": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\hyperloom-workload-optimizer\\SKILL.md"
+  },
+  "lemonade-router-builder": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\lemonade-router-builder\\SKILL.md"
+  },
+  "local-ai-app-integration": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\local-ai-app-integration\\SKILL.md"
+  },
+  "local-ai-use": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\local-ai-use\\SKILL.md"
+  },
+  "magpie-kernel-evaluator": {
+    "description": "Benchmarks LLM inference and drives GPU kernel optimization with Magpie. Use when the user wants to benchmark vLLM, SGLang, or Atom; capture torch traces; post-process inference traces with TraceLens into prefill/decode and roofline reports; identify top bottleneck kernels or map profiler names to source; analyze or compare HIP, CUDA, PyTorch, or Triton kernels; validate and rank optimized variants; run local, container, or Ray workloads; or mentions Magpie, TraceLens, gap analysis, TTFT, TPOT, kernel evaluation, or AMD GPU optimization.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\magpie-kernel-evaluator\\SKILL.md"
+  },
+  "serving-llms-on-epyc": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\serving-llms-on-epyc\\SKILL.md"
+  },
+  "serving-llms-on-instinct": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\serving-llms-on-instinct\\SKILL.md"
+  },
+  "tracelens-analysis-orchestrator": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\amd-skills\\0.0.0\\tracelens-analysis-orchestrator\\SKILL.md"
+  },
+  "review-skills": {
+    "description": "Review and analyze a skill against best practices for length, intent scope, and trigger patterns",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\.claude\\skills\\review-skills\\SKILL.md"
+  },
+  "skill-creator": {
+    "description": "Create new skills, edit existing skills, and iterate wording. Use when writing SKILL.md from scratch, improving existing skills, turning repeated workflows into reusable skills, or refining skill descriptions to improve trigger reliability.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\skill-creator-plugin\\skills\\skill-creator\\SKILL.md"
+  },
+  "sync-cli-skill": {
+    "description": "Synchronize the base44-cli skill with the latest CLI source code from the Base44 CLI repository",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\.claude\\skills\\sync-cli-skill\\SKILL.md"
+  },
+  "sync-sdk-skill": {
+    "description": "Synchronize the base44-sdk skill with the latest SDK source code from the Base44 SDK repository",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\.claude\\skills\\sync-sdk-skill\\SKILL.md"
+  },
+  "base44-cli": {
+    "description": "The base44 CLI is used for EVERYTHING related to base44 projects: resource configuration (entities, backend functions, ai agents), initialization and actions (resource creation, deployment). This skill is the place for learning about how to configure resources. When you plan or implement a feature, you must learn this skill",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\skills\\base44-cli\\SKILL.md"
+  },
+  "base44-remote-dev": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\skills\\base44-remote-dev\\SKILL.md"
+  },
+  "base44-sandbox": {
+    "description": "Develop a Base44 app remotely inside Base44's cloud sandbox using your own agent — no local checkout and no deploy/push commands. The implementation is remote: writing a resource file into the sandbox is what ships it (backend functions, entities, and agents all auto-sync from the file you write), and OAuth connectors are set up against the remote app via MCP tools or the projectless `base44 connectors` CLI. This skill is the place for learning what you can author in the sandbox, how backend functions, entities, and agents are structured, and how to connect a connector without a local filesystem. Triggers on 'develop my Base44 app remotely', 'no local files', 'cloud sandbox', 'create an entity/agent remotely', 'connect a connector remotely', 'bring my own agent', or any work editing a Base44 app inside a sandbox.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\skills\\base44-sandbox\\SKILL.md"
+  },
+  "base44-sdk": {
+    "description": "The base44 SDK is the library to communicate with base44 services. In projects, you use it to communicate with remote resources (entities, backend functions, ai agents) and to write backend functions. This skill is the place for learning about available modules and types. When you plan or implement a feature, you must learn this skill",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\skills\\base44-sdk\\SKILL.md"
+  },
+  "base44-troubleshooter": {
+    "description": "Troubleshoot production issues using backend function logs and workflow run history. Use when investigating app errors, debugging function calls, diagnosing why a scheduled job or automation failed, or diagnosing production problems in Base44 apps.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\base44\\1.0.0-beta.1\\skills\\base44-troubleshooter\\SKILL.md"
+  },
+  "a11y-debugging": {
+    "description": "Uses Chrome DevTools MCP for accessibility (a11y) debugging and auditing based on web.dev guidelines. Use when testing semantic HTML, ARIA labels, focus states, keyboard navigation, tap targets, and color contrast.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\chrome-devtools-mcp\\1.8.0\\skills\\a11y-debugging\\SKILL.md"
+  },
+  "chrome-devtools": {
+    "description": "Uses Chrome DevTools via MCP for efficient debugging, troubleshooting and browser automation. Use when debugging web pages, automating browser interactions, analyzing performance, or inspecting network requests. This skill does not apply to `--slim` mode (MCP configuration).",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\chrome-devtools-mcp\\1.8.0\\skills\\chrome-devtools\\SKILL.md"
+  },
+  "chrome-devtools-cli": {
+    "description": "Use this skill to write shell scripts or run shell commands to automate tasks in the browser or otherwise use Chrome DevTools via CLI.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\chrome-devtools-mcp\\1.8.0\\skills\\chrome-devtools-cli\\SKILL.md"
+  },
+  "debug-optimize-lcp": {
+    "description": "Guides debugging and optimizing Largest Contentful Paint (LCP) using Chrome DevTools MCP tools. Use this skill whenever the user asks about LCP performance, slow page loads, Core Web Vitals optimization, or wants to understand why their page's main content takes too long to appear. Also use when the user mentions \"largest contentful paint\", \"page load speed\", \"CWV\", or wants to improve how fast their hero image or main content renders.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\chrome-devtools-mcp\\1.8.0\\skills\\debug-optimize-lcp\\SKILL.md"
+  },
+  "memory-leak-debugging": {
+    "description": "Diagnoses and resolves memory leaks in JavaScript/Node.js applications. Use when a user reports high memory usage, OOM errors, or wants to capture, compare, or inspect heap snapshots with Chrome DevTools MCP memory tools.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\chrome-devtools-mcp\\1.8.0\\skills\\memory-leak-debugging\\SKILL.md"
+  },
+  "troubleshooting": {
+    "description": "Uses Chrome DevTools MCP and documentation to troubleshoot connection and target issues. Trigger this skill when list_pages, new_page, or navigate_page fail, or when the server initialization fails.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\chrome-devtools-mcp\\1.8.0\\skills\\troubleshooting\\SKILL.md"
+  },
+  "claude-automation-recommender": {
+    "description": "Analyze a codebase and recommend Claude Code automations (hooks, subagents, skills, plugins, MCP servers). Use when user asks for automation recommendations, wants to optimize their Claude Code setup, mentions improving Claude Code workflows, asks how to first set up Claude Code for a project, or wants to know what Claude Code features they should use.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-code-setup\\skills\\claude-automation-recommender\\SKILL.md"
+  },
+  "claude-md-improver": {
+    "description": "Audit and improve CLAUDE.md files in repositories. Use when user asks to check, audit, update, improve, or fix CLAUDE.md files. Scans for all CLAUDE.md files, evaluates quality against templates, outputs quality report, then makes targeted updates. Also use when the user mentions \"CLAUDE.md maintenance\" or \"project memory optimization\".",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-md-management\\skills\\claude-md-improver\\SKILL.md"
+  },
+  "claude-security": {
+    "description": "The Claude Security menu — pick a job: scan the codebase (the whole repository or a scoped part of it), scan changes (this branch's or a pull request's diff, or one commit), or suggest patches (findings turned into targeted patch files, each verified by a panel of agents, that you apply when you choose).",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\claude-security\\skills\\claude-security\\SKILL.md"
+  },
+  "agents-sdk": {
+    "description": "Build AI agents on Cloudflare Workers using the Agents SDK. Load when creating stateful agents, durable workflows, real-time WebSocket apps, scheduled tasks, MCP servers, chat applications, voice agents, or browser automation. Covers Agent class, state management, callable RPC, Workflows, durable execution, queues, retries, observability, and React hooks. Biases towards retrieval from Cloudflare docs over pre-trained knowledge.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\agents-sdk\\SKILL.md"
+  },
+  "cloudflare": {
+    "description": "Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), feature flags (Flagship), networking (Tunnel, Spectrum), security (WAF, DDoS), and infrastructure-as-code (Terraform, Pulumi). Use for any Cloudflare development task. Biases towards retrieval from Cloudflare docs over pre-trained knowledge.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\cloudflare\\SKILL.md"
+  },
+  "cloudflare-email-service": {
+    "description": "Send and receive transactional emails with Cloudflare Email Service (Email Sending + Email Routing). Use when building email sending (Workers binding or REST API), email routing, Agents SDK email handling, or integrating email into any app — Workers, Node.js, Python, Go, etc. Also use for email deliverability, SPF/DKIM/DMARC, wrangler email setup, MCP email tools, or when a coding agent needs to send emails. Even for simple requests like \"add email to my Worker\" — this skill has critical config details.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\cloudflare-email-service\\SKILL.md"
+  },
+  "cloudflare-one": {
+    "description": "Guides Cloudflare One Zero Trust and SASE work across Access, Gateway, WARP, Tunnel, Cloudflare WAN, DLP, CASB, device posture, and identity. Use when designing, configuring, troubleshooting, or reviewing Cloudflare One deployments. Retrieval-first: use current Cloudflare docs/API schemas instead of embedded product docs.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\cloudflare-one\\SKILL.md"
+  },
+  "cloudflare-one-migrations": {
+    "description": "Plans migrations from Zscaler ZIA/ZPA, Palo Alto, legacy VPN, SWG, or SASE stacks to Cloudflare One. Use for migration assessments, policy mapping, rollout plans, and parity/gap analysis.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\cloudflare-one-migrations\\SKILL.md"
+  },
+  "durable-objects": {
+    "description": "Create and review Cloudflare Durable Objects. Use when building stateful coordination (chat rooms, multiplayer games, booking systems), implementing RPC methods, SQLite storage, alarms, WebSockets, or reviewing DO code for best practices. Covers Workers integration, wrangler config, and testing with Vitest. Biases towards retrieval from Cloudflare docs over pre-trained knowledge.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\durable-objects\\SKILL.md"
+  },
+  "sandbox-migrate-to-next": {
+    "description": "Use when porting a Cloudflare Sandbox app from stable @cloudflare/sandbox to @cloudflare/sandbox@next (Sandbox SDK 1.0 preview), or when the user asks to migrate or upgrade to Sandbox 1.0 / @next. Not for day-to-day stable work (sandbox-stable) or new @next apps (sandbox-next).",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\sandbox-migrate-to-next\\SKILL.md"
+  },
+  "sandbox-next": {
+    "description": "Use when building or changing Cloudflare Sandbox apps on @cloudflare/sandbox@next (Sandbox SDK 1.0 preview)—code execution, AI runners, interpreters, CI-like jobs, terminals, files, mounts, tunnels, preview URLs, lifecycle, or errors. Not for the default stable package (use sandbox-stable) or for porting stable to @next (use sandbox-migrate-to-next).",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\sandbox-next\\SKILL.md"
+  },
+  "sandbox-stable": {
+    "description": "Use when building or changing Cloudflare Sandbox apps on the current stable @cloudflare/sandbox package (default npm tag)—commands, sessions, files, ports, tunnels, terminals, bridge, production, or deprecated-API cleanup while staying on stable. Not for @cloudflare/sandbox@next (use sandbox-next) or for porting to 1.0 (use sandbox-migrate-to-next).",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\sandbox-stable\\SKILL.md"
+  },
+  "turnstile-spin": {
+    "description": "Set up Cloudflare Turnstile end-to-end in a project. Scan the codebase, create the widget via the Cloudflare API, embed it where user requests need bot verification (form submissions, SPA actions, API endpoints, download links, comment or vote submissions, etc.), wire canonical server-side siteverify in the customer's existing backend, validate, and persist the skill. Load this when a user asks to add Turnstile, set up CAPTCHA, protect a form or endpoint from bots, or fix a Turnstile integration. Mirrors developers.cloudflare.com/turnstile/spin.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\turnstile-spin\\SKILL.md"
+  },
+  "web-perf": {
+    "description": "Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (LCP, INP, CLS) and supplementary metrics (FCP, TBT, Speed Index), identifies render-blocking resources, network dependency chains, layout shifts, caching issues, and accessibility gaps. Use when asked to audit, profile, debug, or optimize page load performance, Lighthouse scores, or site speed. Biases towards retrieval from current documentation over pre-trained knowledge.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\web-perf\\SKILL.md"
+  },
+  "workers-best-practices": {
+    "description": "Reviews and authors Cloudflare Workers code against production best practices. Load when writing new Workers, reviewing Worker code, configuring wrangler.jsonc, or checking for common Workers anti-patterns (streaming, floating promises, global state, secrets, bindings, observability). Biases towards retrieval from Cloudflare docs over pre-trained knowledge.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\workers-best-practices\\SKILL.md"
+  },
+  "wrangler": {
+    "description": "Cloudflare Workers CLI for deploying, developing, and managing Workers, KV, R2, D1, Vectorize, Hyperdrive, Workers AI, Containers, Queues, Workflows, Pipelines, and Secrets Store. Load before running wrangler commands to ensure correct syntax and best practices. Biases towards retrieval from Cloudflare docs over pre-trained knowledge.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\cloudflare\\1.0.0\\skills\\wrangler\\SKILL.md"
+  },
+  "eas-app-stores": {
+    "description": "EAS service (paid). Deploy Expo apps to the app stores with EAS - build and submit to the iOS App Store, Google Play Store, and TestFlight, configure eas.json build and submit profiles, manage app versions and build numbers, and publish App Store metadata and ASO. Use whenever the user wants to deploy, release, or ship an app to production or the app stores, is preparing a production build, running eas build or eas submit, shipping to TestFlight, bumping version or build numbers, or setting up store listing metadata. For deploying an Expo website or API routes, use the eas-hosting skill.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\eas-app-stores\\SKILL.md"
+  },
+  "eas-hosting": {
+    "description": "EAS service (paid). Deploy Expo websites and Expo Router API routes to EAS Hosting - export the web bundle, run eas deploy for production and PR preview URLs, manage environment secrets and custom domains, and work within the Cloudflare Workers runtime. Also covers authoring API routes (+api.ts handlers, HTTP methods, request handling, CORS). Use when deploying an Expo web app or API routes, setting up EAS Hosting, or configuring hosting environments and domains. Not for native builds or store releases - use the eas-app-stores skill for those.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\eas-hosting\\SKILL.md"
+  },
+  "eas-observe": {
+    "description": "EAS service (paid). Use for anything related to EAS Observe - adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive and ObserveInteractiveMarker, the useObserve hook, the Expo Router / React Navigation integrations for per-route metrics, user-defined events via `Observe.logEvent`, error reporting via ObserveErrorBoundary and `Observe.reportError`, and runtime config such as sampleRate and dispatchInDebug), querying via the EAS CLI (`eas observe:metrics-summary`, `observe:metrics`, `observe:routes`, `observe:events`, `observe:session`, `observe:versions`), interpreting the resulting metrics (cold/warm launch, TTR, TTI, navigation cold/warm TTR, update download, and the TTI frameRate/device/network params for triaging slow startups), or shipping an Observe integration inside a third-party package.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\eas-observe\\SKILL.md"
+  },
+  "eas-simulator": {
+    "description": "EAS service (paid). Run and control a user's app on a remote iOS/Android simulator hosted on EAS cloud. Read before running any `eas simulator:*` commands - it has the current syntax for this experimental API. Use whenever the user needs a simulator they can't run locally - 'run my app on a cloud simulator', 'use eas simulator to run/install/screenshot my app', 'I'm on Linux/Cursor and need an iOS device', 'no sim on this box / headless CI', 'let an agent click through my app and screenshot it', 'test my dev build on a remote sim with live reload', 'stream a sim to my browser' - even when they don't say 'EAS Simulator' or 'cloud'. On a host WITHOUT a local simulator (Linux, CI, cloud sandbox) it's the default; on macOS, do NOT auto-trigger for a plain 'run on the simulator' - use it only for a cloud/remote/shareable sim, an iOS version they lack, or an agent-driven session. NOT for local sims (expo run:ios, Xcode, Android Studio), EAS Build/Update, web preview, or physical devices.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\eas-simulator\\SKILL.md"
+  },
+  "eas-update-insights": {
+    "description": "EAS service (paid). Check the health of published EAS Update: crash rates, install/launch counts, unique users, payload size, and the split between embedded and OTA users per channel. Use when the user asks how an update is performing, whether a rollout is healthy, how many users are on the embedded build vs OTA, or wants to gate CI on update health.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\eas-update-insights\\SKILL.md"
+  },
+  "eas-workflows": {
+    "description": "EAS service (paid). Helps understand and write EAS workflow YAML files for Expo projects. Use this skill when the user asks about CI/CD or workflows in an Expo or EAS context, mentions .eas/workflows/, or wants help with EAS build pipelines or deployment automation.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\eas-workflows\\SKILL.md"
+  },
+  "expo-animation": {
+    "description": "Framework (OSS). Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing, how the gesture hands off, how it degrades. Writes the implementation with Reanimated, Gesture Handler, Expo Router and expo-haptics. Use when animating anything in an Expo app, adding gestures, sheets, screen transitions, press feedback or haptics, or fixing motion that stutters on device. For web animation use `animate`.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-animation\\SKILL.md"
+  },
+  "expo-app-clip": {
+    "description": "Framework (OSS). Add an iOS App Clip target to an Expo app. Use when the user mentions App Clip, AASA, apple-app-site-association, appclips, smart app banner, or wants to ship a lightweight iOS Clip invoked from a URL alongside their parent app.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-app-clip\\SKILL.md"
+  },
+  "expo-brownfield": {
+    "description": "Framework (OSS). Integrate Expo and React Native into an existing native iOS or Android app. Use when the user mentions brownfield, embedding React Native in a native app, AAR/XCFramework, or adding Expo to an existing Kotlin/Swift project. Covers both the isolated approach and the integrated approach.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-brownfield\\SKILL.md"
+  },
+  "expo-data-fetching": {
+    "description": "Framework (OSS). Use when implementing or debugging ANY network request, API call, or data fetching. Covers fetch API, React Query, SWR, error handling, caching, offline support, and Expo Router data loaders (`useLoaderData`).",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-data-fetching\\SKILL.md"
+  },
+  "expo-design-system": {
+    "description": "Framework (OSS). Build and maintain a design system inside an Expo app - a reusable theme of design tokens (color, spacing, typography, radius, shadow, motion), reusable component structure with variant/size/state prop conventions, and rules for when to extract a repeated view into a shared component. Use when creating or organizing theme files and design tokens (theme.ts / theme/), extending an existing theme or styling library (NativeWind, Tamagui, Restyle, Unistyles) in its own idiom, standardizing styles so screens (including AI-generated ones) look consistent and polished, building an in-app component library, or auditing an app for design-system drift (hardcoded colors, spacing, fonts). For platform styling specifics (semantic colors, HIG rules, native controls) use expo-native-ui; for folder layout of a new app use expo-project-structure.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-design-system\\SKILL.md"
+  },
+  "expo-dev-client": {
+    "description": "Framework (OSS). Build and distribute Expo development clients locally or via TestFlight for internal testing. For production TestFlight releases and store submission, use the eas-app-stores skill.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-dev-client\\SKILL.md"
+  },
+  "expo-dom": {
+    "description": "Framework (OSS). Use Expo DOM components to run web code in a webview on native and as-is on web. Migrate web code to native incrementally. For the end-to-end migration of a whole web app, use the expo-web-to-native skill.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-dom\\SKILL.md"
+  },
+  "expo-examples": {
+    "description": "Framework (OSS). Expo's official example projects - the expo/examples repo of ~70 `with-*` integrations (Stripe, Clerk, Supabase, OpenAI, maps, Reanimated, SQLite, Skia, NativeWind, and more). Use when integrating a third-party library or service into an existing Expo app and you want the canonical, version-matched pattern to adapt, or when scaffolding a new project from one with `npx create-expo --example`.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-examples\\SKILL.md"
+  },
+  "expo-module": {
+    "description": "Framework (OSS). Guide for creating and writing Expo native modules and views using the Expo Modules API (Swift, Kotlin, TypeScript). Covers module definition DSL, native views, shared objects, config plugins, lifecycle hooks, autolinking, and type system. Use when building or modifying native modules for Expo. Not for migrating an existing Swift module from the definition DSL to the Expo Modules API 2.0 macros; use expo-migrate-module (from the expo-experiments plugin) for that.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-module\\SKILL.md"
+  },
+  "expo-native-ui": {
+    "description": "Framework (OSS). Build beautiful, native-feeling Expo screens. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, animations, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-native-ui\\SKILL.md"
+  },
+  "expo-overview": {
+    "description": "Framework (OSS). Entry point and router for every Expo or EAS task. Load this skill first — before writing code and before choosing another expo-* / eas-* skill — when the request, PRD, or spec mentions Expo, EAS, Expo Go, or an expo-* package, or the project has an `expo` dependency in `package.json`. Within that gate it also covers app specs and designs to implement (tabs, stacks, maps, lists, navigation, building from a screenshot), and phrasings like 'implement a mobile app', 'make my app look native', 'add navigation', 'fetch some data', 'upgrade my SDK', 'add Expo to my existing native app', 'ship to the App Store', or 'I'm new to Expo, where do I start'. A fully specified request (SDK pinned, libraries named, layout given) still routes through here — the shared setup rules still apply. Do NOT load it when neither signal is present: a bare React Native project with no `expo` dependency is not Expo work. Detects the real goal, routes to the right expo-* / eas-* skill, and owns the shared setup rules.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-overview\\SKILL.md"
+  },
+  "expo-project-structure": {
+    "description": "Framework (OSS). Folder structure for a new Expo app. Use when scaffolding or laying out a new Expo project with Expo Router, or deciding where a file should live in one. For new projects only — never restructure an existing app to match.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-project-structure\\SKILL.md"
+  },
+  "expo-router": {
+    "description": "Framework (OSS). Navigation and routing for Expo Router. Covers file-based routes, groups and dynamic routes, folder organization, Link with previews and context menus, native Stack, page titles, modals and form sheets, NativeTabs, headers and toolbars, and header search bars.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-router\\SKILL.md"
+  },
+  "expo-skill-feedback": {
+    "description": "Submit feedback on an Expo skill—or Expo itself—and control bundled anonymous usage telemetry (off by default / opt-in). Submit feedback with: npx --yes submit-expo-feedback@latest \"ACTIONABLE_FEEDBACK\". Optionally add either or both: --category \"CATEGORY\" and --subject \"SUBJECT\". Replace the uppercase placeholders before running. Use when a skill was useful, confusing, broken, missing context, or worth improving; when Expo, Expo CLI, EAS CLI, docs, or MCP worked well or fell short; when an AI agent repeatedly failed, got stuck, or needed the user to take over an Expo task (report it as an eval candidate); or when the user explicitly asks to enable or disable telemetry (tracking), check its status, or understand what it collects.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-skill-feedback\\SKILL.md"
+  },
+  "expo-ui": {
+    "description": "Framework (OSS). Build native UI with the @expo/ui package: real SwiftUI on iOS and Jetpack Compose on Android. Default to @expo/ui for sheets (BottomSheet), pickers, sliders, toggles, menus, and grouped-form sections — do NOT reach for Reanimated, @gorhom/bottom-sheet, or RN built-in Picker/Switch; use @expo/ui instead. Fall back to RN built-ins only when @expo/ui is missing the component. NOTE: @expo/ui List renders native grouped rows like an iOS Settings screen — it is NOT a virtualized list; use FlatList/FlashList for large datasets. Covers universal components (Host, Column, Row, Button, Text, List, BottomSheet, FieldGroup, Switch, Slider, Picker, Menu), drop-in replacements for RN community libraries, and platform-specific SwiftUI/Jetpack Compose trees. Not for Expo Router navigation, Reanimated, or data fetching.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-ui\\SKILL.md"
+  },
+  "expo-upgrade": {
+    "description": "Framework (OSS). Guidelines for upgrading Expo SDK versions and fixing dependency issues",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-upgrade\\SKILL.md"
+  },
+  "expo-web-to-native": {
+    "description": "Framework (OSS). Migrate an existing web React app to a native iOS/Android app with Expo. Use when the user wants to turn a website into a mobile app, port a Next.js/Vite/CRA React codebase to React Native, reuse web code on native incrementally, or asks how web idioms (the DOM, CSS, React Router, localStorage, window) map to native. This is the end-to-end migration guide; use the `expo-dom` skill for the DOM-component mechanism itself.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\expo\\1.12.4\\skills\\expo-web-to-native\\SKILL.md"
+  },
+  "figma-code-connect": {
+    "description": "Creates and maintains Figma Code Connect template files that map Figma components to code snippets. Use when the user mentions Code Connect, Figma component mapping, design-to-code translation, or asks to create/update .figma.ts or .figma.js files.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-code-connect\\SKILL.md"
+  },
+  "figma-create-new-file": {
+    "description": "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `create_new_file` tool call. NEVER call `create_new_file` directly without loading this skill first. Trigger whenever the user wants a new blank Figma file — a new design, FigJam, or Slides file — or when you need a fresh file before calling `use_figma`. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard, /figma-create-new-file slides Q3 Review)",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-create-new-file\\SKILL.md"
+  },
+  "figma-design-to-code": {
+    "description": "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE calling the `get_design_context` Figma MCP tool. You MUST trigger this skill whenever the user wants to implement, build, port, or code up a Figma design as code. Example prompts (not exhaustive) are 'implement this Figma design', 'build this screen from Figma', 'turn this Figma into code', 'design to code'. This skill provides critical instructions and steps to the agent on how to correctly implement Figma designs in code and must NOT be skipped.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-design-to-code\\SKILL.md"
+  },
+  "figma-generate-design": {
+    "description": "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: 'write to Figma', 'create in Figma from code', 'push page to Figma', 'take this app/page and build it in Figma', 'create a screen', 'build a landing page in Figma', 'update the Figma screen to match code', 'convert this modal/dialog/drawer/panel to Figma'. This is the preferred workflow skill whenever the user wants to build or update a full page, modal, dialog, drawer, sidebar, panel, or any composed multi-section view in Figma from code or a description. Discovers design system components, variables, and styles from Code Connect files, existing screens, and library search, then imports them and assembles views incrementally section-by-section using design system tokens instead of hardcoded values.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-generate-design\\SKILL.md"
+  },
+  "figma-generate-diagram": {
+    "description": "MANDATORY prerequisite — load this skill BEFORE every `generate_diagram` tool call. NEVER call `generate_diagram` directly without loading this skill first. Trigger whenever the user asks to create, generate, draw, render, sketch, or build a diagram — flowchart, architecture diagram, sequence diagram, ERD or entity-relationship diagram, state diagram or state machine, gantt chart, or timeline. Also trigger when the user mentions Mermaid syntax or wants a system architecture, decision tree, dependency graph, API call flow, auth handshake, schema, or pipeline visualized in FigJam. Routes to type-specific guidance, sets universal Mermaid constraints, and tells you when to use a different diagram type or skip the tool entirely (mindmaps, pie charts, class diagrams, etc.).",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-generate-diagram\\SKILL.md"
+  },
+  "figma-generate-library": {
+    "description": "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, create individual components with proper variant sets and variable bindings, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. Also use when the user asks to create or generate any component in Figma — even a single one — since components require proper variable foundations, variant states, and design token bindings to be production-quality. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-generate-library\\SKILL.md"
+  },
+  "figma-generative-plugins": {
+    "description": "**MANDATORY prerequisite** — load this skill before calling `create_generative_plugin` or `update_generative_plugin`. Use when the user asks to create, author, change, fix, or extend a reusable generative Figma plugin.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-generative-plugins\\SKILL.md"
+  },
+  "figma-implement-motion": {
+    "description": "Translates Figma motion and animations into production-ready application code. Use when implementing animation/motion from a Figma design — user mentions \"implement this motion\", \"add animation from Figma\", \"animate this component\", provides a Figma URL whose node is animated, or when `get_design_context` returns motion data or instructs you to call `get_motion_context`.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-implement-motion\\SKILL.md"
+  },
+  "figma-shaders": {
+    "description": "**MANDATORY prerequisite** — load this skill before calling `create_shader` or `update_shader`. Use when the user asks to create, author, change, fix, or iterate on a shader effect, shader fill, custom effect, custom fill, or procedural shader in Figma.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-shaders\\SKILL.md"
+  },
+  "figma-swiftui": {
+    "description": "SwiftUI ↔ Figma translation. Use whenever the user mentions Swift, SwiftUI, iOS, iPhone, or iPad — in EITHER direction — translating a Figma design into SwiftUI (design → code), or pushing SwiftUI views / screens / tokens back into a Figma file (code → design). Triggers on phrases like 'implement this Figma design in SwiftUI', 'build this screen in Swift', 'push this SwiftUI view to Figma', 'mirror my Swift code in a Figma file', or whenever a Figma URL appears alongside `.swift` files / an `.xcodeproj`. Routes to a direction-specific reference doc; loads alongside `figma-use` for the code → design path.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-swiftui\\SKILL.md"
+  },
+  "figma-use": {
+    "description": "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-use\\SKILL.md"
+  },
+  "figma-use-figjam": {
+    "description": "This skill helps agents use Figma's use_figma MCP tool in the FigJam context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-use-figjam\\SKILL.md"
+  },
+  "figma-use-motion": {
+    "description": "Motion / animation context for the `use_figma` MCP tool — animating Figma nodes via manual keyframes, animation styles, easing, and timeline duration. Load alongside figma-use whenever a task involves adding, editing, or inspecting animation on a node.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-use-motion\\SKILL.md"
+  },
+  "figma-use-slides": {
+    "description": "This skill helps agents use Figma's use_figma MCP tool in the Slides context. Can be used alongside figma-use which has foundational context for using the use_figma tool.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\skills\\figma-use-slides\\SKILL.md"
+  },
+  "generate-project-plan": {
+    "description": "Generate a FigJam project plan board from a PRD plus codebase context. Interactive flow: research → propose sections → per-section deep research → per-section content + block-shape proposal → create FigJam → skeleton → fill → diagrams → wrap. Each content block (section, nested section, intro callout, table, multi-column text, sticky column, diagram section, metadata strip) has its own subskill reference file. Use when the user asks for 'project plan in FigJam', 'interactive project plan', '/generate-project-plan', or provides a PRD and wants per-section confirmation on content + rendering.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\workflow-skills\\generate-project-plan\\SKILL.md"
+  },
+  "video-interaction-mapper": {
+    "description": ">",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\figma\\2.2.107\\workflow-skills\\video-interaction-mapper\\SKILL.md"
+  },
+  "firecrawl": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl\\SKILL.md"
+  },
+  "firecrawl-agent": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-agent\\SKILL.md"
+  },
+  "firecrawl-crawl": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-crawl\\SKILL.md"
+  },
+  "firecrawl-developer-index": {
+    "description": "Search issues, merged pull requests, READMEs, and documentation. Use when the question is how a library or API behaves, what an error means, or whether a bug was fixed; prefer this over a general web page.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-developer-index\\SKILL.md"
+  },
+  "firecrawl-download": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-download\\SKILL.md"
+  },
+  "firecrawl-interact": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-interact\\SKILL.md"
+  },
+  "firecrawl-map": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-map\\SKILL.md"
+  },
+  "firecrawl-monitor": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-monitor\\SKILL.md"
+  },
+  "firecrawl-parse": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-parse\\SKILL.md"
+  },
+  "firecrawl-research-index": {
+    "description": "Find the papers that answer a research query in Firecrawl's research paper index — a corpus of paper abstracts whose largest share is biomedical and life-science literature (PubMed, bioRxiv, medRxiv), alongside arXiv preprints in CS, physics, and math — using semantic search, semantic and structural expansion, and in-body verification. Use this skill for literature-finding and paper-retrieval tasks of any kind, including clinical, biomedical, drug, gene, disease, and other life-science questions, whether the answer is a single paper or a full multi-paper set. The index is reached only through the `firecrawl_research_*` MCP tools or the `firecrawl research` CLI subcommands. Calling `firecrawl_search` with its `categories` option set to `[\"research\"]` is a different feature — it filters ordinary web search to research-affiliated websites (the list includes PubMed, bioRxiv, medRxiv, arXiv, and publisher sites) and returns page results from them, without querying the paper records in this index.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-research-index\\SKILL.md"
+  },
+  "firecrawl-scrape": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-scrape\\SKILL.md"
+  },
+  "firecrawl-search": {
+    "description": "|",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\firecrawl\\1.0.9\\skills\\firecrawl-search\\SKILL.md"
+  },
+  "hf-mcp": {
+    "description": "Use Hugging Face Hub via MCP server tools. Search models, datasets, Spaces, papers. Get repo details, fetch documentation, run compute jobs, and use Gradio Spaces as AI tools. Available when connected to the HF MCP server.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\hf-mcp\\skills\\hf-mcp\\SKILL.md"
+  },
+  "hf-cli": {
+    "description": "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face infrastructure; managing Hugging Face repos; discussions and pull requests; browsing models, datasets and spaces; reading, searching, or browsing academic papers; managing collections; querying datasets; configuring spaces; setting up webhooks; or deploying and managing HF Inference Endpoints. Make sure to use this skill whenever the user mentions 'hf', 'huggingface', 'Hugging Face', 'huggingface-cli', or 'hugging face cli', or wants to do anything related to the Hugging Face ecosystem and to AI and ML in general. Also use for cloud storage needs like training checkpoints, data pipelines, or agent traces. Use even if the user doesn't explicitly ask for a CLI command. Replaces the deprecated `huggingface-cli`.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-cli\\SKILL.md"
+  },
+  "hf-cloud-aws-context-discovery": {
+    "description": "Discover the user's local AWS context (active profile, region, account ID, caller identity) at the start of any AWS task. Use this skill before any other AWS work — deploying to SageMaker, creating resources, calling AWS APIs, or anything that touches an AWS account. Use it especially when the user has not specified a region or profile explicitly, when they say things like \"use my AWS account\", \"deploy to AWS\", \"use my profile\", or when about to make any AWS CLI or SDK call. Never guess the region or account ID — always use this skill to read it from the local configuration first.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-cloud-aws-context-discovery\\SKILL.md"
+  },
+  "hf-cloud-python-env-setup": {
+    "description": "Set up an isolated Python environment for SageMaker / AWS work, with the right Python version and current boto3. Use this skill whenever Python code will be executed for a SageMaker deployment, training job, or any AWS automation — including when about to run `pip install`, when about to invoke `boto3`, when creating or activating a virtualenv, or when the user asks to \"set up the environment\". Never use system Python and never `pip install` into it. Always isolate. This skill prevents the most common failure modes: wrong Python version, dependency conflicts, and stale SDKs.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-cloud-python-env-setup\\SKILL.md"
+  },
+  "hf-cloud-sagemaker-deployment-planner": {
+    "description": "Plan and coordinate the deployment of a model to Amazon SageMaker AI. Use this skill whenever the user wants to deploy, host, serve, or expose a model on SageMaker or AWS — including phrases like \"deploy a model\", \"host this LLM on AWS\", \"serve this embedding model\", \"deploy a reranker\", \"deploy a text-to-image / diffusion model\", \"host this for async inference\", \"create an endpoint\", \"serve my fine-tuned model\", or any request that involves making a model available for inference on AWS. Use this even when the user is vague (e.g. \"I just want to get this running on AWS, you figure it out\"). Works for text-generation LLMs, embedding models, rerankers, classifiers, text-to-image / diffusion models — picks the right serving stack and chooses between real-time and async inference. This is the entry-point skill for SageMaker deployment work — it asks clarifying questions, picks a deployment pathway, and coordinates the other deployment skills.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-cloud-sagemaker-deployment-planner\\SKILL.md"
+  },
+  "hf-cloud-sagemaker-iam-preflight": {
+    "description": "Ensure a usable SageMaker execution role exists before deploying or training. Use this skill whenever about to create a SageMaker endpoint, model, training job, or any resource that requires an execution role. Use it especially when the user has not provided a role ARN explicitly, when scripts are about to call `iam:CreateRole`, or when an AccessDenied error mentions an IAM action. Never blindly call `iam:CreateRole` — always check for existing roles first. This skill prevents the most common SageMaker deployment failure: trying to create IAM resources from an SSO principal that has no IAM write permissions.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-cloud-sagemaker-iam-preflight\\SKILL.md"
+  },
+  "hf-cloud-sagemaker-production-defaults": {
+    "description": "Create a SageMaker endpoint (real-time, real-time scale-to-zero, or async) with autoscaling, CloudWatch alarms, and tagging enabled by default. Use this skill whenever about to create a SageMaker endpoint, write deployment code that calls `create_endpoint`, or finalize a deployment after the image URI and IAM role are known. Provides deploy.py for real-time endpoints, deploy_ic.py for real-time endpoints that scale to zero instances via inference components, and deploy_async.py for async endpoints (also scale-to-zero). This is the last step in the SageMaker deployment workflow. Never generate a bare `create_endpoint` call without these defaults — endpoints without autoscaling or alarms are demos, not deployments.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-cloud-sagemaker-production-defaults\\SKILL.md"
+  },
+  "hf-cloud-serving-image-selection": {
+    "description": "Pick the right serving container for a SageMaker model deployment and find its current image URI. Use this skill whenever about to deploy a model to a SageMaker endpoint and an image URI needs to be chosen — including when the user says \"deploy this LLM\", \"host this HuggingFace model\", \"serve this fine-tuned model\", \"deploy this embedding model\", \"host a reranker\", \"serve a sentence-transformers model\", or when about to hardcode any container URI in deployment code. HuggingFace-curated Deep Learning Containers are ALWAYS preferred: HuggingFace vLLM (LLMs and generative rerankers), HuggingFace vLLM-Omni (multimodal), TEI (embeddings/cross-encoder rerankers), HF Inference Toolkit (other transformers). Generic images (AWS vLLM, DJL-LMI, SGLang) are used only when no HuggingFace image is compatible — never merely because they carry a newer version. Never hardcode a container URI from memory and never default to TGI. Prevents stale-image failures and wrong-region URIs.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-cloud-serving-image-selection\\SKILL.md"
+  },
+  "hf-mem": {
+    "description": "Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\hf-mem\\SKILL.md"
+  },
+  "huggingface-best": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-best\\SKILL.md"
+  },
+  "huggingface-community-evals": {
+    "description": "Run evaluations for Hugging Face Hub models using inspect-ai and lighteval on local hardware. Use for backend selection, local GPU evals, and choosing between vLLM / Transformers / accelerate. Not for HF Jobs orchestration, model-card PRs, .eval_results publication, or community-evals automation.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-community-evals\\SKILL.md"
+  },
+  "huggingface-datasets": {
+    "description": "Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-datasets\\SKILL.md"
+  },
+  "huggingface-gradio": {
+    "description": "Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-gradio\\SKILL.md"
+  },
+  "huggingface-llm-trainer": {
+    "description": "Train or fine-tune language and vision models using TRL (Transformer Reinforcement Learning) or Unsloth with Hugging Face Jobs infrastructure. Covers SFT, DPO, GRPO and reward modeling training methods, plus GGUF conversion for local deployment. Includes guidance on the TRL Jobs package, UV scripts with PEP 723 format, dataset preparation and validation, hardware selection, cost estimation, Trackio monitoring, Hub authentication, model selection/leaderboards and model persistence. Use for tasks involving cloud GPU training, GGUF conversion, or when users mention training on Hugging Face Jobs without local GPU setup.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-llm-trainer\\SKILL.md"
+  },
+  "huggingface-local-models": {
+    "description": "Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-local-models\\SKILL.md"
+  },
+  "huggingface-lora-space-builder": {
+    "description": "Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. Also triggers when someone describes a LoRA they trained or hosts on the Hub and wants to share it. Covers picking the right base pipeline and `diffusers` inference recipe, designing a UI tailored to the LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), respecting model-card recommendations (trigger words, steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU hardware as a private Space by default.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-lora-space-builder\\SKILL.md"
+  },
+  "huggingface-paper-publisher": {
+    "description": "Publish and manage research papers on Hugging Face Hub. Supports creating paper pages, linking papers to models/datasets, claiming authorship, and generating professional markdown-based research articles.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-paper-publisher\\SKILL.md"
+  },
+  "huggingface-papers": {
+    "description": "Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked models/datasets/spaces, Github repo and project page. Use when the user shares a Hugging Face paper page URL, an arXiv URL or ID, or asks to summarize, explain, or analyze an AI research paper.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-papers\\SKILL.md"
+  },
+  "huggingface-spaces": {
+    "description": "Build, deploy, and maintain applications on Hugging Face Spaces — Gradio / Docker / Static SDKs, ZeroGPU and dedicated hardware, model loading, debugging, buckets, inference providers, community grants. Use whenever the user asks to create or host an app on Hugging Face, port code onto ZeroGPU, fix a Space that won't build or run, or otherwise work with `hf spaces …`, `@spaces.GPU`, Space README frontmatter, or the `spaces` Python package.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-spaces\\SKILL.md"
+  },
+  "huggingface-tool-builder": {
+    "description": "Use this skill when the user wants to build tool/scripts or achieve a task where using data from the Hugging Face API would help. This is especially useful when chaining or combining API calls or the task will be repeated/automated. This Skill creates a reusable script to fetch, enrich or process data.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-tool-builder\\SKILL.md"
+  },
+  "huggingface-trackio": {
+    "description": "Track and visualize ML training experiments with Trackio. Use when logging metrics during training (Python API), firing alerts for training diagnostics, or retrieving/analyzing logged metrics (CLI). Supports real-time dashboard visualization, alerts with webhooks, HF Space syncing, and JSON output for automation.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-trackio\\SKILL.md"
+  },
+  "huggingface-vision-trainer": {
+    "description": "Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3, MobileViT, ResNet, ViT/DINOv3 — plus any Transformers classifier), and SAM/SAM2 segmentation using Hugging Face Transformers on Hugging Face Jobs cloud GPUs. Covers COCO-format dataset preparation, Albumentations augmentation, mAP/mAR evaluation, accuracy metrics, SAM segmentation with bbox/point prompts, DiceCE loss, hardware selection, cost estimation, Trackio monitoring, and Hub persistence. Use when users mention training object detection, image classification, SAM, SAM2, segmentation, image matting, DETR, D-FINE, RT-DETR, ViT, timm, MobileNet, ResNet, bounding box models, or fine-tuning vision models on Hugging Face Jobs.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-vision-trainer\\SKILL.md"
+  },
+  "huggingface-zerogpu": {
+    "description": "AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU. Use when writing or reviewing code that uses `@spaces.GPU`, configuring `python_version` or `requirements.txt` for a ZeroGPU Space, or handling ZeroGPU-specific code constraints — pickle-based process isolation, `gr.State` semantics across the worker boundary, no `torch.compile` (use AoTI instead), CUDA wheel-only builds (no `nvcc` at build or runtime), large vs xlarge sizing, and dynamic duration callables. Make sure to use this skill whenever the user mentions ZeroGPU, `@spaces.GPU`, or the `spaces` Python package, or hits ZeroGPU-specific code errors like `PicklingError` across the worker boundary, `illegal duration`, or `flash-attn` wheel-build failures — even when the user does not explicitly ask for ZeroGPU coding guidance. Trigger on `import spaces` or `@spaces.GPU` in code.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\huggingface-zerogpu\\SKILL.md"
+  },
+  "train-sentence-transformers": {
+    "description": "Train or fine-tune sentence-transformers models across `SentenceTransformer` (bi-encoder, dense or static embedding model for retrieval, similarity, clustering, classification, paraphrase mining, dedup, multimodal), `CrossEncoder` (reranker, pair scoring for two-stage retrieval / pair classification), `SparseEncoder` (SPLADE, sparse embedding model for learned-sparse retrieval), and `MultiVectorEncoder` (ColBERT / late-interaction, per-token embeddings scored with MaxSim). Covers loss selection, hard-negative mining, evaluators, distillation, LoRA, Matryoshka, and Hugging Face Hub publishing. Use for any sentence-transformers training task.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\train-sentence-transformers\\SKILL.md"
+  },
+  "transformers-js": {
+    "description": "Use Transformers.js to run state-of-the-art machine learning models directly in JavaScript/TypeScript. Supports NLP (text classification, translation, summarization), computer vision (image classification, object detection), audio (speech recognition, audio classification), and multimodal tasks. Works in browsers and server-side runtimes (Node.js, Bun, Deno) with WebGPU/WASM using pre-trained models from Hugging Face Hub.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\transformers-js\\SKILL.md"
+  },
+  "trl-training": {
+    "description": "Train and fine-tune transformer language models using TRL (Transformers Reinforcement Learning). Supports SFT, DPO, GRPO, KTO, RLOO and Reward Model training via CLI commands.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\huggingface-skills\\1.0.27\\skills\\trl-training\\SKILL.md"
+  },
+  "nvidia-skill-finder": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\nvidia-skills\\1.4.0\\skills\\nvidia-skill-finder\\SKILL.md"
+  },
+  "writing-great-skills": {
+    "description": "Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\.claude\\skills\\writing-great-skills\\SKILL.md"
+  },
+  "wix-app": {
+    "description": "Build and review Wix CLI app extensions — dashboard pages, modals, plugins, menu plugins, custom element widgets, Editor React components, site plugins, embedded scripts, backend APIs, backend events, service plugins, data collections, and App Market readiness. Use when building ANY feature or extension for a Wix CLI app or preparing a Wix app for App Market review. Triggers on: add, build, create, implement, help me, dashboard, widget, plugin, backend, API, event, collection, embedded script, service plugin, Editor React component, checkout, shipping, tax, discount, SPI, CMS, schema, tracking, popup, admin panel, menu item, modal, validate, test, verify, register extension, App Market, app review, submission readiness.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-app\\SKILL.md"
+  },
+  "wix-auth": {
+    "description": "Authenticate with Wix to obtain an access token for calling Wix APIs. Use when an agent needs a valid Wix access token and has none, or when the stored token is expired.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-auth\\SKILL.md"
+  },
+  "wix-base44-connector": {
+    "description": "Build on Wix from the Base44 builder sandbox — this file is the complete guide (site context, doc discovery, API contracts, who calls Wix from where), and scripts/utils.js is its helper module, loaded from disk per exec. Triggers: build a Base44 app on a connected Wix site, look up a Wix API from the sandbox, decide frontend vs backend for a Wix call.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-base44-connector\\SKILL.md"
+  },
+  "wix-design-system": {
+    "description": "Wix Design System component reference. Use when building UI with @wix/design-system, choosing components, checking props and examples, or writing tests with component testkits. Triggers on \"what component\", \"how do I make\", \"WDS\", \"show me props\", \"testkit\", \"driver\", or component names like Button, Card, Modal, Box, Text.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-design-system\\SKILL.md"
+  },
+  "wix-docs": {
+    "description": "Look up the Wix API/SDK documentation to confirm an exact endpoint, HTTP method, request/response shape, field, enum, or error before writing Wix code — never guess a Wix API from memory. A lookup is a short flow: find the right page, then read it. Two ways: (1) plain `curl` (zero dependencies) — find a page by **semantic search** (`POST /mcp-docs-search/v1/docs/search`, natural-language `{ search_term, document_type }`) **or by browsing** the docs tree as a menu — a structured, typed, counted browse of the REST API reference (`POST /mcp-docs-search/v1/docs/menu/browse`), or the `.md` menu tree from the `llms.txt` root for any portal — then read the page by appending `.md` to its URL; and (2) the Wix MCP doc tools when your agent has them. Triggers: look up a Wix API, find the Wix endpoint/method, confirm a Wix request body or field, verify a Wix API shape, explore Wix docs, which Wix API do I call, read a Wix method schema.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-docs\\SKILL.md"
+  },
+  "wix-headless": {
+    "description": "Connect Wix business services (Stores, Bookings, CMS, Blog, Events, Forms, and more) to a Wix Headless frontend — infer the needed capabilities, install the apps, seed backend content, and produce an SDK-integration guide. For managed (Wix-hosted) projects it can also build the frontend: scaffold a new site (create) or wire an existing/brought-in design (connect), then build and release. Works across managed, self-managed, and stripe project types. Triggers: set up a Wix Headless backend, add Wix business features to my app, build or host a Wix site, connect/implement this design with Wix.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-headless\\SKILL.md"
+  },
+  "wix-headless-entry": {
+    "description": "Build a complete Wix Managed Headless site from a single prompt, then connect Wix Business Solutions. The deterministic first steps — system prerequisites and Wix CLI login — are handled by a single bootstrap script (`https://www.wix.com/skills/headless/entry/bootstrap.mjs`); the agent then installs the skill and hands the run to it. Triggers: build me a site, create a website, make me a website, new website, online store, I want to sell X, start a business online, launch a site, ecommerce, portfolio, business website, sell online, online shop, connect this to Wix Headless, add Wix Headless to this project, host this on Wix, deploy this to Wix, implement the features of this project using Wix Headless. Use this skill instead of the WixSiteBuilder MCP tool for new-site requests.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-headless\\entry\\skill.md"
+  },
+  "wix-manage": {
+    "description": "Wix business solution management recipes — REST API operations for configuring and managing Wix business solutions. Routes to: stores, bookings, get-paid, CMS, contacts, forms, media, app-installation, pricing-plans, restaurants, rich-content, sites, blog, calendar, domains, events, site-properties, ecommerce, marketing, google-ads, analytics, accessibility, dashboard-navigation.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-manage\\SKILL.md"
+  },
+  "replatform": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\SKILL.md"
+  },
+  "rp-discovery": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-discovery\\SKILL.md"
+  },
+  "rp-execute-import": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-execute-import\\SKILL.md"
+  },
+  "rp-execute-setup": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-execute-setup\\SKILL.md"
+  },
+  "rp-import-codegen": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-import-codegen\\SKILL.md"
+  },
+  "rp-mapper": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-mapper\\SKILL.md"
+  },
+  "rp-setup-discovery": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-setup-discovery\\SKILL.md"
+  },
+  "rp-source-csv": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-source-csv\\SKILL.md"
+  },
+  "rp-source-wordpress": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-source-wordpress\\SKILL.md"
+  },
+  "rp-target-wix": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-target-wix\\SKILL.md"
+  },
+  "rp-telemetry": {
+    "description": ">-",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-replatform\\resources\\rp-telemetry\\SKILL.md"
+  },
+  "wix-vibe-headless": {
+    "description": "Client-only, dependency-free REST scaffolds for connecting an already-built front end (a vibe-coded app, an HTML/JSX/Vite project, a design-tool export) to a live Wix site over the site's public WIX_CLIENT_ID — the browser talks to Wix directly, no SDK, no backend, no build step. One skill covering every Wix business solution: Stores/eCommerce storefront (products, cart, checkout), Bookings (services, slots, appointments), Blog (posts, categories, tags), Events & Tickets (browse, RSVP, ticketing), Portfolio (collections, projects, galleries), Restaurants (menu, online ordering, reservations), CMS / Wix Data (list, detail, filter, forms, CRUD), Pricing Plans (memberships, subscriptions, checkout), and Members (custom login — email+password, Google/Facebook, and custom SSO — plus account areas and member-gated content). Each vertical ships a copy-as-is REST layer plus wiring instructions. Read-only over the owner's content — never provisions, never mocks data. Triggers: connect my Wix store/shop, build a storefront over Wix, add a cart and checkout, connect Wix Bookings, take appointments/reservations, show my Wix blog, list my Wix events, sell tickets, take RSVPs, build a portfolio from Wix Portfolio, show my restaurant menu / order online / book a table, display my Wix CMS collection, wire a contact form to Wix, sell membership/subscription plans, add member login / sign up, let members log in with Google or Facebook, custom login page, account / profile page, gate content behind login, sign in with SSO/Okta, 'here is my WIX_CLIENT_ID', connect this app to my Wix site over REST. Use this for CLIENT-ONLY REST integration over an existing site; use `wix-headless` instead for SDK + Wix CLI builds, hosting, and one-prompt new-site creation.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\claude-plugins-official\\wix\\1.16.1\\skills\\wix-vibe-headless\\SKILL.md"
+  },
+  "android-dev": {
+    "description": "Build, run, inspect, and lightly automate Android apps with the android-emulator MCP tools.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\android-emulator-plugin\\skills\\android-dev\\SKILL.md"
+  },
+  "control-browser": {
+    "description": "Use when opening, navigating, inspecting, testing, clicking, typing, filling, screenshotting, or verifying web pages and local HTTP targets (localhost, 127.0.0.1, ::1) inside ZCode, including browser/web-UI automation, rendered-page scraping, frontend checks, and visible page-state reading. Prefer this over Computer Use for anything that stays inside a web page, unless the user explicitly asks for Computer Use. Main agent only.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\browser-use-plugin\\skills\\control-browser\\SKILL.md"
+  },
+  "web-gui-tester": {
+    "description": "Use the browser automation tooling available in the session to test web frontends interactively in a purely GUI-based, black-box manner: simulate real user clicks, text input, scrolling, and other actions; use screenshots for visual verification and read-only DOM inspection for cross-validation; and produce a final test report. Suitable for verifying whether web functionality works correctly, reproducing frontend bugs, checking interaction feedback and layout styling, or conducting exploratory testing of a page. Use this skill when the user asks to test a webpage/frontend feature, verify UI behavior, reproduce a page bug, or provides only a URL and asks you to “test it.”",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\browser-use-plugin\\skills\\web-gui-tester\\SKILL.md"
+  },
+  "computer-use": {
+    "description": "Use when a task needs a native desktop app's own UI or the OS. For anything inside a web page, use Browser Use. Main agent only.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\zcode-cua-plugin\\skills\\computer-use\\SKILL.md"
+  },
+  "docx": {
+    "description": "Complete DOCX document creation, editing, and analysis capabilities with support for revisions, comments, formatting preservation, and text extraction. Also handles Word format conversion: legacy .doc → .docx, DOCX → PDF, DOCX → images (PNG/JPG) for visual review or previews, and DOCX → Markdown/plain text extraction. Use for creating new documents, modifying content, handling revisions, adding comments, other professional Word document tasks, or when the user asks to convert, export, or render a Word document to another format (e.g. 'Word转PDF', 'doc转docx', 'export this docx as PDF/images').",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\documents-plugin\\skills\\docx\\SKILL.md"
+  },
+  "pdf": {
+    "description": "Professional PDF toolkit covering four production workflows: reports, creative visuals, academic LaTeX, and existing PDF processing. Routes automatically by document type and supports reports, posters, papers, resumes, extraction, merging, splitting, and form filling. Use this skill for any conversion whose output is a PDF: Office → PDF (.docx/.doc/.pptx/.ppt/.xlsx/.xls/.odt/.odp/.ods/.rtf/.csv/.txt → PDF), HTML → PDF, and LaTeX/.tex → PDF; also PDF → images, PDF → text, and PDF → tables when reading a PDF apart. Trigger when the user asks to convert, export, render, print, or turn a file into a PDF, or to merge/split/extract from one — including phrasings like 'Word转PDF', 'PPT转PDF', 'Excel转PDF', 'html转pdf', '导出为PDF', 'save/export as PDF', or 'PDF转图片/文字'.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\pdf-plugin\\skills\\pdf\\SKILL.md"
+  },
+  "pptx": {
+    "description": "Use this skill any time a presentation file is the primary input or output. Covers: creating new .pptx decks from scratch or from an outline/document (pptxgenjs / python-pptx); editing and restyling an existing .pptx; reading and extracting text/structure from a deck (markitdown); and rendering a deck to PDF (LibreOffice) or to per-slide PNG images (pdftoppm) for previews, thumbnails, or visual review. Trigger when the user references a .pptx file by name or path, says 'make/build a deck, slides, presentation, PPT, 幻灯片, 演示文稿, 汇报/路演材料', or asks to convert, export, render, or preview slides as PDF or images (e.g. 'PPT转PDF', 'ppt导出图片', 'turn these slides into a PDF').",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\presentations-plugin\\skills\\pptx\\SKILL.md"
+  },
+  "xlsx": {
+    "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file; create a new spreadsheet from scratch or from other data sources; analyze data and output results as an Excel file with charts; convert between tabular file formats (CSV/TSV/JSON/PDF-table → XLSX, or XLSX → CSV/JSON); clean, merge, pivot, or transform tabular data. Trigger especially when the user references a spreadsheet file by name or path, says 'make a table/report/model', mentions Excel/CSV/数据分析/报表/汇总, asks to convert or export a spreadsheet (e.g. 'csv转excel', 'json转表格', 'export as CSV'), or wants data visualization inside a spreadsheet.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\spreadsheets-plugin\\skills\\xlsx\\SKILL.md"
+  },
+  "docx-viewer": {
+    "description": "View and discuss Word (.docx) files with the user in the Documents side panel. Use when the user wants to open, read, review or ask about a Word document in the workspace, refers to something they selected or referenced in the Documents viewer, or should check a document you just produced.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\documents-plugin\\skills\\docx-viewer\\SKILL.md"
+  },
+  "ios-dev": {
+    "description": "Build, run, inspect, and lightly automate iOS simulator apps with the ios-simulator MCP tools.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\ios-simulator-plugin\\skills\\ios-dev\\SKILL.md"
+  },
+  "pdf-viewer": {
+    "description": "View and discuss PDF files with the user in the PDF side panel. Use when the user wants to open, read, review or ask about a PDF in the workspace, refers to something they selected or referenced in the PDF viewer, or should check a PDF you just produced.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\pdf-plugin\\skills\\pdf-viewer\\SKILL.md"
+  },
+  "plugin-creator": {
+    "description": "Create or update ZCode plugin source and a local test marketplace, then guide the user to add, install, update and try it in the app. Use for new plugins or changes to an existing plugin's capabilities, manifest or local distribution.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\plugin-creator-plugin\\skills\\plugin-creator\\SKILL.md"
+  },
+  "pptx-viewer": {
+    "description": "View and discuss PowerPoint (.pptx) decks with the user in the Presentations side panel. Use when the user wants to open, review or ask about a deck in the workspace together, refers to a slide or shape they selected or referenced in the Presentations viewer, or should check a deck you just produced.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\presentations-plugin\\skills\\pptx-viewer\\SKILL.md"
+  },
+  "restore-legacy-sessions": {
+    "description": "Use when ZCode needs to inspect, plan, or execute restoration of old ACP-era ZCode sessions from ~/.zcode/v2/sessions into the new ZCode task/session stores. Trigger when the user wants to choose a previous agent, select a workspace to restore, pick a specific historical conversation, dry-run legacy session migration, or reason about tasks-index.sqlite and ~/.zcode/cli/db/db.sqlite consistency.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\restore-legacy-sessions-plugin\\skills\\restore-legacy-sessions\\SKILL.md"
+  },
+  "xlsx-viewer": {
+    "description": "View and discuss Excel (.xlsx) workbooks with the user in the Spreadsheets side panel. Use when the user wants to open, look through or ask about a workbook in the workspace together, refers to cells they selected or referenced in the Spreadsheets viewer, or should check a workbook you just produced.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\spreadsheets-plugin\\skills\\xlsx-viewer\\SKILL.md"
+  },
+  "visualize": {
+    "description": "Create visualizations and interactive tools directly in conversation. Proactively use to show how something works; explore 'what happens when', 'what changes', or 'help me understand'; compare or inspect; create simulations, maps, charts, graphs, and mockups. Use standard tools for static scientific figures.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\visualize-plugin\\skills\\visualize\\SKILL.md"
+  },
+  "diagnosing-commands": {
+    "description": "Use to diagnose and fix ZCode custom slash-command (/command) configuration problems in the ZCode client. Applies when a command is missing, is overridden by a higher-precedence command of the same name, has a frontmatter parse error, is dropped for having an empty body, has an invalid name, does not substitute $ARGUMENTS/$1, uses a colon rather than a slash for nested names, has a misspelled frontmatter key, or disappears because the plugin providing it is disabled. Provides the discovery order, how to inspect commands in the client, common pitfalls, and a step-by-step localization and repair workflow.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\zcode-guide-plugin\\skills\\diagnosing-commands\\SKILL.md"
+  },
+  "diagnosing-hooks": {
+    "description": "Use to diagnose and fix ZCode hook configuration problems in the ZCode client. Applies when a hook does not trigger, an event name is wrong, a matcher does not match a tool name, a script is not executable, template variables are not expanded, a timeout unit is mistaken (seconds versus milliseconds), the command and process field styles are mixed, a hook's JSON output fails validation, a hook blocks the session unexpectedly, or configuration-file hooks are not enabled. Provides configuration sources, the hooks.json schema, how to inspect hooks in the client, and a step-by-step localization and repair workflow.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\zcode-guide-plugin\\skills\\diagnosing-hooks\\SKILL.md"
+  },
+  "diagnosing-mcp": {
+    "description": "Use to diagnose and fix ZCode MCP (Model Context Protocol) server configuration problems in the ZCode client. Applies when an MCP server will not connect, its tools (mcp__server__tool) do not appear, it shows as disabled or failed, connections time out, a command cannot be found, template variables are not expanded, or a server defined in a configuration file has no effect. Provides configuration locations, how to inspect status in Settings, common pitfalls, and a step-by-step localization and repair workflow.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\zcode-guide-plugin\\skills\\diagnosing-mcp\\SKILL.md"
+  },
+  "diagnosing-plugins": {
+    "description": "Use to diagnose and fix ZCode plugin and marketplace problems in the ZCode client. Applies when a plugin is not listed, adding a marketplace or installing a plugin fails, a plugin is enabled but its skills or commands are missing, a built-in plugin still appears after being disabled, a plugin is not enabled as expected, a plugin.json manifest has a parse error, a plugin name is invalid, a dependency is unresolved or blocked across marketplaces, or a sensitive configuration value cannot be entered in the interface. Provides the plugin lifecycle, manifest schema, how to manage plugins in the client, and a step-by-step localization and repair workflow.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\zcode-guide-plugin\\skills\\diagnosing-plugins\\SKILL.md"
+  },
+  "diagnosing-skills": {
+    "description": "Use to diagnose and fix ZCode skill configuration problems in the ZCode client. Applies when a skill is not discovered, is installed but does not trigger automatically, is shadowed by a higher-precedence skill of the same name, is disabled by configuration, has a SKILL.md frontmatter error, fails to load because its description is too long, or disappears because the plugin providing it is disabled. Provides the discovery order, how to inspect skills in the client, common pitfalls, and a step-by-step localization and repair workflow.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\zcode-guide-plugin\\skills\\diagnosing-skills\\SKILL.md"
+  },
+  "zcode-configuration-guide": {
+    "description": "Use when configuring ZCode's extension resources (MCP servers, slash commands, skills, hooks, and plugins) or instruction files such as AGENTS.md in the ZCode client. Explains where each resource is configured at the user and workspace scope, the discovery order, precedence, and merge rules, plus guidance on which location to choose. Use when someone asks how to add an MCP server, command, skill, hook, plugin, or AGENTS.md instructions, where a configuration file lives, why a configuration is not taking effect, or needs routing to a specific diagnostic skill.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\zcode-guide-plugin\\skills\\zcode-configuration-guide\\SKILL.md"
+  },
+  "dynamic-workflows": {
+    "description": "Use when writing, debugging, or resubmitting a dynamic-workflow script for the CreateWorkflow tool: choosing subagent topology, typing subagent results, fanning out over files or git, gating loops on world.run commands, testing pieces with EvalWorkflowSnippet, planner-reviewer loops, confirming findings before reporting them, report() salvage, the report shape a run returns, publishing artifacts the user opens, leaving typed holes to fill mid-run, and handling a backgrounded run.",
+    "path": "C:\\Program Files\\ZCode\\resources\\glm\\packages\\bundled-skills\\skills\\dynamic-workflows\\SKILL.md"
+  },
+  "developing-mcp-apps": {
+    "description": "Develop, migrate, build, and test MCP Apps for ZCode using the official MCP Apps SDK. Covers ZCode plugin manifests, persistent panel entries, host capabilities, and standalone distribution.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\cache\\zcode-plugins-official\\zcode-mcp-app-dev\\0.1.1\\skills\\developing-mcp-apps\\SKILL.md"
+  },
+  "access": {
+    "description": "Manage Telegram channel access — approve pairings, edit allowlists, set DM/group policy. Use when the user asks to pair, approve someone, check who's allowed, or change policy for the Telegram channel.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\external_plugins\\telegram\\skills\\access\\SKILL.md"
+  },
+  "configure": {
+    "description": "Set up the Telegram channel — save the bot token and review access policy. Use when the user pastes a Telegram bot token, asks to configure Telegram, asks \"how do I set this up\" or \"who can reach me,\" or wants to check channel status.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\external_plugins\\telegram\\skills\\configure\\SKILL.md"
+  },
+  "cardputer-buddy": {
+    "description": "Iterate on the Cardputer-Adv MicroPython app bundle (Claude Buddy, Snake, Hello) after the device is already provisioned via m5-onboard. Use when the user wants to add a new app, push a single changed .py without re-flashing, watch device serial logs, or run a one-shot REPL command. Trigger on \"add an app\", \"push to the cardputer\", \"tail the device\", \"run on the device\", or follow-up work after /maker-setup.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\cwc-makers\\skills\\cardputer-buddy\\SKILL.md"
+  },
+  "m5-onboard": {
+    "description": "End-to-end onboarding for a freshly-plugged-in M5Stack ESP32 device (Cardputer, Cardputer-Adv, Core, CoreS3, Stick) — detect on USB, flash UIFlow 2.0 firmware, and install the Claude Buddy MicroPython app bundle. Use whenever the user plugs in or wants to flash/provision/reset an M5Stack or ESP32 board, or says \"m5-onboard go\".",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\cwc-makers\\skills\\m5-onboard\\SKILL.md"
+  },
+  "example-command": {
+    "description": "An example user-invoked skill that demonstrates frontmatter options and the skills/<name>/SKILL.md layout",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\example-plugin\\skills\\example-command\\SKILL.md"
+  },
+  "example-skill": {
+    "description": "This skill should be used when the user asks to \"demonstrate skills\", \"show skill format\", \"create a skill template\", or discusses skill development patterns. Provides a reference template for creating Claude Code plugin skills.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\example-plugin\\skills\\example-skill\\SKILL.md"
+  },
+  "frontend-design": {
+    "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\frontend-design\\skills\\frontend-design\\SKILL.md"
+  },
+  "writing-hookify-rules": {
+    "description": "This skill should be used when the user asks to \"create a hookify rule\", \"write a hook rule\", \"configure hookify\", \"add a hookify rule\", or needs guidance on hookify rule syntax and patterns.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\hookify\\skills\\writing-rules\\SKILL.md"
+  },
+  "math-olympiad": {
+    "description": "Solve competition math problems (IMO, Putnam, USAMO, AIME) with adversarial",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\math-olympiad\\skills\\math-olympiad\\SKILL.md"
+  },
+  "build-mcp-app": {
+    "description": "This skill should be used when the user wants to build an \"MCP app\", add \"interactive UI\" or \"widgets\" to an MCP server, \"render components in chat\", build \"MCP UI resources\", make a tool that shows a \"form\", \"picker\", \"dashboard\" or \"confirmation dialog\" inline in the conversation, or mentions \"apps SDK\" in the context of MCP. Use AFTER the build-mcp-server skill has settled the deployment model, or when the user already knows they want UI widgets.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\mcp-server-dev\\skills\\build-mcp-app\\SKILL.md"
+  },
+  "build-mcp-server": {
+    "description": "This skill should be used when the user asks to \"build an MCP server\", \"create an MCP\", \"make an MCP integration\", \"wrap an API for Claude\", \"expose tools to Claude\", \"make an MCP app\", or discusses building something with the Model Context Protocol. It is the entry point for MCP server development — it interrogates the user about their use case, determines the right deployment model (remote HTTP, MCPB, local stdio), picks a tool-design pattern, and hands off to specialized skills.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\mcp-server-dev\\skills\\build-mcp-server\\SKILL.md"
+  },
+  "build-mcpb": {
+    "description": "This skill should be used when the user wants to \"package an MCP server\", \"bundle an MCP\", \"make an MCPB\", \"ship a local MCP server\", \"distribute a local MCP\", discusses \".mcpb files\", mentions bundling a Node or Python runtime with their MCP server, or needs an MCP server that interacts with the local filesystem, desktop apps, or OS and must be installable without the user having Node/Python set up.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\mcp-server-dev\\skills\\build-mcpb\\SKILL.md"
+  },
+  "playground": {
+    "description": "Creates interactive HTML playgrounds — self-contained single-file explorers that let users configure something visually through controls, see a live preview, and copy out a prompt. Use when the user asks to make a playground, explorer, or interactive tool for a topic.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\playground\\skills\\playground\\SKILL.md"
+  },
+  "agent-development": {
+    "description": "This skill should be used when the user asks to \"create an agent\", \"add an agent\", \"write a subagent\", \"agent frontmatter\", \"when to use description\", \"agent examples\", \"agent tools\", \"agent colors\", \"autonomous agent\", or needs guidance on agent structure, system prompts, triggering conditions, or agent development best practices for Claude Code plugins.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\plugin-dev\\skills\\agent-development\\SKILL.md"
+  },
+  "command-development": {
+    "description": "This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a custom command\", \"define command arguments\", \"use command frontmatter\", \"organize commands\", \"create command with file references\", \"interactive command\", \"use AskUserQuestion in command\", or needs guidance on slash command structure, YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction patterns, or command development best practices for Claude Code.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\plugin-dev\\skills\\command-development\\SKILL.md"
+  },
+  "hook-development": {
+    "description": "This skill should be used when the user asks to \"create a hook\", \"add a PreToolUse/PostToolUse/Stop hook\", \"validate tool use\", \"implement prompt-based hooks\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"set up event-driven automation\", \"block dangerous commands\", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive guidance for creating and implementing Claude Code plugin hooks with focus on advanced prompt-based hooks API.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\plugin-dev\\skills\\hook-development\\SKILL.md"
+  },
+  "mcp-integration": {
+    "description": "This skill should be used when the user asks to \"add MCP server\", \"integrate MCP\", \"configure MCP in plugin\", \"use .mcp.json\", \"set up Model Context Protocol\", \"connect external service\", mentions \"${CLAUDE_PLUGIN_ROOT} with MCP\", or discusses MCP server types (SSE, stdio, HTTP, WebSocket). Provides comprehensive guidance for integrating Model Context Protocol servers into Claude Code plugins for external tool and service integration.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\plugin-dev\\skills\\mcp-integration\\SKILL.md"
+  },
+  "plugin-settings": {
+    "description": "This skill should be used when the user asks about \"plugin settings\", \"store plugin configuration\", \"user-configurable plugin\", \".local.md files\", \"plugin state files\", \"read YAML frontmatter\", \"per-project plugin settings\", or wants to make plugin behavior configurable. Documents the .claude/plugin-name.local.md pattern for storing plugin-specific configuration with YAML frontmatter and markdown content.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\plugin-dev\\skills\\plugin-settings\\SKILL.md"
+  },
+  "plugin-structure": {
+    "description": "This skill should be used when the user asks to \"create a plugin\", \"scaffold a plugin\", \"understand plugin structure\", \"organize plugin components\", \"set up plugin.json\", \"use ${CLAUDE_PLUGIN_ROOT}\", \"add commands/agents/skills/hooks\", \"configure auto-discovery\", or needs guidance on plugin directory layout, manifest configuration, component organization, file naming conventions, or Claude Code plugin architecture best practices.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\plugin-dev\\skills\\plugin-structure\\SKILL.md"
+  },
+  "skill-development": {
+    "description": "This skill should be used when the user wants to \"create a skill\", \"add a skill to plugin\", \"write a new skill\", \"improve skill description\", \"organize skill content\", or needs guidance on skill structure, progressive disclosure, or skill development best practices for Claude Code plugins.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\plugin-dev\\skills\\skill-development\\SKILL.md"
+  },
+  "project-artifact": {
+    "description": "Generate and publish a project status artifact — an opinionated, tabbed status page for a project too big for one update (overview & success criteria, the workstream sequence, next steps, plus background, plan, risks & open questions, and decisions/FAQ when they earn a tab) — published with the built-in Artifact tool to a default-private claude.ai page the user can share with teammates. Use when a piece of work spans several workstreams and you want a shareable overview kept current. Each artifact is backed by a small per-project config in the plugin data dir, so refreshing it re-gathers live state, redeploys the same URL, and reports only the delta. For software projects whose workstreams are PRs, also read swe.md (the X.Y PR-numbering convention; pulling PR state with gh/git; a per-PR detail block). Needs the built-in Artifact tool (claude.ai login). Not for single-PR changes or public docs.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\project-artifact\\skills\\project-artifact\\SKILL.md"
+  },
+  "receipts": {
+    "description": "Generate a personal Claude Code usage & impact report (\"receipts\") from this machine's local session transcripts — for justifying Claude Code usage/spend to a manager, self-review, or \"what have I been using this for\" check-ins. Mines ~/.claude/projects locally (no extra API calls beyond one final write-up), cross-references local git history, and writes a markdown report plus a self-contained HTML receipt to your home directory. Use when the user asks for \"receipts\", an \"impact report\", \"usage report\", wants to \"show my Claude Code activity\", \"prove the value of Claude Code\", or runs `/receipts`.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\receipts\\skills\\receipts\\SKILL.md"
+  },
+  "session-report": {
+    "description": "Generate an explorable HTML report of Claude Code session usage (tokens, cache, subagents, skills, expensive prompts) from ~/.claude/projects transcripts.",
+    "path": "C:\\Users\\Work-D\\.zcode\\cli\\plugins\\marketplaces\\claude-plugins-official\\plugins\\session-report\\skills\\session-report\\SKILL.md"
+  },
+  "reverse-engineer-anything": {
+    "description": "Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.",
+    "path": "C:\\Users\\Work-D\\.zcode\\skills\\reverse-engineer-anything\\SKILL.md"
+  },
+  "chrome-cdp": {
+    "description": "Chrome oturumu ile etkileşim kurun, sayfaları denetleyin ve test edin.",
+    "path": "C:\\Users\\Work-D\\.claude\\skills\\chrome-cdp\\SKILL.md"
+  },
+  "codebase-memory": {
+    "description": "Yapısal kod sorguları, mimari keşif ve çağrı zinciri analizi için kod tabanı bilgi grafiğini kullanın.",
+    "path": "C:\\Users\\Work-D\\.claude\\skills\\codebase-memory\\SKILL.md"
+  },
+  "desktop-eye": {
+    "description": "Canlı masaüstü ekran görüntüsü alarak arayüz bağlamını anlık olarak doğrulayın.",
+    "path": "C:\\Users\\Work-D\\.claude\\skills\\desktop-eye\\SKILL.md"
+  }
+}
