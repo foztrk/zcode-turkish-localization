@@ -1,0 +1,146 @@
+{
+  "revise-claude-md": {
+    "description": "Update CLAUDE.md with learnings from this session",
+    "argument_hint": ""
+  },
+  "build-agent": {
+    "description": "Build an AI agent on Cloudflare using the Agents SDK",
+    "argument_hint": "[agent-description]"
+  },
+  "build-mcp": {
+    "description": "Build a remote MCP server on Cloudflare using McpAgent",
+    "argument_hint": "[mcp-description]"
+  },
+  "skill-gen": {
+    "description": "Generate a complete Agent Skill from a documentation URL using Firecrawl",
+    "argument_hint": "<documentation-url>"
+  },
+  "android-dev": {
+    "description": "Start the Android emulator development loop.",
+    "argument_hint": "[goal or issue description]"
+  },
+  "ios-dev": {
+    "description": "Start the iOS simulator development loop.",
+    "argument_hint": "[goal or issue description]"
+  },
+  "restore-legacy-sessions": {
+    "description": "Select and restore a legacy ZCode session.",
+    "argument_hint": "[agent/workspace/session filters]"
+  },
+  "workflow": {
+    "description": "Design and launch a dynamic workflow for a task.",
+    "argument_hint": "[what the workflow should accomplish]"
+  },
+  "asana-setup": {
+    "description": "Set up the Asana V2 MCP server connection (one-time OAuth app + claude mcp add)",
+    "argument_hint": "[client_id]"
+  },
+  "new-sdk-app": {
+    "description": "Create and setup a new Claude Agent SDK application",
+    "argument_hint": "[project-name]"
+  },
+  "modernize-assess": {
+    "description": "Full discovery & portfolio analysis of a legacy system — inventory, complexity, debt, relative scale",
+    "argument_hint": "<system-dir> [--show-secrets] | --portfolio <parent-dir>"
+  },
+  "modernize-brief": {
+    "description": "Generate a phased Modernization Brief — the approved plan that transformation agents will execute against",
+    "argument_hint": "<system-dir> [target-stack]"
+  },
+  "modernize-extract-rules": {
+    "description": "Mine business logic from legacy code into testable, human-readable rule specifications",
+    "argument_hint": "<system-dir> [module-pattern]"
+  },
+  "modernize-harden": {
+    "description": "Security vulnerability scan with a reviewable remediation patch — OWASP, CWE, CVE, secrets, injection",
+    "argument_hint": "<system-dir> [--show-secrets]"
+  },
+  "modernize-map": {
+    "description": "Dependency & topology mapping — call graphs, data lineage, batch flows, rendered as navigable diagrams",
+    "argument_hint": "<system-dir>"
+  },
+  "modernize-preflight": {
+    "description": "Environment readiness check — analysis tools, build toolchain, source completeness, telemetry access",
+    "argument_hint": "<system-dir> [target-stack]"
+  },
+  "modernize-reimagine": {
+    "description": "Multi-agent greenfield rebuild — extract specs from legacy, design AI-native, scaffold & validate with HITL",
+    "argument_hint": "<system-dir> <target-vision>"
+  },
+  "modernize-status": {
+    "description": "Where am I in the modernization workflow — artifact inventory, staleness, secrets hygiene, next step",
+    "argument_hint": "<system-dir>"
+  },
+  "modernize-transform": {
+    "description": "Transform one legacy module to the target stack — idiomatic rewrite with behavior-equivalence tests",
+    "argument_hint": "<system-dir> <module> <target-stack>"
+  },
+  "modernize-uplift": {
+    "description": "Same-stack version uplift (e.g. .NET Framework 4.8 → .NET 8) — preserve the code, fix the version deltas, prove equivalence by running one test suite on both runtimes",
+    "argument_hint": "<system-dir> <source-version> <target-version> [project-pattern]"
+  },
+  "code-review": {
+    "description": "Code review a pull request",
+    "argument_hint": ""
+  },
+  "clean_gone": {
+    "description": "Cleans up all git branches marked as [gone] (branches that have been deleted on the remote but still exist locally), including removing associated worktrees.",
+    "argument_hint": ""
+  },
+  "commit-push-pr": {
+    "description": "Commit, push, and open a PR",
+    "argument_hint": ""
+  },
+  "commit": {
+    "description": "Create a git commit",
+    "argument_hint": ""
+  },
+  "maker-setup": {
+    "description": "Onboard a Code-with-Claude Makers Cardputer — fetch the build-with-claude repo, flash firmware, and install the Claude Buddy apps.",
+    "argument_hint": ""
+  },
+  "example-command": {
+    "description": "An example slash command that demonstrates command frontmatter options (legacy format)",
+    "argument_hint": "<required-arg> [optional-arg]"
+  },
+  "feature-dev": {
+    "description": "Guided feature development with codebase understanding and architecture focus",
+    "argument_hint": "Optional feature description"
+  },
+  "configure": {
+    "description": "Enable or disable hookify rules interactively",
+    "argument_hint": ""
+  },
+  "help": {
+    "description": "Explain Ralph Loop plugin and available commands",
+    "argument_hint": ""
+  },
+  "hookify": {
+    "description": "Create hooks to prevent unwanted behaviors from conversation analysis or explicit instructions",
+    "argument_hint": "Optional specific behavior to address"
+  },
+  "list": {
+    "description": "List all configured hookify rules",
+    "argument_hint": ""
+  },
+  "create-docker-mcp-tunnel": {
+    "description": "Stand up an Anthropic MCP tunnel locally with Docker Compose so Claude can call a private MCP server (manual-credentials quickstart).",
+    "argument_hint": "[deployment-dir] (default: ./mcp-tunnel)"
+  },
+  "create-plugin": {
+    "description": "Guided end-to-end plugin creation workflow with component design, implementation, and validation",
+    "argument_hint": "Optional plugin description"
+  },
+  "review-pr": {
+    "description": "Comprehensive PR review using specialized agents",
+    "argument_hint": "[review-aspects]"
+  },
+  "cancel-ralph": {
+    "description": "Cancel active Ralph Loop",
+    "argument_hint": ""
+  },
+  "ralph-loop": {
+    "description": "Start Ralph Loop in current session",
+    "argument_hint": "PROMPT [--max-iterations N] [--completion-promise TEXT]"
+  }
+}
