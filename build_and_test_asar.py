@@ -318,7 +318,7 @@ function _trTemplateText(txt){{if(!txt||typeof txt!=="string")return txt;let t=t
     js_content = js_content.replace(target_c9e, repl_c9e, 1)
 
     target_o3 = 'function o3(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;return r?.trim()||i?.trim()||``}'
-    repl_o3 = 'function o3(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;let res=r?.trim()||i?.trim()||``;if(typeof _trTemplateText==="function")return _trTemplateText(res);return res}'
+    repl_o3 = '''function o3(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;let res=r?.trim()||i?.trim()||(typeof e===`string`?e.trim():``)||``;if(typeof res===`string`&&res){let s=res.toLowerCase();if(s.includes(`summarize commits`)||s.includes(`previous workday`)||s.includes(`stand-up-ready`)||s.includes(`standup-ready`))return `Önceki iş gününden bu yana commit'leri, modül değişikliklerini, CI durumunu ve takip edilecekleri özetleyin; engelleri ve sonraki adımları içeren en fazla beş maddelik toplantı özeti hazırlayın.`;if(s.includes(`inspect code changes`)||s.includes(`last 24 hours`)||s.includes(`authorization bypasses`)||s.includes(`runtime failures`))return `Son 24 saatteki kod değişikliklerini çalışma zamanı hataları, veri kaybı, yetkilendirme açıkları, kaynak sızıntıları veya eksik geri alma senaryoları açısından inceleyin.`;if(s.includes(`organize prs`)||s.includes(`merged this week`)||s.includes(`breaking changes`))return `Bu hafta birleştirilen PR ve commit'leri Özellikler, Düzeltmeler, Deneyim ve Mühendislik iyileştirmeleri olarak düzenleyin; kritik değişiklikleri ve kalan takip maddelerini vurgulayın.`;if(s.includes(`compare code`)||s.includes(`documentation changes`)||s.includes(`last seven days`)||s.includes(`public interfaces`))return `Son yedi günün kod, yapılandırma, API ve dokümantasyon değişikliklerini karşılaştırın. Genel arayüzlerin veya sistem davranışının belgelenmeden değiştiği durumları tespit edin.`;if(s.includes(`daily standup`)||s.includes(`standup summary`))return `Sabah Geliştirici Özeti`;if(s.includes(`risk scan`))return `Risk Taraması`;if(s.includes(`release summary`))return `Sürüm Özeti`;if(s.includes(`docs sync`)||s.includes(`sync check`))return `Belge Senkronizasyon Kontrolü`}if(typeof _trTemplateText===`function`)return _trTemplateText(res);return res}'''
     js_content = js_content.replace(target_o3, repl_o3, 1)
 
     target_tO = 'function tO(e,t){return ki(e,t)}'
@@ -380,6 +380,14 @@ def patch_html(html_content):
     dom_script = r"""<script id="zcode-tr-dom-patch">
 (function() {
   const DOM_MAP = {
+    "Daily standup summary": "Sabah Geliştirici Özeti",
+    "Summarize commits, module changes, CI status, and follow-ups since the previous workday, then produce no more than five stand-up-ready highlights with blockers and next steps.": "Önceki iş gününden bu yana commit'leri, modül değişikliklerini, CI durumunu ve takip edilecekleri özetleyin; engelleri ve sonraki adımları içeren en fazla beş maddelik toplantı özeti hazırlayın.",
+    "Risk scan": "Risk Taraması",
+    "Inspect code changes from the last 24 hours for high-confidence risks involving runtime failures, data loss, authorization bypasses, resource leaks, or missing rollbacks.": "Son 24 saatteki kod değişikliklerini çalışma zamanı hataları, veri kaybı, yetkilendirme açıkları, kaynak sızıntıları veya eksik geri alma senaryoları açısından inceleyin.",
+    "Release summary": "Sürüm Özeti",
+    "Organize PRs and commits merged this week into Features, Fixes, Experience improvements, and Engineering improvements, then highlight breaking changes and remaining follow-ups.": "Bu hafta birleştirilen PR ve commit'leri Özellikler, Düzeltmeler, Deneyim ve Mühendislik iyileştirmeleri olarak düzenleyin; kritik değişiklikleri ve kalan takip maddelerini vurgulayın.",
+    "Docs sync check": "Belge Senkronizasyon Kontrolü",
+    "Compare code, configuration, API, and documentation changes from the last seven days. Identify high-confidence cases where public interfaces or behavior changed without documentation updates.": "Son yedi günün kod, yapılandırma, API ve dokümantasyon değişikliklerini karşılaştırın. Genel arayüzlerin veya sistem davranışının belgelenmeden değiştiği durumları tespit edin.",
     // 1024 Programmer's Day Surprise Modal
     "YOUR PROGRAMMER'S DAY SURPRISE": "PROGRAMCILAR GÜNÜ SÜRPRİZİNİZ",
     // ZCode Weekend Build Modal
