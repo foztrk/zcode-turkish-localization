@@ -4834,7 +4834,7 @@
   "automations.schedule.hourly": "Her saat başı : {minute}",
   "automations.schedule.daily": "Her gün saat {time}",
   "automations.schedule.weekdays": "Hafta içi her gün saat {time}",
-  "automations.schedule.weekly": "Haftalık olarak {days} günü saat {time}",
+  "automations.schedule.weekly": "Her hafta {days} saat {time}",
   "automations.schedule.monthly": "Her ayın {day}. günü saat {time}",
   "automations.schedule.customMinutes": "Her {interval} dakikada bir",
   "automations.schedule.customHourly": "Her {interval} saatte bir: {time}",
