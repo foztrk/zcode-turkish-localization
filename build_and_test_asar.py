@@ -13,7 +13,11 @@ sys.stdout.reconfigure(encoding="utf-8")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ZCODE_RESOURCES = r"C:\Program Files\ZCode\resources"
 ORIG_ASAR = (
-    os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3163")
+    os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3171")
+    if os.path.exists(os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3171"))
+    else os.path.join(BASE_DIR, "app.asar.orig.v3171")
+    if os.path.exists(os.path.join(BASE_DIR, "app.asar.orig.v3171"))
+    else os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3163")
     if os.path.exists(os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3163"))
     else os.path.join(BASE_DIR, "app.asar.orig.v3163")
     if os.path.exists(os.path.join(BASE_DIR, "app.asar.orig.v3163"))
@@ -851,15 +855,15 @@ def patch_styles(js_content):
             'if(d.startsWith("Restricted read-only verifier"))return TR_AGENT_DESCS["scan-verifier"]}'
             'return d};'
         )
-        target_sub = f'children:e.description||d.formatMessage({{id:{bt}settings.subagents.noDescription{bt}}})'
-        replacement_sub = f'children:_trAgentDesc(e)||d.formatMessage({{id:{bt}settings.subagents.noDescription{bt}}})'
-        if target_sub in js_content:
-            pos_fn = js_content.rfind("function ", 0, js_content.find(target_sub))
+        pat_sub_sub = rf'children:(\w+)\.description\|\|(\w+)\.formatMessage\({{id:{bt}settings\.subagents\.noDescription{bt}}}\)'
+        m_sub = re.search(pat_sub_sub, js_content)
+        if m_sub:
+            pos_fn = js_content.rfind("function ", 0, m_sub.start())
             if pos_fn != -1:
                 js_content = js_content[:pos_fn] + subagent_helpers + js_content[pos_fn:]
             else:
                 js_content = subagent_helpers + js_content
-            js_content = js_content.replace(target_sub, replacement_sub, 1)
+            js_content = re.sub(pat_sub_sub, rf'children:_trAgentDesc()||.formatMessage({{id:{bt}settings.subagents.noDescription{bt}}})', js_content, count=1)
 
     # Section titles helper injection
     if "function _trSectionTitle(" not in js_content:
@@ -948,31 +952,34 @@ def patch_styles(js_content):
 
 
     # 1. Sidebar Theme menu: change "system" label to "Sistem Teması (Varsayılan)"
+    target_theme_v3171 = '(0,$.jsx)(lb,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(lb,{value:`zai-dark`'
+    repl_theme_v3171 = '(0,$.jsx)(lb,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(lb,{value:`zai-dark`'
     target_theme = '(0,$.jsx)(Vy,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Vy,{value:`zai-dark`'
     repl_theme = '(0,$.jsx)(Vy,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(Vy,{value:`zai-dark`'
-    if target_theme in js_content:
+    if target_theme_v3171 in js_content:
+        js_content = js_content.replace(target_theme_v3171, repl_theme_v3171, 1)
+    elif target_theme in js_content:
         js_content = js_content.replace(target_theme, repl_theme, 1)
-    else:
-        pat_theme = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`system`,children:([\w$]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\}\),\(0,\$\.jsx\)\(\2,{value:`zai-dark`)'
-        js_content = re.sub(pat_theme, r'(0,$.jsx)(\2,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(\2,{value:`zai-dark`', js_content, count=1)
 
     # 2. Sidebar Locale menu: change "system" label to "Sistem Dili (Varsayılan)" and inject "tr-TR" (Türkçe)
+    target_locale_v3171 = '(0,$.jsx)(lb,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(lb,{value:`en-US`'
+    repl_locale_v3171 = '(0,$.jsx)(lb,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(lb,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(lb,{value:`en-US`'
     target_locale = '(0,$.jsx)(Vy,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Vy,{value:`en-US`'
     repl_locale = '(0,$.jsx)(Vy,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(Vy,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(Vy,{value:`en-US`'
-    if target_locale in js_content:
+    if target_locale_v3171 in js_content:
+        js_content = js_content.replace(target_locale_v3171, repl_locale_v3171, 1)
+    elif target_locale in js_content:
         js_content = js_content.replace(target_locale, repl_locale, 1)
-    else:
-        pat_locale = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`system`,children:([\w$]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\}\),\(0,\$\.jsx\)\(\2,{value:`en-US`)'
-        js_content = re.sub(pat_locale, r'(0,$.jsx)(\2,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(\2,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(\2,{value:`en-US`', js_content, count=1)
 
     # 3. Settings page locale: inject tr-TR (Türkçe)
+    target_set_v3171 = ')(fh,{value:`en-US`,"data-testid":Gb(Lb,`en-US`),children:ge.formatMessage({id:`settings.locale.en-US`})})'
+    repl_set_v3171 = ')(fh,{value:`en-US`,"data-testid":Gb(Lb,`en-US`),children:ge.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(fh,{value:`tr-TR`,"data-testid":Gb(Lb,`tr-TR`),children:`Türkçe`})'
     target_set = '(0,$.jsx)(Nm,{value:`en-US`,"data-testid":Sb(mb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})})'
     repl_set = '(0,$.jsx)(Nm,{value:`en-US`,"data-testid":Sb(mb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(Nm,{value:`tr-TR`,"data-testid":Sb(mb,`tr-TR`),children:`Türkçe`})'
-    if target_set in js_content:
+    if target_set_v3171 in js_content:
+        js_content = js_content.replace(target_set_v3171, repl_set_v3171, 1)
+    elif target_set in js_content:
         js_content = js_content.replace(target_set, repl_set, 1)
-    else:
-        pat_set = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`en-US`,"data-testid":([\w$]+)\(([\w$]+),`en-US`\),children:([\w$]+)\.formatMessage\({id:`settings\.locale\.en-US`}\}\}\))'
-        js_content = re.sub(pat_set, r'\1,(0,$.jsx)(\2,{value:`tr-TR`,"data-testid":\3(\4,`tr-TR`),children:`Türkçe`})', js_content, count=1)
         # Start Plan and Effort labels
     js_content = js_content.replace('?`Start Plan`:bL(e)}', '?`Başlangıç Planı`:bL(e)}')
     js_content = js_content.replace('{label:`Start Plan`,labelBadge:', '{label:`Başlangıç Planı`,labelBadge:')

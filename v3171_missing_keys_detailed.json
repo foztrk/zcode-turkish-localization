@@ -1,0 +1,1398 @@
+{
+  "projectManagement.nav": {
+    "en": "Projects",
+    "zh": "项目"
+  },
+  "projectManagement.intro": {
+    "en": "Removing a project takes it out of the sidebar and the project picker. Its sessions stay in Recent and search, and nothing on disk is touched.",
+    "zh": "移除项目只会把它从侧栏和项目选择器中拿掉。会话仍保留在最近和搜索中，磁盘上的文件不受影响。"
+  },
+  "projectManagement.manage": {
+    "en": "Manage projects…",
+    "zh": "管理项目…"
+  },
+  "projectManagement.suggestion.title": {
+    "en": "{count} projects look unused",
+    "zh": "{count} 个项目疑似不再使用"
+  },
+  "projectManagement.suggestion.titleOne": {
+    "en": "1 project looks unused",
+    "zh": "1 个项目疑似不再使用"
+  },
+  "projectManagement.suggestion.missing": {
+    "en": "{count} have a missing folder",
+    "zh": "{count} 个文件夹不存在"
+  },
+  "projectManagement.suggestion.missingOne": {
+    "en": "1 has a missing folder",
+    "zh": "1 个文件夹不存在"
+  },
+  "projectManagement.suggestion.empty": {
+    "en": "{count} have no sessions",
+    "zh": "{count} 个没有会话"
+  },
+  "projectManagement.suggestion.emptyOne": {
+    "en": "1 has no sessions",
+    "zh": "1 个没有会话"
+  },
+  "projectManagement.suggestion.idle": {
+    "en": "{count} idle for 90+ days",
+    "zh": "{count} 个超过 90 天未使用"
+  },
+  "projectManagement.suggestion.idleOne": {
+    "en": "1 idle for 90+ days",
+    "zh": "1 个超过 90 天未使用"
+  },
+  "projectManagement.review": {
+    "en": "Review {count}",
+    "zh": "复核 {count} 个"
+  },
+  "projectManagement.search": {
+    "en": "Search projects, folders or devices",
+    "zh": "搜索项目、文件夹或设备"
+  },
+  "projectManagement.clearSearch": {
+    "en": "Clear search",
+    "zh": "清除搜索"
+  },
+  "projectManagement.filterLabel": {
+    "en": "Show",
+    "zh": "显示"
+  },
+  "projectManagement.filter.all": {
+    "en": "All projects",
+    "zh": "全部项目"
+  },
+  "projectManagement.filter.unused": {
+    "en": "Looks unused · {count}",
+    "zh": "疑似不再使用 · {count}"
+  },
+  "projectManagement.sortLabel": {
+    "en": "Sort by",
+    "zh": "排序"
+  },
+  "projectManagement.sort.lastActive": {
+    "en": "Last active",
+    "zh": "最近活动"
+  },
+  "projectManagement.sort.name": {
+    "en": "Name",
+    "zh": "名称"
+  },
+  "projectManagement.sort.sessions": {
+    "en": "Sessions",
+    "zh": "会话数"
+  },
+  "projectManagement.column.project": {
+    "en": "Project",
+    "zh": "项目"
+  },
+  "projectManagement.column.device": {
+    "en": "Device",
+    "zh": "设备"
+  },
+  "projectManagement.column.sessions": {
+    "en": "Sessions",
+    "zh": "会话"
+  },
+  "projectManagement.column.lastActive": {
+    "en": "Last active",
+    "zh": "最近活动"
+  },
+  "projectManagement.selectAll": {
+    "en": "Select all",
+    "zh": "全选"
+  },
+  "projectManagement.selectProject": {
+    "en": "Select {name}",
+    "zh": "选择 {name}"
+  },
+  "projectManagement.rowActions": {
+    "en": "Actions for {name}",
+    "zh": "{name} 的操作"
+  },
+  "projectManagement.removeOne": {
+    "en": "Remove…",
+    "zh": "移除…"
+  },
+  "projectManagement.pinned": {
+    "en": "Pinned",
+    "zh": "已置顶"
+  },
+  "projectManagement.moreRoots": {
+    "en": "{count} more folders",
+    "zh": "另外 {count} 个目录"
+  },
+  "projectManagement.moreRootsOne": {
+    "en": "1 more folder",
+    "zh": "另外 1 个目录"
+  },
+  "projectManagement.reason.missing": {
+    "en": "Folder missing",
+    "zh": "文件夹不存在"
+  },
+  "projectManagement.reason.empty": {
+    "en": "No sessions",
+    "zh": "没有会话"
+  },
+  "projectManagement.reason.idle": {
+    "en": "Idle {months} months",
+    "zh": "{months} 个月未使用"
+  },
+  "projectManagement.never": {
+    "en": "Never",
+    "zh": "从未使用"
+  },
+  "projectManagement.offline": {
+    "en": "Device offline",
+    "zh": "设备离线"
+  },
+  "projectManagement.unremovable": {
+    "en": "This project can’t be removed here",
+    "zh": "此项目无法在这里移除"
+  },
+  "projectManagement.sessionsCount": {
+    "en": "{count} sessions",
+    "zh": "{count} 个会话"
+  },
+  "projectManagement.sessionsCountOne": {
+    "en": "1 session",
+    "zh": "1 个会话"
+  },
+  "projectManagement.projectsCount": {
+    "en": "{count} projects",
+    "zh": "{count} 个项目"
+  },
+  "projectManagement.projectsCountOne": {
+    "en": "1 project",
+    "zh": "1 个项目"
+  },
+  "projectManagement.showMore": {
+    "en": "Show {count} more",
+    "zh": "再显示 {count} 个"
+  },
+  "projectManagement.selected": {
+    "en": "{count} selected",
+    "zh": "已选 {count} 个"
+  },
+  "projectManagement.ofShown": {
+    "en": "of {count} shown",
+    "zh": "共 {count} 个"
+  },
+  "projectManagement.clearSelection": {
+    "en": "Clear",
+    "zh": "清除"
+  },
+  "projectManagement.removeSelected": {
+    "en": "Remove {count} projects",
+    "zh": "移除 {count} 个项目"
+  },
+  "projectManagement.removeSelectedOne": {
+    "en": "Remove 1 project",
+    "zh": "移除 1 个项目"
+  },
+  "projectManagement.confirm.title": {
+    "en": "Remove {count} projects?",
+    "zh": "移除 {count} 个项目？"
+  },
+  "projectManagement.confirm.titleOne": {
+    "en": "Remove 1 project?",
+    "zh": "移除 1 个项目？"
+  },
+  "projectManagement.confirm.description": {
+    "en": "They leave the sidebar and the project picker. Their sessions ({sessions}) stay in Recent and search. Folders on disk are not touched.",
+    "zh": "它们会从侧栏和项目选择器中移除，其中的会话（{sessions} 个）仍保留在最近和搜索中，磁盘上的文件夹不受影响。"
+  },
+  "projectManagement.confirm.remoteNote": {
+    "en": "Removed from this computer only. They stay on {device} for its other clients.",
+    "zh": "只从本机移除，{device} 上的项目及其他客户端不受影响。"
+  },
+  "projectManagement.confirm.remoteNoteOne": {
+    "en": "Removed from this computer only. It stays on {device} for its other clients.",
+    "zh": "只从本机移除，{device} 上的项目及其他客户端不受影响。"
+  },
+  "projectManagement.confirm.restoreLocal": {
+    "en": "Projects on this computer can be restored later from Removed projects on this page.",
+    "zh": "本机项目之后可在本页的「已移除的项目」中恢复。"
+  },
+  "projectManagement.confirm.restoreRemote": {
+    "en": "To bring back a remote project later, add it again from its device.",
+    "zh": "远程项目之后可从对应设备重新添加。"
+  },
+  "projectManagement.confirm.data.option": {
+    "en": "Also delete their ZCode data",
+    "zh": "同时删除它们的 ZCode 数据"
+  },
+  "projectManagement.confirm.data.optionOne": {
+    "en": "Also delete its ZCode data",
+    "zh": "同时删除它的 ZCode 数据"
+  },
+  "projectManagement.confirm.data.note": {
+    "en": "Sessions, session files, checkpoints and memory of the {count} projects on this computer.",
+    "zh": "这 {count} 个本机项目的会话、会话文件、检查点和记忆。"
+  },
+  "projectManagement.confirm.data.noteOne": {
+    "en": "Sessions, session files, checkpoints and memory of the project on this computer.",
+    "zh": "这个本机项目的会话、会话文件、检查点和记忆。"
+  },
+  "projectManagement.confirm.data.calculating": {
+    "en": "Calculating…",
+    "zh": "正在计算…"
+  },
+  "projectManagement.confirm.data.sessions": {
+    "en": "{count} sessions and their files",
+    "zh": "{count} 个会话及其文件"
+  },
+  "projectManagement.confirm.data.sessionsOne": {
+    "en": "1 session and its files",
+    "zh": "1 个会话及其文件"
+  },
+  "projectManagement.confirm.data.checkpoints": {
+    "en": "File checkpoints",
+    "zh": "文件检查点"
+  },
+  "projectManagement.confirm.data.memory": {
+    "en": "Memory",
+    "zh": "记忆"
+  },
+  "projectManagement.confirm.data.notDeleted": {
+    "en": "Not deleted: your folders and app logs.",
+    "zh": "不会删除：你的文件夹和应用日志。"
+  },
+  "projectManagement.confirm.data.notDeletedRemote": {
+    "en": "Not deleted: your folders, app logs, and data on {devices}.",
+    "zh": "不会删除：你的文件夹、应用日志，以及 {devices} 上的数据。"
+  },
+  "projectManagement.confirm.data.title": {
+    "en": "Remove {count} projects and delete their data?",
+    "zh": "移除 {count} 个项目并删除其数据？"
+  },
+  "projectManagement.confirm.data.titleOne": {
+    "en": "Remove 1 project and delete its data?",
+    "zh": "移除 1 个项目并删除其数据？"
+  },
+  "projectManagement.confirm.data.description": {
+    "en": "They leave the sidebar and the project picker. The {sessions} of the {count} projects on this computer are deleted with their files. Folders on disk are not touched.",
+    "zh": "它们会离开侧栏和项目选择器。这 {count} 个本机项目的 {sessions}会连同文件一起删除。磁盘上的文件夹不受影响。"
+  },
+  "projectManagement.confirm.data.descriptionOne": {
+    "en": "They leave the sidebar and the project picker. The {sessions} of the project on this computer are deleted with their files. Folders on disk are not touched.",
+    "zh": "它们会离开侧栏和项目选择器。这个本机项目的 {sessions}会连同文件一起删除。磁盘上的文件夹不受影响。"
+  },
+  "projectManagement.confirm.data.noRestore": {
+    "en": "The {count} projects on this computer can’t be restored afterwards.",
+    "zh": "这 {count} 个本机项目之后无法恢复。"
+  },
+  "projectManagement.confirm.data.noRestoreOne": {
+    "en": "The project on this computer can’t be restored afterwards.",
+    "zh": "这个本机项目之后无法恢复。"
+  },
+  "projectManagement.confirm.data.type": {
+    "en": "Type {word} to confirm",
+    "zh": "输入 {word} 以确认"
+  },
+  "projectManagement.confirm.data.word": {
+    "en": "delete",
+    "zh": "删除"
+  },
+  "projectManagement.confirm.data.confirm": {
+    "en": "Remove and delete {size}",
+    "zh": "移除并删除 {size}"
+  },
+  "projectManagement.data.progress": {
+    "en": "Deleting data of {count} projects…",
+    "zh": "正在删除 {count} 个项目的数据…"
+  },
+  "projectManagement.data.progressOne": {
+    "en": "Deleting data of 1 project…",
+    "zh": "正在删除 1 个项目的数据…"
+  },
+  "projectManagement.data.progressAmount": {
+    "en": "{done} of {total}",
+    "zh": "已删除 {done} / 共 {total}"
+  },
+  "projectManagement.data.removedToast": {
+    "en": "Removed {count} projects · freed {size}",
+    "zh": "已移除 {count} 个项目 · 释放 {size}"
+  },
+  "projectManagement.data.removedToastOne": {
+    "en": "Removed 1 project · freed {size}",
+    "zh": "已移除 1 个项目 · 释放 {size}"
+  },
+  "projectManagement.data.deletedToast": {
+    "en": "Deleted the data of {count} projects · freed {size}",
+    "zh": "已删除 {count} 个项目的数据 · 释放 {size}"
+  },
+  "projectManagement.data.deletedToastOne": {
+    "en": "Deleted the data of 1 project · freed {size}",
+    "zh": "已删除 1 个项目的数据 · 释放 {size}"
+  },
+  "projectManagement.confirm.cancel": {
+    "en": "Cancel",
+    "zh": "取消"
+  },
+  "projectManagement.removedToast": {
+    "en": "Removed {count} projects",
+    "zh": "已移除 {count} 个项目"
+  },
+  "projectManagement.removedToastOne": {
+    "en": "Removed 1 project",
+    "zh": "已移除 1 个项目"
+  },
+  "projectManagement.restoredToast": {
+    "en": "Restored {count} projects",
+    "zh": "已恢复 {count} 个项目"
+  },
+  "projectManagement.restoredToastOne": {
+    "en": "Restored 1 project",
+    "zh": "已恢复 1 个项目"
+  },
+  "projectManagement.undo": {
+    "en": "Undo",
+    "zh": "撤销"
+  },
+  "projectManagement.failure.remove": {
+    "en": "{count} projects weren’t removed: {name} — {reason}",
+    "zh": "{count} 个项目未能移除：{name}（{reason}）"
+  },
+  "projectManagement.failure.removeOne": {
+    "en": "1 project wasn’t removed: {name} — {reason}",
+    "zh": "1 个项目未能移除：{name}（{reason}）"
+  },
+  "projectManagement.failure.undo": {
+    "en": "{count} projects couldn’t be restored: {name} — {reason}",
+    "zh": "{count} 个项目未能恢复：{name}（{reason}）"
+  },
+  "projectManagement.failure.undoOne": {
+    "en": "1 project couldn’t be restored: {name} — {reason}",
+    "zh": "1 个项目未能恢复：{name}（{reason}）"
+  },
+  "projectManagement.failure.restore": {
+    "en": "Couldn’t restore {name} — {reason}",
+    "zh": "无法恢复 {name}（{reason}）"
+  },
+  "projectManagement.failure.restoreOne": {
+    "en": "Couldn’t restore {name} — {reason}",
+    "zh": "无法恢复 {name}（{reason}）"
+  },
+  "projectManagement.failure.purge": {
+    "en": "The data of {count} projects wasn’t deleted: {name} — {reason}",
+    "zh": "{count} 个项目的数据未能删除：{name}（{reason}）"
+  },
+  "projectManagement.failure.purgeOne": {
+    "en": "The data of 1 project wasn’t deleted: {name} — {reason}",
+    "zh": "1 个项目的数据未能删除：{name}（{reason}）"
+  },
+  "projectManagement.retry": {
+    "en": "Retry",
+    "zh": "重试"
+  },
+  "projectManagement.dismiss": {
+    "en": "Dismiss",
+    "zh": "关闭"
+  },
+  "projectManagement.removed.title": {
+    "en": "Removed projects",
+    "zh": "已移除的项目"
+  },
+  "projectManagement.removed.when": {
+    "en": "Removed {time}",
+    "zh": "{time}移除"
+  },
+  "projectManagement.restore": {
+    "en": "Restore",
+    "zh": "恢复"
+  },
+  "projectManagement.loading": {
+    "en": "Loading projects…",
+    "zh": "正在加载项目…"
+  },
+  "projectManagement.loadFailed": {
+    "en": "Could not load projects",
+    "zh": "无法加载项目"
+  },
+  "projectManagement.empty": {
+    "en": "No projects yet",
+    "zh": "还没有项目"
+  },
+  "projectManagement.noResults": {
+    "en": "No matching projects",
+    "zh": "没有匹配的项目"
+  },
+  "projectManagement.noUnused": {
+    "en": "Nothing looks unused right now",
+    "zh": "目前没有疑似不再使用的项目"
+  },
+  "project.dataSessionRunning": {
+    "en": "a session is still running; try again when it finishes",
+    "zh": "仍有会话在运行，结束后再试"
+  },
+  "project.dataSessionReferenced": {
+    "en": "a fork in another project still uses the attachments of a session, so that session was kept",
+    "zh": "有会话的附件仍被其他项目中的分叉会话使用，已保留该会话"
+  },
+  "project.dataDeleteFailed": {
+    "en": "some files couldn’t be deleted",
+    "zh": "部分文件未能删除"
+  },
+  "project.dataUnavailable": {
+    "en": "this version of the agent can’t delete project data",
+    "zh": "当前 Agent 版本不支持删除项目数据"
+  },
+  "project.undoUnavailable": {
+    "en": "This entry has no project identity, so it can’t be added back automatically.",
+    "zh": "该入口缺少项目身份，无法自动重新添加。"
+  },
+  "project.viewUnread": {
+    "en": "Unread",
+    "zh": "按未读"
+  },
+  "remote.action.downgrade-server": {
+    "en": "Switch remote to {version}",
+    "zh": "将远端切换到 {version}"
+  },
+  "remote.downgradeConfirmTitle": {
+    "en": "Switch the remote to {version}?",
+    "zh": "将远端切换到 {version}？"
+  },
+  "remote.downgradeConfirmDescription": {
+    "en": "The remote ZCode service will switch from {current} to {version}, the same version as this desktop app. Devices that still use the newer desktop app must update the remote again when they connect. The older version may not fully show content that the newer version wrote.",
+    "zh": "远端 ZCode 服务将从 {current} 切换到与本机桌面端相同的 {version}。仍在使用新版本桌面端的设备连接时，需要再次更新远端。旧版本可能无法完整显示新版本写入的内容。"
+  },
+  "remote.downgradeConfirm": {
+    "en": "Switch",
+    "zh": "切换"
+  },
+  "remote.downgradedHint": {
+    "en": "An older desktop app switched this remote from {from} to the current version. The remote updates only after you confirm.",
+    "zh": "该远端已由旧版桌面端从 {from} 切换到当前版本。确认后才会更新远端。"
+  },
+  "remote.error.sourceServerDowngradeUnconfirmed.reason": {
+    "en": "Reconnect to read the latest version of the remote device.",
+    "zh": "请重新连接，读取远端的最新版本。"
+  },
+  "remote.error.sourceServerStopFailed.reason": {
+    "en": "The remote service didn't exit cleanly. Try again later, or sign in to the device to check it.",
+    "zh": "远端服务没有正常退出。请稍后重试；仍失败时请登录这台设备检查。"
+  },
+  "remote.error.sourceServerControlUnresponsive.reason": {
+    "en": "The remote service didn't answer the request. Sign in to the device to check it, then try again.",
+    "zh": "远端服务没有响应请求。请登录这台设备检查后重试。"
+  },
+  "sidePane.sites": {
+    "en": "Sites",
+    "zh": "部署"
+  },
+  "sidePane.launcher.sites": {
+    "en": "View sites, deployments, and usage.",
+    "zh": "查看站点、部署记录和用量。"
+  },
+  "pluginUi.open": {
+    "en": "Open",
+    "zh": "打开"
+  },
+  "fileActions.saved": {
+    "en": "Saved",
+    "zh": "已保存"
+  },
+  "fileActions.downloadStarted": {
+    "en": "Download started",
+    "zh": "已开始下载"
+  },
+  "fileActions.saveAs": {
+    "en": "Save as…",
+    "zh": "另存为…"
+  },
+  "fileActions.saveAsUnavailable": {
+    "en": "Saving files is unavailable here",
+    "zh": "当前环境不支持保存文件"
+  },
+  "fileActions.saveAsFailed": {
+    "en": "Could not save this file. Check the source connection and try again.",
+    "zh": "文件保存失败，请检查来源连接后重试。"
+  },
+  "fileActions.saveAsTooLarge": {
+    "en": "Files larger than 50 MiB cannot be saved here.",
+    "zh": "暂不支持另存超过 50 MiB 的文件。"
+  },
+  "fileActions.moreOpenWith": {
+    "en": "More apps",
+    "zh": "更多打开方式"
+  },
+  "fileActions.scrollMoreApps": {
+    "en": "Scroll to see more apps",
+    "zh": "滚动查看更多应用"
+  },
+  "fileActions.openInApplication": {
+    "en": "Open in {application}",
+    "zh": "在 {application} 中打开"
+  },
+  "fileActions.defaultApp": {
+    "en": "Default",
+    "zh": "默认"
+  },
+  "remote.error.sourceServerDowngradeUnconfirmed": {
+    "en": "The remote device was updated to a newer version. This operation did not downgrade it.",
+    "zh": "远程设备已更新到更高版本，本次操作没有降级远端。"
+  },
+  "remote.error.sourceServerStopFailed": {
+    "en": "The remote service didn't stop",
+    "zh": "远端服务未能停止"
+  },
+  "remote.error.sourceServerControlUnresponsive": {
+    "en": "The remote service isn't responding",
+    "zh": "远端服务无响应"
+  },
+  "webRemoteControl.pullMobileLogs": {
+    "en": "Pull mobile logs",
+    "zh": "拉取手机日志"
+  },
+  "settings.source.restartRemoteService": {
+    "en": "Restart remote service",
+    "zh": "重启远端服务"
+  },
+  "settings.source.restartRemoteServiceTitle": {
+    "en": "Restart the remote service?",
+    "zh": "重启远端服务？"
+  },
+  "settings.source.reinstallRemoteService": {
+    "en": "Reinstall remote service",
+    "zh": "重新安装远端服务"
+  },
+  "settings.source.reinstallRemoteServiceHint": {
+    "en": "Uses this computer's version. Projects and tasks are kept.",
+    "zh": "用本机版本重新安装，保留项目和任务"
+  },
+  "settings.source.reinstallRemoteServiceTitle": {
+    "en": "Reinstall the remote service?",
+    "zh": "重新安装远端服务？"
+  },
+  "settings.source.reinstallRemoteServiceDescription": {
+    "en": "ZCode Server {version} will be reinstalled on {source}. Damaged program files are replaced. Projects, tasks, settings, and sign-in information are kept.",
+    "zh": "将在 {source} 上重新安装 ZCode Server {version}。损坏的程序文件会被替换，项目、任务、设置和登录信息都会保留。"
+  },
+  "settings.source.reinstallRemoteServiceConfirm": {
+    "en": "Reinstall",
+    "zh": "重新安装"
+  },
+  "settings.source.stopRemoteService": {
+    "en": "Stop remote service",
+    "zh": "停止远端服务"
+  },
+  "settings.source.stopRemoteServiceTitle": {
+    "en": "Stop the remote service?",
+    "zh": "停止远端服务？"
+  },
+  "settings.source.remoteServiceInterruptionDescription": {
+    "en": "This interrupts all running tasks on this device. They won't resume automatically.",
+    "zh": "这会中断此设备上所有运行中的任务，这些任务不会自动续跑。"
+  },
+  "settings.source.remoteServiceRunningTasksUnavailable": {
+    "en": "The device didn't provide a task list.",
+    "zh": "设备未提供任务清单。"
+  },
+  "settings.source.remoteServiceNoRunningTasks": {
+    "en": "No tasks are running on this device right now.",
+    "zh": "此设备当前没有运行中的任务。"
+  },
+  "settings.source.remoteServiceOtherClientsNotice": {
+    "en": "If ZCode on another computer is connected to this device, it may start the remote service again.",
+    "zh": "其他电脑上的 ZCode 若连着这台设备，可能会重新启动远端服务。"
+  },
+  "settings.source.stopRemoteServiceStartupReconnectNotice": {
+    "en": "“Reconnect automatically at startup” is on, so the remote service will start again the next time you open ZCode.",
+    "zh": "「启动时自动重连」已开启，下次打开 ZCode 时会重新启动远端服务。"
+  },
+  "settings.source.remoteServiceUpdateRequired": {
+    "en": "Available after updating the remote service",
+    "zh": "更新远端服务后可用"
+  },
+  "settings.source.error.credentials-required": {
+    "en": "Couldn't get the SSH credentials automatically. Connect to this device once first.",
+    "zh": "无法自动取得 SSH 凭据，请先连接一次此设备。"
+  },
+  "settings.source.error.source-server-stop-failed": {
+    "en": "The remote service didn't stop. Try again later, or sign in to the device to check it.",
+    "zh": "远端服务未能停止。请稍后重试；仍失败时请登录这台设备检查。"
+  },
+  "settings.source.error.source-server-control-unresponsive": {
+    "en": "The remote service isn't responding. Sign in to the device to check it, then try again.",
+    "zh": "远端服务无响应。请登录这台设备检查后重试。"
+  },
+  "settings.source.error.source-server-operation-in-progress": {
+    "en": "Another operation is in progress on this device. Try again later.",
+    "zh": "此设备有其他操作正在进行，请稍后再试。"
+  },
+  "settings.source.searchPlaceholder": {
+    "en": "Search devices, addresses, or projects",
+    "zh": "搜索设备名、地址或项目"
+  },
+  "settings.source.searchEmpty": {
+    "en": "No devices match “{query}”",
+    "zh": "没有匹配「{query}」的设备"
+  },
+  "settings.source.preferences": {
+    "en": "Preferences",
+    "zh": "偏好设置"
+  },
+  "settings.source.hideProjectDeviceNames": {
+    "en": "Hide device names in project rows",
+    "zh": "隐藏项目行设备名"
+  },
+  "settings.source.hideProjectDeviceNamesDescription": {
+    "en": "Hide remote device names in task list project rows. Hover to view them.",
+    "zh": "在任务列表的项目行中隐藏远程设备名，悬停仍可查看。"
+  },
+  "sourceServer.reinstallCompletedToast": {
+    "en": "{source} was reinstalled and reconnected.",
+    "zh": "{source} 已重新安装并重新连接。"
+  },
+  "sourceServer.reinstallFailedToast": {
+    "en": "{source} could not be reinstalled. Review the log under Remote devices and try again.",
+    "zh": "{source} 重新安装失败，请在远程设备中查看日志并重试。"
+  },
+  "sourceServer.stopCompletedToast": {
+    "en": "Stopped the remote service on {source}.",
+    "zh": "已停止 {source} 的远端服务。"
+  },
+  "sourceServer.stopFailedToast": {
+    "en": "Couldn't stop the remote service on {source}. View details.",
+    "zh": "未能停止 {source} 的远端服务，请查看详情。"
+  },
+  "sourceServer.restartCompletedToast": {
+    "en": "Restarted the remote service on {source} and reconnected.",
+    "zh": "已重启 {source} 的远端服务并重新连接。"
+  },
+  "sourceServer.restartFailedToast": {
+    "en": "Couldn't restart the remote service on {source}. View details.",
+    "zh": "未能重启 {source} 的远端服务，请查看详情。"
+  },
+  "chat.workspaceHookPending.label": {
+    "en": "Workspace hooks pending review",
+    "zh": "待审核的工作区 Hook"
+  },
+  "chat.workspaceMcpPending.label": {
+    "en": "Workspace MCP servers awaiting trust",
+    "zh": "待信任的工作区 MCP"
+  },
+  "chat.workspaceMcpPending.message": {
+    "en": "{count} workspace MCP server(s) await trust. Trust changes apply to new or restarted chats; you can continue chatting.",
+    "zh": "{count} 个工作区 MCP 待信任。信任变更在新建或重启会话时生效，聊天可继续。"
+  },
+  "chat.workspaceMcpPending.review": {
+    "en": "Review",
+    "zh": "去审核"
+  },
+  "chat.workspaceMcpPending.dismiss": {
+    "en": "Dismiss",
+    "zh": "忽略"
+  },
+  "taskList.noUnreadTasks": {
+    "en": "No unread tasks",
+    "zh": "暂无未读任务"
+  },
+  "taskList.restartUnsupported": {
+    "en": "This Agent version does not support restarting tasks. Update it first.",
+    "zh": "当前 Agent 版本不支持重启任务，请先更新。"
+  },
+  "taskList.recoverWorkspace": {
+    "en": "Restart Agent process",
+    "zh": "重启 Agent 进程"
+  },
+  "taskList.recoverWorkspaceDescription": {
+    "en": "Task resources could not be safely released. Continuing stops every task sharing this Agent process, including tasks in other workspaces. Conversation history is kept.",
+    "zh": "任务资源未能安全释放。继续会中断所有共用此 Agent 进程的任务，包括其他工作区的任务。会话历史会保留。"
+  },
+  "taskList.restart": {
+    "en": "Restart task",
+    "zh": "重启任务"
+  },
+  "taskList.restarting": {
+    "en": "Restarting task…",
+    "zh": "正在重启任务…"
+  },
+  "taskList.restartFailed": {
+    "en": "Restart failed. Check the task status and try again.",
+    "zh": "重启失败，请查看任务状态后重试"
+  },
+  "chat.slash.app.reload.description": {
+    "en": "Reload the task runtime, preserving history and stopping current execution.",
+    "zh": "Reload the task runtime, preserving history and stopping current execution."
+  },
+  "chat.message.link.openInZCode": {
+    "en": "Open in ZCode",
+    "zh": "在 ZCode 中打开"
+  },
+  "chat.previewCards.openCard": {
+    "en": "Open {title}",
+    "zh": "打开 {title}"
+  },
+  "settings.personalization.title": {
+    "en": "Personalization",
+    "zh": "个性化"
+  },
+  "settings.personalization.description": {
+    "en": "Add custom instructions to personalize Agent responses. Instructions apply to future conversations of the local Agent; remote devices need separate configuration.",
+    "zh": "添加自定义指令来个性化 Agent 的回复，指令会应用到你本机 Agent 的后续会话；远程设备需单独配置。"
+  },
+  "settings.personalization.placeholder": {
+    "en": "Add custom instructions...",
+    "zh": "添加自定义指令…"
+  },
+  "settings.personalization.editorLabel": {
+    "en": "Custom instructions editor",
+    "zh": "个性化指令编辑器"
+  },
+  "settings.personalization.saved": {
+    "en": "Saved; effective for new conversations",
+    "zh": "已保存，新会话生效"
+  },
+  "settings.personalization.saveFailed": {
+    "en": "Failed to save. Check the logs",
+    "zh": "保存失败，请查看日志"
+  },
+  "settings.personalization.loadFailed": {
+    "en": "Failed to load custom instructions. Check the logs",
+    "zh": "读取个性化指令失败，请查看日志"
+  },
+  "settings.personalization.localOnly": {
+    "en": "Custom instructions can only be edited on the local desktop. Open Settings → Personalization in the desktop app.",
+    "zh": "个性化指令仅支持在本地桌面端设置，请前往本地桌面端的“个性化”设置。"
+  },
+  "settings.personalization.unsaved": {
+    "en": "Unsaved changes",
+    "zh": "有未保存的修改"
+  },
+  "settings.personalization.sizeCount": {
+    "en": "{used} / {limit}",
+    "zh": "{used} / {limit}"
+  },
+  "settings.personalization.sizeOverLimit": {
+    "en": "Content exceeds the 100 KB limit the Agent reads; anything beyond it is ignored. Trim before saving.",
+    "zh": "内容超出 Agent 读取上限 100 KB，超出部分不会生效；请精简后再保存。"
+  },
+  "settings.mcp.trust.action": {
+    "en": "Trust",
+    "zh": "信任"
+  },
+  "settings.mcp.trust.revoke": {
+    "en": "Revoke trust",
+    "zh": "撤销信任"
+  },
+  "settings.mcp.trust.title": {
+    "en": "Trust workspace MCP: {name}",
+    "zh": "信任工作区 MCP：{name}"
+  },
+  "settings.mcp.trust.revokeTitle": {
+    "en": "Revoke workspace MCP trust: {name}",
+    "zh": "撤销工作区 MCP 信任：{name}"
+  },
+  "settings.mcp.trust.description": {
+    "en": "Connections may run code or send data. Trust does not enable MCP. Existing chats keep their authorization. Changes apply to new or restarted chats.",
+    "zh": "连接可运行本地命令或发送数据。信任不会启用 MCP。已有会话沿用原授权，信任变更在新建或重启会话时生效。"
+  },
+  "settings.mcp.trust.pending": {
+    "en": "Current declaration awaits trust",
+    "zh": "当前声明待信任"
+  },
+  "settings.mcp.trust.trusted": {
+    "en": "Current declaration trusted",
+    "zh": "当前声明已信任"
+  },
+  "settings.mcp.trust.failed": {
+    "en": "The declaration changed or trust is unavailable. Refresh and try again.",
+    "zh": "声明已变化或信任服务不可用，请刷新后重试。"
+  },
+  "settings.scope.deviceOffline": {
+    "en": "{device} is offline. Its configuration cannot be read or changed until it reconnects.",
+    "zh": "「{device}」已离线，无法读取或修改它的配置。设备重新连接后再试。"
+  },
+  "settings.scope.deviceConnecting": {
+    "en": "Connecting to {device}…",
+    "zh": "正在连接「{device}」…"
+  },
+  "settings.scope.localDevice": {
+    "en": "This computer",
+    "zh": "本机"
+  },
+  "settings.scope.projects": {
+    "en": "Projects",
+    "zh": "项目"
+  },
+  "settings.scope.searchProjects": {
+    "en": "Search projects",
+    "zh": "搜索项目"
+  },
+  "settings.scope.noMatchingProjects": {
+    "en": "No matching projects",
+    "zh": "没有匹配的项目"
+  },
+  "settings.plugins.marketplaces.riskWarning": {
+    "en": "Unofficial plugin marketplaces may contain malicious plugins that can harm your device. Verify the source and take precautions before adding.",
+    "zh": "非官方插件市场可能包含恶意插件，损害设备。请先核实来源并做好风险防范，再添加。"
+  },
+  "settings.plugins.marketplaces.riskAcknowledgement": {
+    "en": "I understand the risks, have verified the source, and have taken precautions.",
+    "zh": "我已了解风险，并已核实来源、做好风险防范。"
+  },
+  "settings.plugins.updateAll": {
+    "en": "Update all ({count})",
+    "zh": "全部更新（{count}）"
+  },
+  "settings.plugins.updateAll.done": {
+    "en": "Updated {count} plugin(s)",
+    "zh": "已更新 {count} 个插件"
+  },
+  "settings.plugins.updateAll.partial": {
+    "en": "Updated {succeeded}, failed {failed}: {plugins}",
+    "zh": "已更新 {succeeded} 个，{failed} 个失败：{plugins}"
+  },
+  "settings.plugins.updateAll.aborted": {
+    "en": "Update all stopped because the plugin scope changed; updated {count} plugin(s)",
+    "zh": "插件范围已切换，全部更新已中止；已更新 {count} 个插件"
+  },
+  "onboarding.finish.workspaceRequired": {
+    "en": "{count} items need a project and were not imported. Open a project, then migrate them again.",
+    "zh": "{count} 项需要导入到项目，请先打开项目后再迁移这些项。"
+  },
+  "chat.loading.working": {
+    "en": "Working",
+    "zh": "工作中"
+  },
+  "imageEditor.tools": {
+    "en": "Image editing tools",
+    "zh": "图片编辑工具"
+  },
+  "imageEditor.select": {
+    "en": "Select and move",
+    "zh": "选择与移动"
+  },
+  "imageEditor.pen": {
+    "en": "Pen",
+    "zh": "画笔"
+  },
+  "imageEditor.text": {
+    "en": "Text",
+    "zh": "文字"
+  },
+  "imageEditor.rectangle": {
+    "en": "Rectangle",
+    "zh": "矩形"
+  },
+  "imageEditor.ellipse": {
+    "en": "Ellipse",
+    "zh": "椭圆"
+  },
+  "imageEditor.arrow": {
+    "en": "Arrow",
+    "zh": "箭头"
+  },
+  "imageEditor.eraser": {
+    "en": "Eraser",
+    "zh": "橡皮擦"
+  },
+  "imageEditor.color": {
+    "en": "Annotation color",
+    "zh": "标注颜色"
+  },
+  "imageEditor.undo": {
+    "en": "Undo",
+    "zh": "撤销"
+  },
+  "imageEditor.redo": {
+    "en": "Redo",
+    "zh": "重做"
+  },
+  "imageEditor.save": {
+    "en": "Save to chat",
+    "zh": "保存到对话"
+  },
+  "imageEditor.saving": {
+    "en": "Saving…",
+    "zh": "正在保存…"
+  },
+  "imageEditor.saveFailed": {
+    "en": "Could not save the image. Try again.",
+    "zh": "图片保存失败，请重试"
+  },
+  "imageEditor.noComposer": {
+    "en": "No chat input is available for this image",
+    "zh": "当前没有可接收图片的输入框"
+  },
+  "imageEditor.textValue": {
+    "en": "Annotation text",
+    "zh": "标注文字"
+  },
+  "imageEditor.applyText": {
+    "en": "Add text",
+    "zh": "添加文字"
+  },
+  "mode.yoloConfirmation.title": {
+    "en": "Enable full access?",
+    "zh": "要启用完全访问吗？"
+  },
+  "mode.yoloConfirmation.description": {
+    "en": "Tasks can perform the following actions without asking for your approval each time.",
+    "zh": "启用后，任务可以直接执行以下操作，无需逐次请求你确认。"
+  },
+  "mode.yoloConfirmation.files": {
+    "en": "Files and folders",
+    "zh": "文件和文件夹"
+  },
+  "mode.yoloConfirmation.files.description": {
+    "en": "Read, create, change, and delete accessible files.",
+    "zh": "读取、创建、修改和删除可访问的文件。"
+  },
+  "mode.yoloConfirmation.commands": {
+    "en": "Terminal commands",
+    "zh": "终端命令"
+  },
+  "mode.yoloConfirmation.commands.description": {
+    "en": "Run commands, install software, or change system settings.",
+    "zh": "运行命令、安装软件或修改系统配置。"
+  },
+  "mode.yoloConfirmation.network": {
+    "en": "Network and apps",
+    "zh": "网络和应用"
+  },
+  "mode.yoloConfirmation.network.description": {
+    "en": "Access the network, send data, and use connected apps.",
+    "zh": "访问网络、发送数据，以及调用已连接的应用。"
+  },
+  "mode.yoloConfirmation.risk": {
+    "en": "These actions may cause data loss or disclosure. Enable only for tasks you trust. You can switch to another permission mode at any time.",
+    "zh": "这些操作可能造成数据丢失或泄露。请仅在信任任务内容时启用。你可以随时切回其他权限模式。"
+  },
+  "mode.yoloConfirmation.acknowledgement": {
+    "en": "I understand the risks and take responsibility for my data security.",
+    "zh": "我已了解风险，并对自己的数据安全负责。"
+  },
+  "mode.yoloConfirmation.confirm": {
+    "en": "Confirm",
+    "zh": "确认启用"
+  },
+  "zcode.error.providerBusiness.3106": {
+    "en": "This run exceeded the maximum single-run time. Create a new idle-time task to continue.",
+    "zh": "已超过单次最长运行时间，请创建新的闲时任务继续。"
+  },
+  "zcode.error.offPeakTicketExpired": {
+    "en": "This idle-time task can no longer continue. Create a new idle-time task.",
+    "zh": "此闲时任务已无法继续，请创建新的闲时任务。"
+  },
+  "remoteSync.title": {
+    "en": "Data sync",
+    "zh": "数据同步"
+  },
+  "remoteSync.description": {
+    "en": "Sync local configuration to remote devices.",
+    "zh": "同步本机配置到远端。"
+  },
+  "remoteSync.rules.title": {
+    "en": "Sync rules",
+    "zh": "同步规则"
+  },
+  "remoteSync.rules.description": {
+    "en": "Only adds or updates items. Remote-only content is preserved.",
+    "zh": "仅新增或更新，保留远端独有内容。"
+  },
+  "remoteSync.device.status.online": {
+    "en": "Connected",
+    "zh": "已连接"
+  },
+  "remoteSync.empty.title": {
+    "en": "No connected devices",
+    "zh": "暂无已连接设备"
+  },
+  "remoteSync.empty.description": {
+    "en": "Connect an SSH, WSL, or Docker device to push this device's configuration to its ~/.zcode directory.",
+    "zh": "连接 SSH、WSL 或 Docker 设备后，可以把本机配置推送到该设备的 ~/.zcode 目录。"
+  },
+  "remoteSync.empty.connect": {
+    "en": "Connect remote device",
+    "zh": "连接远端设备"
+  },
+  "remoteSync.device.neverSynced": {
+    "en": "Not synced yet",
+    "zh": "尚未同步"
+  },
+  "remoteSync.device.lastSynced.today": {
+    "en": "Synced today at {time}",
+    "zh": "今天 {time} 已同步"
+  },
+  "remoteSync.device.lastSynced": {
+    "en": "Synced {time}",
+    "zh": "{time} 已同步"
+  },
+  "remoteSync.device.status.failed": {
+    "en": "Last sync failed",
+    "zh": "上次同步失败"
+  },
+  "remoteSync.device.status.offline": {
+    "en": "Not connected",
+    "zh": "未连接"
+  },
+  "remoteSync.device.status.connecting": {
+    "en": "Connecting…",
+    "zh": "连接中…"
+  },
+  "remoteSync.action.open": {
+    "en": "Sync configuration",
+    "zh": "同步配置"
+  },
+  "remoteSync.action.migrate": {
+    "en": "Migrate data",
+    "zh": "迁移数据"
+  },
+  "remoteSync.action.retry": {
+    "en": "Retry",
+    "zh": "重试"
+  },
+  "remoteSync.action.connect": {
+    "en": "Connect",
+    "zh": "连接"
+  },
+  "remoteSync.action.connecting": {
+    "en": "Connecting…",
+    "zh": "连接中…"
+  },
+  "remoteSync.action.close": {
+    "en": "Close",
+    "zh": "关闭"
+  },
+  "remoteSync.action.pushAll": {
+    "en": "Push all",
+    "zh": "推送全部"
+  },
+  "remoteSync.action.transferringAll": {
+    "en": "Syncing all…",
+    "zh": "全部同步中…"
+  },
+  "remoteSync.action.transferredAll": {
+    "en": "All synced",
+    "zh": "已全部同步"
+  },
+  "remoteSync.action.pushCategory": {
+    "en": "Push {category}",
+    "zh": "推送{category}"
+  },
+  "remoteSync.action.clear": {
+    "en": "Clear selection",
+    "zh": "取消选择"
+  },
+  "remoteSync.action.transferring": {
+    "en": "Syncing…",
+    "zh": "同步中…"
+  },
+  "remoteSync.action.transferAgain": {
+    "en": "Sync again",
+    "zh": "再次同步"
+  },
+  "remoteSync.action.stop": {
+    "en": "Stop",
+    "zh": "停止"
+  },
+  "remoteSync.dialog.title": {
+    "en": "Data sync",
+    "zh": "数据同步"
+  },
+  "remoteSync.dialog.categories": {
+    "en": "Sync content",
+    "zh": "同步内容"
+  },
+  "remoteSync.dialog.offline": {
+    "en": "The device is offline, so actions are disabled. The list refreshes automatically when the device is back online.",
+    "zh": "设备已离线，操作已禁用。设备重新上线后会自动刷新列表。"
+  },
+  "remoteSync.category.overview": {
+    "en": "Overview",
+    "zh": "概览"
+  },
+  "remoteSync.category.plugins": {
+    "en": "Plugins",
+    "zh": "插件"
+  },
+  "remoteSync.category.subagents": {
+    "en": "Subagents",
+    "zh": "子智能体"
+  },
+  "remoteSync.category.skills": {
+    "en": "Skills",
+    "zh": "技能"
+  },
+  "remoteSync.category.mcp": {
+    "en": "MCP Servers",
+    "zh": "MCP 服务器"
+  },
+  "remoteSync.category.commands": {
+    "en": "Commands",
+    "zh": "命令"
+  },
+  "remoteSync.category.hooks": {
+    "en": "Hooks",
+    "zh": "钩子"
+  },
+  "remoteSync.category.empty": {
+    "en": "No items on this device to sync",
+    "zh": "本机没有可同步的条目"
+  },
+  "remoteSync.category.loadFailed": {
+    "en": "Failed to load: {error}",
+    "zh": "加载失败：{error}"
+  },
+  "remoteSync.overview.description": {
+    "en": "Review configuration differences between this device and the target.",
+    "zh": "查看本机与目标设备之间的配置差异。"
+  },
+  "remoteSync.overview.column.category": {
+    "en": "Category",
+    "zh": "分类"
+  },
+  "remoteSync.overview.column.local": {
+    "en": "Local",
+    "zh": "本机"
+  },
+  "remoteSync.overview.column.remote": {
+    "en": "Remote",
+    "zh": "远端"
+  },
+  "remoteSync.overview.loading": {
+    "en": "Loading…",
+    "zh": "加载中…"
+  },
+  "remoteSync.overview.loadFailed": {
+    "en": "Failed to load",
+    "zh": "加载失败"
+  },
+  "remoteSync.difference.matching": {
+    "en": "Identical",
+    "zh": "已一致"
+  },
+  "remoteSync.difference.changes": {
+    "en": "{count} changes",
+    "zh": "{count} 项变更"
+  },
+  "remoteSync.selection.selectAll": {
+    "en": "Select all",
+    "zh": "全选"
+  },
+  "remoteSync.selection.empty": {
+    "en": "No items selected",
+    "zh": "未选择任何内容"
+  },
+  "remoteSync.selection.summary": {
+    "en": "{count} items to sync",
+    "zh": "将同步 {count} 项"
+  },
+  "remoteSync.selection.failed": {
+    "en": "{count} failed",
+    "zh": "{count} 项失败"
+  },
+  "remoteSync.version.pushSourceOlder": {
+    "en": "Local version is older",
+    "zh": "本机版本较旧"
+  },
+  "remoteSync.version.contentDiffers": {
+    "en": "Content differs",
+    "zh": "内容不同"
+  },
+  "remoteSync.operation.push": {
+    "en": "Push",
+    "zh": "推送"
+  },
+  "remoteSync.operation.update": {
+    "en": "Update",
+    "zh": "更新"
+  },
+  "remoteSync.operation.difference": {
+    "en": "Difference",
+    "zh": "差异"
+  },
+  "remoteSync.operation.synced": {
+    "en": "Synced",
+    "zh": "已同步"
+  },
+  "remoteSync.blocked.sizeLimit": {
+    "en": "Exceeds the size limit and cannot be synced",
+    "zh": "超过大小上限，不能同步"
+  },
+  "remoteSync.blocked.containsSymlink": {
+    "en": "Contains a symbolic link and cannot be synced",
+    "zh": "目录内含软链，不能同步"
+  },
+  "remoteSync.blocked.targetSymlink": {
+    "en": "The remote item is a symbolic link and cannot be overwritten",
+    "zh": "远端同名项是软链，不能覆盖"
+  },
+  "remoteSync.blocked.compatDirectory": {
+    "en": "The remote item is in the ~/.agents compatibility directory and cannot be overwritten",
+    "zh": "远端同名项位于 ~/.agents 兼容目录，不能覆盖"
+  },
+  "remoteSync.blocked.externalDirectory": {
+    "en": "The remote plugin with the same name is outside ~/.zcode/plugins (for example a development checkout) and cannot be updated",
+    "zh": "远端同名插件位于 ~/.zcode/plugins 以外的目录（例如开发中的 checkout），不能更新"
+  },
+  "remoteSync.blocked.targetCompatConfig": {
+    "en": "The remote device uses the ~/.agents compatibility config; pushing would disable it",
+    "zh": "远端使用 ~/.agents 兼容配置，推送会使其失效"
+  },
+  "remoteSync.blocked.sourceRemoved": {
+    "en": "The source was removed and cannot be synced",
+    "zh": "来源已删除，不能同步"
+  },
+  "remoteSync.blocked.remoteLatestMismatch": {
+    "en": "The latest version from the remote source differs from the version on this device",
+    "zh": "远端来源的最新版本与本机不一致"
+  },
+  "remoteSync.blocked.crossMarketplaceDependency": {
+    "en": "Depends on a plugin from another marketplace. Mirroring does not support cross-marketplace dependencies",
+    "zh": "依赖其他 marketplace 的插件，镜像不支持跨 marketplace 的依赖"
+  },
+  "remoteSync.blocked.unsupportedSource": {
+    "en": "This source type cannot be synced",
+    "zh": "来源类型不支持同步"
+  },
+  "remoteSync.item.conflict": {
+    "en": "The remote item changed. Refresh and try again.",
+    "zh": "远端已变化，请刷新后重试"
+  },
+  "remoteSync.item.failed": {
+    "en": "Sync failed: {error}",
+    "zh": "同步失败：{error}"
+  },
+  "remoteSync.item.unknownError": {
+    "en": "Unknown error",
+    "zh": "未知错误"
+  },
+  "remoteSync.item.stopped": {
+    "en": "Stopped",
+    "zh": "已停止"
+  },
+  "remoteSync.dependency.missingMcp": {
+    "en": "Missing MCP on remote: {names}",
+    "zh": "远端缺少 MCP：{names}"
+  },
+  "remoteSync.dependency.missingSkills": {
+    "en": "Missing skills on remote: {names}",
+    "zh": "远端缺少技能：{names}"
+  },
+  "remoteSync.dependency.nameSeparator": {
+    "en": ", ",
+    "zh": "、"
+  },
+  "remoteSync.dependency.groupSeparator": {
+    "en": "; ",
+    "zh": "；"
+  },
+  "remoteSync.error.offline": {
+    "en": "The device disconnected during the push. The push did not finish.",
+    "zh": "推送中设备已断开，本次推送未完成。"
+  },
+  "remoteSync.error.preflightTimeout": {
+    "en": "Checking remote write access timed out. Nothing was written.",
+    "zh": "检查远端写入权限超时，未写入任何内容。"
+  },
+  "remoteSync.error.pushFailed": {
+    "en": "Push failed: {error}",
+    "zh": "推送失败：{error}"
+  },
+  "remoteSync.category.providers": {
+    "en": "Model providers",
+    "zh": "模型提供商"
+  },
+  "remoteSync.category.providers.warning": {
+    "en": "This device's model configuration is the source of truth and syncs to the remote automatically after you save. API keys and sign-in state sync with it.",
+    "zh": "模型配置以本机为准，保存后自动同步到远端；API Key 和登录态随配置同步"
+  },
+  "remoteSync.overview.autoSync": {
+    "en": "Auto sync",
+    "zh": "自动同步"
+  },
+  "remoteSync.overview.syncFailed": {
+    "en": "Sync failed",
+    "zh": "同步失败"
+  },
+  "remoteSync.providers.empty": {
+    "en": "No custom model providers on this device",
+    "zh": "本机没有自定义的模型提供商"
+  },
+  "remoteSync.providers.apiKey": {
+    "en": "API key {key}",
+    "zh": "API Key {key}"
+  },
+  "remoteSync.providers.status.noLane": {
+    "en": "Syncs automatically after you open a project on this device",
+    "zh": "打开该设备上的项目后自动同步"
+  },
+  "remoteSync.providers.status.running": {
+    "en": "Syncing automatically…",
+    "zh": "正在自动同步…"
+  },
+  "remoteSync.providers.status.never": {
+    "en": "Not synced automatically yet",
+    "zh": "尚未自动同步"
+  },
+  "remoteSync.providers.status.success": {
+    "en": "Synced automatically {time}",
+    "zh": "{time} 已自动同步"
+  },
+  "remoteSync.providers.status.failed": {
+    "en": "Automatic sync failed {time}: {reason}",
+    "zh": "{time} 自动同步失败：{reason}"
+  },
+  "remoteSync.providers.status.loadFailed": {
+    "en": "Could not read the automatic sync status",
+    "zh": "无法读取自动同步状态"
+  },
+  "remoteSync.providers.error.sourceReadFailed": {
+    "en": "Could not read the local model configuration",
+    "zh": "读取本机模型配置失败"
+  },
+  "remoteSync.providers.error.targetCallFailed": {
+    "en": "Could not reach the remote sync service",
+    "zh": "无法调用远端的同步服务"
+  },
+  "remoteSync.providers.error.targetWriteFailed": {
+    "en": "The remote device could not write the configuration",
+    "zh": "远端写入配置失败"
+  },
+  "remoteSync.providers.error.targetRefreshFailed": {
+    "en": "The remote device could not reload the model configuration",
+    "zh": "远端刷新模型配置失败"
+  },
+  "remoteSync.providers.error.targetCommitFailed": {
+    "en": "The remote device could not record the sync result",
+    "zh": "远端记录同步结果失败"
+  },
+  "remoteSync.providers.error.targetApplyFailed": {
+    "en": "The remote device could not apply the configuration",
+    "zh": "远端应用配置失败"
+  },
+  "remoteSync.providers.error.capabilityUnavailable": {
+    "en": "The remote version does not support model configuration sync",
+    "zh": "远端版本不支持模型配置同步"
+  },
+  "remoteSync.providers.error.sessionUnavailable": {
+    "en": "The remote connection is no longer available",
+    "zh": "远端连接已失效"
+  },
+  "remoteSync.providers.error.hostExecutionFailed": {
+    "en": "The sync could not run on this device",
+    "zh": "本机执行同步失败"
+  },
+  "remoteSync.providers.error.unknown": {
+    "en": "Unknown error",
+    "zh": "未知错误"
+  },
+  "chat.configReadRetryStatus": {
+    "en": "",
+    "zh": "正在重新读取请求校验配置（{attempt}/{maxRetries}）…"
+  },
+  "chat.configReadFailed": {
+    "en": "",
+    "zh": "暂时无法读取请求校验配置，消息尚未发送。请检查网络后重试。"
+  },
+  "chat.configInvalid": {
+    "en": "",
+    "zh": "请求校验配置无效，请检查账号或联系支持。"
+  }
+}

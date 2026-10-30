@@ -930,17 +930,7 @@ def patch_styles(js_content):
     "Activity rules": "Etkinlik Kuralları",
     "Activity Rules": "Etkinlik Kuralları",
     "View rules": "Kuralları Görüntüle",
-    "View Rules": "Kuralları Görüntüle",
-    "Documents": "Belge Becerileri",
-    "DOCUMENTS": "Belge Becerileri",
-        "Presentations": "Sunum Becerileri",
-    "PRESENTATIONS": "Sunum Becerileri",
-    "Spreadsheets": "Tablo Becerileri",
-    "SPREADSHEETS": "Tablo Becerileri",
-    "Plugin Creator": "Eklenti Oluşturucu",
-    "PLUGIN CREATOR": "Eklenti Oluşturucu",
-    "Microsoft Foundry": "Microsoft Foundry",
-    "MICROSOFT FOUNDRY": "Microsoft Foundry"
+    "View Rules": "Kuralları Görüntüle"
   };
 
   const SORTED_KEYS = Object.keys(TR_MAP).sort((a, b) => b.length - a.length);
@@ -1012,29 +1002,7 @@ def patch_styles(js_content):
         modified = "20 kat Lite kullanımı + Tüm avantajlar";
       } else if (clean.startsWith("Save 10% annually")) {
         modified = "Yıllık %10 indirim";
-      } else if (clean.startsWith("Comprehensive DOCX") || clean.startsWith("Revizyonlar, yorumlar")) {
-        modified = "Revizyonlar, yorumlar, biçimlendirme koruma ve metin çıkarma desteğiyle kapsamlı DOCX belgesi oluşturma, düzenleme ve analiz yetenekleri. Şablon tabanlı üretim ve format dönüştürmeyi destekler.";
-      } else if (clean.startsWith("Professional PDF") || clean.startsWith("4 özel iş akışına")) {
-        modified = "4 özel iş akışına sahip profesyonel PDF işleme araç seti: Typst/ReportLab ile yayın kalitesinde PDF üretimi, HTML/CSS tuvali ile görsel belge biçimlendirme, LaTeX ile akademik makaleler ve PyMuPDF/pdfplumber ile programatik düzenleme. Akıllı yönlendirme, format doğrulama ve otomatik kalite kontrolleri içerir.";
-      } else if (clean.startsWith("PowerPoint (.pptx)") || clean.startsWith("PowerPoint ( .pptx )")) {
-        modified = "PowerPoint (.pptx) sunum oluşturma, biçimlendirme ve düzenleme yetenekleri. Sıfırdan veya taslaklardan sunum hazırlama, mevcut slaytları düzenleme ve metin/not çıkarma işlemlerini kapsar.";
-      } else if (clean.startsWith("Advanced spreadsheet") || clean.startsWith("Veri analizi, formüller")) {
-        modified = "Veri analizi, formüller ve grafiklerle Excel (.xlsx, .xlsm, .csv) için gelişmiş elektronik tablo işleme yetenekleri. Sıfırdan çalışma kitapları oluşturma, mevcut tabloları düzenleme, veri analizi ve formül hesaplamalarını kapsar.";
-      } else if (clean.startsWith("Create or update ZCode plugin")) {
-        modified = "ZCode eklenti kaynak kodunu ve yerel bir test mağazasını oluşturun veya güncelleyin; ardından kullanıcıya mağazayı ekleme, eklentiyi yükleme veya güncelleme ve uygulamada deneme konusunda rehberlik edin.";
-      } else if (clean.startsWith("Discover available Azure OpenAI")) {
-        modified = "Bölgeler ve abonelikler genelinde kullanılabilir Azure OpenAI model kapasitesini keşfeder. Kota sınırlarını analiz eder ve en uygun dağıtım konumlarını önerir.";
-      } else if (clean.startsWith("Interactive guided deployment flow")) {
-        modified = "Tam özelleştirme kontrolüyle Azure OpenAI modelleri için etkileşimli rehberli dağıtım akışı. Model sürümü, SKU, kapasite ve içerik filtreleme ilkesi seçimini sağlar.";
-      } else if (clean.startsWith("Unified Azure OpenAI model deployment")) {
-        modified = "Akıllı amaç tabanlı yönlendirme ile birleşik Azure OpenAI model dağıtım yeteneği. Hem hızlı ön ayarlı hem de tam özelleştirilmiş dağıtımları yönetir.";
-      } else if (clean.startsWith("Fine-tune models on Microsoft Foundry")) {
-        modified = "SFT, DPO veya RFT kullanarak Microsoft Foundry üzerinde modelleri ince ayarlar (fine-tune). Veri kümesi hazırlama, eğitim işi gönderme, değerlendirme ve dağıtımı kapsar.";
-      } else if (clean.startsWith("Build, deploy, evaluate, optimize, fine-tune, and manage Microsoft Foundry")) {
-        modified = "Microsoft Foundry ajanlarını, modellerini ve kaynaklarını uçtan uca derleyin, dağıtın, değerlendirin, optimize edin, ince ayar yapın ve yönetin.";
-      } else if (clean.startsWith("Smart deployment of Azure OpenAI")) {
-        modified = "Kullanılabilir tüm bölgelerdeki kapasiteyi analiz ederek Azure OpenAI modellerini en uygun bölgelere akıllıca dağıtır. Kapasite mevcut olduğunda geçerli bölgeyi tercih eder.";
-      } else if (clean.startsWith("Unified user & permission") || clean.startsWith("Unified seat & permission") || clean.startsWith("Unified user and permission") || clean.startsWith("Unified kullanıcı &")) {
+      } else if (clean.startsWith("Unified")) {
         modified = "Birleşik kullanıcı ve yetki yönetimi";
       }
       if (modified.includes("per kullanıcı/ay") || modified.includes("per user/month") || modified.includes("per seat/month")) {
@@ -1237,8 +1205,6 @@ def patch_styles(js_content):
         "ruic-card": "Holografik koleksiyon kartı üreticisi: katmanlı sanat tasarımı, folyo efektleri ve dışa aktarma.",
         "kicad": "Sohbet içinde KiCad 10: ajanlar 2 katmanlı devre kartları tasarlar, Gerber dosyalarını dışa aktarır ve katmanları SVG'de önizler."
     }
-    if CLAUDE_PLUGINS_TR:
-        official_p_descs.update(CLAUDE_PLUGINS_TR)
     claude_tr_file = os.path.join(BASE_DIR, "claude_plugins_tr.json")
     if os.path.exists(claude_tr_file):
         with open(claude_tr_file, "r", encoding="utf-8") as _cf:
@@ -1312,15 +1278,15 @@ def patch_styles(js_content):
             'if(d.startsWith("Restricted read-only verifier"))return TR_AGENT_DESCS["scan-verifier"]}'
             'return d};'
         )
-        target_sub = f'children:e.description||d.formatMessage({{id:{bt}settings.subagents.noDescription{bt}}})'
-        replacement_sub = f'children:_trAgentDesc(e)||d.formatMessage({{id:{bt}settings.subagents.noDescription{bt}}})'
-        if target_sub in js_content:
-            pos_fn = js_content.rfind("function ", 0, js_content.find(target_sub))
+        pat_sub_sub = rf'children:(\w+)\.description\|\|(\w+)\.formatMessage\({{id:{bt}settings\.subagents\.noDescription{bt}}}\)'
+        m_sub = re.search(pat_sub_sub, js_content)
+        if m_sub:
+            pos_fn = js_content.rfind("function ", 0, m_sub.start())
             if pos_fn != -1:
                 js_content = js_content[:pos_fn] + subagent_helpers + js_content[pos_fn:]
             else:
                 js_content = subagent_helpers + js_content
-            js_content = js_content.replace(target_sub, replacement_sub, 1)
+            js_content = re.sub(pat_sub_sub, rf'children:_trAgentDesc()||.formatMessage({{id:{bt}settings.subagents.noDescription{bt}}})', js_content, count=1)
 
     # Section titles helper injection
     if "function _trSectionTitle(" not in js_content:
@@ -1409,31 +1375,34 @@ def patch_styles(js_content):
 
 
     # 1. Sidebar Theme menu: change "system" label to "Sistem Teması (Varsayılan)"
+    target_theme_v3171 = '(0,$.jsx)(lb,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(lb,{value:`zai-dark`'
+    repl_theme_v3171 = '(0,$.jsx)(lb,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(lb,{value:`zai-dark`'
     target_theme = '(0,$.jsx)(Vy,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Vy,{value:`zai-dark`'
     repl_theme = '(0,$.jsx)(Vy,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(Vy,{value:`zai-dark`'
-    if target_theme in js_content:
+    if target_theme_v3171 in js_content:
+        js_content = js_content.replace(target_theme_v3171, repl_theme_v3171, 1)
+    elif target_theme in js_content:
         js_content = js_content.replace(target_theme, repl_theme, 1)
-    else:
-        pat_theme = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`system`,children:([\w$]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\}\),\(0,\$\.jsx\)\(\2,{value:`zai-dark`)'
-        js_content = re.sub(pat_theme, r'(0,$.jsx)(\2,{value:`system`,children:`Sistem Teması (Varsayılan)`}),(0,$.jsx)(\2,{value:`zai-dark`', js_content, count=1)
 
     # 2. Sidebar Locale menu: change "system" label to "Sistem Dili (Varsayılan)" and inject "tr-TR" (Türkçe)
+    target_locale_v3171 = '(0,$.jsx)(lb,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(lb,{value:`en-US`'
+    repl_locale_v3171 = '(0,$.jsx)(lb,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(lb,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(lb,{value:`en-US`'
     target_locale = '(0,$.jsx)(Vy,{value:`system`,children:v.formatMessage({id:`sidebar.settings.systemDefault`})}),(0,$.jsx)(Vy,{value:`en-US`'
     repl_locale = '(0,$.jsx)(Vy,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(Vy,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(Vy,{value:`en-US`'
-    if target_locale in js_content:
+    if target_locale_v3171 in js_content:
+        js_content = js_content.replace(target_locale_v3171, repl_locale_v3171, 1)
+    elif target_locale in js_content:
         js_content = js_content.replace(target_locale, repl_locale, 1)
-    else:
-        pat_locale = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`system`,children:([\w$]+)\.formatMessage\({id:`sidebar\.settings\.systemDefault`}\}\}\),\(0,\$\.jsx\)\(\2,{value:`en-US`)'
-        js_content = re.sub(pat_locale, r'(0,$.jsx)(\2,{value:`system`,children:`Sistem Dili (Varsayılan)`}),(0,$.jsx)(\2,{value:`tr-TR`,children:`Türkçe`}),(0,$.jsx)(\2,{value:`en-US`', js_content, count=1)
 
     # 3. Settings page locale: inject tr-TR (Türkçe)
+    target_set_v3171 = ')(fh,{value:`en-US`,"data-testid":Gb(Lb,`en-US`),children:ge.formatMessage({id:`settings.locale.en-US`})})'
+    repl_set_v3171 = ')(fh,{value:`en-US`,"data-testid":Gb(Lb,`en-US`),children:ge.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(fh,{value:`tr-TR`,"data-testid":Gb(Lb,`tr-TR`),children:`Türkçe`})'
     target_set = '(0,$.jsx)(Nm,{value:`en-US`,"data-testid":Sb(mb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})})'
     repl_set = '(0,$.jsx)(Nm,{value:`en-US`,"data-testid":Sb(mb,`en-US`),children:_e.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(Nm,{value:`tr-TR`,"data-testid":Sb(mb,`tr-TR`),children:`Türkçe`})'
-    if target_set in js_content:
+    if target_set_v3171 in js_content:
+        js_content = js_content.replace(target_set_v3171, repl_set_v3171, 1)
+    elif target_set in js_content:
         js_content = js_content.replace(target_set, repl_set, 1)
-    else:
-        pat_set = r'(\(0,\$\.jsx\)\(([\w$]+),{value:`en-US`,"data-testid":([\w$]+)\(([\w$]+),`en-US`\),children:([\w$]+)\.formatMessage\({id:`settings\.locale\.en-US`}\}\}\))'
-        js_content = re.sub(pat_set, r'\1,(0,$.jsx)(\2,{value:`tr-TR`,"data-testid":\3(\4,`tr-TR`),children:`Türkçe`})', js_content, count=1)
         # Start Plan and Effort labels
     js_content = js_content.replace('?`Start Plan`:bL(e)}', '?`Başlangıç Planı`:bL(e)}')
     js_content = js_content.replace('{label:`Start Plan`,labelBadge:', '{label:`Başlangıç Planı`,labelBadge:')
