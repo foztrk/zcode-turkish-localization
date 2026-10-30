@@ -714,7 +714,7 @@ function _trCommandHint(h){{if(!h||typeof h!=="string")return h;let t=h.trim();i
 
 const TR_STORE_NAMES={tr_store_names_json};
 function _trPluginName(id,raw){{if(id&&TR_STORE_NAMES[id])return TR_STORE_NAMES[id];if(raw&&TR_STORE_NAMES[raw])return TR_STORE_NAMES[raw];return raw}};
-function _trPluginDesc(id,raw){{if(id&&TR_SKILL_DESCS[id])return TR_SKILL_DESCS[id];if(raw&&typeof raw==="string"){{let t=raw.trim();if(TR_SKILL_DESCS[t])return TR_SKILL_DESCS[t]}};return raw}};
+function _trPluginDesc(id,raw){{if(id&&TR_SKILL_DESCS[id])return TR_SKILL_DESCS[id];if(raw&&typeof raw==="string"){{let t=raw.trim();if(TR_SKILL_DESCS[t])return TR_SKILL_DESCS[t];for(let k in TR_SKILL_DESCS){{if(t.length>15&&k.length>15&&(t.startsWith(k)||k.startsWith(t)||t.includes(k)||k.includes(t.slice(0,25))))return TR_SKILL_DESCS[k]}}}};return raw}};
 /* === END HELPERS === */
 """
 
@@ -760,6 +760,14 @@ function _trPluginDesc(id,raw){{if(id&&TR_SKILL_DESCS[id])return TR_SKILL_DESCS[
     target_c9e = 'var c9e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};'
     repl_c9e = 'var c9e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,"游戏/3D":`settings.plugins.store.category.game3d`,game3d:`settings.plugins.store.category.game3d`,other:`settings.plugins.store.category.other`};'
     js_content = js_content.replace(target_c9e, repl_c9e, 1)
+
+    target_tO = 'function tO(e,t){return ki(e,t)}'
+    repl_tO = 'function tO(e,t){let raw=ki(e,t);let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginName==="function")return _trPluginName(id,raw);return raw}'
+    js_content = js_content.replace(target_tO, repl_tO, 1)
+
+    target_nO = 'function nO(e,t){return xr(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)}'
+    repl_nO = 'function nO(e,t){let raw=xr(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)??(e&&e.description)??"";let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginDesc==="function")return _trPluginDesc(id,raw);return raw}'
+    js_content = js_content.replace(target_nO, repl_nO, 1)
 
     target_rO = 'function rO(e,t,n){let r=t?.id===e.id?t:void 0;return{name:ki(r??e,n),description:r?nO(r,n):e.description}}'
     repl_rO = 'function rO(e,t,n){let r=t?.id===e.id?t:void 0;let res={name:ki(r??e,n),description:r?nO(r,n):e.description};let pid=(e&&e.id)||(r&&r.id)||(e&&e.name)||"";if(typeof _trPluginName==="function")res.name=_trPluginName(pid,res.name);if(typeof _trPluginDesc==="function")res.description=_trPluginDesc(pid,res.description);return res}'
