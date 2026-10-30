@@ -240,17 +240,17 @@ def patch_styles(js_content):
     # 2. Temiz Global Yardımcılar Bloğu (Top-Level Scope)
     helpers_header = f"""
 /* === TURKISH LOCALIZATION HELPERS === */
-const TR_AGENT_DESCS={{"general-purpose":"Karmaşık soruları araştırmak, kod aramak ve çok adımlı görevleri yürütmek için genel amaçlı ajan.","Explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.","explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.","judge":"Yalnızca görsel çıktıların kabul incelemesi için yetkili onay ajanı."}};
-function _trAgentDesc(e){{let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;if(TR_AGENT_DESCS[b])return TR_AGENT_DESCS[b];if(TR_AGENT_DESCS[n])return TR_AGENT_DESCS[n];return (e&&e.description)||""}};
+const TR_AGENT_DESCS={{"general-purpose":"Karmaşık soruları araştırmak, kod aramak ve çok adımlı görevleri yürütmek için genel amaçlı ajan.","Explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.","explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.","judge":"Yalnızca görsel çıktıların kabul incelemesi için yetkili onay ajanı.","claude-security":"Özel Claude Güvenlik orkestratörü. Depoyu derinlemesine tarar, açıkları tespit eder ve çoklu ajan koordinasyonuyla yamaları otomatik olarak uygular."}};
+function _trAgentDesc(e){{let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;let d=(e&&e.description)||"";if(b==="claude-security"||n==="claude-security"||(typeof d==="string"&&(d.startsWith("The dedicated Claude")||d.includes("orchestrator. Hand it an unattended job"))))return TR_AGENT_DESCS["claude-security"];if(TR_AGENT_DESCS[b])return TR_AGENT_DESCS[b];if(TR_AGENT_DESCS[n])return TR_AGENT_DESCS[n];return d}};
 
-const TR_SEC_TITLES={{"Restore Legacy Sessions":"Eski Oturumları Geri Yükle","Skill Creator":"Beceri Oluşturucu","ZCode Guide":"ZCode Rehberi","Android Emulator":"Android Emülatörü","iOS Simulator":"iOS Simülatörü","Document Skills":"Belge Becerileri","Documents":"Belge Becerileri","PDF":"PDF","Presentations":"Sunum Becerileri","Spreadsheets":"Tablo Becerileri","Plugin Creator":"Eklenti Oluşturucu","Browser Use":"Browser Use","Computer Use":"Bilgisayar Kontrolü","Base44":"Base44","Cloudflare":"Cloudflare"}};
+const TR_SEC_TITLES={{"Restore Legacy Sessions":"Eski Oturumları Geri Yükle","Skill Creator":"Beceri Oluşturucu","ZCode Guide":"ZCode Rehberi","Android Emulator":"Android Emülatörü","iOS Simulator":"iOS Simülatörü","Document Skills":"Belge Becerileri","Documents":"Belge Becerileri","PDF":"PDF","Presentations":"Sunum Becerileri","Spreadsheets":"Tablo Becerileri","Plugin Creator":"Eklenti Oluşturucu","Browser Use":"Browser Use","Computer Use":"Bilgisayar Kontrolü","Base44":"Base44","Cloudflare":"Cloudflare","AMD Skills":"AMD Becerileri","Amd Skills":"AMD Becerileri","Claude MD Management":"Claude MD Yönetimi","Firecrawl":"Firecrawl"}};
 function _trSectionTitle(n){{if(!n)return n;let u=n.toUpperCase();if(TR_SEC_TITLES[u])return TR_SEC_TITLES[u];if(TR_SEC_TITLES[n])return TR_SEC_TITLES[n];return n}};
 
 const TR_SKILL_DESCS={tr_p_descs_json};
 if(typeof window!=="undefined"){{window.TR_SKILL_DESCS=TR_SKILL_DESCS;window.TR_P_DESCS=TR_SKILL_DESCS}};
 if(typeof globalThis!=="undefined"){{globalThis.TR_SKILL_DESCS=TR_SKILL_DESCS;globalThis.TR_P_DESCS=TR_SKILL_DESCS}};
 
-function _trSkillDesc(e){{if(!e)return"";let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;b=String(b).replace(/@.*$/,"").replace(/^plugin:/,"").trim();if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n];return e.description||""}};
+function _trSkillDesc(e){{if(!e)return"";let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;b=String(b).replace(/@.*$/,"").replace(/^plugin:/,"").trim();if(b.includes("/"))b=b.slice(b.lastIndexOf("/")+1);if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n];let d=(e&&e.description)||"";if(typeof d==="string"&&d.trim()&&TR_SKILL_DESCS[d.trim()])return TR_SKILL_DESCS[d.trim()];return d}};
 
 const TR_CMD_DESCS={{"revise-claude-md":"Bu oturumdan öğrenilenlerle CLAUDE.md dosyasını güncelleyin.","build-agent":"Agents SDK kullanarak Cloudflare üzerinde bir yapay zeka ajanı derleyin.","build-mcp":"McpAgent kullanarak Cloudflare üzerinde uzak bir MCP sunucusu derleyin.","skill-gen":"Firecrawl kullanarak bir dokümantasyon URL'sinden eksiksiz bir Ajan Becerisi oluşturun.","android-dev":"Android emülatör geliştirme döngüsünü başlatın.","ios-dev":"iOS simülatör geliştirme döngüsünü başlatın.","restore-legacy-sessions":"Eski bir ZCode oturumunu seçin ve geri yükleyin.","workflow":"Bir görev için dinamik iş akışı tasarlayın ve başlatın.","code-review":"Bir pull request için kod incelemesi yapın."}};
 function _trCommandDesc(e){{if(!e)return"";let n=(e&&(e.name||e.id))||"";let b=n.startsWith("/")?n.slice(1):n;b=b.split(" ")[0].trim();if(TR_CMD_DESCS[b])return TR_CMD_DESCS[b];if(TR_CMD_DESCS[n])return TR_CMD_DESCS[n];return (e&&e.description)||""}};
@@ -264,15 +264,15 @@ function _trCommandHint(h){{if(!h||typeof h!=="string")return h;let t=h.trim();i
 
     # 3. Güvenli Regex Eşleştirmeleri (Sözdizimi Hatasız)
     pat_sub_sub = rf'children:(\w+)\.description\|\|(\w+)\.formatMessage\({{id:{bt}settings\.subagents\.noDescription{bt}}}\)'
-    js_content = re.sub(pat_sub_sub, r'children:_trAgentDesc(\1)||\2.formatMessage({id:`settings.subagents.noDescription`})', js_content, count=1)
+    js_content = re.sub(pat_sub_sub, r'children:_trAgentDesc(\1)||\2.formatMessage({id:`settings.subagents.noDescription`})', js_content, count=0)
 
     pat_skill_sub = rf'children:(\w+)\.description\|\|(\w+)\.formatMessage\({{id:{bt}settings\.skills\.noDescription{bt}}}\)'
     pat_cmd_sub = rf'children:(\w+)\.description\|\|(\w+)\.formatMessage\({{id:{bt}settings\.commands\.noDescription{bt}}}\)'
     pat_hint_sub = rf'(\w+)\.argumentHint\?\(0,\$\.jsx\)\(`span`,{{className:`text-ui-base text-foreground-subtlest`,children:(\w+)\.argumentHint}}\):null'
 
-    js_content = re.sub(pat_skill_sub, r'children:_trSkillDesc(\1)||\2.formatMessage({id:`settings.skills.noDescription`})', js_content, count=1)
-    js_content = re.sub(pat_cmd_sub, r'children:_trCommandDesc(\1)||\2.formatMessage({id:`settings.commands.noDescription`})', js_content, count=1)
-    js_content = re.sub(pat_hint_sub, r'\1.argumentHint?(0,$.jsx)(`span`,{className:`text-ui-base text-foreground-subtlest`,children:_trCommandHint(\2.argumentHint)}):null', js_content, count=1)
+    js_content = re.sub(pat_skill_sub, r'children:_trSkillDesc(\1)||\2.formatMessage({id:`settings.skills.noDescription`})', js_content, count=0)
+    js_content = re.sub(pat_cmd_sub, r'children:_trCommandDesc(\1)||\2.formatMessage({id:`settings.commands.noDescription`})', js_content, count=0)
+    js_content = re.sub(pat_hint_sub, r'\1.argumentHint?(0,$.jsx)(`span`,{className:`text-ui-base text-foreground-subtlest`,children:_trCommandHint(\2.argumentHint)}):null', js_content, count=0)
 
     m1 = re.search(r"function\s+(\w+)\(\{count:e,hint:t,title:n\}\)\{", js_content)
     if m1:
@@ -319,6 +319,29 @@ def patch_html(html_content):
   const DOM_MAP = {
     // 1024 Programmer's Day Surprise Modal
     "YOUR PROGRAMMER'S DAY SURPRISE": "PROGRAMCILAR GÜNÜ SÜRPRİZİNİZ",
+    // ZCode Weekend Build Modal
+    "ZCODE WEEKEND BUILD": "ZCODE HAFTA SONU DERLEMESİ",
+    "ZCode Weekend Build": "ZCode Hafta Sonu Derlemesi",
+    "Weekend Build": "Hafta Sonu Derlemesi",
+    "500,000,000 Tokens": "500.000.000 Token",
+    "500M Tokens": "500M Token",
+    "GLM-5.3-Flash · 500M Tokens": "GLM-5.3-Flash · 500M Token",
+    "GLM-5.3-Flash . 500M Tokens": "GLM-5.3-Flash · 500M Token",
+    "500,000,000": "500.000.000",
+    "500M": "500M",
+    "Tokens": "Token",
+    "tokens": "token",
+    "Valid until": "Son Geçerlilik:",
+    "You now have access to ZCODE WEEKEND BUILD": "Artık ZCODE HAFTA SONU DERLEMESİ'ne erişiminiz var",
+    "You now have access to": "Artık erişiminiz var:",
+    "GLM-5.3-Flash will be available on Oct 30, 2026 18:00.": "GLM-5.3-Flash 30 Ekim 2026 18:00'de kullanıma açılacaktır.",
+    "GLM-5.3-Flash will be available on": "GLM-5.3-Flash tarihinde kullanıma açılacaktır:",
+    "Oct 30, 2026 18:00.": "30 Ekim 2026 18:00.",
+    "Oct 30, 2026 18:00": "30 Ekim 2026 18:00",
+    "Oct 30, 2026": "30 Ekim 2026",
+    "Nov 2, 2026": "2 Kasım 2026",
+    "11/2/2026, 4:00:00 AM": "2 Kasım 2026 04:00",
+    "11/2/2026": "02.11.2026",
     "Your programmer's day surprise": "Programcılar Günü Sürpriziniz",
     "Your gift pack is open": "Hediye Paketiniz Açıldı",
     "Your gift pack is open.": "Hediye Paketiniz Açıldı.",
