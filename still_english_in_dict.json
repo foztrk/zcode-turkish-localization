@@ -1,0 +1,8 @@
+{
+  "bots.runtime.feishuWebSocketStarting": "Feishu WebSocket is starting.",
+  "bots.runtime.feishuWebSocketStopped": "Feishu WebSocket is stopped.",
+  "remote.error.hostUnreachable.wsl": "Cannot access WSL distribution",
+  "remote.error.spaceInsufficient.wsl": "Distribution is out of space",
+  "remote.error.spaceInsufficient.docker": "Container is out of space",
+  "remote.error.connectionClosed": "The remote connection was kapatıldı"
+}

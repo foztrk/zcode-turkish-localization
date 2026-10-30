@@ -801,13 +801,21 @@ function _trTemplateText(txt){{if(!txt||typeof txt!=="string")return txt;let t=t
     js_content = js_content.replace(target_command_list, repl_command_list, 1)
 
     # 6. Göreceli Zaman Formatlayıcı (3 days ago -> 3 gün önce)
+    # 6. Göreceli Zaman ve Tarih Formatlayıcıları (Tümü Türkçe tr-TR'ye kancalandı)
     js_content = js_content.replace('new Intl.RelativeTimeFormat(e,', 'new Intl.RelativeTimeFormat("tr-TR",')
     js_content = js_content.replace('new Intl.RelativeTimeFormat(t,', 'new Intl.RelativeTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.DateTimeFormat(e,', 'new Intl.DateTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.DateTimeFormat(t,', 'new Intl.DateTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.DateTimeFormat(o,', 'new Intl.DateTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.DateTimeFormat(n,', 'new Intl.DateTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.DateTimeFormat(i,', 'new Intl.DateTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.DateTimeFormat(c,', 'new Intl.DateTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.DateTimeFormat(`en-US`,', 'new Intl.DateTimeFormat("tr-TR",')
+    js_content = js_content.replace('.toLocaleString(t)', '.toLocaleString("tr-TR")')
+    js_content = js_content.replace('.toLocaleDateString(t)', '.toLocaleDateString("tr-TR")')
 
-        # 7. Hafta Sonu Sürümü Bilet Yaması
-    js_content = js_content.replace('endsAtPrefix:t===`zh-CN`?`有效期至`:`Valid until`', 'endsAtPrefix:t===`zh-CN`?`有效期至`:`Geçerlilik:`')
-    js_content = js_content.replace('replayLabel:t===`zh-CN`?`重播`:`Replay`', 'replayLabel:t===`zh-CN`?`重播`:`Tekrar Oynat`')
-
+    # Hardcoded Computer Use label
+    js_content = js_content.replace('label:{cn:`电脑控制`,en:`Computer Use`}', 'label:{cn:`电脑控制`,en:`Bilgisayar Kontrolü`}')
     return js_content
 
 def patch_usage_parts(js_content):
@@ -822,6 +830,22 @@ def patch_main(js_content):
     js_content = js_content.replace("资源管理器", "Kaynak Yöneticisi")
     js_content = js_content.replace('MU="Resource Manager"', 'MU="Kaynak Yöneticisi"')
     js_content = js_content.replace('"Resource Manager"', '"Kaynak Yöneticisi"')
+    
+    # Dialogs & OS Messages
+    dialog_replacements = {
+        'Open external ZCode link?': 'Harici ZCode bağlantısı açılsın mı?',
+        'Open this folder in ZCode?': 'Bu klasör ZCode\'da açılsın mı?',
+        'Pull Mobile Logs': 'Mobil Günlükleri Çek',
+        'App permission request': 'Uygulama İzin İsteği',
+        'Clear All Data': 'Tüm Verileri Temizle',
+        'Architecture Mismatch': 'Mimari Uyuşmazlığı',
+        'The installed build does not match your machine': 'Yüklü sürüm bu makineyle eşleşmiyor',
+        'Update ZCode': 'ZCode\'u Güncelle',
+        'The current version can no longer be used': 'Mevcut sürüm artık kullanılamaz'
+    }
+    for k, v in dialog_replacements.items():
+        js_content = js_content.replace(k, v)
+        
     return js_content
 
 

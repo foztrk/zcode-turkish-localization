@@ -1,0 +1,138 @@
+{
+  "ternary": [
+    {
+      "full": "e===`zh-CN`?`cn`:`en`",
+      "zh": "cn",
+      "en": "en"
+    },
+    {
+      "full": "r===`zh-CN`?`zh-CN`:`en-US`",
+      "zh": "zh-CN",
+      "en": "en-US"
+    },
+    {
+      "full": "e===`zh-CN`?`zh-CN`:`en-US`",
+      "zh": "zh-CN",
+      "en": "en-US"
+    },
+    {
+      "full": "t===`zh-CN`?`有效期至`:`Valid until`",
+      "zh": "有效期至",
+      "en": "Valid until"
+    },
+    {
+      "full": "t===`zh-CN`?`重播`:`Replay`",
+      "zh": "重播",
+      "en": "Replay"
+    },
+    {
+      "full": "e===`zh-CN`?`bigmodel`:`zai`",
+      "zh": "bigmodel",
+      "en": "zai"
+    }
+  ],
+  "ui_attributes": [
+    {
+      "attr": "title",
+      "text": "Computer Use",
+      "match": "title:`Computer Use`"
+    },
+    {
+      "attr": "label",
+      "text": "GitHub Light",
+      "match": "label:`GitHub Light`"
+    },
+    {
+      "attr": "label",
+      "text": "GitHub Dark",
+      "match": "label:`GitHub Dark`"
+    },
+    {
+      "attr": "label",
+      "text": "Vitesse Light",
+      "match": "label:`Vitesse Light`"
+    },
+    {
+      "attr": "label",
+      "text": "Vitesse Dark",
+      "match": "label:`Vitesse Dark`"
+    },
+    {
+      "attr": "label",
+      "text": "Minimal Light",
+      "match": "label:`Minimal Light`"
+    },
+    {
+      "attr": "label",
+      "text": "Minimal Dark",
+      "match": "label:`Minimal Dark`"
+    },
+    {
+      "attr": "label",
+      "text": "GitHub HC Light",
+      "match": "label:`GitHub HC Light`"
+    },
+    {
+      "attr": "label",
+      "text": "GitHub HC Dark",
+      "match": "label:`GitHub HC Dark`"
+    },
+    {
+      "attr": "label",
+      "text": "Catppuccin Latte",
+      "match": "label:`Catppuccin Latte`"
+    },
+    {
+      "attr": "label",
+      "text": "Catppuccin Mocha",
+      "match": "label:`Catppuccin Mocha`"
+    },
+    {
+      "attr": "label",
+      "text": "Z.ai - Coding Plan",
+      "match": "label:`Z.ai - Coding Plan`"
+    },
+    {
+      "attr": "label",
+      "text": "BigModel - Coding Plan",
+      "match": "label:`BigModel - Coding Plan`"
+    },
+    {
+      "attr": "label",
+      "text": "BigModel- Coding Plan",
+      "match": "label:`BigModel- Coding Plan`"
+    },
+    {
+      "attr": "label",
+      "text": "Start Plan",
+      "match": "label:`Start Plan`"
+    }
+  ],
+  "date_formatters": [
+    "new Intl.DateTimeFormat(void 0,{month:`2-digit`,day:`2-digit`,hour:`2-digit`,minute:`2-digit`})",
+    "new Intl.DateTimeFormat(e.locale,{...e.compactToday&&r?{}:{month:`short`,day:`numeric`},hour:`2-digit`,minute:`2-digit`,hourCycle:`h23`})",
+    "new Intl.DateTimeFormat(e.locale,{hour:`2-digit`,minute:`2-digit`,hourCycle:`h23`})",
+    "new Intl.DateTimeFormat(e,t===`time`?{hour:`2-digit`,minute:`2-digit`}:t===`monthDayTime`?{month:`numeric`,day:`numeric`,hour:`2-digit`,minute:`2-digit`}:{year:`numeric`,month:`numeric`,day:`numeric`,hour:`2-digit`,minute:`2-digit`})",
+    "new Intl.DateTimeFormat(n,{hour:`2-digit`,minute:`2-digit`,second:`2-digit`,hour12:!1})",
+    "new Intl.DateTimeFormat(t,{day:`numeric`,month:`short`,...n?{year:`numeric`}:{}})",
+    "new Intl.DateTimeFormat(o,{year:`numeric`,month:`short`,day:`numeric`,hour:`2-digit`,minute:`2-digit`})",
+    "new Intl.RelativeTimeFormat(t,{numeric:`auto`})",
+    "new Intl.DateTimeFormat(e,{hour:`2-digit`,minute:`2-digit`,hourCycle:`h23`})",
+    "new Intl.DateTimeFormat(t,{...i?{}:{year:`numeric`},month:`short`,day:`numeric`,hour:`2-digit`,minute:`2-digit`,hour12:!1})",
+    "new Intl.RelativeTimeFormat(e,{numeric:`auto`})",
+    "new Intl.DateTimeFormat(i,{dateStyle:`medium`,timeStyle:`short`})",
+    "new Intl.DateTimeFormat(e,{hour:`2-digit`,minute:`2-digit`,second:`2-digit`})",
+    "new Intl.DateTimeFormat(t,{hour:`2-digit`,minute:`2-digit`,hour12:!1})",
+    "new Intl.DateTimeFormat(t,{month:`short`,day:`numeric`,hour:`2-digit`,minute:`2-digit`,hour12:!1})",
+    "new Intl.DateTimeFormat(c,{hour:`2-digit`,minute:`2-digit`,hourCycle:`h23`})",
+    "new Intl.DateTimeFormat(t,{weekday:`short`})",
+    "new Intl.DateTimeFormat(e.locale,{month:`short`,day:`numeric`})",
+    "new Intl.DateTimeFormat(t,{year:`numeric`,month:`long`,day:`numeric`,timeZone:`UTC`})",
+    "new Intl.DateTimeFormat(e,{year:`numeric`,month:`2-digit`,day:`2-digit`,hour:`2-digit`,minute:`2-digit`})",
+    "new Intl.DateTimeFormat(void 0,{hour:`2-digit`,minute:`2-digit`,hour12:!1})",
+    "new Intl.DateTimeFormat(t,{hour:`2-digit`,hourCycle:`h23`,minute:`2-digit`})",
+    "new Intl.DateTimeFormat(`en-US`,{timeZone:t,year:`numeric`,month:`numeric`,day:`numeric`,hour:`numeric`,minute:`numeric`,second:`numeric`,hour12:!1})",
+    "new Intl.DateTimeFormat(t,{month:`2-digit`,day:`2-digit`,hour:`2-digit`,minute:`2-digit`})",
+    "new Intl.DateTimeFormat(t,{...r?{}:{year:`numeric`},month:`short`,day:`numeric`,timeZone:`UTC`})"
+  ]
+}
