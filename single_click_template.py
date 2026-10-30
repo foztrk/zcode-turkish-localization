@@ -427,6 +427,17 @@ def patch_html(html_content):
     "Günlük At 10:00": "Her gün 10:00'da",
     "Haftalık olarak Fri'da, 16:00'de": "Haftalık olarak Cuma günü, 16:00'da",
     "Haftalık olarak Çar'da, 15:00'de": "Haftalık olarak Çarşamba günü, 15:00'te",
+    "Model output was blocked by the provider\'s content safety filter.": "Model çıktısı, sağlayıcının içerik güvenliği filtresi tarafından engellendi.",
+    "Prompt was blocked by the provider\'s content safety filter.": "İstem (prompt), sağlayıcının içerik güvenliği filtresi tarafından engellendi.",
+    "Valid until": "Geçerlilik tarihi:",
+    "Replay": "Animasyonu Tekrar Oynat",
+    "Hide or show the ZCode badge on the linked ZCode Sites site.": "Bağlı ZCode Sites sitesinde ZCode rozetini gizleyin veya gösterin.",
+    "Deploy this project to ZCode Sites, or redeploy the linked site.": "Bu projeyi ZCode Sites\'a dağıtın veya bağlı siteyi yeniden dağıtın.",
+    "Show the logs of a ZCode Sites deployment and explain any failure.": "Bir ZCode Sites dağıtımının günlüklerini gösterin ve olası hataları açıklayın.",
+    "Take the linked ZCode Sites site offline.": "Bağlı ZCode Sites sitesini çevrimdışı duruma getirin.",
+    "Bring the linked ZCode Sites site back online.": "Bağlı ZCode Sites sitesini tekrar çevrimiçi duruma getirin.",
+    "Show the ZCode Sites site linked to this project.": "Bu projeye bağlı ZCode Sites sitesini gösterin.",
+    "Show ZCode Sites usage and plan limits.": "ZCode Sites kullanımını ve plan sınırlarını gösterin.",
     "Personal plans": "Bireysel Planlar",
     "Team plans": "Ekip Planları",
     "Personal Plans": "Bireysel Planlar",
@@ -701,6 +712,41 @@ def patch_styles(js_content):
     # 2. Temiz Global Yardımcılar Bloğu (Top-Level Scope)
     helpers_header = f"""
 /* === TURKISH LOCALIZATION HELPERS === */
+const TR_ERROR_MSGS = {{
+  "Model output was blocked by the provider's content safety filter.": "Model çıktısı, sağlayıcının içerik güvenliği filtresi tarafından engellendi.",
+  "Prompt was blocked by the provider's content safety filter.": "İstem (prompt), sağlayıcının içerik güvenliği filtresi tarafından engellendi.",
+  "Content safety filter": "İçerik güvenliği filtresi tarafından engellendi.",
+  "Rate limit exceeded": "İstek sınırı (rate limit) aşıldı. Lütfen biraz bekleyin.",
+  "Context length exceeded": "Modelin maksimum bağlam (token) sınırı aşıldı.",
+  "maximum context length": "Modelin maksimum bağlam (token) sınırı aşıldı.",
+  "token limit": "Token sınırı aşıldı.",
+  "Connection timed out": "Bağlantı zaman aşımına uğradı.",
+  "Request timeout": "İstek zaman aşımına uğradı.",
+  "Invalid API key": "Geçersiz API anahtarı veya yetkilendirme hatası.",
+  "Unauthorized": "Yetkilendirme hatası. Lütfen API anahtarını kontrol edin.",
+  "Authentication failed": "Kimlik doğrulama başarısız oldu.",
+  "Model is overloaded": "Model şu anda aşırı yüklü veya geçici olarak kullanılamıyor.",
+  "Model unavailable": "Model şu anda kullanılamıyor.",
+  "Service unavailable": "Sağlayıcı servisi şu anda kullanılamıyor.",
+  "Network error": "Ağ bağlantı hatası oluştu.",
+  "Internal server error": "Sağlayıcı sunucusunda dahili hata oluştu.",
+  "Quota exceeded": "Kullanım kotası yetersiz.",
+  "Insufficient balance": "Hesap bakiyesi yetersiz."
+}};
+function _trErrorMessage(msg){{
+  if(!msg || typeof msg !== "string") return msg;
+  let t = msg.trim();
+  if(TR_ERROR_MSGS[t]) return TR_ERROR_MSGS[t];
+  for(let k in TR_ERROR_MSGS){{
+    if(t.toLowerCase().includes(k.toLowerCase())) return TR_ERROR_MSGS[k];
+  }}
+  return msg;
+}}
+if(typeof window!=="undefined"){{window._trErrorMessage=_trErrorMessage}};
+if(typeof globalThis!=="undefined"){{globalThis._trErrorMessage=_trErrorMessage}};
+
+
+
 const TR_AGENT_DESCS={{"general-purpose":"Karmaşık soruları araştırmak, kod aramak ve çok adımlı görevleri yürütmek için genel amaçlı ajan.","Explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.","explore":"Geniş kapsamlı aramalar için salt okunur arama ajanı.","judge":"Yalnızca görsel çıktıların kabul incelemesi için yetkili onay ajanı.","claude-security":"Özel Claude Güvenlik orkestratörü. Depoyu derinlemesine tarar, açıkları tespit eder ve çoklu ajan koordinasyonuyla yamaları otomatik olarak uygular."}};
 function _trAgentDesc(e){{let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;let d=(e&&e.description)||"";if(b==="claude-security"||n==="claude-security"||(typeof d==="string"&&(d.startsWith("The dedicated Claude")||d.includes("orchestrator. Hand it an unattended job"))))return TR_AGENT_DESCS["claude-security"];if(TR_AGENT_DESCS[b])return TR_AGENT_DESCS[b];if(TR_AGENT_DESCS[n])return TR_AGENT_DESCS[n];return d}};
 
@@ -714,7 +760,7 @@ if(typeof globalThis!=="undefined"){{globalThis.TR_SKILL_DESCS=TR_SKILL_DESCS;gl
 function _trSkillDesc(e){{if(!e)return"";let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;b=String(b).replace(/@.*$/,"").replace(/^plugin:/,"").trim();if(b.includes("/"))b=b.slice(b.lastIndexOf("/")+1);if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n];let d=(e&&e.description)||"";if(typeof d==="string"&&d.trim()&&TR_SKILL_DESCS[d.trim()])return TR_SKILL_DESCS[d.trim()];return d}};
 
 const TR_CMD_DESCS={{"revise-claude-md":"Bu oturumdan öğrenilenlerle CLAUDE.md dosyasını güncelleyin.","build-agent":"Agents SDK kullanarak Cloudflare üzerinde bir yapay zeka ajanı derleyin.","build-mcp":"McpAgent kullanarak Cloudflare üzerinde uzak bir MCP sunucusu derleyin.","skill-gen":"Firecrawl kullanarak bir dokümantasyon URL'sinden eksiksiz bir Ajan Becerisi oluşturun.","android-dev":"Android emülatör geliştirme döngüsünü başlatın.","ios-dev":"iOS simülatör geliştirme döngüsünü başlatın.","restore-legacy-sessions":"Eski bir ZCode oturumunu seçin ve geri yükleyin.","workflow":"Bir görev için dinamik iş akışı tasarlayın ve başlatın.","code-review":"Bir pull request için kod incelemesi yapın.","site-badge":"Bağlı ZCode Siteleri sitesinde ZCode rozetini gizleyin veya gösterin.","site-deploy":"Bu projeyi ZCode Sitelerine dağıtın veya bağlı siteyi yeniden dağıtın.","site-logs":"Bir ZCode Siteleri dağıtımının günlüklerini gösterin ve hataları açıklayın.","site-offline":"Bağlı ZCode Siteleri sitesini çevrimdışı yapın.","site-online":"Bağlı ZCode Siteleri sitesini tekrar çevrimiçi yapın.","site-status":"Bu projeye bağlı ZCode Siteleri sitesini gösterin.","site-usage":"ZCode Siteleri kullanımını ve plan sınırlarını gösterin."}};
-function _trCommandDesc(e){{if(!e)return"";let n=(e&&(e.name||e.id))||"";let b=n.startsWith("/")?n.slice(1):n;b=b.split(" ")[0].trim();if(TR_CMD_DESCS[b])return TR_CMD_DESCS[b];if(TR_CMD_DESCS[n])return TR_CMD_DESCS[n];return (e&&e.description)||""}};
+function _trCommandDesc(e,d){{if(!e)return d||"";if(typeof e==="string"&&!d){{let n=e.startsWith("/")?e.slice(1):e;n=n.split(" ")[0].trim();if(TR_CMD_DESCS[n])return TR_CMD_DESCS[n];if(TR_CMD_DESCS[e])return TR_CMD_DESCS[e];return e}};let n=(e&&(e.name||e.id))||(typeof e==="string"?e:"");let b=n.startsWith("/")?n.slice(1):n;b=b.split(" ")[0].trim();if(TR_CMD_DESCS[b])return TR_CMD_DESCS[b];if(TR_CMD_DESCS[n])return TR_CMD_DESCS[n];let desc=d||(e&&e.description)||"";if(typeof desc==="string"){{let s=desc.toLowerCase();if(s.includes("hide or show the zcode badge"))return TR_CMD_DESCS["site-badge"];if(s.includes("deploy this project to zcode sites"))return TR_CMD_DESCS["site-deploy"];if(s.includes("show the logs of a zcode sites"))return TR_CMD_DESCS["site-logs"];if(s.includes("take the linked zcode sites site offline"))return TR_CMD_DESCS["site-offline"];if(s.includes("bring the linked zcode sites site back online"))return TR_CMD_DESCS["site-online"];if(s.includes("show the zcode sites site linked to this project"))return TR_CMD_DESCS["site-status"];if(s.includes("show zcode sites usage and plan limits"))return TR_CMD_DESCS["site-usage"]}};return desc||""}};
 
 const TR_CMD_HINTS={{"[goal or issue description]":"[hedef veya sorun açıklaması]","[agent-description]":"[ajan açıklaması]","[mcp-description]":"[mcp açıklaması]","<documentation-url>":"<dokümantasyon URL'si>","[what the workflow should accomplish]":"[iş akışının hedefi]","[project-name]":"[proje adı]"}};
 function _trCommandHint(h){{if(!h||typeof h!=="string")return h;let t=h.trim();if(TR_CMD_HINTS[t])return TR_CMD_HINTS[t];for(let k in TR_CMD_HINTS){{if(t.includes(k))t=t.replace(k,TR_CMD_HINTS[k])}};return t}};
@@ -774,6 +820,22 @@ function _trTemplateText(txt){{if(!txt||typeof txt!=="string")return txt;let t=t
     target_o3 = 'function o3(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;return r?.trim()||i?.trim()||``}'
     repl_o3 = '''function o3(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;let res=r?.trim()||i?.trim()||(typeof e===`string`?e.trim():``)||``;if(typeof res===`string`&&res){let s=res.toLowerCase();if(s.includes(`summarize commits`)||s.includes(`previous workday`)||s.includes(`stand-up-ready`)||s.includes(`standup-ready`))return `Önceki iş gününden bu yana commit'leri, modül değişikliklerini, CI durumunu ve takip edilecekleri özetleyin; engelleri ve sonraki adımları içeren en fazla beş maddelik toplantı özeti hazırlayın.`;if(s.includes(`inspect code changes`)||s.includes(`last 24 hours`)||s.includes(`authorization bypasses`)||s.includes(`runtime failures`))return `Son 24 saatteki kod değişikliklerini çalışma zamanı hataları, veri kaybı, yetkilendirme açıkları, kaynak sızıntıları veya eksik geri alma senaryoları açısından inceleyin.`;if(s.includes(`organize prs`)||s.includes(`merged this week`)||s.includes(`breaking changes`))return `Bu hafta birleştirilen PR ve commit'leri Özellikler, Düzeltmeler, Deneyim ve Mühendislik iyileştirmeleri olarak düzenleyin; kritik değişiklikleri ve kalan takip maddelerini vurgulayın.`;if(s.includes(`compare code`)||s.includes(`documentation changes`)||s.includes(`last seven days`)||s.includes(`public interfaces`))return `Son yedi günün kod, yapılandırma, API ve dokümantasyon değişikliklerini karşılaştırın. Genel arayüzlerin veya sistem davranışının belgelenmeden değiştiği durumları tespit edin.`;if(s.includes(`daily standup`)||s.includes(`standup summary`))return `Sabah Geliştirici Özeti`;if(s.includes(`risk scan`))return `Risk Taraması`;if(s.includes(`release summary`))return `Sürüm Özeti`;if(s.includes(`docs sync`)||s.includes(`sync check`))return `Belge Senkronizasyon Kontrolü`}if(typeof _trTemplateText===`function`)return _trTemplateText(res);return res}'''
     js_content = js_content.replace(target_o3, repl_o3, 1)
+
+    # 4.9 Model ve Sağlayıcı Hata Mesajları Yaması (ZBt Kancası)
+    target_ZBt = 'function ZBt(e,t,n=`local`){let r=jo(e);if(r)return Ik({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(YBt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=XBt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=ZE(e);if(i)return t.formatMessage({id:i});let a=u6e(XE(e.code,e.message)??x6e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):S6e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):e.code&&qBt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}'
+    repl_ZBt = 'function ZBt(e,t,n=`local`){let r=jo(e);if(r){let _res=Ik({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});return typeof _trErrorMessage===`function`?_trErrorMessage(_res):_res}if(YBt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=XBt(e.message);let _res=n?(n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command})):e.message;return typeof _trErrorMessage===`function`?_trErrorMessage(_res):_res}let i=ZE(e);if(i)return t.formatMessage({id:i});let a=u6e(XE(e.code,e.message)??x6e(e.code,e.message)??e.code);let _res=a?t.formatMessage({id:a}):S6e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):e.code&&qBt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message;return typeof _trErrorMessage===`function`?_trErrorMessage(_res):_res}'
+    if target_ZBt in js_content:
+        js_content = js_content.replace(target_ZBt, repl_ZBt, 1)
+        print("    [+] ZBt hata mesajı kancası başarıyla uygulandı!")
+
+    # 4.10 Kupon / Bilet Geçerlilik Tarihi ve Animasyon Yaması
+    target_endsAt = 'endsAtPrefix:t===`zh-CN`?`有效期至`:`Valid until`,replayLabel:t===`zh-CN`?`重播`:`Replay`'
+    repl_endsAt = 'endsAtPrefix:t===`zh-CN`?`有效期至`:`Geçerlilik tarihi:`,replayLabel:t===`zh-CN`?`重播`:`Animasyonu Tekrar Oynat`'
+    if target_endsAt in js_content:
+        js_content = js_content.replace(target_endsAt, repl_endsAt, 1)
+        print("    [+] endsAtPrefix ve replayLabel kupon yaması başarıyla uygulandı!")
+
+
 
     target_tO = 'function tO(e,t){return ki(e,t)}'
     repl_tO = 'function tO(e,t){let raw=ki(e,t);let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginName==="function")return _trPluginName(id,raw);return raw}'
