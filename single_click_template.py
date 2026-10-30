@@ -779,6 +779,19 @@ function _trTemplateText(txt){{if(!txt||typeof txt!=="string")return txt;let t=t
     repl_rO = 'function rO(e,t,n){let r=t?.id===e.id?t:void 0;let res={name:ki(r??e,n),description:r?nO(r,n):e.description};let pid=(e&&e.id)||(r&&r.id)||(e&&e.name)||"";if(typeof _trPluginName==="function")res.name=_trPluginName(pid,res.name);if(typeof _trPluginDesc==="function")res.description=_trPluginDesc(pid,res.description);return res}'
     js_content = js_content.replace(target_rO, repl_rO, 1)
 
+    # 5.1 Beceriler ve Komutlar Listesi ve Detayı Kancaları
+    target_skill_list = '(0,$.jsx)(`div`,{className:`mt-0.5 truncate text-ui-sm text-foreground-subtle`,children:e.description||g.formatMessage({id:`settings.skills.noDescription`})})'
+    repl_skill_list = '(0,$.jsx)(`div`,{className:`mt-0.5 truncate text-ui-sm text-foreground-subtle`,children:(_trSkillDesc(e)||e.description)||g.formatMessage({id:`settings.skills.noDescription`})})'
+    js_content = js_content.replace(target_skill_list, repl_skill_list, 1)
+
+    target_skill_detail = '(0,$.jsx)(`div`,{className:`max-h-40 overflow-auto whitespace-pre-wrap text-ui-base/relaxed text-foreground-subtle`,children:ke.description||g.formatMessage({id:`settings.skills.noDescription`})})'
+    repl_skill_detail = '(0,$.jsx)(`div`,{className:`max-h-40 overflow-auto whitespace-pre-wrap text-ui-base/relaxed text-foreground-subtle`,children:(_trSkillDesc(ke)||ke.description)||g.formatMessage({id:`settings.skills.noDescription`})})'
+    js_content = js_content.replace(target_skill_detail, repl_skill_detail, 1)
+
+    target_command_list = '(0,$.jsx)(`p`,{className:`mt-0.5 line-clamp-2 text-ui-sm text-foreground-subtle`,children:e.description||a.formatMessage({id:`settings.commands.noDescription`})})'
+    repl_command_list = '(0,$.jsx)(`p`,{className:`mt-0.5 line-clamp-2 text-ui-sm text-foreground-subtle`,children:(_trCommandDesc(e)||e.description)||a.formatMessage({id:`settings.commands.noDescription`})})'
+    js_content = js_content.replace(target_command_list, repl_command_list, 1)
+
     # 6. Göreceli Zaman Formatlayıcı (3 days ago -> 3 gün önce)
     js_content = js_content.replace('new Intl.RelativeTimeFormat(e,', 'new Intl.RelativeTimeFormat("tr-TR",')
     js_content = js_content.replace('new Intl.RelativeTimeFormat(t,', 'new Intl.RelativeTimeFormat("tr-TR",')
