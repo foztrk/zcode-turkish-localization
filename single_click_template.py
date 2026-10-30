@@ -683,6 +683,13 @@ def patch_styles(js_content):
             official_p_descs.update(json.load(_cf))
     tr_p_descs_json = json.dumps(official_p_descs, ensure_ascii=False)
 
+    official_store_names = {}
+    store_tr_file = os.path.join(BASE_DIR, "store_names_tr.json")
+    if os.path.exists(store_tr_file):
+        with open(store_tr_file, "r", encoding="utf-8") as _sf:
+            official_store_names.update(json.load(_sf))
+    tr_store_names_json = json.dumps(official_store_names, ensure_ascii=False)
+
     # 2. Temiz Global Yardımcılar Bloğu (Top-Level Scope)
     helpers_header = f"""
 /* === TURKISH LOCALIZATION HELPERS === */
@@ -698,15 +705,26 @@ if(typeof globalThis!=="undefined"){{globalThis.TR_SKILL_DESCS=TR_SKILL_DESCS;gl
 
 function _trSkillDesc(e){{if(!e)return"";let n=(e&&(e.name||e.id))||"";let b=n.includes(":")?n.slice(n.indexOf(":")+1):n;b=String(b).replace(/@.*$/,"").replace(/^plugin:/,"").trim();if(b.includes("/"))b=b.slice(b.lastIndexOf("/")+1);if(TR_SKILL_DESCS[b])return TR_SKILL_DESCS[b];if(TR_SKILL_DESCS[n])return TR_SKILL_DESCS[n];let d=(e&&e.description)||"";if(typeof d==="string"&&d.trim()&&TR_SKILL_DESCS[d.trim()])return TR_SKILL_DESCS[d.trim()];return d}};
 
-const TR_CMD_DESCS={{"revise-claude-md":"Bu oturumdan öğrenilenlerle CLAUDE.md dosyasını güncelleyin.","build-agent":"Agents SDK kullanarak Cloudflare üzerinde bir yapay zeka ajanı derleyin.","build-mcp":"McpAgent kullanarak Cloudflare üzerinde uzak bir MCP sunucusu derleyin.","skill-gen":"Firecrawl kullanarak bir dokümantasyon URL'sinden eksiksiz bir Ajan Becerisi oluşturun.","android-dev":"Android emülatör geliştirme döngüsünü başlatın.","ios-dev":"iOS simülatör geliştirme döngüsünü başlatın.","restore-legacy-sessions":"Eski bir ZCode oturumunu seçin ve geri yükleyin.","workflow":"Bir görev için dinamik iş akışı tasarlayın ve başlatın.","code-review":"Bir pull request için kod incelemesi yapın."}};
+const TR_CMD_DESCS={{"revise-claude-md":"Bu oturumdan öğrenilenlerle CLAUDE.md dosyasını güncelleyin.","build-agent":"Agents SDK kullanarak Cloudflare üzerinde bir yapay zeka ajanı derleyin.","build-mcp":"McpAgent kullanarak Cloudflare üzerinde uzak bir MCP sunucusu derleyin.","skill-gen":"Firecrawl kullanarak bir dokümantasyon URL'sinden eksiksiz bir Ajan Becerisi oluşturun.","android-dev":"Android emülatör geliştirme döngüsünü başlatın.","ios-dev":"iOS simülatör geliştirme döngüsünü başlatın.","restore-legacy-sessions":"Eski bir ZCode oturumunu seçin ve geri yükleyin.","workflow":"Bir görev için dinamik iş akışı tasarlayın ve başlatın.","code-review":"Bir pull request için kod incelemesi yapın.","site-badge":"Bağlı ZCode Siteleri sitesinde ZCode rozetini gizleyin veya gösterin.","site-deploy":"Bu projeyi ZCode Sitelerine dağıtın veya bağlı siteyi yeniden dağıtın.","site-logs":"Bir ZCode Siteleri dağıtımının günlüklerini gösterin ve hataları açıklayın.","site-offline":"Bağlı ZCode Siteleri sitesini çevrimdışı yapın.","site-online":"Bağlı ZCode Siteleri sitesini tekrar çevrimiçi yapın.","site-status":"Bu projeye bağlı ZCode Siteleri sitesini gösterin.","site-usage":"ZCode Siteleri kullanımını ve plan sınırlarını gösterin."}};
 function _trCommandDesc(e){{if(!e)return"";let n=(e&&(e.name||e.id))||"";let b=n.startsWith("/")?n.slice(1):n;b=b.split(" ")[0].trim();if(TR_CMD_DESCS[b])return TR_CMD_DESCS[b];if(TR_CMD_DESCS[n])return TR_CMD_DESCS[n];return (e&&e.description)||""}};
 
 const TR_CMD_HINTS={{"[goal or issue description]":"[hedef veya sorun açıklaması]","[agent-description]":"[ajan açıklaması]","[mcp-description]":"[mcp açıklaması]","<documentation-url>":"<dokümantasyon URL'si>","[what the workflow should accomplish]":"[iş akışının hedefi]","[project-name]":"[proje adı]"}};
 function _trCommandHint(h){{if(!h||typeof h!=="string")return h;let t=h.trim();if(TR_CMD_HINTS[t])return TR_CMD_HINTS[t];for(let k in TR_CMD_HINTS){{if(t.includes(k))t=t.replace(k,TR_CMD_HINTS[k])}};return t}};
+
+
+const TR_STORE_NAMES={tr_store_names_json};
+function _trPluginName(id,raw){{if(id&&TR_STORE_NAMES[id])return TR_STORE_NAMES[id];if(raw&&TR_STORE_NAMES[raw])return TR_STORE_NAMES[raw];return raw}};
+function _trPluginDesc(id,raw){{if(id&&TR_SKILL_DESCS[id])return TR_SKILL_DESCS[id];if(raw&&typeof raw==="string"){{let t=raw.trim();if(TR_SKILL_DESCS[t])return TR_SKILL_DESCS[t]}};return raw}};
 /* === END HELPERS === */
 """
 
-    js_content = helpers_header + "\n" + js_content
+        # Son import ifadesini bulup hemen sonrasına enjekte et (ES Module sözdizimi geçerliliği için şart)
+    import_matches = list(re.finditer(r'import\b[^;]+;', js_content[:150000]))
+    if import_matches:
+        last_import_pos = import_matches[-1].end()
+        js_content = js_content[:last_import_pos] + "\n" + helpers_header + "\n" + js_content[last_import_pos:]
+    else:
+        js_content = helpers_header + "\n" + js_content
 
     # 3. Güvenli Regex Eşleştirmeleri (Sözdizimi Hatasız)
     pat_sub_sub = rf'children:(\w+)\.description\|\|(\w+)\.formatMessage\({{id:{bt}settings\.subagents\.noDescription{bt}}}\)'
@@ -736,6 +754,24 @@ function _trCommandHint(h){{if(!h||typeof h!=="string")return h;let t=h.trim();i
     target_set_v3171 = ')(fh,{value:`en-US`,"data-testid":Gb(Lb,`en-US`),children:ge.formatMessage({id:`settings.locale.en-US`})})'
     repl_set_v3171 = ')(fh,{value:`en-US`,"data-testid":Gb(Lb,`en-US`),children:ge.formatMessage({id:`settings.locale.en-US`})}),(0,$.jsx)(fh,{value:`tr-TR`,"data-testid":Gb(Lb,`tr-TR`),children:`Türkçe`})'
     js_content = js_content.replace(target_set_v3171, repl_set_v3171, 1)
+
+    
+    # 5. Eklenti Mağazası Kategorileri ve Eklenti İsim/Açıklama Dinamik Yaması
+    target_c9e = 'var c9e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};'
+    repl_c9e = 'var c9e={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,"游戏/3D":`settings.plugins.store.category.game3d`,game3d:`settings.plugins.store.category.game3d`,other:`settings.plugins.store.category.other`};'
+    js_content = js_content.replace(target_c9e, repl_c9e, 1)
+
+    target_rO = 'function rO(e,t,n){let r=t?.id===e.id?t:void 0;return{name:ki(r??e,n),description:r?nO(r,n):e.description}}'
+    repl_rO = 'function rO(e,t,n){let r=t?.id===e.id?t:void 0;let res={name:ki(r??e,n),description:r?nO(r,n):e.description};let pid=(e&&e.id)||(r&&r.id)||(e&&e.name)||"";if(typeof _trPluginName==="function")res.name=_trPluginName(pid,res.name);if(typeof _trPluginDesc==="function")res.description=_trPluginDesc(pid,res.description);return res}'
+    js_content = js_content.replace(target_rO, repl_rO, 1)
+
+    # 6. Göreceli Zaman Formatlayıcı (3 days ago -> 3 gün önce)
+    js_content = js_content.replace('new Intl.RelativeTimeFormat(e,', 'new Intl.RelativeTimeFormat("tr-TR",')
+    js_content = js_content.replace('new Intl.RelativeTimeFormat(t,', 'new Intl.RelativeTimeFormat("tr-TR",')
+
+        # 7. Hafta Sonu Sürümü Bilet Yaması
+    js_content = js_content.replace('endsAtPrefix:t===`zh-CN`?`有效期至`:`Valid until`', 'endsAtPrefix:t===`zh-CN`?`有效期至`:`Geçerlilik:`')
+    js_content = js_content.replace('replayLabel:t===`zh-CN`?`重播`:`Replay`', 'replayLabel:t===`zh-CN`?`重播`:`Tekrar Oynat`')
 
     return js_content
 
@@ -1127,6 +1163,34 @@ def patch_markdown_file(filepath):
 
 
 def patch_special_files(user_zcode, program_packages):
+    # ZCode Sites Komutları Güncellemesi
+    site_cmds_dir = os.path.join(program_packages, "zcode-site-plugin", "commands")
+    if os.path.exists(site_cmds_dir):
+        site_tr = {
+            "site-badge.md": ("Bağlı ZCode Sites sitesinde ZCode rozetini gizleyin veya gösterin.", "gizle | göster"),
+            "site-deploy.md": ("Bu projeyi ZCode Sites'a dağıtın veya bağlı siteyi yeniden dağıtın.", "[site id veya notlar]"),
+            "site-logs.md": ("Bir ZCode Sites dağıtımının günlüklerini gösterin ve olası hataları açıklayın.", "[dağıtım id]"),
+            "site-offline.md": ("Bağlı ZCode Sites sitesini çevrimdışı duruma getirin.", "[site id]"),
+            "site-online.md": ("Bağlı ZCode Sites sitesini tekrar çevrimiçi duruma getirin.", "[site id]"),
+            "site-status.md": ("Bu projeye bağlı ZCode Sites sitesini gösterin.", "[site id]"),
+            "site-usage.md": ("ZCode Sites kullanımını ve plan sınırlarını gösterin.", "")
+        }
+        for fname, (desc, hint) in site_tr.items():
+            fpath = os.path.join(site_cmds_dir, fname)
+            if os.path.exists(fpath):
+                try:
+                    with open(fpath, "r", encoding="utf-8", errors="ignore") as _f:
+                        _txt = _f.read()
+                    _txt = re.sub(r'description:\s*".*?"', f'description: "{desc}"', _txt)
+                    _txt = re.sub(r'description:\s*[^\r\n]+', f'description: "{desc}"', _txt, count=1)
+                    if hint:
+                        _txt = re.sub(r'argument-hint:\s*".*?"', f'argument-hint: "{hint}"', _txt)
+                        _txt = re.sub(r'argument-hint:\s*[^\r\n]+', f'argument-hint: "{hint}"', _txt, count=1)
+                    with open(fpath, "w", encoding="utf-8") as _f:
+                        _f.write(_txt)
+                except Exception:
+                    pass
+
     # 1. server.js
     server_paths = [
         os.path.join(program_packages, r"browser-use-plugin\dist\mcp\server.js"),

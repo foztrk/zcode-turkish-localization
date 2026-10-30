@@ -26,3 +26,4 @@ temp_*.js
 Thumbs.db
 .vscode/
 .idea/
+extracted_assets/
