@@ -4,8 +4,8 @@
 <div align="center">
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.16.3%2B-green.svg)](https://zcode.z.ai)
-[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-7%2C328-orange.svg)](tr_dictionary_zcode.json)
+[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.17.1%2B-green.svg)](https://zcode.z.ai)
+[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-7%2C400%2B-orange.svg)](tr_dictionary_zcode.json)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Cross--Platform-lightgrey.svg)](#-kurulum-installation)
 [![Maintenance Commitment](https://img.shields.io/badge/Maintenance-Day--0%20SLA-blue.svg)](#-note-to-official-zcode-developers-zai-org)
 [![GitHub stars](https://img.shields.io/github/stars/foztrk/zcode-turkish-localization?style=social)](https://github.com/foztrk/zcode-turkish-localization)
@@ -21,52 +21,41 @@
 
 > [!TIP]
 > 🌟 **Projeyi beğendiyseniz sağ üst köşeden bir ⭐ Yıldız (Star) bırakarak bize destek olabilirsiniz!**  
-> GitHub yıldızlarınız, ZCode resmi ekibinin Türkçe dilini doğrudan çekirdeğe (native) entegre etmesini hızlandırmak ve projenin görünürlüğünü artırmak için en büyük katkıdır.
+> GitHub yıldızlarınız, bağımsız topluluk projesinin görünürlüğünü artırmak için en büyük katkıdır.
 
 ZCode Desktop yapay zeka destekli IDE ve kodlama asistanı için geliştirilmiş **en kapsamlı, %100 eksiksiz ve bağımsız Türkçe yerelleştirme projesidir**.
 
-Bu proje; arayüz metinlerinden eklenti mağazasına, uzak bağlantılardan (Docker, SSH, WSL), komutlardan ve yeteneklerden (skills) fiyatlandırma webview'larına kadar ZCode'un tüm katmanlarını Türkçeleştirir. Ayrıca sol alttaki profil menüsüne ve Genel Ayarlar sayfasına kalıcı **"Türkçe"** dil seçeneğini doğrudan entegre eder.
+Bu proje; arayüz metinlerinden model/sağlayıcı hata bildirimlerine, eklenti mağazasından (topluluk ve resmi eklentiler), uzak bağlantılardan (Docker, SSH, WSL), ZCode Sites komutlarından ve otomasyon görev şablonlarına kadar ZCode'un tüm katmanlarını Türkçeleştirir. Ayrıca sol alttaki profil menüsüne ve Genel Ayarlar sayfasına kalıcı **"Türkçe"** dil seçeneğini doğrudan entegre eder.
 
 ---
 
-## 📢 Note to Official ZCode Developers (@zai-org)
+## 📢 Note Regarding Official Upstream (@zai-org)
 
-> **Dear ZCode Team & Contributors at [@zai-org](https://github.com/zai-org) / Zhipu AI,**
+> **To the Community & ZCode Team at [@zai-org](https://github.com/zai-org) / Zhipu AI:**
 
-First of all, congratulations on creating **ZCode**! It is an outstanding agentic IDE and coding assistant, and our Turkish developer community truly appreciates the hard work your team is putting into this product.
+As of November 2026, official issue [#1047](https://github.com/zai-org/feedback/issues/1047) was marked as *"not planned"* by the upstream maintainers. Consequently, **this project serves as the definitive, fully autonomous, and officially maintained community localization engine for all Turkish-speaking ZCode developers.**
 
-### Upstream Integration Ready (Parity with v3.16.3)
-Following guidance from the Z.ai Developer Support team, we have prepared the complete native Turkish localization branch in our fork:
-- 🔗 **Branch:** [foztrk/ZCode@feat/add-turkish-language-support](https://github.com/foztrk/ZCode/tree/feat/add-turkish-language-support)
-- 🔗 **Direct Commit:** [7f14fea](https://github.com/foztrk/ZCode/commit/7f14fea0)
-- 🔗 **Official Feedback Issue:** [zai-org/feedback#1047](https://github.com/zai-org/feedback/issues/1047#issuecomment-6291121632)
-
-### Changes Prepared:
-1. `packages/ui/src/i18n/locales/tr-TR.ts`: Complete Turkish locale dictionary with **7,328 keys** (100% key parity).
-2. `packages/shared/src/protocol.ts`: Extended `Locale` union type to `"zh-CN" | "en-US" | "tr-TR"`.
-3. `packages/ui/src/i18n/IntlProvider.tsx`: Registered `tr-TR` translations in `MESSAGES`.
-4. `packages/ui/src/i18n/LocaleSwitcher.tsx` & `WorkspaceSidebarFooter.tsx`: Added Turkish ("Tr" / "Türkçe") to interactive language pickers.
+Our reverse-engineered AST and ASAR injection engine guarantees zero downtime and instant day-0 Turkish support with every new ZCode release.
 
 ---
 
 ## 🌟 Neler İçerir? (Özellikler)
 
-1. **Tam Kapsamlı Arayüz (7.328 Anahtar):**
-   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **7.328 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
-   - v3.16.3 ile gelen yeni kimlik doğrulama, uzak bağlantı platform/dizin hata mesajları, OAuth giriş bağlantısı kopyalama ve MID araçları.
-   - Uzak Bağlantılar (SSH, Docker, WSL, ZCode Server) altyapısı, Konteyner Seçimi, Özel Anahtar yönetimi ve kaynak indirme sihirbazları.
+1. **Model ve Sağlayıcı Hata Mesajları Enjeksiyonu (`ZBt` Kancası):**
+   - Sohbet panelinde model sağlayıcısından gelen İngilizce hata mesajları (`"Model output was blocked by the provider's content safety filter."`, rate limit, quota, context limit vb.) anında yakalanıp Türkçeleştirilir.
+2. **Tam Kapsamlı Arayüz (7.400+ Anahtar):**
+   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **7.400+ anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
    - Sol alttaki profil menüsünde ve Genel Ayarlar sayfasında yerleşik **"Türkçe"** dil seçeneği.
    - Electron yerel masaüstü menüleri (Dosya, Düzen, Görünüm, Pencere, Yardım).
-   - Güncelleyici diyalogları ve Türkçe yerel tarih/sayı biçimlendirmeleri.
-2. **Resmi Eklenti Mağazası ve Claude Code Eklentileri (330+ Paket):**
-   - Resmi ZCode eklentilerinin (Plugin Creator, PDF, Documents, Presentations, Spreadsheets, Finans, Güvenlik vb.) başlık ve Türkçe açıklamaları.
-   - Claude Code Mağazasındaki 291 eklentinin tamamının Türkçe açıklamaları.
-3. **Ajan Becerileri (Skills) ve Komutlar (Slash Commands):**
-   - Yeni `visualize` (Görselleştirme) becerisi dahil tüm ajan yetenekleri ve `/komut` açıklamaları, argüman ipuçları ve kategori başlıkları.
-4. **Planı Yükselt & Webview Arayüzü:**
-   - Dinamik DOM gözlemcisi ile Bireysel ve Ekip planları, kredi kotaları, indirimler ve faturalandırma metinleri.
+   - Güncelleyici diyalogları, kupon/bilet geçerlilik metinleri ve Türkçe yerel tarih/sayı biçimlendirmeleri.
+3. **Resmi ve Topluluk Eklenti Mağazası (510+ Paket):**
+   - Resmi ZCode eklentilerinin (PDF, Sunum, Tablo, Belge, Görselleştirme, Android/iOS Simülatör, Browser Use) başlık ve açıklamaları.
+   - Topluluk Mağazasındaki tüm eklentilerin (Excalidraw, PhotoCraft, VectorCraft, PdfCraft, DesignCraft, WordCraft, GridCraft, CADCraft vb.) Türkçe açıklamaları.
+4. **ZCode Sites Komutları & Otomasyon Görev Şablonları:**
+   - `/site-badge`, `/site-deploy`, `/site-logs`, `/site-offline`, `/site-online`, `/site-status`, `/site-usage` komut açıklamaları ve argüman ipuçları.
+   - "Sabah Geliştirici Özeti", "Risk Taraması", "Sürüm Özeti", "Belge Senkronizasyon Kontrolü" otomasyon şablonları ve düzgün haftalık takvim formatı.
 5. **Kalıcı ve Güvenli:**
-   - Orijinal `app.asar.orig.v3163` fabrika yedeğini saklar; istendiğinde tek tıkla orijinal fabrika ayarlarına geri döndürür.
+   - Orijinal `app.asar` fabrika yedeğini saklar; istendiğinde tek tıkla orijinal fabrika ayarlarına geri döndürür.
 
 ---
 
@@ -75,7 +64,7 @@ Following guidance from the Z.ai Developer Support team, we have prepared the co
 ### Yöntem 1: Tek Tıkla Kurulum (Önerilen)
 1. [Releases](https://github.com/foztrk/zcode-turkish-localization/releases/latest) sayfasından **`ZCode_Tek_Tik_Yama.exe`** dosyasını indirin.
 2. ZCode uygulamasını tamamen kapatın.
-3. İndirdiğiniz `.exe` dosyasını çalıştırın ve ekrandaki talimatları izleyin.
+3. İndirdiğiniz `.exe` dosyasını çalıştırın.
 4. Yama saniyeler içinde uygulanır ve ZCode Türkçe olarak kullanıma hazır hale gelir!
 
 ### Yöntem 2: Python ile Manuel Kurulum
