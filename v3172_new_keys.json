@@ -1,0 +1,23 @@
+[
+  "settings.mcp.failure.adviceTitle",
+  "settings.mcp.failureAdvice.config_invalid",
+  "settings.mcp.failureAdvice.official_origin_untrusted",
+  "settings.mcp.failureAdvice.process_start_failed",
+  "settings.mcp.failureAdvice.connection_timeout",
+  "settings.mcp.failureAdvice.network_unreachable",
+  "settings.mcp.failureAdvice.server_not_found",
+  "settings.mcp.failureAdvice.coding_plan_required",
+  "settings.mcp.failureAdvice.server_internal_error",
+  "settings.mcp.failureAdvice.not_authenticated",
+  "settings.mcp.failureAdvice.protocol_negotiation_failed",
+  "settings.mcp.failureAdvice.unexpected_disconnect",
+  "settings.mcp.failureAdvice.connection_failed",
+  "settings.mcp.failureAdvice.protocol_error",
+  "settings.mcp.failureAdvice.runtime_unavailable",
+  "settings.mcp.failureAdvice.status_unavailable",
+  "settings.mcp.failure.errorDetails",
+  "settings.mcp.failureAdvice.rate_limited",
+  "settings.mcp.failureAdvice.oauth_authorization_failed",
+  "settings.mcp.failureAdvice.tool_list_failed",
+  "settings.mcp.failureAdvice.server_unavailable"
+]

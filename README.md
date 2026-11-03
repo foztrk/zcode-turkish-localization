@@ -4,10 +4,10 @@
 <div align="center">
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.17.1%2B-green.svg)](https://zcode.z.ai)
-[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-7%2C400%2B-orange.svg)](tr_dictionary_zcode.json)
+[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.17.2%2B-green.svg)](https://zcode.z.ai)
+[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-7%2C703-orange.svg)](tr_dictionary_zcode.json)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Cross--Platform-lightgrey.svg)](#-kurulum-installation)
-[![Maintenance Commitment](https://img.shields.io/badge/Maintenance-Day--0%20SLA-blue.svg)](#-note-to-official-zcode-developers-zai-org)
+[![Maintenance Commitment](https://img.shields.io/badge/Maintenance-Day--0%20SLA-blue.svg)](#-note-regarding-official-upstream-zai-org)
 [![GitHub stars](https://img.shields.io/github/stars/foztrk/zcode-turkish-localization?style=social)](https://github.com/foztrk/zcode-turkish-localization)
 
 [📥 **Tek Tıkla İndir (.exe)**](https://github.com/foztrk/zcode-turkish-localization/releases/latest) • 
@@ -33,7 +33,7 @@ Bu proje; arayüz metinlerinden model/sağlayıcı hata bildirimlerine, eklenti 
 
 > **To the Community & ZCode Team at [@zai-org](https://github.com/zai-org) / Zhipu AI:**
 
-As of November 2026, official issue [#1047](https://github.com/zai-org/feedback/issues/1047) was marked as *"not planned"* by the upstream maintainers. Consequently, **this project serves as the definitive, fully autonomous, and officially maintained community localization engine for all Turkish-speaking ZCode developers.**
+As of November 2026, official issue [#1047](https://github.com/zai-org/feedback/issues/1047) was tracked and merged into primary issue [#708](https://github.com/zai-org/feedback/issues/708). Consequently, **this project serves as the definitive, fully autonomous, and officially maintained community localization engine for all Turkish-speaking ZCode developers.**
 
 Our reverse-engineered AST and ASAR injection engine guarantees zero downtime and instant day-0 Turkish support with every new ZCode release.
 
@@ -41,10 +41,11 @@ Our reverse-engineered AST and ASAR injection engine guarantees zero downtime an
 
 ## 🌟 Neler İçerir? (Özellikler)
 
-1. **Model ve Sağlayıcı Hata Mesajları Enjeksiyonu (`ZBt` Kancası):**
+1. **Model ve Sağlayıcı Hata Mesajları Enjeksiyonu (`ZBt` / `bVt` Kancası):**
    - Sohbet panelinde model sağlayıcısından gelen İngilizce hata mesajları (`"Model output was blocked by the provider's content safety filter."`, rate limit, quota, context limit vb.) anında yakalanıp Türkçeleştirilir.
-2. **Tam Kapsamlı Arayüz (7.400+ Anahtar):**
-   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **7.400+ anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
+2. **Tam Kapsamlı Arayüz (7.703 Anahtar):**
+   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **7.703 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
+   - v3.17.2 ile eklenen yeni MCP hata çözüm önerileri (`settings.mcp.failureAdvice.*`) ve hata ayrıntıları eksiksiz çevrildi.
    - Sol alttaki profil menüsünde ve Genel Ayarlar sayfasında yerleşik **"Türkçe"** dil seçeneği.
    - Electron yerel masaüstü menüleri (Dosya, Düzen, Görünüm, Pencere, Yardım).
    - Güncelleyici diyalogları, kupon/bilet geçerlilik metinleri ve Türkçe yerel tarih/sayı biçimlendirmeleri.
