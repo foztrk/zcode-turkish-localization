@@ -301,6 +301,8 @@ def patch_html(html_content):
 (function() {
   const DOM_MAP = {
     "Daily standup summary": "Sabah Geliştirici Özeti",
+    "Model output was blocked by the provider's content safety filter.": "Model çıktısı, sağlayıcının içerik güvenliği filtresi tarafından engellendi.",
+    "Prompt was blocked by the provider's content safety filter.": "İstem (prompt), sağlayıcının içerik güvenliği filtresi tarafından engellendi.",
     "Summarize commits, module changes, CI status, and follow-ups since the previous workday, then produce no more than five stand-up-ready highlights with blockers and next steps.": "Önceki iş gününden bu yana commit'leri, modül değişikliklerini, CI durumunu ve takip edilecekleri özetleyin; engelleri ve sonraki adımları içeren en fazla beş maddelik toplantı özeti hazırlayın.",
     "Risk scan": "Risk Taraması",
     "Inspect code changes from the last 24 hours for high-confidence risks involving runtime failures, data loss, authorization bypasses, resource leaks, or missing rollbacks.": "Son 24 saatteki kod değişikliklerini çalışma zamanı hataları, veri kaybı, yetkilendirme açıkları, kaynak sızıntıları veya eksik geri alma senaryoları açısından inceleyin.",
@@ -828,7 +830,46 @@ function _trTemplateText(txt){{if(!txt||typeof txt!=="string")return txt;let t=t
     repl_o3 = '''function o3(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;let res=r?.trim()||i?.trim()||(typeof e===`string`?e.trim():``)||``;if(typeof res===`string`&&res){let s=res.toLowerCase();if(s.includes(`summarize commits`)||s.includes(`previous workday`)||s.includes(`stand-up-ready`)||s.includes(`standup-ready`))return `Önceki iş gününden bu yana commit'leri, modül değişikliklerini, CI durumunu ve takip edilecekleri özetleyin; engelleri ve sonraki adımları içeren en fazla beş maddelik toplantı özeti hazırlayın.`;if(s.includes(`inspect code changes`)||s.includes(`last 24 hours`)||s.includes(`authorization bypasses`)||s.includes(`runtime failures`))return `Son 24 saatteki kod değişikliklerini çalışma zamanı hataları, veri kaybı, yetkilendirme açıkları, kaynak sızıntıları veya eksik geri alma senaryoları açısından inceleyin.`;if(s.includes(`organize prs`)||s.includes(`merged this week`)||s.includes(`breaking changes`))return `Bu hafta birleştirilen PR ve commit'leri Özellikler, Düzeltmeler, Deneyim ve Mühendislik iyileştirmeleri olarak düzenleyin; kritik değişiklikleri ve kalan takip maddelerini vurgulayın.`;if(s.includes(`compare code`)||s.includes(`documentation changes`)||s.includes(`last seven days`)||s.includes(`public interfaces`))return `Son yedi günün kod, yapılandırma, API ve dokümantasyon değişikliklerini karşılaştırın. Genel arayüzlerin veya sistem davranışının belgelenmeden değiştiği durumları tespit edin.`;if(s.includes(`daily standup`)||s.includes(`standup summary`))return `Sabah Geliştirici Özeti`;if(s.includes(`risk scan`))return `Risk Taraması`;if(s.includes(`release summary`))return `Sürüm Özeti`;if(s.includes(`docs sync`)||s.includes(`sync check`))return `Belge Senkronizasyon Kontrolü`}if(typeof _trTemplateText===`function`)return _trTemplateText(res);return res}'''
     js_content = js_content.replace(target_o3, repl_o3, 1)
 
-    # 4.9 Model ve Sağlayıcı Hata Mesajları Yaması (ZBt Kancası)
+    # 4.9 Model ve Sağlayıcı Hata Mesajları Yaması
+    # v3.18.0+ DYt Hata Fonksiyonu
+    target_DYt = 'function DYt(e,t,n=`local`){let r=bo(e);if(r)return SM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(TYt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=EYt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=xO(e);if(i)return t.formatMessage({id:i});let a=c9e(bO(e.code,e.message)??y9e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):b9e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):wYt(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&xYt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}'
+    repl_DYt = 'function DYt(e,t,n=`local`){let _inner=function(){let r=bo(e);if(r)return SM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(TYt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=EYt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=xO(e);if(i)return t.formatMessage({id:i});let a=c9e(bO(e.code,e.message)??y9e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):b9e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):wYt(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&xYt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}();return typeof _trErrorMessage===`function`?_trErrorMessage(_inner):_inner}'
+    if target_DYt in js_content:
+        js_content = js_content.replace(target_DYt, repl_DYt, 1)
+        print("    [+] DYt (v3.18.0+) hata kancası başarıyla uygulandı!")
+
+    # v3.18.0+ n8 Ajan Tanım Fonksiyonu
+    target_n8 = 'function n8(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;return r?.trim()||i?.trim()||``}'
+    repl_n8 = 'function n8(e,t){let d=_trAgentDesc(e);if(d&&d!==e.description)return d;let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;return r?.trim()||i?.trim()||``}'
+    if target_n8 in js_content:
+        js_content = js_content.replace(target_n8, repl_n8, 1)
+        print("    [+] n8 (v3.18.0+) agent tanım kancası başarıyla uygulandı!")
+
+    # v3.18.0+ Kk, qk, Jk Eklenti Başlık ve Açıklamaları
+    target_git_cat = 'var git={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};'
+    repl_git_cat = 'var git={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,"游戏/3D":`settings.plugins.store.category.game3d`,game3d:`settings.plugins.store.category.game3d`,other:`settings.plugins.store.category.other`};'
+    if target_git_cat in js_content:
+        js_content = js_content.replace(target_git_cat, repl_git_cat, 1)
+        print("    [+] git (v3.18.0+) kategori kancası uygulandı!")
+
+    target_Kk = 'function Kk(e,t){return Xr(e,t)}'
+    repl_Kk = 'function Kk(e,t){let raw=Xr(e,t);let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginName==="function")return _trPluginName(id,raw);return raw}'
+    if target_Kk in js_content:
+        js_content = js_content.replace(target_Kk, repl_Kk, 1)
+        print("    [+] Kk (v3.18.0+) eklenti başlık kancası uygulandı!")
+
+    target_qk = 'function qk(e,t){return Jr(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)}'
+    repl_qk = 'function qk(e,t){let raw=Jr(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)??(e&&e.description)??"";let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginDesc==="function")return _trPluginDesc(id,raw);return raw}'
+    if target_qk in js_content:
+        js_content = js_content.replace(target_qk, repl_qk, 1)
+        print("    [+] qk (v3.18.0+) eklenti açıklama kancası uygulandı!")
+
+    target_Jk = 'function Jk(e,t,n){let r=t?.id===e.id?t:void 0;return{name:Xr(r??e,n),description:r?qk(r,n):e.description}}'
+    repl_Jk = 'function Jk(e,t,n){let r=t?.id===e.id?t:void 0;let res={name:Xr(r??e,n),description:r?qk(r,n):e.description};let pid=(e&&e.id)||(r&&r.id)||(e&&e.name)||"";if(typeof _trPluginName==="function")res.name=_trPluginName(pid,res.name);if(typeof _trPluginDesc==="function")res.description=_trPluginDesc(pid,res.description);return res}'
+    if target_Jk in js_content:
+        js_content = js_content.replace(target_Jk, repl_Jk, 1)
+        print("    [+] Jk (v3.18.0+) eklenti birleşim kancası uygulandı!")
+
     # v3.17.2+ bVt Hata Fonksiyonu
     target_bVt = 'function bVt(e,t,n=`local`){let r=za(e);if(r)return DA({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(vVt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=yVt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=HD(e);if(i)return t.formatMessage({id:i});let a=h8e(VD(e.code,e.message)??E8e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):D8e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):e.code&&gVt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}'
     repl_bVt = 'function bVt(e,t,n=`local`){let r=za(e);if(r){let _res=DA({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});return typeof _trErrorMessage===`function`?_trErrorMessage(_res):_res}if(vVt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=yVt(e.message);let _res=n?(n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command})):e.message;return typeof _trErrorMessage===`function`?_trErrorMessage(_res):_res}let i=HD(e);if(i)return t.formatMessage({id:i});let a=h8e(VD(e.code,e.message)??E8e(e.code,e.message)??e.code);let _res=a?t.formatMessage({id:a}):D8e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):e.code&&gVt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message;return typeof _trErrorMessage===`function`?_trErrorMessage(_res):_res}'
@@ -968,13 +1009,17 @@ def patch_intl(js_content, tr_dict):
             new_val = f'{var_map}={{"zh-CN":{zh_var},"en-US":Object.assign({{}},{en_var},{tr_json})}}'
             return js_content[:m_patched.start()] + new_val + js_content[m_patched.end():]
 
-    # Pattern: xyz={"zh-CN":a,"en-US":b}
-    m = re.search(r'(\w+)=\{"zh-CN":(\w+),"en-US":(\w+)\}', js_content)
+    # Match both multi-lang (v3.18.0+) and standard dual-lang (v3.17.2-)
+    m = re.search(r'(\w+)=\{"zh-CN":(\w+),"en-US":(\w+)([,}])', js_content)
     if m:
         var_map = m.group(1)
         zh_var = m.group(2)
         en_var = m.group(3)
-        replacement = f'{var_map}={{"zh-CN":{zh_var},"en-US":Object.assign({{}},{en_var},{tr_json})}}'
+        delim = m.group(4)
+        if delim == '}':
+            replacement = f'{var_map}={{"zh-CN":{zh_var},"en-US":Object.assign({{}},{en_var},{tr_json})}}}}'
+        else:
+            replacement = f'{var_map}={{"zh-CN":{zh_var},"en-US":Object.assign({{}},{en_var},{tr_json}),"tr-TR":Object.assign({{}},{en_var},{tr_json}),'
         return js_content[:m.start()] + replacement + js_content[m.end():]
 
     target = 'g={"zh-CN":p,"en-US":m}'

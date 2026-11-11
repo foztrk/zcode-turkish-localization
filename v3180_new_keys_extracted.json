@@ -1,0 +1,2238 @@
+{
+  "archives.cannotDelete": {
+    "en": "Cannot be deleted now",
+    "zh": "本次无法删除"
+  },
+  "archives.checking": {
+    "en": "Checking…",
+    "zh": "正在检查…"
+  },
+  "archives.checkingDescription": {
+    "en": "Nothing is deleted during this check. Cancel at any time to stop further checks.",
+    "zh": "检查期间不会删除任何内容。可随时取消，停止后续检查。"
+  },
+  "archives.checkingProgress": {
+    "en": "Checking sessions: {completed}/{total}…",
+    "zh": "正在检查 {completed}/{total} 个会话…"
+  },
+  "archives.deleteCount": {
+    "en": "Permanently delete {count} sessions",
+    "zh": "永久删除 {count} 个会话"
+  },
+  "archives.deleteFiltered": {
+    "en": "Permanently delete filtered results",
+    "zh": "永久删除筛选结果"
+  },
+  "archives.deleteItem": {
+    "en": "“{title}”: conversation, {children} owned child sessions, input history and indexes, {files} private attachment or execution record files",
+    "zh": "“{title}”：对话、{children} 个所属子会话、输入历史与索引、{files} 个私有附件或执行记录文件"
+  },
+  "archives.deletedResult": {
+    "en": "“{title}” permanently deleted; {count} referenced attachments kept.",
+    "zh": "“{title}”已永久删除，保留 {count} 个仍被引用的附件。"
+  },
+  "archives.incomplete": {
+    "en": "Deletion has not been confirmed complete. Retry; removed content cannot be restored.",
+    "zh": "删除尚未确认完成，请重试；已删除的内容无法恢复。"
+  },
+  "archives.keepAttachment": {
+    "en": "Attachment {name}: referenced by {referrers}; file will be kept",
+    "zh": "附件 {name}：被 {referrers} 引用，保留文件"
+  },
+  "archives.keepExternal": {
+    "en": "Workspace files, Git/worktrees, directory-level memory and checkpoints, exports, backups and application logs are outside this deletion.",
+    "zh": "工作区文件、Git/worktree、目录级记忆与检查点、导出副本、备份和应用日志不在删除范围内。"
+  },
+  "archives.keepFork": {
+    "en": "Independent fork: “{title}” (may contain original conversation content)",
+    "zh": "独立分叉：“{title}”（可能含有原对话内容）"
+  },
+  "archives.keepShares": {
+    "en": "Published share links and shared copies remain unchanged and accessible.",
+    "zh": "已发布的分享链接及分享副本保持不变，链接仍可访问。"
+  },
+  "archives.localDevice": {
+    "en": "This device",
+    "zh": "此设备"
+  },
+  "archives.none": {
+    "en": "None",
+    "zh": "无"
+  },
+  "archives.previousReference": {
+    "en": "previously confirmed conversations",
+    "zh": "此前确认的其他会话"
+  },
+  "archives.reason.changed": {
+    "en": "The deletion scope changed. Review and confirm again.",
+    "zh": "删除范围已变化，请重新检查并确认。"
+  },
+  "archives.reason.in-use": {
+    "en": "Another process is using this session. Close it there and retry.",
+    "zh": "另一进程正在使用此会话，请先关闭该会话后重试。"
+  },
+  "archives.reason.not-archived": {
+    "en": "The session is no longer archived. Nothing was deleted.",
+    "zh": "会话已取消归档，未执行删除。"
+  },
+  "archives.reason.not-found": {
+    "en": "Original session data was not found. Nothing was deleted.",
+    "zh": "找不到原会话数据，未执行删除。"
+  },
+  "archives.reason.running": {
+    "en": "Work or queued input is pending. Stop the task and resolve its queue first.",
+    "zh": "任务仍在运行或有待处理输入，请先停止任务并处理队列。"
+  },
+  "archives.reason.unavailable": {
+    "en": "Cannot safely inspect or delete: the host is unavailable, its version is unsupported, or reading failed. Resolve the issue and retry.",
+    "zh": "无法安全检查或删除：所属设备不可用、版本不支持或读取失败，请恢复后重试。"
+  },
+  "archives.resumeDeletion": {
+    "en": "“{title}”: finish the previous permanent deletion",
+    "zh": "“{title}”：继续上次未完成的永久删除"
+  },
+  "archives.willDelete": {
+    "en": "Will be deleted",
+    "zh": "将删除"
+  },
+  "archives.willKeep": {
+    "en": "Will be kept",
+    "zh": "将保留"
+  },
+  "browser.design.contextUnavailable": {
+    "en": "No composer can receive this. Open an editable conversation first.",
+    "zh": "当前没有可接收的输入框，先打开一个可编辑的对话"
+  },
+  "browser.design.edit.align.center": {
+    "en": "Center",
+    "zh": "居中"
+  },
+  "browser.design.edit.align.left": {
+    "en": "Align left",
+    "zh": "左对齐"
+  },
+  "browser.design.edit.align.right": {
+    "en": "Align right",
+    "zh": "右对齐"
+  },
+  "browser.design.edit.appearance": {
+    "en": "Appearance",
+    "zh": "外观"
+  },
+  "browser.design.edit.background": {
+    "en": "Background",
+    "zh": "背景"
+  },
+  "browser.design.edit.borderRadius": {
+    "en": "Corner radius",
+    "zh": "圆角"
+  },
+  "browser.design.edit.color": {
+    "en": "Text color",
+    "zh": "文字颜色"
+  },
+  "browser.design.edit.content": {
+    "en": "Text",
+    "zh": "文字内容"
+  },
+  "browser.design.edit.customColor": {
+    "en": "Custom",
+    "zh": "自定义"
+  },
+  "browser.design.edit.fill": {
+    "en": "Fill",
+    "zh": "填充"
+  },
+  "browser.design.edit.fontSize": {
+    "en": "Font size",
+    "zh": "字号"
+  },
+  "browser.design.edit.fontWeight": {
+    "en": "Weight",
+    "zh": "字重"
+  },
+  "browser.design.edit.kind.button": {
+    "en": "Button",
+    "zh": "按钮"
+  },
+  "browser.design.edit.kind.container": {
+    "en": "Box",
+    "zh": "区块"
+  },
+  "browser.design.edit.kind.heading": {
+    "en": "Heading",
+    "zh": "标题"
+  },
+  "browser.design.edit.kind.image": {
+    "en": "Image",
+    "zh": "图片"
+  },
+  "browser.design.edit.kind.link": {
+    "en": "Link",
+    "zh": "链接"
+  },
+  "browser.design.edit.kind.text": {
+    "en": "Text",
+    "zh": "文字"
+  },
+  "browser.design.edit.opacity": {
+    "en": "Opacity",
+    "zh": "不透明度"
+  },
+  "browser.design.edit.padding": {
+    "en": "Padding",
+    "zh": "内边距"
+  },
+  "browser.design.edit.paddingBottom": {
+    "en": "Bottom",
+    "zh": "下"
+  },
+  "browser.design.edit.paddingLeft": {
+    "en": "Left",
+    "zh": "左"
+  },
+  "browser.design.edit.paddingRight": {
+    "en": "Right",
+    "zh": "右"
+  },
+  "browser.design.edit.paddingTop": {
+    "en": "Top",
+    "zh": "上"
+  },
+  "browser.design.edit.pageColors": {
+    "en": "Page colors",
+    "zh": "页面里的颜色"
+  },
+  "browser.design.edit.parent": {
+    "en": "Select parent",
+    "zh": "选中外层"
+  },
+  "browser.design.edit.textAlign": {
+    "en": "Alignment",
+    "zh": "对齐"
+  },
+  "browser.design.edit.typography": {
+    "en": "Text",
+    "zh": "文字"
+  },
+  "browser.design.edit.weight.300": {
+    "en": "Light",
+    "zh": "细"
+  },
+  "browser.design.edit.weight.400": {
+    "en": "Regular",
+    "zh": "常规"
+  },
+  "browser.design.edit.weight.500": {
+    "en": "Medium",
+    "zh": "中等"
+  },
+  "browser.design.edit.weight.600": {
+    "en": "Semibold",
+    "zh": "中粗"
+  },
+  "browser.design.edit.weight.700": {
+    "en": "Bold",
+    "zh": "粗"
+  },
+  "browser.design.edit.weight.800": {
+    "en": "Extra bold",
+    "zh": "特粗"
+  },
+  "browser.design.inspector.close": {
+    "en": "Close adjust panel",
+    "zh": "关闭调整面板"
+  },
+  "browser.design.inspector.empty": {
+    "en": "Click an element on the page to inspect and edit it. Shift-click to select more.",
+    "zh": "点选页面上的元素查看和修改；Shift + 点击可多选"
+  },
+  "browser.design.inspector.height": {
+    "en": "H",
+    "zh": "高"
+  },
+  "browser.design.inspector.layout": {
+    "en": "Layout",
+    "zh": "布局"
+  },
+  "browser.design.inspector.selectedCount": {
+    "en": "{count} selected",
+    "zh": "已选 {count} 个"
+  },
+  "browser.design.inspector.title": {
+    "en": "Adjust panel",
+    "zh": "调整面板"
+  },
+  "browser.design.inspector.width": {
+    "en": "W",
+    "zh": "宽"
+  },
+  "browser.design.panel": {
+    "en": "Adjust panel",
+    "zh": "调整面板"
+  },
+  "browser.design.pluginCheckFailed": {
+    "en": "Could not load the Design plugin status. Please try again.",
+    "zh": "无法读取 Design 插件状态，请重试。"
+  },
+  "browser.design.pluginRequired.action": {
+    "en": "Open plugin page",
+    "zh": "前往安装"
+  },
+  "browser.design.pluginRequired.description": {
+    "en": "Selecting elements requires the Design plugin to be installed and enabled. Open its plugin page to set it up.",
+    "zh": "选择元素需要安装并启用 Design 插件。请前往插件页面完成设置。"
+  },
+  "browser.design.pluginRequired.title": {
+    "en": "Design plugin required",
+    "zh": "需要 Design 插件"
+  },
+  "browser.design.slideNext": {
+    "en": "Next slide",
+    "zh": "下一页"
+  },
+  "browser.design.slidePrev": {
+    "en": "Previous slide",
+    "zh": "上一页"
+  },
+  "browser.design.source.changed": {
+    "en": "The file was just changed by someone else. Nothing was written.",
+    "zh": "文件刚被别的改动修改，这次没有写入"
+  },
+  "browser.design.source.notFound": {
+    "en": "This element wasn't found in the source. Nothing was written.",
+    "zh": "源码里找不到这个元素，没有写入"
+  },
+  "browser.design.source.notMatched": {
+    "en": "This element is generated by the page, so it's view only here. To change it, tell the agent in the composer.",
+    "zh": "这个元素是页面脚本生成的，这里只能查看，想改的话在输入框里告诉 Agent"
+  },
+  "browser.design.source.pageUnavailable": {
+    "en": "View only here. To change it, tell the agent in the composer.",
+    "zh": "这里只能查看，想改的话在输入框里告诉 Agent"
+  },
+  "browser.design.source.undoUnavailable": {
+    "en": "The file has changed since. Undo is unavailable.",
+    "zh": "文件已被别的改动修改，不能撤销"
+  },
+  "browser.design.source.unreadable": {
+    "en": "To keep this file safe, it's view only here. To change it, tell the agent in the composer.",
+    "zh": "为了不弄坏这个文件，这里只能查看，想改的话在输入框里告诉 Agent"
+  },
+  "browser.design.source.writeFailed": {
+    "en": "Couldn't read or write the source file. Nothing was written.",
+    "zh": "读写源文件失败，这次没有写入"
+  },
+  "browser.design.toolbar": {
+    "en": "Design tools",
+    "zh": "设计工具"
+  },
+  "browser.design.variables": {
+    "en": "Variables",
+    "zh": "变量"
+  },
+  "browser.design.variables.empty": {
+    "en": "This page has no adjustable variables",
+    "zh": "这个页面没有可调整的变量"
+  },
+  "browser.design.variant": {
+    "en": "Version",
+    "zh": "版本"
+  },
+  "browser.design.variant.all": {
+    "en": "All versions",
+    "zh": "全部版本"
+  },
+  "browser.export.failed": {
+    "en": "Export failed. Try again.",
+    "zh": "导出失败，请重试"
+  },
+  "browser.export.pdf": {
+    "en": "Export as PDF",
+    "zh": "导出为 PDF"
+  },
+  "browser.export.png": {
+    "en": "Export as PNG",
+    "zh": "导出为 PNG"
+  },
+  "browser.export.success": {
+    "en": "Exported to {path}",
+    "zh": "已导出到 {path}"
+  },
+  "browser.recentVisits.remove": {
+    "en": "Remove from recent visits",
+    "zh": "从最近访问中删除"
+  },
+  "browser.recentVisits.title": {
+    "en": "Recently visited",
+    "zh": "最近访问"
+  },
+  "browser.responsive.preset": {
+    "en": "Device preset",
+    "zh": "设备预设"
+  },
+  "browser.responsive.preset.custom": {
+    "en": "Custom",
+    "zh": "自定义"
+  },
+  "browser.responsive.preset.desktop": {
+    "en": "Desktop",
+    "zh": "桌面"
+  },
+  "browser.responsive.preset.phone": {
+    "en": "Phone",
+    "zh": "手机"
+  },
+  "browser.responsive.preset.slide": {
+    "en": "Slide",
+    "zh": "幻灯片"
+  },
+  "browser.responsive.preset.tablet": {
+    "en": "Tablet",
+    "zh": "平板"
+  },
+  "chat.changeSummary.rewindLocked": {
+    "en": "The session is running or has a pending request. You can undo after it finishes.",
+    "zh": "会话正在运行或有待处理的请求，完成后可撤销"
+  },
+  "chat.composerEdit.applyQueue.cancel": {
+    "en": "Only this message",
+    "zh": "仅本条"
+  },
+  "chat.composerEdit.applyQueue.confirm": {
+    "en": "Apply to queue",
+    "zh": "应用到排队消息"
+  },
+  "chat.composerEdit.applyQueue.failed": {
+    "en": "Could not apply to queued messages",
+    "zh": "应用到排队消息失败"
+  },
+  "chat.composerEdit.applyQueue.mode": {
+    "en": "You changed the permission to {mode}. Apply this to all queued messages too?",
+    "zh": "您将执行权限改为{mode}，是否也应用于所有排队消息？"
+  },
+  "chat.composerEdit.applyQueue.model": {
+    "en": "You changed the model to {model}. Apply this to all queued messages too?",
+    "zh": "您将模型改为{model}，是否也应用于所有排队消息？"
+  },
+  "chat.composerEdit.applyQueue.modelAndMode": {
+    "en": "You changed the permission to {mode} and the model to {model}. Apply this to all queued messages too?",
+    "zh": "您将执行权限改为{mode}，模型改为{model}，是否也应用于所有排队消息？"
+  },
+  "chat.composerEdit.applyQueue.title": {
+    "en": "Apply to queued messages?",
+    "zh": "应用到排队消息？"
+  },
+  "chat.composerEdit.busy": {
+    "en": "Wait for the current send or upload to finish before editing.",
+    "zh": "请等待当前发送或附件上传完成后再编辑"
+  },
+  "chat.composerEdit.editingQueueItem": {
+    "en": "Editing a queued message",
+    "zh": "正在编辑排队消息"
+  },
+  "chat.composerEdit.editingUserQuery": {
+    "en": "Editing your last message",
+    "zh": "正在编辑上一条消息"
+  },
+  "chat.composerEdit.inComposerHint": {
+    "en": "Editing below",
+    "zh": "正在下方编辑"
+  },
+  "chat.composerEdit.invalid.editLockLost": {
+    "en": "Editing was released from another device. Sending will create a new message.",
+    "zh": "编辑已被其他设备解除，发送将作为新消息"
+  },
+  "chat.composerEdit.invalid.notLatest": {
+    "en": "This is no longer the last message. Sending will create a new message.",
+    "zh": "这条消息已不是最后一条，发送将作为新消息"
+  },
+  "chat.composerEdit.invalid.queueItemRemoved": {
+    "en": "The queued message is no longer in the queue. Sending will create a new message.",
+    "zh": "原排队消息已不在队列中，发送将作为新消息"
+  },
+  "chat.composerEdit.kindMismatch.goal": {
+    "en": "A goal message must keep the /goal prefix.",
+    "zh": "目标消息需要保留 /goal 前缀"
+  },
+  "chat.composerEdit.kindMismatch.text": {
+    "en": "A regular message can't be changed into a /goal command.",
+    "zh": "普通消息不能改成 /goal 命令"
+  },
+  "chat.composerEdit.lockFailed.generic": {
+    "en": "Couldn't edit this message. Try again.",
+    "zh": "无法编辑这条消息，请重试"
+  },
+  "chat.composerEdit.lockFailed.locked": {
+    "en": "This message is being edited in another window or device.",
+    "zh": "这条消息正在其他窗口或设备编辑"
+  },
+  "chat.composerEdit.lockFailed.reserved": {
+    "en": "This message is being sent and can't be edited.",
+    "zh": "这条消息正在发送，无法编辑"
+  },
+  "chat.composerEdit.saveFailed": {
+    "en": "Couldn't save the edit. Try again.",
+    "zh": "保存编辑失败，请重试"
+  },
+  "chat.composerEdit.switchConfirm": {
+    "en": "Discard and switch",
+    "zh": "放弃并切换"
+  },
+  "chat.composerEdit.switchDescription": {
+    "en": "Switching to another message discards your current edits.",
+    "zh": "切换到另一条消息会丢弃当前编辑内容。"
+  },
+  "chat.composerEdit.switchTitle": {
+    "en": "Discard current edits?",
+    "zh": "放弃当前编辑？"
+  },
+  "chat.message.fork.here": {
+    "en": "Fork in the current folder",
+    "zh": "在当前目录分叉"
+  },
+  "chat.message.fork.hereWorktree": {
+    "en": "Fork in the current worktree",
+    "zh": "在当前 worktree 中分叉"
+  },
+  "chat.message.fork.toWorktree": {
+    "en": "Fork into a new worktree",
+    "zh": "在新 worktree 中分叉"
+  },
+  "chat.message.fork.toWorktreeHint": {
+    "en": "Includes uncommitted changes",
+    "zh": "带上未提交的改动"
+  },
+  "chat.message.fork.worktreeUnsupported": {
+    "en": "Not supported by this Agent version",
+    "zh": "当前 Agent 版本不支持"
+  },
+  "chat.permission.allowAndSwitch": {
+    "en": "Allow and switch to {mode}",
+    "zh": "允许，并切换为{mode}"
+  },
+  "chat.permission.retryCommittedMode": {
+    "en": "{mode} was already saved. Select the approval action again to finish in that mode.",
+    "zh": "已保存「{mode}」。请再次点击该模式的批准选项，完成本次审批。"
+  },
+  "chat.permission.switchAction": {
+    "en": "Allow and switch to",
+    "zh": "允许，并切换为"
+  },
+  "chat.permission.switchProjectHint": {
+    "en": "New sessions in this project will also use this mode.",
+    "zh": "同一项目的新会话也会使用所选模式。"
+  },
+  "chat.queue.editLockedByOther": {
+    "en": "Being edited in another window or device",
+    "zh": "正在其他窗口或设备编辑"
+  },
+  "chat.queue.releaseEdit": {
+    "en": "Release",
+    "zh": "解除"
+  },
+  "chat.runtimeExit.dismiss": {
+    "en": "Dismiss",
+    "zh": "关闭"
+  },
+  "chat.runtimeExit.generic": {
+    "en": "The background runtime exited unexpectedly. Running tasks and subagents were interrupted.",
+    "zh": "后台运行时异常退出。正在运行的任务和子代理已中断。"
+  },
+  "chat.runtimeExit.outOfMemory": {
+    "en": "The background runtime exited unexpectedly because the system ran out of memory. Another program may be using a lot of memory. Running tasks and subagents were interrupted.",
+    "zh": "后台运行时异常退出：系统内存不足，可能是其他程序占用了大量内存。正在运行的任务和子代理已中断。"
+  },
+  "chat.selections.comment": {
+    "en": "Annotate",
+    "zh": "注释"
+  },
+  "chat.selections.commentAdd": {
+    "en": "Add comment",
+    "zh": "添加评论"
+  },
+  "chat.selections.commentAddTitle": {
+    "en": "Add annotation · comment optional",
+    "zh": "添加注释 · 评论可选"
+  },
+  "chat.selections.commentDelete": {
+    "en": "Delete annotation",
+    "zh": "删除注释"
+  },
+  "chat.selections.commentDeleted": {
+    "en": "Annotation deleted",
+    "zh": "已删除注释"
+  },
+  "chat.selections.commentEditHint": {
+    "en": "Leave empty to keep only the quoted text",
+    "zh": "留空 = 只保留原文，不带评论"
+  },
+  "chat.selections.commentEditSave": {
+    "en": "Save",
+    "zh": "保存"
+  },
+  "chat.selections.commentEditTitle": {
+    "en": "Edit annotation",
+    "zh": "编辑注释"
+  },
+  "chat.selections.commentHint": {
+    "en": "Can be left empty · Shift + ↵ for new line",
+    "zh": "留空也可添加 · Shift + ↵ 换行"
+  },
+  "chat.selections.commentPlaceholder": {
+    "en": "Add a comment (optional); it's sent to the model with this text",
+    "zh": "写下评论（可选），和这段原文一起发给模型"
+  },
+  "chat.selections.commentSave": {
+    "en": "Add annotation",
+    "zh": "添加注释"
+  },
+  "chat.selections.commentUndo": {
+    "en": "Undo",
+    "zh": "撤销"
+  },
+  "chat.selections.listHeader": {
+    "en": "{count} annotations will be sent with your next message",
+    "zh": "下一条消息将携带 {count} 条注释"
+  },
+  "chat.selections.listHint": {
+    "en": "Numbers match the reply",
+    "zh": "编号对应正文"
+  },
+  "chat.selections.removeAll": {
+    "en": "Remove all annotations",
+    "zh": "移除全部注释"
+  },
+  "chat.summaryGroup.change.completed.label": {
+    "en": "Changed",
+    "zh": "已修改"
+  },
+  "chat.summaryGroup.change.completed.one": {
+    "en": "Changed {count} file",
+    "zh": "已修改 {count} 文件"
+  },
+  "chat.summaryGroup.change.completed.other": {
+    "en": "Changed {count} files",
+    "zh": "已修改 {count} 文件"
+  },
+  "chat.summaryGroup.change.label": {
+    "en": "Change",
+    "zh": "修改"
+  },
+  "chat.summaryGroup.change.one": {
+    "en": "Change {count} file",
+    "zh": "修改 {count} 文件"
+  },
+  "chat.summaryGroup.change.other": {
+    "en": "Change {count} files",
+    "zh": "修改 {count} 文件"
+  },
+  "chat.summaryGroup.explore.completed.one": {
+    "en": "Explored {count} item",
+    "zh": "已查阅 {count} 项"
+  },
+  "chat.summaryGroup.explore.completed.other": {
+    "en": "Explored {count} items",
+    "zh": "已查阅 {count} 项"
+  },
+  "chat.summaryGroup.explore.one": {
+    "en": "Explore {count} item",
+    "zh": "查阅 {count} 项"
+  },
+  "chat.summaryGroup.explore.other": {
+    "en": "Explore {count} items",
+    "zh": "查阅 {count} 项"
+  },
+  "chat.summaryGroup.reasoning": {
+    "en": "Reasoning",
+    "zh": "思考"
+  },
+  "chat.summaryGroup.run.completed.one": {
+    "en": "Ran {count} command",
+    "zh": "已执行 {count} 命令"
+  },
+  "chat.summaryGroup.run.completed.other": {
+    "en": "Ran {count} commands",
+    "zh": "已执行 {count} 命令"
+  },
+  "chat.summaryGroup.run.one": {
+    "en": "Run {count} command",
+    "zh": "执行 {count} 命令"
+  },
+  "chat.summaryGroup.run.other": {
+    "en": "Run {count} commands",
+    "zh": "执行 {count} 命令"
+  },
+  "chat.summaryGroup.separator": {
+    "en": ", ",
+    "zh": "，"
+  },
+  "chat.summaryGroup.unresolved.completed.one": {
+    "en": "Changed {count} time (path unknown)",
+    "zh": "已修改 {count} 次（路径未知）"
+  },
+  "chat.summaryGroup.unresolved.completed.other": {
+    "en": "Changed {count} times (path unknown)",
+    "zh": "已修改 {count} 次（路径未知）"
+  },
+  "chat.summaryGroup.unresolved.one": {
+    "en": "Change {count} time (path unknown)",
+    "zh": "修改 {count} 次（路径未知）"
+  },
+  "chat.summaryGroup.unresolved.other": {
+    "en": "Change {count} times (path unknown)",
+    "zh": "修改 {count} 次（路径未知）"
+  },
+  "chat.summaryPanel.stopRunningSubagent": {
+    "en": "Stop running agent",
+    "zh": "停止运行中的智能体"
+  },
+  "chat.summaryPanel.stopSubagentFailed": {
+    "en": "Could not stop the agent. Try again.",
+    "zh": "未能停止智能体，请重试。"
+  },
+  "chat.toolCall.explore.bucket.fetch.few": {
+    "en": "{count} загрузки",
+    "zh": "{count} 回の取得"
+  },
+  "chat.toolCall.explore.bucket.fetch.many": {
+    "en": "{count} загрузок",
+    "zh": "{count} 回の取得"
+  },
+  "chat.toolCall.explore.bucket.file.few": {
+    "en": "{count} файла",
+    "zh": "{count} 個のファイル"
+  },
+  "chat.toolCall.explore.bucket.file.many": {
+    "en": "{count} файлов",
+    "zh": "{count} 個のファイル"
+  },
+  "chat.toolCall.explore.bucket.list.few": {
+    "en": "{count} списка",
+    "zh": "{count} 件の一覧"
+  },
+  "chat.toolCall.explore.bucket.list.many": {
+    "en": "{count} списков",
+    "zh": "{count} 件の一覧"
+  },
+  "chat.toolCall.explore.bucket.search.few": {
+    "en": "{count} поиска",
+    "zh": "{count} 回の検索"
+  },
+  "chat.toolCall.explore.bucket.search.many": {
+    "en": "{count} поисков",
+    "zh": "{count} 回の検索"
+  },
+  "chat.toolCall.fallback.copyFailed": {
+    "en": "Copy failed. Please try again.",
+    "zh": "复制失败，请重试。"
+  },
+  "chat.toolCall.fallback.error": {
+    "en": "Error",
+    "zh": "错误"
+  },
+  "chat.toolCall.fallback.noParameters": {
+    "en": "No parameters",
+    "zh": "无参数"
+  },
+  "chat.toolCall.fallback.noResult": {
+    "en": "No result available",
+    "zh": "暂无结果"
+  },
+  "chat.toolCall.fallback.waiting": {
+    "en": "Waiting for result",
+    "zh": "等待结果"
+  },
+  "chat.toolCall.session.ListSessions": {
+    "en": "Find sessions",
+    "zh": "查找会话"
+  },
+  "chat.toolCall.session.ListSessions.running": {
+    "en": "Searching",
+    "zh": "查找中"
+  },
+  "chat.toolCall.session.ReadSession": {
+    "en": "Read session",
+    "zh": "读取会话"
+  },
+  "chat.toolCall.session.ReadSession.running": {
+    "en": "Reading",
+    "zh": "读取中"
+  },
+  "chat.toolCall.session.SendToSession": {
+    "en": "Send message",
+    "zh": "发送消息"
+  },
+  "chat.toolCall.session.SendToSession.running": {
+    "en": "Sending",
+    "zh": "发送中"
+  },
+  "chat.toolCall.session.WaitSessions": {
+    "en": "Wait for sessions",
+    "zh": "等待会话"
+  },
+  "chat.toolCall.session.WaitSessions.running": {
+    "en": "Waiting",
+    "zh": "等待中"
+  },
+  "chat.toolCall.session.accepted": {
+    "en": "Accepted",
+    "zh": "已接收"
+  },
+  "chat.toolCall.session.attention": {
+    "en": "Needs attention",
+    "zh": "需要处理"
+  },
+  "chat.toolCall.session.cancelled": {
+    "en": "Wait cancelled",
+    "zh": "等待已取消"
+  },
+  "chat.toolCall.session.completed": {
+    "en": "Completed",
+    "zh": "已完成"
+  },
+  "chat.toolCall.session.count": {
+    "en": "{count, plural, one {# session} other {# sessions}}",
+    "zh": "{count} 个会话"
+  },
+  "chat.toolCall.session.empty": {
+    "en": "No sessions found in the searched scope",
+    "zh": "已搜索范围内未找到会话"
+  },
+  "chat.toolCall.session.failed": {
+    "en": "Failed",
+    "zh": "执行失败"
+  },
+  "chat.toolCall.session.found": {
+    "en": "Found {count, plural, one {# session} other {# sessions}}",
+    "zh": "找到 {count} 个会话"
+  },
+  "chat.toolCall.session.idle": {
+    "en": "Idle",
+    "zh": "空闲"
+  },
+  "chat.toolCall.session.message": {
+    "en": "Message",
+    "zh": "消息"
+  },
+  "chat.toolCall.session.messages": {
+    "en": "Messages",
+    "zh": "消息记录"
+  },
+  "chat.toolCall.session.more": {
+    "en": "More results available",
+    "zh": "还有更多结果"
+  },
+  "chat.toolCall.session.noMessages": {
+    "en": "No messages",
+    "zh": "暂无消息"
+  },
+  "chat.toolCall.session.noResult": {
+    "en": "No result available",
+    "zh": "暂无可展示结果"
+  },
+  "chat.toolCall.session.partial": {
+    "en": "Search coverage is incomplete; some sources were not searched",
+    "zh": "搜索范围不完整，部分来源未搜索"
+  },
+  "chat.toolCall.session.pending": {
+    "en": "Pending",
+    "zh": "等待中"
+  },
+  "chat.toolCall.session.queued": {
+    "en": "Queued",
+    "zh": "已排队"
+  },
+  "chat.toolCall.session.rejected": {
+    "en": "Rejected",
+    "zh": "已拒绝"
+  },
+  "chat.toolCall.session.result": {
+    "en": "Result",
+    "zh": "结果"
+  },
+  "chat.toolCall.session.role.assistant": {
+    "en": "Assistant",
+    "zh": "助手"
+  },
+  "chat.toolCall.session.role.system": {
+    "en": "System",
+    "zh": "系统"
+  },
+  "chat.toolCall.session.role.tool": {
+    "en": "Tool",
+    "zh": "工具"
+  },
+  "chat.toolCall.session.role.user": {
+    "en": "User",
+    "zh": "用户"
+  },
+  "chat.toolCall.session.running": {
+    "en": "Running",
+    "zh": "进行中"
+  },
+  "chat.toolCall.session.scope": {
+    "en": "Search scope",
+    "zh": "搜索范围"
+  },
+  "chat.toolCall.session.sessions": {
+    "en": "Sessions",
+    "zh": "会话"
+  },
+  "chat.toolCall.session.stopped": {
+    "en": "Stopped",
+    "zh": "已停止"
+  },
+  "chat.toolCall.session.target": {
+    "en": "Target session",
+    "zh": "目标会话"
+  },
+  "chat.toolCall.session.textResult": {
+    "en": "Text result",
+    "zh": "文本结果"
+  },
+  "chat.toolCall.session.timedOut": {
+    "en": "Wait timed out",
+    "zh": "等待超时"
+  },
+  "chat.toolCall.session.unknown": {
+    "en": "Outcome unknown",
+    "zh": "结果未知"
+  },
+  "chat.toolCall.session.unknownSession": {
+    "en": "Unknown session",
+    "zh": "未知会话"
+  },
+  "chat.toolCall.session.waitEnded": {
+    "en": "Wait ended",
+    "zh": "等待结束"
+  },
+  "chat.toolCall.session.waitingResult": {
+    "en": "Waiting for result",
+    "zh": "等待结果"
+  },
+  "codingPlan.quotaReset.confirm": {
+    "en": "Reset",
+    "zh": "重置"
+  },
+  "codingPlan.quotaReset.confirmAria": {
+    "en": "Confirm 5-hour quota reset",
+    "zh": "确认重置 5 小时额度"
+  },
+  "codingPlan.quotaReset.confirmAriaWeek": {
+    "en": "Confirm weekly quota reset",
+    "zh": "确认重置周额度"
+  },
+  "codingPlan.quotaReset.confirmTitle": {
+    "en": "Reset your 5-hour quota?",
+    "zh": "重置 5 小时额度？"
+  },
+  "codingPlan.quotaReset.confirmTitleWeek": {
+    "en": "Reset this week's quota?",
+    "zh": "重置本周额度？"
+  },
+  "codingPlan.quotaReset.dialog.back": {
+    "en": "Back",
+    "zh": "返回"
+  },
+  "codingPlan.quotaReset.dialog.confirmHint": {
+    "en": "This uses 1 reset (expires {date}) and can't be undone.",
+    "zh": "会用掉 1 次重置机会（{date}到期），重置后无法撤销。"
+  },
+  "conversation.fromSession": {
+    "en": "From session {name}",
+    "zh": "来自会话 {name}"
+  },
+  "conversation.fromSession.open": {
+    "en": "Open this session",
+    "zh": "打开该会话"
+  },
+  "conversation.row.unreadable": {
+    "en": "This message requires a newer version of ZCode",
+    "zh": "这条内容需要更新 ZCode 查看"
+  },
+  "conversationShare.error.shareRevoked": {
+    "en": "This share was revoked. Generate a new link.",
+    "zh": "分享已被撤销，请重新生成链接。"
+  },
+  "conversationShare.import.revoked": {
+    "en": "This share was revoked. Ask the author to share it again",
+    "zh": "分享已被撤销，请让分享者重新分享"
+  },
+  "conversationShare.manage.cancel": {
+    "en": "Cancel",
+    "zh": "取消"
+  },
+  "conversationShare.manage.copied": {
+    "en": "Copied",
+    "zh": "已复制"
+  },
+  "conversationShare.manage.copyLink": {
+    "en": "Copy link",
+    "zh": "复制链接"
+  },
+  "conversationShare.manage.createdAt": {
+    "en": "Created {time}",
+    "zh": "创建于 {time}"
+  },
+  "conversationShare.manage.emptyDescription": {
+    "en": "Conversations you share appear here. Expired shares are not shown.",
+    "zh": "在会话中分享后会显示在这里。已过期的分享不会显示。"
+  },
+  "conversationShare.manage.emptyTitle": {
+    "en": "No active shares",
+    "zh": "还没有生效中的分享"
+  },
+  "conversationShare.manage.expiresAt": {
+    "en": "Expires {time}",
+    "zh": "到期 {time}"
+  },
+  "conversationShare.manage.importImportable": {
+    "en": "Import & continue",
+    "zh": "可导入并继续"
+  },
+  "conversationShare.manage.importReadonly": {
+    "en": "View only",
+    "zh": "仅查看"
+  },
+  "conversationShare.manage.loadFailed": {
+    "en": "Unable to load your shares.",
+    "zh": "分享列表加载失败。"
+  },
+  "conversationShare.manage.loadMore": {
+    "en": "Load more",
+    "zh": "加载更多"
+  },
+  "conversationShare.manage.loadMoreFailed": {
+    "en": "Unable to load more. Try again.",
+    "zh": "加载失败，请重试。"
+  },
+  "conversationShare.manage.loading": {
+    "en": "Loading…",
+    "zh": "正在加载…"
+  },
+  "conversationShare.manage.loadingMore": {
+    "en": "Loading…",
+    "zh": "正在加载…"
+  },
+  "conversationShare.manage.login": {
+    "en": "Sign in",
+    "zh": "登录"
+  },
+  "conversationShare.manage.loginDescription": {
+    "en": "Sign in with the account you used to create the shares.",
+    "zh": "请使用创建分享时的账号登录，查看和管理你的分享。"
+  },
+  "conversationShare.manage.loginTitle": {
+    "en": "Sign in to manage your shares",
+    "zh": "登录后管理分享"
+  },
+  "conversationShare.manage.more": {
+    "en": "More actions",
+    "zh": "更多操作"
+  },
+  "conversationShare.manage.nav": {
+    "en": "Shares",
+    "zh": "分享管理"
+  },
+  "conversationShare.manage.open": {
+    "en": "Open share page",
+    "zh": "打开分享页"
+  },
+  "conversationShare.manage.openConversation": {
+    "en": "Go to conversation",
+    "zh": "跳转对话"
+  },
+  "conversationShare.manage.remainingDay": {
+    "en": "1 day left",
+    "zh": "剩余 1 天"
+  },
+  "conversationShare.manage.remainingDays": {
+    "en": "{count} days left",
+    "zh": "剩余 {count} 天"
+  },
+  "conversationShare.manage.remainingHour": {
+    "en": "1 hour left",
+    "zh": "剩余 1 小时"
+  },
+  "conversationShare.manage.remainingHours": {
+    "en": "{count} hours left",
+    "zh": "剩余 {count} 小时"
+  },
+  "conversationShare.manage.remainingLessThanHour": {
+    "en": "Less than 1 hour left",
+    "zh": "不足 1 小时"
+  },
+  "conversationShare.manage.remove": {
+    "en": "Delete",
+    "zh": "删除"
+  },
+  "conversationShare.manage.removeDescription": {
+    "en": "The link stops working permanently and the shared content is removed. You cannot undo this.",
+    "zh": "删除后链接永久失效，分享内容会被清除，无法恢复。"
+  },
+  "conversationShare.manage.removeTitle": {
+    "en": "Delete this share?",
+    "zh": "删除这个分享？"
+  },
+  "conversationShare.manage.restore": {
+    "en": "Resume sharing",
+    "zh": "恢复分享"
+  },
+  "conversationShare.manage.retry": {
+    "en": "Retry",
+    "zh": "重试"
+  },
+  "conversationShare.manage.revoke": {
+    "en": "Stop sharing",
+    "zh": "停止分享"
+  },
+  "conversationShare.manage.revokeDescription": {
+    "en": "The link stops working now. You can resume it later. Download links in pages that are already open expire shortly; imported copies are not affected.",
+    "zh": "链接会立即失效，之后可以恢复。已打开页面中的下载链接会在短时间内自然失效，已导入的副本不受影响。"
+  },
+  "conversationShare.manage.revokeTitle": {
+    "en": "Stop this share?",
+    "zh": "停止这个分享？"
+  },
+  "conversationShare.manage.rowFailed": {
+    "en": "The action failed. Try again.",
+    "zh": "操作失败，请重试。"
+  },
+  "conversationShare.manage.rowRateLimited": {
+    "en": "Too many requests. Try again later.",
+    "zh": "操作过于频繁，请稍后重试。"
+  },
+  "conversationShare.manage.rowRemovedNotice": {
+    "en": "A share is no longer available and was removed from the list.",
+    "zh": "有分享已失效，已从列表中移除。"
+  },
+  "conversationShare.manage.statusActive": {
+    "en": "Active",
+    "zh": "生效中"
+  },
+  "conversationShare.manage.statusRevoked": {
+    "en": "Stopped",
+    "zh": "已停止"
+  },
+  "conversationShare.manage.visibilityLink": {
+    "en": "Anyone with the link",
+    "zh": "凭链接查看"
+  },
+  "conversationShare.manage.visibilityPrivate": {
+    "en": "Only me",
+    "zh": "仅自己"
+  },
+  "conversationShare.ttl.day": {
+    "en": "1 day",
+    "zh": "1 天"
+  },
+  "conversationShare.ttl.days": {
+    "en": "{count} days",
+    "zh": "{count} 天"
+  },
+  "conversationShare.ttl.hour": {
+    "en": "1 hour",
+    "zh": "1 小时"
+  },
+  "conversationShare.ttl.hours": {
+    "en": "{count} hours",
+    "zh": "{count} 小时"
+  },
+  "conversationShare.ttlLabel": {
+    "en": "Expires after",
+    "zh": "有效期"
+  },
+  "extensions.activation.allow": {
+    "en": "Activate",
+    "zh": "激活"
+  },
+  "extensions.activation.allowedToast": {
+    "en": "Activated “{plugin}”",
+    "zh": "已激活「{plugin}」"
+  },
+  "extensions.activation.decline": {
+    "en": "Keep inactive",
+    "zh": "不激活"
+  },
+  "extensions.activation.declinedToast": {
+    "en": "The extension code of “{plugin}” will not run. To activate it, disable and then enable the plugin in Settings.",
+    "zh": "「{plugin}」的扩展代码不会运行。要激活它，在设置里先停用再启用这个插件。"
+  },
+  "extensions.activation.description": {
+    "en": "Newly installed extension code, not running yet",
+    "zh": "刚安装的扩展代码，还没有运行"
+  },
+  "extensions.activation.dialog.body": {
+    "en": "Extensions already hold session permissions: {holders}.\n\n“{plugin}” was just installed from the plugin store. It contains extension code, which is not running yet. Extension code runs in the same process as other extensions, with no isolation between them. Once activated, its code can use these permissions too. Only activate plugins you trust.\n\nIf you keep it inactive, the plugin's skills and MCP still work.",
+    "zh": "已有扩展持有会话权限：{holders}。\n\n「{plugin}」刚从插件商店安装，它带扩展代码，还没有运行。扩展代码与其他扩展在同一个进程运行，彼此没有隔离。激活后，它的代码同样能使用这些权限。只激活你信任的插件。\n\n不激活时，插件的技能与 MCP 照常可用。"
+  },
+  "extensions.activation.dialog.bodyUnknown": {
+    "en": "The granted session permissions could not be checked.\n\n“{plugin}” was just installed from the plugin store. It contains extension code, which is not running yet. Extension code runs in the same process as other extensions, with no isolation between them. Once activated, its code can use any permission granted to any extension. Only activate plugins you trust.\n\nIf you keep it inactive, the plugin's skills and MCP still work.",
+    "zh": "无法确认已授予的会话权限。\n\n「{plugin}」刚从插件商店安装，它带扩展代码，还没有运行。扩展代码与其他扩展在同一个进程运行，彼此没有隔离。激活后，它的代码同样能使用已授予任一扩展的权限。只激活你信任的插件。\n\n不激活时，插件的技能与 MCP 照常可用。"
+  },
+  "extensions.activation.dialog.title": {
+    "en": "Activate the extension code of “{plugin}”?",
+    "zh": "激活「{plugin}」的扩展代码？"
+  },
+  "extensions.activation.failedToast": {
+    "en": "Could not update the extension",
+    "zh": "无法更新扩展状态"
+  },
+  "extensions.activation.needsConfirmation": {
+    "en": "Needs confirmation",
+    "zh": "需要确认"
+  },
+  "extensions.activation.review": {
+    "en": "Review",
+    "zh": "确认"
+  },
+  "extensions.grants.dialog.body": {
+    "en": "Extension code runs in the same process as other extensions, with no isolation between them. Any enabled extension can technically use the permissions granted here. Only enable plugins you trust.\n\nRead: the titles, status and full conversations of all sessions, including tool output. Write: create, fork, send messages to, interrupt, rename, open, archive and pin any session on this computer. If the target session runs in full access mode, a message from the plugin makes the Agent run tools directly.\n\nSessions in the plugin's project: the plugin can also approve or deny tool calls for you, answer the Agent's questions and switch the permission mode.\n\nActions started by a plugin show their source and are written to the audit log.",
+    "zh": "扩展代码与其他扩展在同一个进程运行，彼此没有隔离。这里授予的权限，任何已启用的扩展在技术上都能使用。只启用你信任的插件。\n\n读取：所有会话的标题、状态和完整对话，包括工具输出。写入：新建、分叉、发消息、中断、重命名、打开、归档、置顶本机任意会话。如果目标会话开着免确认模式，插件发的消息会让 Agent 直接执行工具。\n\n插件项目里的会话：插件还能替你批准或拒绝工具调用、回答 Agent 的提问、切换权限模式。\n\n插件发起的操作会标出来源，并写入审计日志。"
+  },
+  "extensions.grants.dialog.fullAccessBody": {
+    "en": "Full access: the plugin can switch sessions in its project to full access, so the Agent reads and writes files, runs commands and uses the network without asking. Only grant this to plugins you trust.",
+    "zh": "完全访问：插件可以把它项目里的会话切到完全访问，Agent 读写文件、运行命令、访问网络都不再询问。只授予你信任的插件。"
+  },
+  "extensions.grants.dialog.notificationsBody": {
+    "en": "System notifications: the plugin can show system notifications while the window is in the background, with the plugin name before the title. At most 1 per minute and 20 per day. You can turn them off on the plugin details page; nothing is shown while system notifications are off in Settings.",
+    "zh": "系统通知：插件可以在窗口不在前台时弹出系统通知，标题前会加上插件名。每分钟最多 1 条、每天最多 20 条。可以在插件详情页单独关闭；设置里的系统通知开关关掉时一律不弹。"
+  },
+  "extensions.grants.dialog.titleNotifications": {
+    "en": "Allow “{plugin}” to send system notifications?",
+    "zh": "允许「{plugin}」发送系统通知？"
+  },
+  "extensions.grants.dialog.titleRead": {
+    "en": "Allow “{plugin}” to read sessions?",
+    "zh": "允许「{plugin}」读取会话？"
+  },
+  "extensions.grants.dialog.titleWrite": {
+    "en": "Allow “{plugin}” to read and change sessions?",
+    "zh": "允许「{plugin}」读取和操作会话？"
+  },
+  "extensions.grants.enable.body": {
+    "en": "Extensions already hold session permissions: {holders}.\n\nExtension code runs in the same process as other extensions, with no isolation between them. Once “{plugin}” is enabled, its code can use these permissions too. Only enable plugins you trust.",
+    "zh": "已有扩展持有会话权限：{holders}。\n\n扩展代码与其他扩展在同一个进程运行，彼此没有隔离。启用「{plugin}」后，它的代码同样能使用这些权限。只启用你信任的插件。"
+  },
+  "extensions.grants.enable.bodyUnknown": {
+    "en": "The granted session permissions could not be checked.\n\nExtension code runs in the same process as other extensions, with no isolation between them. Once “{plugin}” is enabled, its code can use any permission granted to any extension. Only enable plugins you trust.",
+    "zh": "无法确认已授予的会话权限。\n\n扩展代码与其他扩展在同一个进程运行，彼此没有隔离。启用「{plugin}」后，它的代码同样能使用已授予任一扩展的权限。只启用你信任的插件。"
+  },
+  "extensions.grants.enable.confirm": {
+    "en": "Enable",
+    "zh": "启用"
+  },
+  "extensions.grants.enable.title": {
+    "en": "Enable “{plugin}”?",
+    "zh": "启用「{plugin}」？"
+  },
+  "extensions.grants.failedToast": {
+    "en": "Couldn't update the extension permission",
+    "zh": "无法更新扩展权限"
+  },
+  "extensions.grants.grant": {
+    "en": "Grant",
+    "zh": "授权"
+  },
+  "extensions.grants.grantedToast": {
+    "en": "Granted “{plugin}”",
+    "zh": "已授权「{plugin}」"
+  },
+  "extensions.grants.holder": {
+    "en": "“{plugin}” ({tiers})",
+    "zh": "「{plugin}」（{tiers}）"
+  },
+  "extensions.grants.needsConsent": {
+    "en": "Needs permission",
+    "zh": "需要授权"
+  },
+  "extensions.grants.revokedToast": {
+    "en": "Revoked the permissions of “{plugin}”",
+    "zh": "已撤销「{plugin}」的权限"
+  },
+  "extensions.grants.tier.notifications": {
+    "en": "Send system notifications",
+    "zh": "发送系统通知"
+  },
+  "extensions.grants.tier.sessions.fullAccess": {
+    "en": "Read and change sessions, with full access",
+    "zh": "读写会话（含完全访问）"
+  },
+  "extensions.grants.tier.sessions.read": {
+    "en": "Read sessions",
+    "zh": "读取会话"
+  },
+  "extensions.grants.tier.sessions.write": {
+    "en": "Read and change sessions",
+    "zh": "读写会话"
+  },
+  "extensions.launcher.reload": {
+    "en": "Reload",
+    "zh": "重新加载"
+  },
+  "extensions.launcher.stopped": {
+    "en": "Extensions stopped",
+    "zh": "扩展已停止"
+  },
+  "extensions.launcher.stoppedDescription": {
+    "en": "Stopped restarting after repeated crashes or hangs.",
+    "zh": "多次崩溃或无响应后已停止自动重启。"
+  },
+  "extensions.launcher.title": {
+    "en": "Extensions",
+    "zh": "扩展"
+  },
+  "extensions.logs.autoScroll": {
+    "en": "Auto-scroll to the end",
+    "zh": "自动滚到底"
+  },
+  "extensions.logs.clear": {
+    "en": "Clear view",
+    "zh": "清空视图"
+  },
+  "extensions.logs.copied": {
+    "en": "Copied {count, plural, one {# log line} other {# log lines}}",
+    "zh": "已复制 {count} 条日志"
+  },
+  "extensions.logs.copy": {
+    "en": "Copy logs",
+    "zh": "复制日志"
+  },
+  "extensions.logs.copyFailed": {
+    "en": "Copy failed: {error}",
+    "zh": "复制失败：{error}"
+  },
+  "extensions.logs.empty": {
+    "en": "No logs yet",
+    "zh": "还没有日志"
+  },
+  "extensions.logs.launcherDescription": {
+    "en": "View live logs from extensions and the extension host.",
+    "zh": "查看扩展与扩展进程的实时日志。"
+  },
+  "extensions.logs.level.all": {
+    "en": "All levels",
+    "zh": "全部级别"
+  },
+  "extensions.logs.level.error": {
+    "en": "Errors only",
+    "zh": "仅错误"
+  },
+  "extensions.logs.level.warn": {
+    "en": "Warnings and errors",
+    "zh": "警告及以上"
+  },
+  "extensions.logs.levelFilter": {
+    "en": "Filter by level",
+    "zh": "按级别筛选"
+  },
+  "extensions.logs.loading": {
+    "en": "Loading logs…",
+    "zh": "正在加载日志…"
+  },
+  "extensions.logs.noMatch": {
+    "en": "No logs match the filters",
+    "zh": "没有符合筛选条件的日志"
+  },
+  "extensions.logs.source.all": {
+    "en": "All sources",
+    "zh": "全部来源"
+  },
+  "extensions.logs.source.host": {
+    "en": "Extension host",
+    "zh": "扩展进程"
+  },
+  "extensions.logs.sourceFilter": {
+    "en": "Filter by source",
+    "zh": "按来源筛选"
+  },
+  "extensions.logs.title": {
+    "en": "Extension logs",
+    "zh": "扩展日志"
+  },
+  "extensions.mention.denied": {
+    "en": "The plugin tool call was denied",
+    "zh": "已拒绝调用插件工具"
+  },
+  "extensions.mention.failed": {
+    "en": "Couldn't load suggestions",
+    "zh": "候选项加载失败"
+  },
+  "extensions.nav.badge.count": {
+    "en": "{count} unread",
+    "zh": "{count} 条未读"
+  },
+  "extensions.nav.badge.dot": {
+    "en": "New activity",
+    "zh": "有新内容"
+  },
+  "extensions.nav.stopped": {
+    "en": "Stopped",
+    "zh": "已停止"
+  },
+  "extensions.notifications.title": {
+    "en": "{plugin}: {title}",
+    "zh": "{plugin}：{title}"
+  },
+  "extensions.permissions.action.createSession": {
+    "en": "Created a session",
+    "zh": "新建会话"
+  },
+  "extensions.permissions.action.failed": {
+    "en": "{action} (failed)",
+    "zh": "{action}（失败）"
+  },
+  "extensions.permissions.action.forkSession": {
+    "en": "Forked a session",
+    "zh": "分叉会话"
+  },
+  "extensions.permissions.action.grant": {
+    "en": "Granted: {tiers}",
+    "zh": "授予：{tiers}"
+  },
+  "extensions.permissions.action.interruptSession": {
+    "en": "Interrupted a session",
+    "zh": "中断会话"
+  },
+  "extensions.permissions.action.notificationsOff": {
+    "en": "Turned system notifications off",
+    "zh": "关闭系统通知"
+  },
+  "extensions.permissions.action.notificationsOn": {
+    "en": "Turned system notifications on",
+    "zh": "打开系统通知"
+  },
+  "extensions.permissions.action.openSession": {
+    "en": "Opened a session",
+    "zh": "打开会话"
+  },
+  "extensions.permissions.action.other": {
+    "en": "{capability}",
+    "zh": "{capability}"
+  },
+  "extensions.permissions.action.renameSession": {
+    "en": "Renamed a session",
+    "zh": "重命名会话"
+  },
+  "extensions.permissions.action.resolveInteraction": {
+    "en": "Answered an approval or a question",
+    "zh": "回答审批或提问"
+  },
+  "extensions.permissions.action.revoke": {
+    "en": "Revoked: {tiers}",
+    "zh": "撤销：{tiers}"
+  },
+  "extensions.permissions.action.sendToSession": {
+    "en": "Sent a message",
+    "zh": "发送消息"
+  },
+  "extensions.permissions.action.setPermissionMode": {
+    "en": "Changed the permission mode",
+    "zh": "切换权限模式"
+  },
+  "extensions.permissions.action.setSessionArchived": {
+    "en": "Changed session archiving",
+    "zh": "设置会话归档"
+  },
+  "extensions.permissions.action.setSessionPinned": {
+    "en": "Changed session pinning",
+    "zh": "设置会话置顶"
+  },
+  "extensions.permissions.note": {
+    "en": "Any enabled extension can technically use these permissions.",
+    "zh": "任何已启用的扩展在技术上都能使用这些权限。"
+  },
+  "extensions.permissions.notifications": {
+    "en": "System notifications",
+    "zh": "系统通知"
+  },
+  "extensions.permissions.notificationsNote": {
+    "en": "When system notifications are off in Settings, nothing is shown even if this is on.",
+    "zh": "设置里的系统通知开关关掉时，这里打开也不弹。"
+  },
+  "extensions.permissions.recent": {
+    "en": "Recent actions",
+    "zh": "最近操作"
+  },
+  "extensions.permissions.recentEmpty": {
+    "en": "No actions yet",
+    "zh": "还没有操作记录"
+  },
+  "extensions.permissions.recentLoading": {
+    "en": "Loading actions…",
+    "zh": "正在读取操作记录…"
+  },
+  "extensions.permissions.revoke": {
+    "en": "Revoke",
+    "zh": "撤销"
+  },
+  "extensions.permissions.status.granted": {
+    "en": "Granted",
+    "zh": "已授予"
+  },
+  "extensions.permissions.status.inactive": {
+    "en": "Granted (plugin disabled)",
+    "zh": "已授予（插件未启用）"
+  },
+  "extensions.permissions.title": {
+    "en": "Permissions",
+    "zh": "权限"
+  },
+  "extensions.state.failed": {
+    "en": "Activation failed",
+    "zh": "激活失败"
+  },
+  "extensions.state.incompatible": {
+    "en": "Incompatible version",
+    "zh": "版本不兼容"
+  },
+  "extensions.state.invalid": {
+    "en": "Invalid manifest",
+    "zh": "清单非法"
+  },
+  "extensions.state.reasonWithPath": {
+    "en": "{path}: {reason}",
+    "zh": "{path}：{reason}"
+  },
+  "extensions.view.failed": {
+    "en": "The extension view failed to load: {reason}",
+    "zh": "扩展视图加载失败：{reason}"
+  },
+  "extensions.view.hostNotRunning": {
+    "en": "Extensions are not running. The view reopens when they recover.",
+    "zh": "扩展未运行，恢复后自动重新打开。"
+  },
+  "extensions.view.loading": {
+    "en": "Loading the extension view…",
+    "zh": "正在加载扩展视图…"
+  },
+  "extensions.view.title": {
+    "en": "Extension view",
+    "zh": "扩展视图"
+  },
+  "extensions.view.unavailable": {
+    "en": "This extension view is not available right now.",
+    "zh": "该扩展视图当前不可用。"
+  },
+  "extensions.view.unsupported": {
+    "en": "Extension views are not supported here.",
+    "zh": "当前环境不支持扩展视图。"
+  },
+  "git.managedWorktree.created.title": {
+    "en": "Worktree created",
+    "zh": "已创建 worktree"
+  },
+  "git.managedWorktree.creation.continueLocal": {
+    "en": "Don't use worktree",
+    "zh": "不使用 worktree"
+  },
+  "git.managedWorktree.creation.creating": {
+    "en": "Creating worktree",
+    "zh": "正在创建 worktree"
+  },
+  "git.managedWorktree.creation.dismiss": {
+    "en": "Dismiss",
+    "zh": "放弃"
+  },
+  "git.managedWorktree.creation.failed": {
+    "en": "Worktree setup failed",
+    "zh": "worktree 创建失败"
+  },
+  "git.managedWorktree.creation.forkTitle": {
+    "en": "Fork in a new worktree",
+    "zh": "在新 worktree 中分叉"
+  },
+  "git.managedWorktree.creation.hideOutput": {
+    "en": "Hide output",
+    "zh": "收起输出"
+  },
+  "git.managedWorktree.creation.retry": {
+    "en": "Retry",
+    "zh": "重试"
+  },
+  "git.managedWorktree.creation.showOutput": {
+    "en": "Show output",
+    "zh": "查看输出"
+  },
+  "git.managedWorktree.creation.sidebarRow": {
+    "en": "Creating worktree…",
+    "zh": "正在创建 worktree…"
+  },
+  "git.managedWorktree.creation.startingSession": {
+    "en": "Starting task",
+    "zh": "正在启动任务"
+  },
+  "git.managedWorktree.dialog.archived": {
+    "en": "Archived",
+    "zh": "已归档"
+  },
+  "git.managedWorktree.dialog.confirm.directory": {
+    "en": "The worktree directory will be deleted.",
+    "zh": "将删除这个 worktree 目录。"
+  },
+  "git.managedWorktree.dialog.confirm.discardChanges": {
+    "en": "This worktree has uncommitted changes. They will be discarded.",
+    "zh": "这个 worktree 有未提交的改动，删除后会丢弃。"
+  },
+  "git.managedWorktree.dialog.confirm.ignored": {
+    "en": "Ignored files, such as dependencies and build output, are also deleted.",
+    "zh": "被忽略的文件（依赖、构建产物）也会一并删除。"
+  },
+  "git.managedWorktree.dialog.confirm.tasks": {
+    "en": "Tasks that use it are kept, but they become read-only.",
+    "zh": "使用它的任务会保留，但会变为只读。"
+  },
+  "git.managedWorktree.dialog.confirm.title": {
+    "en": "Delete worktree {name}?",
+    "zh": "删除 worktree {name}？"
+  },
+  "git.managedWorktree.dialog.delete": {
+    "en": "Delete worktree",
+    "zh": "删除 worktree"
+  },
+  "git.managedWorktree.dialog.description": {
+    "en": "Worktrees that ZCode manages for {project}",
+    "zh": "{project} 中由 ZCode 管理的 worktree"
+  },
+  "git.managedWorktree.dialog.detached": {
+    "en": "detached · {sha}",
+    "zh": "detached · {sha}"
+  },
+  "git.managedWorktree.dialog.dirty": {
+    "en": "Modified",
+    "zh": "有改动"
+  },
+  "git.managedWorktree.dialog.empty": {
+    "en": "No worktrees yet",
+    "zh": "还没有 worktree"
+  },
+  "git.managedWorktree.dialog.error.creating": {
+    "en": "This worktree is still being created",
+    "zh": "这个 worktree 正在创建中"
+  },
+  "git.managedWorktree.dialog.error.dirty": {
+    "en": "The worktree has uncommitted changes",
+    "zh": "worktree 有未提交的改动"
+  },
+  "git.managedWorktree.dialog.error.generic": {
+    "en": "Couldn't delete the worktree",
+    "zh": "无法删除 worktree"
+  },
+  "git.managedWorktree.dialog.error.removing": {
+    "en": "This worktree is being deleted",
+    "zh": "这个 worktree 正在删除"
+  },
+  "git.managedWorktree.dialog.error.running": {
+    "en": "A task is running",
+    "zh": "有任务正在运行"
+  },
+  "git.managedWorktree.dialog.error.sessionClose": {
+    "en": "Couldn't unload the tasks using this worktree. The worktree was kept.",
+    "zh": "无法卸载使用这个 worktree 的任务，worktree 已保留"
+  },
+  "git.managedWorktree.dialog.error.tasks": {
+    "en": "A task is using this worktree",
+    "zh": "有任务正在使用这个 worktree"
+  },
+  "git.managedWorktree.dialog.error.terminal": {
+    "en": "Close the terminals running in this directory first",
+    "zh": "请先关闭在该目录中运行的终端"
+  },
+  "git.managedWorktree.dialog.loadFailed": {
+    "en": "Couldn't load worktrees",
+    "zh": "无法读取 worktree 列表"
+  },
+  "git.managedWorktree.dialog.missing": {
+    "en": "Directory missing",
+    "zh": "目录缺失"
+  },
+  "git.managedWorktree.dialog.noTasks": {
+    "en": "No tasks",
+    "zh": "无任务"
+  },
+  "git.managedWorktree.dialog.openInEditorFailed": {
+    "en": "Couldn't open in {editor}",
+    "zh": "无法在 {editor} 中打开"
+  },
+  "git.managedWorktree.dialog.openTask": {
+    "en": "Open task",
+    "zh": "打开任务"
+  },
+  "git.managedWorktree.dialog.prune": {
+    "en": "Remove record",
+    "zh": "移除记录"
+  },
+  "git.managedWorktree.dialog.pruneFailed": {
+    "en": "Couldn't remove the record",
+    "zh": "无法移除记录"
+  },
+  "git.managedWorktree.dialog.title": {
+    "en": "Worktrees",
+    "zh": "Worktrees"
+  },
+  "git.managedWorktree.dialog.untitledTask": {
+    "en": "Untitled task",
+    "zh": "未命名任务"
+  },
+  "git.managedWorktree.error.bucket-exhausted": {
+    "en": "Couldn't allocate a worktree folder",
+    "zh": "无法分配 worktree 目录"
+  },
+  "git.managedWorktree.error.carry-failed": {
+    "en": "Couldn't carry uncommitted changes into the new worktree",
+    "zh": "无法把未提交的改动带入新 worktree"
+  },
+  "git.managedWorktree.error.command-unconfirmed": {
+    "en": "Couldn't confirm whether the task started. Nothing was deleted. Try again later.",
+    "zh": "暂时无法确认任务是否已启动，未做任何删除，请稍后再试"
+  },
+  "git.managedWorktree.error.copy-failed": {
+    "en": "Couldn't copy files listed in .worktreeinclude",
+    "zh": "无法拷贝 .worktreeinclude 中的文件"
+  },
+  "git.managedWorktree.error.generic": {
+    "en": "The worktree operation failed",
+    "zh": "worktree 操作失败"
+  },
+  "git.managedWorktree.error.git-failed": {
+    "en": "The Git operation failed",
+    "zh": "Git 操作失败"
+  },
+  "git.managedWorktree.error.invalid-start-ref": {
+    "en": "The selected starting point doesn't exist",
+    "zh": "找不到所选的起点"
+  },
+  "git.managedWorktree.error.local-only": {
+    "en": "Worktrees are available only for local projects",
+    "zh": "只有本地项目支持 worktree"
+  },
+  "git.managedWorktree.error.not-managed": {
+    "en": "This folder isn't a worktree managed by ZCode",
+    "zh": "这个目录不是 ZCode 管理的 worktree"
+  },
+  "git.managedWorktree.error.not-repository": {
+    "en": "The project folder isn't a Git repository",
+    "zh": "项目目录不是 Git 仓库"
+  },
+  "git.managedWorktree.error.removing": {
+    "en": "This worktree is being deleted. Try again later.",
+    "zh": "这个 worktree 正在删除，请稍后再试"
+  },
+  "git.managedWorktree.error.session-close-failed": {
+    "en": "Couldn't unload the tasks using this worktree. The worktree was kept.",
+    "zh": "无法卸载使用这个 worktree 的任务，worktree 已保留"
+  },
+  "git.managedWorktree.error.session-failed": {
+    "en": "The worktree was created, but the task failed to start",
+    "zh": "worktree 已创建，但任务启动失败"
+  },
+  "git.managedWorktree.error.slash-unsupported": {
+    "en": "The first message of a worktree task can't be a command",
+    "zh": "worktree 任务的第一条消息不支持命令"
+  },
+  "git.managedWorktree.error.start-ref-missing-subdir": {
+    "en": "The selected starting point doesn't contain the project folder",
+    "zh": "所选起点中没有项目目录"
+  },
+  "git.managedWorktree.error.task-immovable": {
+    "en": "Worktree tasks can't be moved to another project",
+    "zh": "worktree 任务不能移动到其他项目"
+  },
+  "git.managedWorktree.error.unsupported-agent": {
+    "en": "This Agent version doesn't support worktrees",
+    "zh": "当前 Agent 版本不支持 worktree"
+  },
+  "git.managedWorktree.error.worktree-dirty": {
+    "en": "The worktree has uncommitted changes",
+    "zh": "worktree 有未提交的改动"
+  },
+  "git.managedWorktree.error.worktree-in-use": {
+    "en": "A task is using this worktree",
+    "zh": "有任务正在使用这个 worktree"
+  },
+  "git.managedWorktree.name": {
+    "en": "{repo} · {bucket}",
+    "zh": "{repo} · {bucket}"
+  },
+  "git.managedWorktree.ref.currentHead": {
+    "en": "Current HEAD ({ref})",
+    "zh": "当前 HEAD（{ref}）"
+  },
+  "git.managedWorktree.ref.detached": {
+    "en": "detached · {sha}",
+    "zh": "detached · {sha}"
+  },
+  "git.managedWorktree.ref.localBranches": {
+    "en": "Local branches",
+    "zh": "本地分支"
+  },
+  "git.managedWorktree.ref.note": {
+    "en": "The new worktree is created from the selected branch. Your local branch does not change. Uncommitted changes are not included.",
+    "zh": "新 worktree 将从所选分支创建，不切换本地分支。未提交的改动不会带入。"
+  },
+  "git.managedWorktree.ref.remoteBranches": {
+    "en": "Remote branches",
+    "zh": "远端分支"
+  },
+  "git.managedWorktree.ref.title": {
+    "en": "Create the new worktree from",
+    "zh": "新 worktree 从哪个分支创建"
+  },
+  "git.managedWorktree.toggle.label": {
+    "en": "worktree",
+    "zh": "worktree"
+  },
+  "git.managedWorktree.toggle.tooltip": {
+    "en": "Run in a new worktree: an isolated copy that works in parallel with your local checkout",
+    "zh": "在新的 worktree 中运行：创建独立副本，与本地并行工作"
+  },
+  "imageEditor.addedToChat": {
+    "en": "Added. You can remove it before sending.",
+    "zh": "已添加，发送前还可移除"
+  },
+  "imageEditor.discard": {
+    "en": "Discard changes",
+    "zh": "放弃修改"
+  },
+  "imageEditor.keepEditing": {
+    "en": "Keep editing",
+    "zh": "继续编辑"
+  },
+  "imageEditor.unsavedDescription": {
+    "en": "Add the edited image to chat?",
+    "zh": "要把圈画后的图片添加到聊天吗？"
+  },
+  "imageEditor.unsavedTitle": {
+    "en": "Your drawing has not been added",
+    "zh": "圈画还没添加到聊天"
+  },
+  "login.agreement.conjunction": {
+    "en": "and",
+    "zh": "和"
+  },
+  "login.agreement.prefix": {
+    "en": "By signing in, you agree to our",
+    "zh": "登录即表示同意"
+  },
+  "login.agreement.privacy": {
+    "en": "Privacy Policy",
+    "zh": "隐私政策"
+  },
+  "login.agreement.terms": {
+    "en": "Terms of Service",
+    "zh": "用户协议"
+  },
+  "login.copyright": {
+    "en": "© 2026 ZCode All rights reserved.",
+    "zh": "© 2026 北京智谱华章科技股份有限公司"
+  },
+  "login.credentialStore.changed": {
+    "en": "The credential file has changed. Nothing was reset. Reload to use its current state.",
+    "zh": "凭据文件已变化，本次没有重置。请重新加载以使用当前状态。"
+  },
+  "login.credentialStore.confirm": {
+    "en": "This resets all stored credentials. You will need to sign in again and reconfigure API keys, bots, MCP services and remote access. The original file will be preserved in a verified backup. Cancel to keep the original file unchanged.",
+    "zh": "此操作会重置全部已存凭据。你需要重新登录，并重新配置 API Key、Bot、MCP 服务及远程访问。原始文件会保存在经校验的备份中。取消则保持原文件不变。"
+  },
+  "login.credentialStore.description": {
+    "en": "The credential file is damaged. You can back it up and create an empty credential store.",
+    "zh": "凭据文件已损坏。可先备份原件，再建立空的凭据存储。"
+  },
+  "login.credentialStore.done": {
+    "en": "The original file was backed up and the empty credential store is ready. Reload to sign in again.",
+    "zh": "已备份原始文件，空凭据存储已就绪。请重新加载后登录。"
+  },
+  "login.credentialStore.failed": {
+    "en": "Recovery could not be completed or confirmed. Check the connection, available disk space and file permissions, then try again.",
+    "zh": "无法完成或确认恢复结果。请检查连接、磁盘空间和文件权限后重试。"
+  },
+  "login.credentialStore.reload": {
+    "en": "Reload",
+    "zh": "重新加载"
+  },
+  "login.credentialStore.restore": {
+    "en": "Back up and reset credentials",
+    "zh": "备份并重建凭据"
+  },
+  "login.credentialStore.title": {
+    "en": "Credential storage needs recovery",
+    "zh": "凭据存储需要恢复"
+  },
+  "login.singleLogin.browserButton": {
+    "en": "Login with Browser",
+    "zh": "浏览器授权登录"
+  },
+  "login.singleLogin.switchToDomestic": {
+    "en": "切换到中国",
+    "zh": "切换到中国"
+  },
+  "login.singleLogin.switchToGlobal": {
+    "en": "Switch to Global",
+    "zh": "Switch to Global"
+  },
+  "login.singleLogin.waiting": {
+    "en": "Waiting for browser authentication...",
+    "zh": "等待浏览器完成认证..."
+  },
+  "plugin.discovery.confirmTitle": {
+    "en": "Official plugin recommendation",
+    "zh": "官方插件推荐"
+  },
+  "plugin.discovery.enable": {
+    "en": "Enable",
+    "zh": "启用"
+  },
+  "plugin.discovery.enableInWorkspace": {
+    "en": "Enable in this workspace",
+    "zh": "在当前工作区启用"
+  },
+  "plugin.discovery.install": {
+    "en": "Install",
+    "zh": "安装"
+  },
+  "plugin.discovery.installAndEnable": {
+    "en": "Install and enable in this workspace",
+    "zh": "安装并在当前工作区启用"
+  },
+  "plugin.discovery.official": {
+    "en": "ZCode official marketplace",
+    "zh": "ZCode 官方市场"
+  },
+  "plugin.discovery.responseFailed": {
+    "en": "Could not submit your choice. Please try again.",
+    "zh": "提交选择失败，请重试。"
+  },
+  "plugin.discovery.skip": {
+    "en": "Skip",
+    "zh": "跳过"
+  },
+  "plugin.discovery.userInstall": {
+    "en": "Installed plugins are saved for this user. Configuration or authorization may still be required.",
+    "zh": "插件安装到当前用户，使用前可能还需要配置或授权。"
+  },
+  "plugin.discovery.workspaceEnable": {
+    "en": "Enable this plugin in the current workspace.",
+    "zh": "将在当前工作区启用此插件。"
+  },
+  "plugin.discovery.workspaceInstall": {
+    "en": "Install the plugin and enable it in this workspace. Other workspace settings stay unchanged; configuration or authorization may still be required.",
+    "zh": "将安装插件并在当前工作区启用。其他工作区的启用设置不变；使用前可能还需配置或授权。"
+  },
+  "plugins.startupTimeout": {
+    "en": "Plugin loading timed out. Plugin skills, commands, MCP servers and hooks are unavailable for this run. Restart the app to try again.",
+    "zh": "插件加载超时，本次未启用插件技能、命令、插件 MCP 和 Hook。重启应用后重试。"
+  },
+  "preview.image.actionFailed": {
+    "en": "Could not complete the image action. Please try again.",
+    "zh": "图片操作失败，请重试"
+  },
+  "preview.image.annotate": {
+    "en": "Draw",
+    "zh": "圈画"
+  },
+  "preview.image.resetZoom": {
+    "en": "Reset zoom",
+    "zh": "重置缩放"
+  },
+  "preview.image.saveAndChooseApp": {
+    "en": "Save a copy and choose an app",
+    "zh": "保存副本并选择打开应用"
+  },
+  "preview.image.saveAndOpen": {
+    "en": "Save and open",
+    "zh": "保存并打开"
+  },
+  "project.worktrees": {
+    "en": "Worktrees",
+    "zh": "Worktrees"
+  },
+  "projectManagement.confirm.descriptionOne": {
+    "en": "It leaves the sidebar and the project picker. Its sessions ({sessions}) stay in Recent and search. The folder on disk is not touched.",
+    "zh": "它会从侧栏和项目选择器中移除，其中的会话（{sessions} 个）仍保留在最近和搜索中，磁盘上的文件夹不受影响。"
+  },
+  "quickPick.command.openExtensionLogs": {
+    "en": "Open extension logs",
+    "zh": "打开扩展日志"
+  },
+  "quickPick.command.reloadExtensions": {
+    "en": "Reload extensions",
+    "zh": "重新加载扩展"
+  },
+  "remote.error.sourceServerUpdateInProgress": {
+    "en": "The remote device is updating its remote service",
+    "zh": "远程设备正在更新远端服务"
+  },
+  "remote.error.sourceServerUpdateInProgress.reason": {
+    "en": "This connection was not started. Retry after the update finishes.",
+    "zh": "这次连接没有发起。等更新完成后点击重试。"
+  },
+  "remoteSync.dialog.minimize": {
+    "en": "Minimize; sync continues",
+    "zh": "最小化，同步继续"
+  },
+  "remoteSync.minimized.failed": {
+    "en": "Sync needs attention. Click to view",
+    "zh": "同步需要处理，点击查看"
+  },
+  "remoteSync.minimized.finished": {
+    "en": "Sync finished. Click to view results",
+    "zh": "同步已结束，点击查看结果"
+  },
+  "remoteSync.minimized.pushing": {
+    "en": "Syncing… Click to view",
+    "zh": "正在同步… 点击查看"
+  },
+  "remoteSync.minimized.restore": {
+    "en": "Click to restore sync",
+    "zh": "点击恢复同步窗口"
+  },
+  "remoteSync.progress.category": {
+    "en": "Syncing {category}…",
+    "zh": "正在同步{category}…"
+  },
+  "remoteSync.subagents.builtInModel": {
+    "en": "Built-in · Model {model}",
+    "zh": "内置 · 模型 {model}"
+  },
+  "remoteSync.subagents.builtInModelWithReasoning": {
+    "en": "Built-in · Model {model} · Reasoning effort {level}",
+    "zh": "内置 · 模型 {model} · 推理档位 {level}"
+  },
+  "remoteSync.subagents.targetModel": {
+    "en": "Remote: {model}",
+    "zh": "远端：{model}"
+  },
+  "remoteSync.subagents.targetModelWithReasoning": {
+    "en": "Remote: {model} · Reasoning effort {level}",
+    "zh": "远端：{model} · 推理档位 {level}"
+  },
+  "resourceManager.category.task": {
+    "en": "Task processes",
+    "zh": "任务进程"
+  },
+  "settings.agentBehavior.title": {
+    "en": "Behavior and tools",
+    "zh": "行为与工具"
+  },
+  "settings.browser.htmlClickOpensBrowser": {
+    "en": "Open HTML files in the built-in browser on click",
+    "zh": "单击 HTML 文件时在内置浏览器中打开"
+  },
+  "settings.browser.htmlClickOpensBrowserDescription": {
+    "en": "When on, clicking a local .html file in the file tree opens it in the built-in browser. When off, it opens the source preview. Open in the context menu always opens the source preview.",
+    "zh": "开启后，在文件树中单击本地 .html 文件会在内置浏览器中打开；关闭时打开源码预览。右键菜单的「打开」始终打开源码预览。"
+  },
+  "settings.browser.htmlClickOpensBrowserSaveError": {
+    "en": "Couldn't save the setting. Try again.",
+    "zh": "保存打开方式失败，请重试"
+  },
+  "settings.browser.open.section": {
+    "en": "Opening files",
+    "zh": "打开方式"
+  },
+  "settings.memory.viewer.remoteUnavailable": {
+    "en": "Memory details for remote devices are not available yet.",
+    "zh": "暂不支持查看远程设备的记忆详情。"
+  },
+  "settings.mobilePush": {
+    "en": "Mobile push notifications",
+    "zh": "手机推送通知"
+  },
+  "settings.mobilePushDescription": {
+    "en": "When you are away from this desktop, completed, failed, or waiting tasks are pushed to the signed-in ZCode App.",
+    "zh": "桌面不在身边时，任务完成、失败或需要确认会推送到已登录的 ZCode App。"
+  },
+  "settings.pluginAutoRecommendation": {
+    "en": "Automatic plugin recommendations",
+    "zh": "插件自动推荐"
+  },
+  "settings.pluginAutoRecommendationDescription": {
+    "en": "Let the agent find and recommend plugins in conversations. When off, you can still install plugins in Settings. Applies from your next message. Installation requires confirmation.",
+    "zh": "允许 Agent 在对话中查找和推荐插件。关闭后仍可在设置页手动安装。从下一条输入生效，安装仍需确认。"
+  },
+  "settings.pluginAutoRecommendationSaveError": {
+    "en": "Could not save. Try again.",
+    "zh": "保存失败，请重试。"
+  },
+  "settings.plugins.store.extension.consentNote": {
+    "en": "For information only. After you install, the plugin can use these permissions only after you grant them in the permission dialog.",
+    "zh": "这里只是说明。安装后，要在授权对话框里授权，插件才能使用这些权限。"
+  },
+  "settings.plugins.store.extension.description": {
+    "en": "When enabled, the plugin's extension code keeps running inside ZCode.",
+    "zh": "启用后，插件的扩展代码在 ZCode 里常驻运行。"
+  },
+  "settings.plugins.store.extension.grantsTitle": {
+    "en": "Requested permissions",
+    "zh": "申请的权限"
+  },
+  "settings.plugins.store.extension.incompatibleHint": {
+    "en": "This plugin needs a newer version of ZCode. Update ZCode, then install it.",
+    "zh": "这个插件需要更新版本的 ZCode。更新 ZCode 后再安装。"
+  },
+  "settings.plugins.store.extension.noGrants": {
+    "en": "No permissions requested",
+    "zh": "不申请权限"
+  },
+  "settings.plugins.store.extension.requiresUpdate": {
+    "en": "Requires newer ZCode",
+    "zh": "需要更新 ZCode"
+  },
+  "settings.plugins.store.extension.title": {
+    "en": "Includes resident code",
+    "zh": "含常驻代码"
+  },
+  "settings.search.description": {
+    "en": "Find a setting and jump to it",
+    "zh": "搜索设置项并跳转到对应位置"
+  },
+  "settings.search.empty": {
+    "en": "No matching settings",
+    "zh": "未找到相关设置"
+  },
+  "settings.search.results": {
+    "en": "Search results",
+    "zh": "搜索结果"
+  },
+  "settings.search.section": {
+    "en": "Settings section",
+    "zh": "设置分类"
+  },
+  "settings.search.title": {
+    "en": "Search settings",
+    "zh": "搜索设置"
+  },
+  "startup.global.exportLogs": {
+    "en": "Export logs",
+    "zh": "导出日志"
+  },
+  "startup.global.exportLogsFailed": {
+    "en": "Failed to export logs. Please try again.",
+    "zh": "导出日志失败，请稍后重试。"
+  },
+  "startup.global.exportedLogs": {
+    "en": "Logs exported. Opened in the file manager.",
+    "zh": "日志已导出，已在文件管理器中打开。"
+  },
+  "startup.global.exportingLogs": {
+    "en": "Exporting logs...",
+    "zh": "正在导出日志…"
+  },
+  "taskList.archiveBlockedWhileRunning": {
+    "en": "Stop the task before archiving it",
+    "zh": "任务运行中，请先停止后再归档"
+  },
+  "taskList.managedWorktreeLabel": {
+    "en": "Worktree task",
+    "zh": "Worktree 任务"
+  },
+  "updateDialog.backgroundDownload": {
+    "en": "Download in background",
+    "zh": "后台下载"
+  },
+  "voiceInput.action.openPrivacySettings": {
+    "en": "Open System Settings",
+    "zh": "打开系统设置"
+  },
+  "voiceInput.action.openSoundSettings": {
+    "en": "Open Sound Settings",
+    "zh": "打开声音设置"
+  },
+  "voiceInput.button.connecting": {
+    "en": "Connecting to speech recognition…",
+    "zh": "正在连接语音识别…"
+  },
+  "voiceInput.button.recognizing": {
+    "en": "Recognizing…",
+    "zh": "正在识别…"
+  },
+  "voiceInput.button.start": {
+    "en": "Voice input",
+    "zh": "语音输入"
+  },
+  "voiceInput.button.stop": {
+    "en": "Stop recording",
+    "zh": "停止录音"
+  },
+  "voiceInput.error.audio_limit_exceeded": {
+    "en": "The recording reached the maximum length. The recognized text was kept.",
+    "zh": "已达到单次录音时长上限，已保留识别到的文字。"
+  },
+  "voiceInput.error.audio_too_short": {
+    "en": "The recording is too short. Try again.",
+    "zh": "说话时间太短，请重试。"
+  },
+  "voiceInput.error.deviceBusy": {
+    "en": "The microphone cannot be used. Another app may be using it.",
+    "zh": "麦克风无法使用，可能被其他应用占用。"
+  },
+  "voiceInput.error.deviceBusy.linux": {
+    "en": "The microphone cannot be used. Another app may be using it. Check the PulseAudio / PipeWire input device.",
+    "zh": "麦克风无法使用，可能被其他应用占用。请检查 PulseAudio / PipeWire 输入设备。"
+  },
+  "voiceInput.error.device_ended": {
+    "en": "The microphone was disconnected. Voice input was cancelled.",
+    "zh": "麦克风已断开，本次识别已取消。"
+  },
+  "voiceInput.error.failed": {
+    "en": "Speech recognition failed. Try again.",
+    "zh": "语音识别失败，请重试。"
+  },
+  "voiceInput.error.network": {
+    "en": "Cannot connect to speech recognition. Check your network.",
+    "zh": "无法连接语音识别服务，请检查网络。"
+  },
+  "voiceInput.error.noDevice": {
+    "en": "No microphone found. Connect a microphone and try again.",
+    "zh": "未检测到麦克风，请连接麦克风后重试。"
+  },
+  "voiceInput.error.noDevice.linux": {
+    "en": "No microphone found. Connect a microphone and check the PulseAudio / PipeWire input device.",
+    "zh": "未检测到麦克风。请连接麦克风，并检查 PulseAudio / PipeWire 输入设备。"
+  },
+  "voiceInput.error.no_speech": {
+    "en": "No speech was recognized. Move closer to the microphone and try again.",
+    "zh": "没有识别到内容，请靠近麦克风再说一次。"
+  },
+  "voiceInput.error.permissionDenied.linux": {
+    "en": "Cannot access the microphone. Check the system microphone permission and the PulseAudio / PipeWire input device.",
+    "zh": "无法访问麦克风。请检查系统的麦克风权限和 PulseAudio / PipeWire 输入设备。"
+  },
+  "voiceInput.error.permissionDenied.mac": {
+    "en": "ZCode cannot use the microphone. Allow ZCode in System Settings › Privacy & Security › Microphone. On some macOS versions, restart the app after you change it.",
+    "zh": "ZCode 没有麦克风权限。请在「系统设置 › 隐私与安全性 › 麦克风」中允许 ZCode，部分系统版本需要重启应用后生效。"
+  },
+  "voiceInput.error.permissionDenied.windows": {
+    "en": "ZCode cannot use the microphone. In Settings › Privacy & security › Microphone, turn on both \"Microphone access\" and \"Let desktop apps access your microphone\".",
+    "zh": "ZCode 没有麦克风权限。请在「设置 › 隐私和安全性 › 麦克风」中同时打开「麦克风访问权限」和「允许桌面应用访问麦克风」。"
+  },
+  "voiceInput.error.proxy": {
+    "en": "Cannot connect to speech recognition through the HTTP proxy. Make sure the proxy supports WebSocket, or add the service address to \"No proxy\", then restart the app.",
+    "zh": "无法通过 HTTP 代理连接语音识别服务。请确认代理支持 WebSocket，或把服务地址加入「不使用代理的地址」后重启应用。"
+  },
+  "voiceInput.error.rate_limited": {
+    "en": "Speech recognition is busy. Try again later.",
+    "zh": "语音识别繁忙，请稍后再试。"
+  },
+  "voiceInput.error.silent": {
+    "en": "No sound came from the microphone. Usually the system microphone permission is off or the wrong input device is selected.",
+    "zh": "没有收到麦克风声音。通常是系统麦克风权限未开启或选错了输入设备。"
+  },
+  "voiceInput.error.silent.linux": {
+    "en": "No sound came from the microphone. Check the PulseAudio / PipeWire input device and volume.",
+    "zh": "没有收到麦克风声音。请检查 PulseAudio / PipeWire 的输入设备和音量。"
+  },
+  "voiceInput.error.too_quiet": {
+    "en": "No sound detected. Check that the microphone is not muted or too far away.",
+    "zh": "没有检测到声音，请检查麦克风是否静音或离得太远。"
+  },
+  "voiceInput.error.unavailable": {
+    "en": "Speech recognition is unavailable. Try again later.",
+    "zh": "语音识别服务暂不可用，请稍后再试。"
+  },
+  "voiceInput.error.upstream_timeout": {
+    "en": "Speech recognition timed out. Try again.",
+    "zh": "语音识别超时，请重试。"
+  }
+}
