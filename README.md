@@ -4,8 +4,8 @@
 <div align="center">
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.18.0%2B-green.svg)](https://zcode.z.ai)
-[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-8%2C355-orange.svg)](tr_dictionary_zcode.json)
+[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.18.2%2B-green.svg)](https://zcode.z.ai)
+[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-8%2C365-orange.svg)](tr_dictionary_zcode.json)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Cross--Platform-lightgrey.svg)](#-kurulum-installation)
 [![Maintenance Commitment](https://img.shields.io/badge/Maintenance-Day--0%20SLA-blue.svg)](#-note-regarding-official-upstream-zai-org)
 [![GitHub stars](https://img.shields.io/github/stars/foztrk/zcode-turkish-localization?style=social)](https://github.com/foztrk/zcode-turkish-localization)
@@ -43,10 +43,11 @@ Our reverse-engineered AST and ASAR injection engine guarantees zero downtime an
 
 1. **Model ve Sağlayıcı Hata Mesajları Enjeksiyonu (`ZBt` / `bVt` Kancası):**
    - Sohbet panelinde model sağlayıcısından gelen İngilizce hata mesajları (`"Model output was blocked by the provider's content safety filter."`, rate limit, quota, context limit vb.) anında yakalanıp Türkçeleştirilir.
-2. **Tam Kapsamlı Arayüz (8.355 Anahtar):**
-   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **8.355 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
+2. **Tam Kapsamlı Arayüz (8.365 Anahtar):**
+   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **8.365 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
+   - **v3.18.2 Uyumluluğu:** 10 yeni i18n anahtarı (Yazı tipi gri tonlama düzgünleştirme ayarı, sesli giriş mikrofon yetkilendirme diyalogları ve sistem bildirimleri) eksiksiz Türkçeleştirildi.
+   - v3.18.2 ile değişen dinamik modül hash'leri (`IntlProvider-FwXbxV-p.js`, `styles-a4AckxCl.js`, `chunk-N4BDK3A6.js`) ve güncellenen fonksiyon kancaları (`MYt`, `r8`, `wit`, `qk`, `Jk`, `Yk`) tam entegre edildi.
    - **v3.18.0 Uyumluluğu:** 559 yeni i18n anahtarı (Git Worktree yönetimi, Yerleşik Tasarım Tarayıcısı, Uzantı Oturum İzinleri, Sesli Giriş ve Hata Güvenlik Filtreleri) eksiksiz Türkçeleştirildi.
-   - Yeni çoklu dil altyapısı ve güncellenen dinamik modül hash'leri (`styles-BhvI6_DD.js`, `IntlProvider-C0vyPcb8.js`) tam entegre edildi.
    - v3.17.2 ile eklenen yeni MCP hata çözüm önerileri (`settings.mcp.failureAdvice.*`) ve hata ayrıntıları eksiksiz çevrildi.
    - Sol alttaki profil menüsünde ve Genel Ayarlar sayfasında yerleşik **"Türkçe"** dil seçeneği.
    - Electron yerel masaüstü menüleri (Dosya, Düzen, Görünüm, Pencere, Yardım).

@@ -8353,5 +8353,15 @@ export default {
   "startup.global.exportedLogs": "Günlükler dışa aktarıldı. Dosya yöneticisinde açıldı.",
   "startup.global.exportingLogs": "Günlükler dışa aktarılıyor...",
   "taskList.archiveBlockedWhileRunning": "Arşivlemeden önce görevi durdurun",
-  "taskList.managedWorktreeLabel": "Worktree görevi"
+  "taskList.managedWorktreeLabel": "Worktree görevi",
+  "settings.fontSmoothing": "Yazı Tipi Düzgünleştirme",
+  "settings.fontSmoothingDescription": "Açıkken gri tonlamalı düzgünleştirme kullanır, metinler daha ince görünebilir. Etki ekrana göre değişiklik gösterir.",
+  "voiceInput.permission.title": "Mikrofon Erişimi Gerekli",
+  "voiceInput.permission.description.mac": "“Yeniden İste”ye tıklayın, ardından sistem iletişim kutusunda “İzin Ver”i seçin. Ayrıca Sistem Ayarları › Gizlilik ve Güvenlik › Mikrofon bölümünden ZCode'u açabilirsiniz.",
+  "voiceInput.permission.reauthorize": "Yeniden İste",
+  "voiceInput.permission.restartTitle": "ZCode'u Yeniden Başlatın",
+  "voiceInput.permission.restartDescription": "Mikrofon yetkilendirmesi sıfırlandı. ZCode'u yeniden başlatın, mikrofona tıklayın ve sistem iletişim kutusunda “İzin Ver”i seçin.",
+  "voiceInput.permission.relaunch": "ZCode'u Yeniden Başlat",
+  "voiceInput.permission.granted": "Mikrofon erişimi açık. Sesli girişi başlatmak için mikrofona tıklayın.",
+  "voiceInput.permission.description.windows": "Ayarlar › Gizlilik ve güvenlik › Mikrofon bölümünde hem “Mikrofon erişimi”ni hem de “Masaüstü uygulamalarının mikrofonunuza erişmesine izin verin” seçeneğini açın."
 };

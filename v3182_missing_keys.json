@@ -1,0 +1,42 @@
+{
+  "settings.fontSmoothing": {
+    "en": "글꼴 다듬기",
+    "zh": "字体平滑"
+  },
+  "settings.fontSmoothingDescription": {
+    "en": "회색조로 글꼴을 다듬습니다. 글자가 더 가늘게 보일 수 있으며 효과는 디스플레이에 따라 다릅니다.",
+    "zh": "开启后使用灰度平滑，文字可能显得更细。效果因显示器而异。"
+  },
+  "voiceInput.permission.title": {
+    "en": "Microphone access needed",
+    "zh": "需要麦克风权限"
+  },
+  "voiceInput.permission.description.mac": {
+    "en": "Click \"Request again\", then choose \"Allow\" in the system dialog. You can also turn on ZCode in System Settings › Privacy & Security › Microphone.",
+    "zh": "点击「重新授权」，然后在系统弹框中选择「允许」。也可以在「系统设置 › 隐私与安全性 › 麦克风」中打开 ZCode。"
+  },
+  "voiceInput.permission.reauthorize": {
+    "en": "Request again",
+    "zh": "重新授权"
+  },
+  "voiceInput.permission.restartTitle": {
+    "en": "Restart ZCode",
+    "zh": "需要重启 ZCode"
+  },
+  "voiceInput.permission.restartDescription": {
+    "en": "The microphone permission was reset. Restart ZCode, click the microphone, then choose \"Allow\" in the system dialog.",
+    "zh": "已重置麦克风授权。重启 ZCode 后点击麦克风，在系统弹框中选择「允许」。"
+  },
+  "voiceInput.permission.relaunch": {
+    "en": "Restart ZCode",
+    "zh": "重启 ZCode"
+  },
+  "voiceInput.permission.granted": {
+    "en": "Microphone access is on. Click the microphone to start voice input.",
+    "zh": "已开启麦克风权限，点击麦克风开始语音输入。"
+  },
+  "voiceInput.permission.description.windows": {
+    "en": "In Settings › Privacy & security › Microphone, turn on both \"Microphone access\" and \"Let desktop apps access your microphone\".",
+    "zh": "请在「设置 › 隐私和安全性 › 麦克风」中同时打开「麦克风访问权限」和「允许桌面应用访问麦克风」。"
+  }
+}

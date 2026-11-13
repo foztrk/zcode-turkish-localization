@@ -831,6 +831,45 @@ function _trTemplateText(txt){{if(!txt||typeof txt!=="string")return txt;let t=t
     js_content = js_content.replace(target_o3, repl_o3, 1)
 
     # 4.9 Model ve Sağlayıcı Hata Mesajları Yaması
+    # v3.18.2+ MYt Hata Fonksiyonu
+    target_MYt = 'function MYt(e,t,n=`local`){let r=Co(e);if(r)return bM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(AYt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=jYt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=SO(e);if(i)return t.formatMessage({id:i});let a=g9e(xO(e.code,e.message)??D9e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):O9e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):kYt(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&EYt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}'
+    repl_MYt = 'function MYt(e,t,n=`local`){let _inner=function(){let r=Co(e);if(r)return bM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(AYt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=jYt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=SO(e);if(i)return t.formatMessage({id:i});let a=g9e(xO(e.code,e.message)??D9e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):O9e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):kYt(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&EYt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}();return typeof _trErrorMessage===`function`?_trErrorMessage(_inner):_inner}'
+    if target_MYt in js_content:
+        js_content = js_content.replace(target_MYt, repl_MYt, 1)
+        print("    [+] MYt (v3.18.2+) hata kancası başarıyla uygulandı!")
+
+    # v3.18.2+ r8 Ajan Tanım Fonksiyonu
+    target_r8 = 'function r8(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;return r?.trim()||i?.trim()||``}'
+    repl_r8 = 'function r8(e,t){let d=_trAgentDesc(e);if(d&&d!==e.description)return d;let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;return r?.trim()||i?.trim()||``}'
+    if target_r8 in js_content:
+        js_content = js_content.replace(target_r8, repl_r8, 1)
+        print("    [+] r8 (v3.18.2+) agent tanım kancası başarıyla uygulandı!")
+
+    # v3.18.2+ wit Kategori ve qk, Jk, Yk Eklenti Başlık ve Açıklamaları
+    target_wit_cat = 'var wit={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};'
+    repl_wit_cat = 'var wit={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,"游戏/3D":`settings.plugins.store.category.game3d`,game3d:`settings.plugins.store.category.game3d`,other:`settings.plugins.store.category.other`};'
+    if target_wit_cat in js_content:
+        js_content = js_content.replace(target_wit_cat, repl_wit_cat, 1)
+        print("    [+] wit (v3.18.2+) kategori kancası uygulandı!")
+
+    target_qk_v3182 = 'function qk(e,t){return ti(e,t)}'
+    repl_qk_v3182 = 'function qk(e,t){let raw=ti(e,t);let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginName==="function")return _trPluginName(id,raw);return raw}'
+    if target_qk_v3182 in js_content:
+        js_content = js_content.replace(target_qk_v3182, repl_qk_v3182, 1)
+        print("    [+] qk (v3.18.2+) eklenti başlık kancası uygulandı!")
+
+    target_Jk_v3182 = 'function Jk(e,t){return Zr(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)}'
+    repl_Jk_v3182 = 'function Jk(e,t){let raw=Zr(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)??(e&&e.description)??"";let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginDesc==="function")return _trPluginDesc(id,raw);return raw}'
+    if target_Jk_v3182 in js_content:
+        js_content = js_content.replace(target_Jk_v3182, repl_Jk_v3182, 1)
+        print("    [+] Jk (v3.18.2+) eklenti açıklama kancası uygulandı!")
+
+    target_Yk_v3182 = 'function Yk(e,t,n){let r=t?.id===e.id?t:void 0;return{name:ti(r??e,n),description:r?Jk(r,n):e.description}}'
+    repl_Yk_v3182 = 'function Yk(e,t,n){let r=t?.id===e.id?t:void 0;let res={name:ti(r??e,n),description:r?Jk(r,n):e.description};let pid=(e&&e.id)||(r&&r.id)||(e&&e.name)||"";if(typeof _trPluginName==="function")res.name=_trPluginName(pid,res.name);if(typeof _trPluginDesc==="function")res.description=_trPluginDesc(pid,res.description);return res}'
+    if target_Yk_v3182 in js_content:
+        js_content = js_content.replace(target_Yk_v3182, repl_Yk_v3182, 1)
+        print("    [+] Yk (v3.18.2+) eklenti birleşim kancası uygulandı!")
+
     # v3.18.0+ DYt Hata Fonksiyonu
     target_DYt = 'function DYt(e,t,n=`local`){let r=bo(e);if(r)return SM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(TYt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=EYt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=xO(e);if(i)return t.formatMessage({id:i});let a=c9e(bO(e.code,e.message)??y9e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):b9e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):wYt(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&xYt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}'
     repl_DYt = 'function DYt(e,t,n=`local`){let _inner=function(){let r=bo(e);if(r)return SM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(TYt(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=EYt(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=xO(e);if(i)return t.formatMessage({id:i});let a=c9e(bO(e.code,e.message)??y9e(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):b9e(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):wYt(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&xYt.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}();return typeof _trErrorMessage===`function`?_trErrorMessage(_inner):_inner}'
