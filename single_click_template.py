@@ -300,6 +300,9 @@ def patch_html(html_content):
     dom_script = r"""<script id="zcode-tr-dom-patch">
 (function() {
   const DOM_MAP = {
+    "Design": "Tasarım",
+    "Design workflow for UI, web, app prototypes and HTML decks, delivered as workspace files.": "Çalışma alanı dosyaları olarak teslim edilen kullanıcı arayüzü, web, uygulama prototipleri ve HTML sunumları için tasarım iş akışı.",
+    "Design workflow skill for HTML design drafts, prototypes and HTML decks, published as a built-in official ZCode plugin.": "Resmi yerleşik ZCode eklentisi olarak yayınlanan HTML tasarım taslakları, prototipler ve sunumlar için tasarım iş akışı becerisi.",
     "Daily standup summary": "Sabah Geliştirici Özeti",
     "Model output was blocked by the provider's content safety filter.": "Model çıktısı, sağlayıcının içerik güvenliği filtresi tarafından engellendi.",
     "Prompt was blocked by the provider's content safety filter.": "İstem (prompt), sağlayıcının içerik güvenliği filtresi tarafından engellendi.",

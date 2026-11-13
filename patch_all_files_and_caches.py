@@ -34,17 +34,27 @@ def patch_json_file(filepath):
 
     changed = False
 
-    # 1. Marketplace dosyası mı?
-    if isinstance(data, dict) and "plugins" in data and isinstance(data["plugins"], list):
-        for p in data["plugins"]:
+    # 1. Marketplace dosyası mı (plugins veya manifest.plugins listesi)?
+    plugins_list = None
+    if isinstance(data, dict):
+        if "plugins" in data and isinstance(data["plugins"], list):
+            plugins_list = data["plugins"]
+        elif "manifest" in data and isinstance(data["manifest"], dict) and "plugins" in data["manifest"] and isinstance(data["manifest"]["plugins"], list):
+            plugins_list = data["manifest"]["plugins"]
+
+    if plugins_list is not None:
+        for p in plugins_list:
             pid = p.get("id") or p.get("name") or ""
             # Ad güncelle
-            if pid in NAMES_TR:
-                p["displayName"] = NAMES_TR[pid]
-                changed = True
-            elif p.get("name") in NAMES_TR:
-                p["displayName"] = NAMES_TR[p["name"]]
-                changed = True
+            tr_name = NAMES_TR.get(pid) or NAMES_TR.get(p.get("name", "")) or NAMES_TR.get(p.get("displayName", ""))
+            if tr_name:
+                if p.get("displayName") != tr_name:
+                    p["displayName"] = tr_name
+                    changed = True
+                if "displayName_i18n" in p and isinstance(p["displayName_i18n"], dict):
+                    p["displayName_i18n"]["tr"] = tr_name
+                    p["displayName_i18n"]["zh-CN"] = tr_name
+                    changed = True
 
             # Açıklama güncelle
             cur_desc = p.get("description", "")
@@ -54,24 +64,44 @@ def patch_json_file(filepath):
                 changed = True
                 
             # i18n objesi varsa
-            if "descriptionI18n" in p and isinstance(p["descriptionI18n"], dict):
-                if tr_desc:
-                    p["descriptionI18n"]["tr-TR"] = tr_desc
-                    p["descriptionI18n"]["en-US"] = tr_desc
-                    changed = True
+            for i18n_key in ["descriptionI18n", "description_i18n"]:
+                if i18n_key in p and isinstance(p[i18n_key], dict):
+                    if tr_desc:
+                        p[i18n_key]["tr-TR"] = tr_desc
+                        p[i18n_key]["tr"] = tr_desc
+                        p[i18n_key]["en-US"] = tr_desc
+                        p[i18n_key]["en"] = tr_desc
+                        p[i18n_key]["zh-CN"] = tr_desc
+                        changed = True
 
     # 2. Tekil plugin.json veya package.json mı?
     elif isinstance(data, dict):
         pid = data.get("name") or data.get("id") or ""
-        if pid in NAMES_TR:
-            data["displayName"] = NAMES_TR[pid]
-            changed = True
+        clean_pid = pid.replace("-plugin", "").replace("@zcode/", "")
+        tr_name = NAMES_TR.get(clean_pid) or NAMES_TR.get(pid) or NAMES_TR.get(data.get("displayName", ""))
+        if tr_name:
+            if "displayName" in data and data.get("displayName") != tr_name:
+                data["displayName"] = tr_name
+                changed = True
+            elif "name" in data and data.get("name") != tr_name and not filepath.endswith("package.json"):
+                # package.json içinde name paket tanımlayıcısı olduğu için değiştirilmez, displayName veya plugin.json güncellenir
+                pass
         
         cur_desc = data.get("description", "")
-        tr_desc = get_tr_desc(pid, cur_desc)
+        tr_desc = get_tr_desc(clean_pid, cur_desc) or get_tr_desc(pid, cur_desc)
         if tr_desc and tr_desc != cur_desc:
             data["description"] = tr_desc
             changed = True
+
+        for i18n_key in ["descriptionI18n", "description_i18n"]:
+            if i18n_key in data and isinstance(data[i18n_key], dict):
+                if tr_desc:
+                    data[i18n_key]["tr-TR"] = tr_desc
+                    data[i18n_key]["tr"] = tr_desc
+                    data[i18n_key]["en-US"] = tr_desc
+                    data[i18n_key]["en"] = tr_desc
+                    data[i18n_key]["zh-CN"] = tr_desc
+                    changed = True
 
     if changed:
         try:

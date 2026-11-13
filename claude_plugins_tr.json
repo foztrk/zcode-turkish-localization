@@ -1237,5 +1237,10 @@
   "presentation": "Resmi ZCode eklentisi olarak yayınlanan PPTX sunum üretim yetenekleri ve PowerPoint görüntüleme paneli.",
   "spreadsheet": "Resmi ZCode eklentisi olarak yayınlanan XLSX hesap tablosu üretim yetenekleri ve Excel görüntüleme paneli.",
   "document": "Resmi ZCode eklentisi olarak yayınlanan DOCX belge üretim yetenekleri ve Word görüntüleme paneli.",
-  "visualization": "ZCode sohbetlerinde etkileşimli açıklamalar, grafikler ve tasarım önizlemeleri oluşturun."
+  "visualization": "ZCode sohbetlerinde etkileşimli açıklamalar, grafikler ve tasarım önizlemeleri oluşturun.",
+  "design": "Çalışma alanı dosyaları olarak sunulan kullanıcı arayüzü, web, uygulama prototipleri ve HTML slaytları için tasarım iş akışı.",
+  "Design workflow for UI, web, app prototypes and HTML decks, delivered as workspace files.": "Çalışma alanı dosyaları olarak sunulan kullanıcı arayüzü, web, uygulama prototipleri ve HTML slaytları için tasarım iş akışı.",
+  "Design workflow skill for HTML design drafts, prototypes and HTML decks, published as a built-in official ZCode plugin.": "Resmi yerleşik ZCode eklentisi olarak yayınlanan HTML tasarım taslakları, prototipler ve sunumlar için tasarım iş akışı becerisi.",
+  "做网页设计稿、原型和演示稿；桌面端本地工作区可在内置浏览器里点选修改。": "Çalışma alanı dosyaları olarak sunulan kullanıcı arayüzü, web, uygulama prototipleri ve HTML slaytları için tasarım iş akışı.",
+  "设计工作流：UI、网页、App 原型与 HTML 演示稿，交付为工作区文件。": "Çalışma alanı dosyaları olarak sunulan kullanıcı arayüzü, web, uygulama prototipleri ve HTML slaytları için tasarım iş akışı."
 }

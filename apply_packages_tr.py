@@ -96,6 +96,18 @@ PLUGIN_TRANSLATIONS = {
         "displayName": "DesignCraft",
         "description": "Çalışma alanı dosyaları ve tuval düzenleme desteğiyle ZCode panelinde DesignCraft sayfa ve grafik tasarımı."
     },
+    "design": {
+        "displayName": "Tasarım",
+        "description": "Çalışma alanı dosyaları olarak sunulan kullanıcı arayüzü, web, uygulama prototipleri ve HTML slaytları için tasarım iş akışı.",
+        "examplePrompts": [
+            "Bütçe uygulaması için bir açılış sayfası tasarla",
+            "8 sayfalık bir HTML sunumu hazırla"
+        ]
+    },
+    "design-plugin": {
+        "displayName": "Tasarım",
+        "description": "Resmi yerleşik ZCode eklentisi olarak yayınlanan HTML tasarım taslakları, prototipler ve sunumlar için tasarım iş akışı becerisi."
+    },
     "excalidraw": {
         "displayName": "Excalidraw",
         "description": "Excalidraw ve MCP araçlarıyla el çizimi tarzında diyagramlar ve şemalar oluşturun."
@@ -310,7 +322,8 @@ SKILL_TRANSLATIONS = {
     "preset": "Kullanılabilir tüm bölgelerdeki kapasiteyi analiz ederek Azure OpenAI modellerini en uygun bölgelere akıllıca dağıtır. Kapasite mevcut olduğunda geçerli bölgeyi tercih eder.",
     "chrome-cdp": "Chrome oturumu ile etkileşim kurun, sayfaları denetleyin ve test edin.",
     "codebase-memory": "Yapısal kod sorguları, mimari keşif ve çağrı zinciri analizi için kod tabanı bilgi grafiğini kullanın.",
-    "desktop-eye": "Canlı masaüstü ekran görüntüsü alarak arayüz bağlamını anlık olarak doğrulayın."
+    "desktop-eye": "Canlı masaüstü ekran görüntüsü alarak arayüz bağlamını anlık olarak doğrulayın.",
+    "design": "Tasarım iş akışı: Çalışma alanına yazılan HTML tasarım taslakları, etkileşimli prototipler veya HTML sunumları üretildiğinde kullanılır; girdi analizi, yeni tasarım ve yeniden tasarım, marka renk paletleri, görsel keşif ve incelemeyi kapsar. Sohbet içi etkileşimli görünümler (visualize) veya doğrudan .pptx üretimi (presentations) için kullanılmaz."
 }
 
 COMMAND_TRANSLATIONS = {
