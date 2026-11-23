@@ -13,7 +13,11 @@ sys.stdout.reconfigure(encoding="utf-8")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ZCODE_RESOURCES = r"C:\Program Files\ZCode\resources"
 ORIG_ASAR = (
-    os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3190")
+    os.path.join(ZCODE_RESOURCES, "app.asar.orig.v400")
+    if os.path.exists(os.path.join(ZCODE_RESOURCES, "app.asar.orig.v400"))
+    else os.path.join(BASE_DIR, "app.asar.orig.v400")
+    if os.path.exists(os.path.join(BASE_DIR, "app.asar.orig.v400"))
+    else os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3190")
     if os.path.exists(os.path.join(ZCODE_RESOURCES, "app.asar.orig.v3190"))
     else os.path.join(BASE_DIR, "app.asar.orig.v3190")
     if os.path.exists(os.path.join(BASE_DIR, "app.asar.orig.v3190"))
@@ -130,6 +134,7 @@ def find_target_paths(header, f_src, base_offset):
     intl_file = None
     styles_file = None
     usage_parts_file = None
+    validation_file = None
 
     for k in renderer_assets.keys():
         if k.startswith("IntlProvider-") and k.endswith(".js"):
@@ -138,6 +143,8 @@ def find_target_paths(header, f_src, base_offset):
             styles_file = k
         elif k.startswith("usageStatsUiParts-") and k.endswith(".js"):
             usage_parts_file = k
+        elif k.startswith("validation-") and k.endswith(".js"):
+            validation_file = k
 
     menu_file = None
     for k, node in main_files.items():
@@ -159,7 +166,7 @@ def find_target_paths(header, f_src, base_offset):
     if not menu_file:
         raise FileNotFoundError("Menu chunk bundle bulunamadı!")
 
-    return {
+    res = {
         "intl": ["out", "renderer", "assets", intl_file],
         "styles": ["out", "renderer", "assets", styles_file],
         "usage_parts": ["out", "renderer", "assets", usage_parts_file],
@@ -168,6 +175,32 @@ def find_target_paths(header, f_src, base_offset):
         "html": ["out", "renderer", "index.html"],
         "resource_html": ["out", "renderer", "resource-manager.html"],
     }
+    if validation_file:
+        res["validation"] = ["out", "renderer", "assets", validation_file]
+    return res
+
+def patch_validation(js_content):
+    # v4.0.0+ merkezi dil listesi ve etiket haritası (ml=[`zh-CN`,`en-US`,...], gl={"zh-CN":`中文简体`,...})
+    if '`tr-TR`' not in js_content and '"tr-TR"' not in js_content:
+        js_content = re.sub(
+            r'(\[`zh-CN`,`en-US`)([^\]]*\])',
+            r'\1,`tr-TR`\2',
+            js_content,
+            count=1
+        )
+        js_content = re.sub(
+            r'(\{"zh-CN":`中文简体`,"en-US":`English`)',
+            r'\1,"tr-TR":`Türkçe`',
+            js_content,
+            count=1
+        )
+        js_content = js_content.replace(
+            'case`ko`:return`ko-KR`;',
+            'case`tr`:return`tr-TR`;case`ko`:return`ko-KR`;',
+            1
+        )
+        print("    [+] validation dil listesi (tr-TR: Türkçe) başarıyla eklendi!")
+    return js_content
 
 def patch_intl(js_content, tr_dict):
     tr_json = json.dumps(tr_dict, ensure_ascii=False)
@@ -203,6 +236,11 @@ def patch_intl(js_content, tr_dict):
     return js_content
 
 def patch_menu(js_content):
+    # Main process locale listesine tr-TR ekle (var vt=["zh-CN","en-US",...])
+    if '["zh-CN","en-US"' in js_content and '"tr-TR"' not in js_content:
+        js_content = js_content.replace('["zh-CN","en-US"', '["zh-CN","en-US","tr-TR"', 1)
+    js_content = js_content.replace('case"ko":return"ko-KR";', 'case"tr":return"tr-TR";case"ko":return"ko-KR";', 1)
+
     m = re.search(r'(\w+)=(\{"zh-CN":\{"titleBar\.menu\.file":.*?\}\});function\s+', js_content)
     if m:
         var_name = m.group(1)
@@ -384,6 +422,45 @@ function _trTemplateText(txt){{if(!txt||typeof txt!=="string")return txt;let t=t
     js_content = js_content.replace(target_o3, repl_o3, 1)
 
     # 4.9 Model ve Sağlayıcı Hata Mesajları Yaması
+    # v4.0.0+ r0t Hata Fonksiyonu
+    target_r0t_v400 = 'function r0t(e,t,n=`local`){let r=fo(e);if(r)return aM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(t0t(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=n0t(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=OO(e);if(i)return t.formatMessage({id:i});let a=ktt(DO(e.code,e.message)??Btt(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):Vtt(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):e0t(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&Z1t.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}'
+    repl_r0t_v400 = 'function r0t(e,t,n=`local`){let _inner=function(){let r=fo(e);if(r)return aM({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(t0t(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=n0t(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=OO(e);if(i)return t.formatMessage({id:i});let a=ktt(DO(e.code,e.message)??Btt(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):Vtt(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):e0t(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&Z1t.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}();return typeof _trErrorMessage===`function`?_trErrorMessage(_inner):_inner}'
+    if target_r0t_v400 in js_content:
+        js_content = js_content.replace(target_r0t_v400, repl_r0t_v400, 1)
+        print("    [+] r0t (v4.0.0+) hata kancası başarıyla uygulandı!")
+
+    # v4.0.0+ h6 Otomasyon Şablonu ve Ajan Tanım Fonksiyonu
+    target_h6 = 'function h6(e,t){let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;return r?.trim()||i?.trim()||``}'
+    repl_h6 = '''function h6(e,t){let d=(typeof _trAgentDesc===`function`)?_trAgentDesc(e):` `;if(d&&d!==e.description)return d;let n=t?.startsWith(`zh`)??!1,r=n?e.cn:e.en,i=n?e.en:e.cn;let res=r?.trim()||i?.trim()||(typeof e===`string`?e.trim():``)||``;if(typeof res===`string`&&res){let s=res.toLowerCase();if(s.includes(`summarize commits`)||s.includes(`previous workday`)||s.includes(`stand-up-ready`)||s.includes(`standup-ready`))return `Önceki iş gününden bu yana commit'leri, modül değişikliklerini, CI durumunu ve takip edilecekleri özetleyin; engelleri ve sonraki adımları içeren en fazla beş maddelik toplantı özeti hazırlayın.`;if(s.includes(`inspect code changes`)||s.includes(`last 24 hours`)||s.includes(`authorization bypasses`)||s.includes(`runtime failures`))return `Son 24 saatteki kod değişikliklerini çalışma zamanı hataları, veri kaybı, yetkilendirme açıkları, kaynak sızıntıları veya eksik geri alma senaryoları açısından inceleyin.`;if(s.includes(`organize prs`)||s.includes(`merged this week`)||s.includes(`breaking changes`))return `Bu hafta birleştirilen PR ve commit'leri Özellikler, Düzeltmeler, Deneyim ve Mühendislik iyileştirmeleri olarak düzenleyin; kritik değişiklikleri ve kalan takip maddelerini vurgulayın.`;if(s.includes(`compare code`)||s.includes(`documentation changes`)||s.includes(`last seven days`)||s.includes(`public interfaces`))return `Son yedi günün kod, yapılandırma, API ve dokümantasyon değişikliklerini karşılaştırın. Genel arayüzlerin veya sistem davranışının belgelenmeden değiştiği durumları tespit edin.`;if(s.includes(`daily standup`)||s.includes(`standup summary`))return `Sabah Geliştirici Özeti`;if(s.includes(`risk scan`))return `Risk Taraması`;if(s.includes(`release summary`))return `Sürüm Özeti`;if(s.includes(`docs sync`)||s.includes(`sync check`))return `Belge Senkronizasyon Kontrolü`}if(typeof _trTemplateText===`function`)return _trTemplateText(res);return res}'''
+    if target_h6 in js_content:
+        js_content = js_content.replace(target_h6, repl_h6, 1)
+        print("    [+] h6 (v4.0.0+) otomasyon ve ajan tanım kancası başarıyla uygulandı!")
+
+    # v4.0.0+ Fot Kategori ve $k, eA, tA Eklenti Başlık ve Açıklamaları
+    target_Fot_cat = 'var Fot={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,other:`settings.plugins.store.category.other`};'
+    repl_Fot_cat = 'var Fot={"developer-tools":`settings.plugins.store.category.developerTools`,productivity:`settings.plugins.store.category.productivity`,utilities:`settings.plugins.store.category.utilities`,legal:`settings.plugins.store.category.legal`,template:`settings.plugins.store.category.template`,finance:`settings.plugins.store.category.finance`,"游戏/3D":`settings.plugins.store.category.game3d`,game3d:`settings.plugins.store.category.game3d`,other:`settings.plugins.store.category.other`};'
+    if target_Fot_cat in js_content:
+        js_content = js_content.replace(target_Fot_cat, repl_Fot_cat, 1)
+        print("    [+] Fot (v4.0.0+) kategori kancası uygulandı!")
+
+    target_dk_v400 = 'function $k(e,t){return Or(e,t)}'
+    repl_dk_v400 = 'function $k(e,t){let raw=Or(e,t);let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginName==="function")return _trPluginName(id,raw);return raw}'
+    if target_dk_v400 in js_content:
+        js_content = js_content.replace(target_dk_v400, repl_dk_v400, 1)
+        print("    [+] $k (v4.0.0+) eklenti başlık kancası uygulandı!")
+
+    target_eA_v400 = 'function eA(e,t){return ni(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)}'
+    repl_eA_v400 = 'function eA(e,t){let raw=ni(t,e.summary?.description??e.info?.description??e.installedMeta?.description,e.listing?.descriptionI18n)??(e&&e.description)??"";let id=(e&&(e.id||e.name||e.pluginId))||"";if(typeof _trPluginDesc==="function")return _trPluginDesc(id,raw);return raw}'
+    if target_eA_v400 in js_content:
+        js_content = js_content.replace(target_eA_v400, repl_eA_v400, 1)
+        print("    [+] eA (v4.0.0+) eklenti açıklama kancası uygulandı!")
+
+    target_tA_v400 = 'function tA(e,t,n){let r=t?.id===e.id?t:void 0;return{name:Or(r??e,n),description:r?eA(r,n):e.description}}'
+    repl_tA_v400 = 'function tA(e,t,n){let r=t?.id===e.id?t:void 0;let res={name:Or(r??e,n),description:r?eA(r,n):e.description};let pid=(e&&e.id)||(r&&r.id)||(e&&e.name)||"";if(typeof _trPluginName==="function")res.name=_trPluginName(pid,res.name);if(typeof _trPluginDesc==="function")res.description=_trPluginDesc(pid,res.description);return res}'
+    if target_tA_v400 in js_content:
+        js_content = js_content.replace(target_tA_v400, repl_tA_v400, 1)
+        print("    [+] tA (v4.0.0+) eklenti birleşim kancası uygulandı!")
+
     # v3.19.0+ S$t Hata Fonksiyonu
     target_St_v3190 = 'function S$t(e,t,n=`local`){let r=Lo(e);if(r)return _M({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(b$t(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=x$t(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=FO(e);if(i)return t.formatMessage({id:i});let a=mtt(PO(e.code,e.message)??Ttt(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):Ett(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):y$t(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&g$t.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}'
     repl_St_v3190 = 'function S$t(e,t,n=`local`){let _inner=function(){let r=Lo(e);if(r)return _M({fallback:e.message,reasonCode:r,formatMessage:t.formatMessage});if(b$t(e))return t.formatMessage({id:n===`remote`?`chat.error.remoteNoAvailableModel`:`chat.error.noAvailableModel`});if(e.code===`CLAUDE_UNKNOWN_COMMAND`){let n=x$t(e.message);return n?n.args?t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND_WITH_ARGS`},{command:n.command,args:n.args}):t.formatMessage({id:`zcode.error.CLAUDE_UNKNOWN_COMMAND`},{command:n.command}):e.message}let i=FO(e);if(i)return t.formatMessage({id:i});let a=mtt(PO(e.code,e.message)??Ttt(e.code,e.message)??e.code);return a?t.formatMessage({id:a}):Ett(e.message)?t.formatMessage({id:`zcode.error.modelSuspiciousEmpty`}):y$t(e)?t.formatMessage({id:`zcode.error.ZCODE_RUNTIME_MODEL_UNAVAILABLE`}):e.code&&g$t.has(e.code)?t.formatMessage({id:`zcode.error.${e.code}`}):e.message}();return typeof _trErrorMessage===`function`?_trErrorMessage(_inner):_inner}'
@@ -1130,6 +1207,7 @@ def main():
         main_orig = extract_file(f_src, find_node(header, targets["main"]), base_offset).decode("utf-8")
         html_orig = extract_file(f_src, find_node(header, targets["html"]), base_offset).decode("utf-8")
         resource_html_orig = extract_file(f_src, find_node(header, targets["resource_html"]), base_offset).decode("utf-8")
+        validation_orig = extract_file(f_src, find_node(header, targets["validation"]), base_offset).decode("utf-8") if "validation" in targets else None
 
     print("Applying patches in memory...")
     intl_patched = patch_intl(intl_orig, tr_dict)
@@ -1149,6 +1227,9 @@ def main():
         "/".join(targets["html"]): html_patched.encode("utf-8"),
         "/".join(targets["resource_html"]): resource_html_patched.encode("utf-8"),
     }
+    if validation_orig is not None:
+        validation_patched = patch_validation(validation_orig)
+        modified_files["/".join(targets["validation"])] = validation_patched.encode("utf-8")
 
     rebuild_asar(ORIG_ASAR, PATCHED_ASAR, modified_files)
 

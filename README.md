@@ -4,8 +4,8 @@
 <div align="center">
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tested On](https://img.shields.io/badge/ZCode%20Version-v3.19.0%2B-green.svg)](https://zcode.z.ai)
-[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-8%2C468-orange.svg)](tr_dictionary_zcode.json)
+[![Tested On](https://img.shields.io/badge/ZCode%20Version-v4.0.0%2B-green.svg)](https://zcode.z.ai)
+[![Keys Translated](https://img.shields.io/badge/Translated%20Keys-8%2C474-orange.svg)](tr_dictionary_zcode.json)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Cross--Platform-lightgrey.svg)](#-kurulum-installation)
 [![Maintenance Commitment](https://img.shields.io/badge/Maintenance-Day--0%20SLA-blue.svg)](#-note-regarding-official-upstream-zai-org)
 [![GitHub stars](https://img.shields.io/github/stars/foztrk/zcode-turkish-localization?style=social)](https://github.com/foztrk/zcode-turkish-localization)
@@ -43,8 +43,10 @@ Our reverse-engineered AST and ASAR injection engine guarantees zero downtime an
 
 1. **Model ve Sağlayıcı Hata Mesajları Enjeksiyonu (`ZBt` / `bVt` Kancası):**
    - Sohbet panelinde model sağlayıcısından gelen İngilizce hata mesajları (`"Model output was blocked by the provider's content safety filter."`, rate limit, quota, context limit vb.) anında yakalanıp Türkçeleştirilir.
-2. **Tam Kapsamlı Arayüz (8.468 Anahtar):**
-   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **8.468 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
+2. **Tam Kapsamlı Arayüz (8.474 Anahtar):**
+   - React-Intl dil sağlayıcısı (`IntlProvider`) üzerinden **8.474 anahtarın tamamı** Türkçe yazılım ve geliştirici terminolojisine uygun olarak yerelleştirildi.
+   - **v4.0.0 Uyumluluğu:** 6 yeni i18n anahtarı (Arka plan alt ajan ayarı, Token bütçesi hatırlatıcısı, Worktree güven bildirimi, Otomasyon cihaz uyumsuzluğu) ve yeni merkezi dil doğrulama modülü (`validation-BgObiV9E.js` + `chunk-IERSWOXK.js`) eksiksiz entegre edildi.
+   - v4.0.0 ile değişen dinamik modül hash'leri (`IntlProvider-CWWc_lf7.js`, `styles-D2WmIVpU.js`, `usageStatsUiParts-BoBHFk72.js`) ve güncellenen fonksiyon kancaları (`r0t`, `h6`, `Fot`, `$k`, `eA`, `tA`) tam uyumlu hale getirildi.
    - **v3.19.0 Uyumluluğu:** 103 yeni i18n anahtarı (Önceden Yüklenmiş Araçlar yönetimi, Yanıt Dili Seçimi, Sohbet Kapsülü Durumları, Çalışma Alanı Eklenti Güvenlik İzinleri, Sohbet Paylaşımı Güvenlik Denetimleri) eksiksiz Türkçeleştirildi.
    - v3.19.0 ile değişen dinamik modül hash'leri (`IntlProvider-B3A2qFwN.js`, `styles-BpXEJYlR.js`, `chunk-2FJIZ7ZZ.js`) ve güncellenen fonksiyon kancaları (`S$t`, `t8`, `bot`, `oA`, `sA`, `cA`) tam entegre edildi.
    - **v3.18.2 Uyumluluğu:** 10 yeni i18n anahtarı (Yazı tipi gri tonlama düzgünleştirme ayarı, sesli giriş mikrofon yetkilendirme diyalogları ve sistem bildirimleri) eksiksiz Türkçeleştirildi.

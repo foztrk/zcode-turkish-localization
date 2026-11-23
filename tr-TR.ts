@@ -8466,5 +8466,11 @@ export default {
   "settings.replyLanguageLocalOnly": "Yanıt dili yalnızca yerel masaüstü uygulamasında ayarlanabilir. Masaüstü uygulamasında Ayarlar → Davranış ve Araçlar bölümüne gidin.",
   "settings.replyLanguagePlaceholder": "Örneğin: Türkçe, English, 简体中文, 日本語",
   "settings.replyLanguageSaveError": "Yanıt dili kaydedilemedi",
-  "settings.shortcuts.command.toggleVoiceInput": "Sesli Girişi Başlat veya Durdur"
+  "settings.shortcuts.command.toggleVoiceInput": "Sesli Girişi Başlat veya Durdur",
+  "automations.runNowHostMismatch": "Bu görev farklı bir cihaza ait olduğundan burada çalıştırılamaz",
+  "settings.agentAlwaysBackground": "Alt ajanları her zaman arka planda çalıştır",
+  "settings.agentAlwaysBackgroundDescription": "Alt ajanlar her zaman arka planda başlatılır ve sonuçları sonraki bir turda iletilir; böylece onlar çalışırken işinize devam edebilirsiniz. Modelin karar vermesi için bu ayarı kapatın: bu durumda alt ajanlar, model arka plan talep etmediği sürece ön planda çalışır. Yeni oturumlarda ve uygulama yeniden başlatıldıktan sonra geri yüklenen oturumlarda geçerlidir; aktif oturumlar mevcut ayarını korur.",
+  "settings.hooks.review.worktreeNotice": "Güven, kaynak depo {path} ve bağlı worktree dizinleri için geçerlidir",
+  "settings.totalTokensReminder": "Token bütçesi hatırlatıcısı",
+  "settings.totalTokensReminderDescription": "Yeni oturumlarda ve uygulama yeniden başlatıldıktan sonra geri yüklenen oturumlarda modele sabit bir token bütçesi ve her turda kalan miktarı bildirir. Yalnızca bir hatırlatmadır, gerçek kullanımı kısıtlamaz. Aktif oturumlar mevcut ayarını korur."
 };
